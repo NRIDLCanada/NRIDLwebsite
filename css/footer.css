@@ -1,0 +1,203 @@
+/* Footer Styles */
+
+.main-footer {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    padding: var(--spacing-lg) 0 var(--spacing-md);
+    margin-top: var(--spacing-xl);
+}
+
+.footer-container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+    padding-bottom: var(--spacing-lg);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Footer Branding */
+.footer-branding {
+    max-width: 400px;
+}
+
+.footer-logo {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-light);
+    margin-bottom: var(--spacing-sm);
+    display: block;
+}
+
+.footer-description {
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+    font-size: 0.9375rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.footer-mission {
+    font-family: var(--font-accent);
+    font-size: 0.875rem;
+    font-style: italic;
+    color: var(--accent-light);
+    padding-left: 1rem;
+    border-left: 3px solid var(--accent-light);
+}
+
+/* Footer Links Section */
+.footer-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-section-title {
+    font-family: var(--font-accent);
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-light);
+    margin-bottom: var(--spacing-sm);
+    font-weight: 600;
+}
+
+.footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.footer-link {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 0.9375rem;
+    transition: all var(--transition-fast);
+    display: inline-block;
+    position: relative;
+}
+
+.footer-link:hover {
+    color: var(--accent-light);
+    transform: translateX(5px);
+}
+
+.footer-link::before {
+    content: '→';
+    position: absolute;
+    left: -20px;
+    opacity: 0;
+    transition: all var(--transition-fast);
+}
+
+.footer-link:hover::before {
+    opacity: 1;
+    left: -25px;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    padding-top: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.footer-policies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-bottom: var(--spacing-sm);
+}
+
+.footer-policy-link {
+    font-family: var(--font-accent);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+    font-weight: 600;
+}
+
+.footer-policy-link:hover {
+    color: var(--accent-light);
+}
+
+.footer-copyright {
+    text-align: center;
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.5);
+    font-family: var(--font-accent);
+    letter-spacing: 0.02em;
+}
+
+.footer-copyright strong {
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 600;
+}
+
+/* Footer Social */
+.footer-social {
+    display: flex;
+    gap: 1rem;
+    margin-top: var(--spacing-sm);
+}
+
+.social-link {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: var(--text-light);
+    text-decoration: none;
+    transition: all var(--transition-medium);
+}
+
+.social-link:hover {
+    background-color: var(--accent-light);
+    transform: translateY(-3px);
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+    
+    .footer-branding {
+        max-width: 100%;
+    }
+    
+    .footer-policies {
+        flex-direction: column;
+        gap: 0.75rem;
+        align-items: center;
+    }
+    
+    .footer-bottom {
+        text-align: center;
+    }
+    
+    .footer-social {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-policy-link {
+        font-size: 0.6875rem;
+    }
+}
