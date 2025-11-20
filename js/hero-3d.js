@@ -5,8 +5,8 @@ import * as THREE from 'https://unpkg.com/three@0.160.0/build/three.module.js';
 const PARTICLE_COUNT = 80000; // Optimized for detail and performance
 const PARTICLE_SIZE = 0.02; // Visible but not too large
 const TRANSITION_DURATION = 3500; // Smooth transitions
-const ERA_DURATION = 8000; // Longer viewing time
-const INITIAL_ERA_DURATION = 10000; // First scene stays 10 seconds
+const ERA_DURATION = 4000; // 4 seconds per scene
+const INITIAL_ERA_DURATION = 4000; // First scene also 4 seconds
 
 // State
 let currentEraIndex = 0; // Start with Earth
