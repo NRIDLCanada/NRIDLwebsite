@@ -1,5 +1,6 @@
 
 import * as THREE from 'https://unpkg.com/three@0.160.0/build/three.module.js';
+import { OrbitControls } from 'https://unpkg.com/three@0.160.0/examples/jsm/controls/OrbitControls.js';
 
 // Configuration
 const PARTICLE_COUNT = 300000; // Ultra-high detail for artistic clarity
@@ -11,19 +12,20 @@ const ERA_DURATION = 8000; // Longer viewing time
 let currentEraIndex = 0;
 let isTransitioning = false;
 let particles;
-let renderer, scene, camera;
+let renderer, scene, camera, controls;
 let eraStartTime = 0;
 let transitionStartTime = 0;
+let sceneLines = []; // Store line geometries for each scene
 
 // Eras Definition
 const ERAS = [
-    { name: "THE BEGINNING", caption: "Our Planet Earth", color: 0x4caf50, type: 'earth' },
-    { name: "AGRARIAN ERA", caption: "Farming & Harvest", color: 0xffd700, type: 'sickle' },
-    { name: "AGE OF TRANSPORT", caption: "Horse-Drawn Commerce", color: 0x8d6e63, type: 'cart' },
-    { name: "INDUSTRIAL AGE", caption: "Steam & Railways", color: 0x607d8b, type: 'locomotive' },
-    { name: "ELECTRIC ERA", caption: "Power & Light", color: 0xffeb3b, type: 'lightbulb' },
-    { name: "DIGITAL AGE", caption: "Computing & Information", color: 0x00e5ff, type: 'computer' },
-    { name: "HUMANITY", caption: "The Human Spirit", color: 0xffccbc, type: 'face' }
+    { name: "THE BEGINNING", caption: "Our Planet Earth", color: 0xcccccc, type: 'earth' },
+    { name: "AGRARIAN ERA", caption: "Farming & Harvest", color: 0xaaaaaa, type: 'sickle' },
+    { name: "AGE OF TRANSPORT", caption: "Horse-Drawn Commerce", color: 0x999999, type: 'cart' },
+    { name: "INDUSTRIAL AGE", caption: "Steam & Railways", color: 0x888888, type: 'locomotive' },
+    { name: "ELECTRIC ERA", caption: "Power & Light", color: 0xbbbbbb, type: 'lightbulb' },
+    { name: "DIGITAL AGE", caption: "Computing & Information", color: 0xdddddd, type: 'computer' },
+    { name: "HUMANITY", caption: "The Human Spirit", color: 0xe0e0e0, type: 'face' }
 ];
 
 // Initialize
@@ -32,7 +34,7 @@ function init() {
     
     // Scene
     scene = new THREE.Scene();
-    // scene.fog = new THREE.FogExp2(0x000000, 0.02); // Removed fog for vivid colors
+    scene.background = new THREE.Color(0x000000); // Pure black background
 
     // Camera
     camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
@@ -43,7 +45,18 @@ function init() {
     renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
     renderer.setSize(container.clientWidth, container.clientHeight);
     renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setClearColor(0x000000, 1); // Black background
     container.appendChild(renderer.domElement);
+
+    // Orbit Controls for rotation
+    controls = new OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.05;
+    controls.enableZoom = true;
+    controls.minDistance = 4;
+    controls.maxDistance = 12;
+    controls.autoRotate = false;
+    controls.rotateSpeed = 0.5;
 
     // Particles
     createParticles();
@@ -85,13 +98,13 @@ function createParticles() {
         targetPositions[i * 3 + 1] = positions[i * 3 + 1];
         targetPositions[i * 3 + 2] = positions[i * 3 + 2];
 
-        // Initial Colors (Earth-like) - More variety
+        // Initial Colors (Earth-like) - Grayscale with variation
         const color = new THREE.Color();
         const rand = Math.random();
-        if (rand > 0.7) color.setHex(0x2196f3); // Ocean Blue
-        else if (rand > 0.5) color.setHex(0x4caf50); // Land Green
-        else if (rand > 0.3) color.setHex(0x1976d2); // Deep Ocean
-        else color.setHex(0x81c784); // Light Green
+        if (rand > 0.7) color.setHex(0x666666); // Dark gray (oceans)
+        else if (rand > 0.5) color.setHex(0xcccccc); // Light gray (land)
+        else if (rand > 0.3) color.setHex(0x555555); // Darker (deep ocean)
+        else color.setHex(0xdddddd); // Lighter (ice/clouds)
         
         colors[i * 3] = color.r;
         colors[i * 3 + 1] = color.g;
@@ -102,14 +115,14 @@ function createParticles() {
     geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
     geometry.setAttribute('targetPosition', new THREE.BufferAttribute(targetPositions, 3));
 
-    // Material for Vivid Dots
+    // Material for Grayscale Dots
     const material = new THREE.PointsMaterial({
         size: PARTICLE_SIZE,
         vertexColors: true,
-        blending: THREE.AdditiveBlending,
-        depthTest: false,
-        transparent: true,
-        opacity: 1.0 // Full opacity for vivid colors
+        blending: THREE.NormalBlending, // Normal blending for grayscale
+        depthTest: true,
+        transparent: false,
+        opacity: 1.0
     });
 
     particles = new THREE.Points(geometry, material);
@@ -125,38 +138,59 @@ function getShapePoints(type) {
         const t = i / PARTICLE_COUNT;
         
         if (type === 'earth') {
-            // Detailed Earth with continents, atmosphere, and orbital elements
-            if (t < 0.65) {
-                // Main sphere (Earth core)
-                const r = 2.3;
+            // Realistic Earth with continents visible
+            if (t < 0.88) {
+                // Main sphere with continent mapping
+                const r = 2.5;
                 const theta = Math.random() * Math.PI * 2;
                 const phi = Math.acos(2 * Math.random() - 1);
+                
                 x = r * Math.sin(phi) * Math.cos(theta);
                 y = r * Math.sin(phi) * Math.sin(theta);
                 z = r * Math.cos(phi);
-            } else if (t < 0.75) {
-                // Atmospheric layer (slightly larger radius)
-                const r = 2.6 + Math.random() * 0.3;
-                const theta = Math.random() * Math.PI * 2;
-                const phi = Math.acos(2 * Math.random() - 1);
-                x = r * Math.sin(phi) * Math.cos(theta);
-                y = r * Math.sin(phi) * Math.sin(theta);
-                z = r * Math.cos(phi);
-            } else if (t < 0.9) {
-                // Orbital ring (satellites)
-                const orbitR = 4.0;
-                const orbitAngle = t * Math.PI * 2 * 5;
-                x = Math.cos(orbitAngle) * orbitR;
-                y = (Math.random() - 0.5) * 0.3;
-                z = Math.sin(orbitAngle) * orbitR;
+                
+                // Create continent-like patterns (simplified landmass distribution)
+                // Using spherical coordinates to create recognizable land patterns
+                const lat = phi - Math.PI / 2; // -PI/2 to PI/2
+                const lon = theta; // 0 to 2PI
+                
+                // Simplified continent logic:
+                // Africa/Europe (lon: 0-1, lat: -0.5 to 0.8)
+                // Asia (lon: 1.5-4, lat: 0 to 1.2)
+                // Americas (lon: 4-6, lat: -1 to 1)
+                // Antarctica (lat < -1.2)
+                
+                const isLand = 
+                    (lon > 0 && lon < 1.2 && lat > -0.6 && lat < 0.9) || // Africa/Europe
+                    (lon > 1.8 && lon < 4.2 && lat > 0.1 && lat < 1.3) || // Asia
+                    (lon > 4.0 && lon < 6.0 && lat > -1.0 && lat < 1.1) || // Americas
+                    (lat < -1.3); // Antarctica
+                    
+                // Adjust surface slightly outward for land (creates relief)
+                if (isLand && Math.random() > 0.3) {
+                    const landR = r + 0.02;
+                    x = landR * Math.sin(phi) * Math.cos(theta);
+                    y = landR * Math.sin(phi) * Math.sin(theta);
+                    z = landR * Math.cos(phi);
+                }
             } else {
-                // Stars in background
-                const starR = 5 + Math.random() * 3;
-                const theta = Math.random() * Math.PI * 2;
-                const phi = Math.random() * Math.PI;
-                x = starR * Math.sin(phi) * Math.cos(theta);
-                y = starR * Math.sin(phi) * Math.sin(theta);
-                z = starR * Math.cos(phi);
+                // Few shooting stars in the background
+                const starIndex = i - Math.floor(PARTICLE_COUNT * 0.88);
+                const totalStars = Math.floor(PARTICLE_COUNT * 0.12);
+                
+                if (starIndex % 100 < 5) { // Only 5% are actual stars
+                    const starR = 6 + Math.random() * 2;
+                    const theta = Math.random() * Math.PI * 2;
+                    const phi = Math.random() * Math.PI;
+                    x = starR * Math.sin(phi) * Math.cos(theta);
+                    y = starR * Math.sin(phi) * Math.sin(theta);
+                    z = starR * Math.cos(phi);
+                } else {
+                    // Hide excess particles far away
+                    x = 0;
+                    y = 0;
+                    z = -100;
+                }
             }
         } 
         else if (type === 'sickle') {
@@ -570,6 +604,11 @@ function animate() {
 
     // Gentle Rotation
     particles.rotation.y += 0.002;
+    
+    // Update controls
+    if (controls) {
+        controls.update();
+    }
     
     // Electricity Effect for Lightbulb Era
     if (ERAS[currentEraIndex].type === 'lightbulb' && !isTransitioning) {
