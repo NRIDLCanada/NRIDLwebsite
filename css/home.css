@@ -203,7 +203,7 @@
     .hero-content {
         text-align: center;
         padding: 0 1.5rem;
-        margin-bottom: 3rem; /* More space from bottom */
+        margin-bottom: calc(3rem + 7.5rem); /* 3rem base + 3 title heights (2.5rem each) */
         max-width: 100%;
     }
     
