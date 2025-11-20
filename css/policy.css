@@ -1,221 +1,214 @@
-/* Policy Pages Styles - Professional and Readable */
+/* Policy Pages Styles - NVIDIA-inspired Tech Layout */
 
 .policy-hero {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
-    color: var(--text-light);
-    padding: clamp(6rem, 12vw, 8rem) 0 clamp(4rem, 8vw, 6rem);
-    text-align: center;
+    background-color: #000000; /* Stark black like NVIDIA */
+    color: #ffffff;
+    padding: 4rem 0 3rem; /* Much tighter padding */
+    text-align: left; /* Left aligned for tech look */
     position: relative;
-    overflow: hidden;
+    border-bottom: 1px solid #333;
 }
 
-.policy-hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(circle at top right, rgba(255,255,255,0.1) 0%, transparent 50%);
-    pointer-events: none;
+.policy-hero .container {
+    max-width: 1200px; /* Wider container alignment */
+    padding: 0 2rem;
 }
 
 .policy-hero h1 {
-    color: var(--text-light);
-    margin-bottom: 1.25rem;
-    position: relative;
+    font-family: var(--font-primary); /* Inter instead of Serif */
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+    text-transform: none;
 }
 
 .policy-meta {
-    font-family: var(--font-accent);
+    font-family: var(--font-primary);
     font-size: 0.875rem;
-    color: rgba(255, 255, 255, 0.85);
-    margin-top: 1.25rem;
+    color: #999999; /* Tech gray */
+    margin-top: 0.5rem;
+    font-weight: 400;
 }
 
 .policy-meta span {
-    margin: 0 1.25rem;
+    margin-right: 1.5rem;
+    margin-left: 0;
 }
 
 .policy-content {
-    max-width: 960px;
+    max-width: 1200px; /* Wider reading area */
     margin: 0 auto;
-    padding: clamp(4rem, 8vw, 6rem) clamp(1.5rem, 5vw, 3rem);
+    padding: 3rem 2rem;
+    font-family: var(--font-primary); /* Force Sans-Serif */
+    color: #333333;
+}
+
+/* Typography Overrides for Tech Look */
+.policy-content h2,
+.policy-content h3,
+.policy-content h4 {
+    font-family: var(--font-primary);
+    color: #000000;
+    font-weight: 700;
+    letter-spacing: -0.01em;
 }
 
 .policy-content h2 {
-    margin-top: clamp(3rem, 6vw, 5rem);
-    margin-bottom: clamp(1.5rem, 3vw, 2rem);
-    color: var(--accent-color);
-    font-size: clamp(1.75rem, 4vw, 2.5rem);
-    padding-bottom: 1rem;
-    border-bottom: 2px solid var(--border-color);
-    line-height: 1.3;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #e0e0e0; /* Thinner, lighter border */
+    line-height: 1.2;
 }
 
 .policy-content h3 {
-    margin-top: clamp(2rem, 4vw, 3rem);
-    margin-bottom: 1.25rem;
-    color: var(--text-primary);
-    font-size: clamp(1.375rem, 3vw, 1.875rem);
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    font-size: 1.25rem;
+    font-weight: 600;
 }
 
 .policy-content h4 {
-    margin-top: clamp(1.5rem, 3vw, 2rem);
-    margin-bottom: 1rem;
-    color: var(--text-primary);
-    font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.125rem;
+    font-weight: 600;
 }
 
 .policy-content p {
-    margin-bottom: 1.5rem;
-    line-height: 1.85;
-    font-size: 1.0625rem;
+    margin-bottom: 1rem; /* Tighter paragraph spacing */
+    line-height: 1.6; /* Tighter line height */
+    font-size: 1rem;
+    color: #444444;
+    max-width: 90ch; /* Allow wider text for tech feel */
 }
 
 .policy-content ul,
 .policy-content ol {
-    margin-bottom: 1.75rem;
-    padding-left: 2.5rem;
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
 }
 
 .policy-content li {
-    margin-bottom: 1rem;
-    line-height: 1.8;
-    color: var(--text-secondary);
+    margin-bottom: 0.5rem; /* Tighter list items */
+    line-height: 1.6;
+    color: #444444;
+    font-size: 1rem;
 }
 
 .policy-content strong {
-    color: var(--text-primary);
+    color: #000000;
     font-weight: 600;
 }
 
 .policy-content a {
-    color: var(--accent-color);
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 2px;
-    transition: color var(--transition-fast);
+    color: #0066cc; /* Standard tech blue link */
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
 }
 
 .policy-content a:hover {
-    color: var(--accent-light);
+    color: #004499;
+    text-decoration: underline;
 }
 
+/* Tech-style Highlights */
 .policy-highlight {
-    background-color: var(--bg-secondary);
-    padding: clamp(1.5rem, 3vw, 2rem);
-    border-left: 5px solid var(--accent-color);
-    border-radius: var(--radius-md);
-    margin: clamp(1.5rem, 3vw, 2rem) 0;
-    box-shadow: var(--shadow-sm);
+    background-color: #f5f5f5; /* Light gray background */
+    padding: 1.5rem;
+    border-left: 4px solid #76b900; /* NVIDIA-ish Green accent or keep brand blue? Let's use brand accent but solid */
+    border-left-color: var(--accent-color);
+    border-radius: 0; /* Square corners for tech look */
+    margin: 1.5rem 0;
+    box-shadow: none;
 }
 
 .policy-note {
-    background-color: #fff8e1;
-    border-left: 5px solid #ffc107;
-    padding: clamp(1.5rem, 3vw, 2rem);
-    border-radius: var(--radius-md);
-    margin: clamp(1.5rem, 3vw, 2rem) 0;
-    box-shadow: var(--shadow-sm);
+    background-color: #fff9c4;
+    border-left: 4px solid #fbc02d;
+    padding: 1.5rem;
+    border-radius: 0;
+    margin: 1.5rem 0;
+    box-shadow: none;
 }
 
 .policy-warning {
     background-color: #ffebee;
-    border-left: 5px solid #f44336;
-    padding: clamp(1.5rem, 3vw, 2rem);
-    border-radius: var(--radius-md);
-    margin: clamp(1.5rem, 3vw, 2rem) 0;
-    box-shadow: var(--shadow-sm);
+    border-left: 4px solid #d32f2f;
+    padding: 1.5rem;
+    border-radius: 0;
+    margin: 1.5rem 0;
+    box-shadow: none;
 }
 
+/* Table of Contents - Sidebar style if possible, or clean block */
 .policy-toc {
-    background-color: var(--bg-secondary);
-    padding: clamp(1.75rem, 4vw, 2.5rem);
-    border-radius: var(--radius-xl);
-    margin-bottom: clamp(2.5rem, 5vw, 4rem);
-    border: 1px solid var(--border-color);
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 0;
+    margin-bottom: 3rem;
+    border: 1px solid #e9ecef;
 }
 
 .policy-toc h3 {
     margin-top: 0;
-    margin-bottom: 1.25rem;
-    font-size: 1.375rem;
-}
-
-.policy-toc ul {
-    list-style: none;
-    padding-left: 0;
+    margin-bottom: 1rem;
+    font-size: 1.125rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #666;
 }
 
 .policy-toc li {
-    margin-bottom: 0.75rem;
-}
-
-.policy-toc a {
-    color: var(--accent-color);
-    text-decoration: none;
-    font-weight: 500;
-    transition: all var(--transition-fast);
-    display: inline-block;
-}
-
-.policy-toc a:hover {
-    text-decoration: underline;
-    transform: translateX(5px);
+    margin-bottom: 0.5rem;
+    font-size: 0.9375rem;
 }
 
 .policy-section {
-    scroll-margin-top: 120px;
+    scroll-margin-top: 100px;
 }
 
+/* Contact Box - Simplified */
 .contact-box {
-    background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-light) 100%);
-    color: var(--text-light);
-    padding: clamp(2.5rem, 5vw, 4rem);
-    border-radius: var(--radius-xl);
-    text-align: center;
-    margin-top: clamp(4rem, 8vw, 6rem);
-    box-shadow: var(--shadow-lg);
+    background: #f5f5f5;
+    color: #333;
+    padding: 2rem;
+    border-radius: 0;
+    text-align: left;
+    margin-top: 4rem;
+    box-shadow: none;
+    border-top: 2px solid var(--accent-color);
 }
 
 .contact-box h3 {
-    color: var(--text-light);
-    margin-bottom: 1.25rem;
+    color: #000;
+    margin-bottom: 1rem;
 }
 
 .contact-box p {
-    color: rgba(255, 255, 255, 0.93);
-    max-width: none;
+    color: #444;
 }
 
 .contact-box a {
-    color: var(--text-light);
-    font-weight: 600;
-    text-decoration: underline;
-    text-decoration-thickness: 2px;
-}
-
-.contact-box a:hover {
-    color: rgba(255, 255, 255, 0.85);
+    color: var(--accent-color);
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     .policy-hero {
-        padding: var(--spacing-lg) 0 var(--spacing-md);
+        padding: 3rem 0 2rem;
     }
     
     .policy-content {
-        padding: var(--spacing-lg) var(--spacing-sm);
+        padding: 2rem 1.5rem;
     }
     
     .policy-content h2 {
         font-size: 1.5rem;
-    }
-    
-    .policy-content ul,
-    .policy-content ol {
-        padding-left: var(--spacing-md);
+        margin-top: 2rem;
     }
 }
