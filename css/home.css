@@ -43,7 +43,7 @@
 }
 
 .hero-title {
-    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-size: clamp(1.25rem, 3vw, 2.5rem); /* Reduced by 50% */
     margin-bottom: 1rem;
     color: var(--text-light);
     line-height: 1.1;
@@ -52,7 +52,7 @@
 }
 
 .hero-subtitle {
-    font-size: clamp(1.125rem, 2vw, 1.5rem);
+    font-size: clamp(0.6rem, 1vw, 0.8rem); /* Reduced by ~50% */
     color: rgba(255, 255, 255, 0.9);
     max-width: 600px;
     margin: 0 0 2rem 0;
@@ -66,95 +66,7 @@
     justify-content: flex-start;
 }
 
-/* Holographic UI Panel */
-.hero-ui-panel {
-    position: absolute;
-    top: 120px;
-    right: clamp(2rem, 5vw, 4rem);
-    z-index: 10;
-    background: rgba(0, 20, 40, 0.7);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(0, 255, 255, 0.3);
-    padding: 1.5rem;
-    border-radius: 4px;
-    font-family: 'Courier New', monospace; /* Tech font */
-    color: #0ff;
-    width: 220px;
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
-    transform: skewX(-5deg); /* Futuristic skew */
-}
-
-.hero-ui-panel::before {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    width: 10px;
-    height: 10px;
-    border-top: 2px solid #0ff;
-    border-left: 2px solid #0ff;
-}
-
-.hero-ui-panel::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    right: -2px;
-    width: 10px;
-    height: 10px;
-    border-bottom: 2px solid #0ff;
-    border-right: 2px solid #0ff;
-}
-
-.ui-header {
-    font-size: 0.75rem;
-    letter-spacing: 2px;
-    border-bottom: 1px solid rgba(0, 255, 255, 0.3);
-    padding-bottom: 0.5rem;
-    margin-bottom: 1rem;
-    text-align: center;
-    font-weight: bold;
-}
-
-.ui-row {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 0.5rem;
-    font-size: 0.875rem;
-}
-
-.ui-label {
-    color: rgba(0, 255, 255, 0.7);
-}
-
-.ui-value {
-    font-weight: bold;
-}
-
-.ui-value.highlight {
-    color: #fff;
-    text-shadow: 0 0 5px #0ff;
-}
-
-.ui-btn {
-    background: transparent;
-    border: 1px solid #0ff;
-    color: #0ff;
-    width: 100%;
-    padding: 0.5rem;
-    margin-top: 1rem;
-    cursor: pointer;
-    font-family: inherit;
-    font-size: 0.75rem;
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-}
-
-.ui-btn:hover {
-    background: rgba(0, 255, 255, 0.2);
-    box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
-}
+/* Holographic UI Panel Removed */
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {

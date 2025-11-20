@@ -2,34 +2,29 @@
 import * as THREE from 'https://unpkg.com/three@0.160.0/build/three.module.js';
 
 // Configuration
-const PARTICLE_COUNT = 20000;
-const PARTICLE_SIZE = 0.05;
-const TRANSITION_DURATION = 2000; // ms
+const PARTICLE_COUNT = 15000; // Reduced slightly for better performance with dots
+const PARTICLE_SIZE = 0.04; // Slightly larger for visibility
+const TRANSITION_DURATION = 3000; // Slower transitions
+const ERA_DURATION = 5000; // Time between auto-transitions
 
 // State
 let currentEraIndex = 0;
 let isTransitioning = false;
 let particles;
-let sunMoon;
 let renderer, scene, camera;
-let clock = new THREE.Clock();
-let frameCount = 0;
-let lastTime = 0;
+let eraStartTime = 0;
+let transitionStartTime = 0;
 
 // Eras Definition
 const ERAS = [
-    { name: "GENESIS", color: 0xffffff, sunColor: 0xffaa00, type: 'random' },
-    { name: "AGRARIAN", color: 0x4caf50, sunColor: 0xffd700, type: 'plow' },
-    { name: "MARITIME", color: 0x2196f3, sunColor: 0xe0e0e0, type: 'ship' }, // Moon
-    { name: "INDUSTRIAL", color: 0xff5722, sunColor: 0xff4500, type: 'train' },
-    { name: "DIGITAL", color: 0x00bcd4, sunColor: 0x00ffff, type: 'sphere' }
+    { name: "EARTH", color: 0x4caf50, type: 'earth' }, // Green/Blue mix handled in shader/generation
+    { name: "AGRARIAN", color: 0xffd700, type: 'sickle' }, // Gold
+    { name: "TRANSPORT", color: 0x8d6e63, type: 'cart' }, // Wood/Brown
+    { name: "INDUSTRIAL", color: 0x607d8b, type: 'locomotive' }, // Steel Blue
+    { name: "ELECTRICITY", color: 0xffff00, type: 'lightbulb' }, // Bright Yellow
+    { name: "DIGITAL", color: 0x00e5ff, type: 'computer' }, // Cyan
+    { name: "HUMANITY", color: 0xffccbc, type: 'face' } // Skin tone
 ];
-
-// UI Elements
-const uiFPS = document.getElementById('ui-fps');
-const uiParticles = document.getElementById('ui-particles');
-const uiEra = document.getElementById('ui-era');
-const btnSwitch = document.getElementById('btn-switch');
 
 // Initialize
 function init() {
@@ -37,12 +32,12 @@ function init() {
     
     // Scene
     scene = new THREE.Scene();
-    scene.fog = new THREE.FogExp2(0x000000, 0.02);
+    // scene.fog = new THREE.FogExp2(0x000000, 0.02); // Removed fog for vivid colors
 
     // Camera
     camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
-    camera.position.z = 5;
-    camera.position.y = 1;
+    camera.position.z = 6;
+    camera.position.y = 0;
 
     // Renderer
     renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
@@ -53,25 +48,14 @@ function init() {
     // Particles
     createParticles();
 
-    // Sun/Moon
-    createSunMoon();
-
-    // Lights
-    const ambientLight = new THREE.AmbientLight(0x404040);
-    scene.add(ambientLight);
-    const pointLight = new THREE.PointLight(0xffffff, 1, 100);
-    pointLight.position.set(10, 10, 10);
-    scene.add(pointLight);
-
     // Event Listeners
     window.addEventListener('resize', onWindowResize, false);
-    if(btnSwitch) btnSwitch.addEventListener('click', nextEra);
 
     // Start Loop
     animate();
     
-    // Initial UI
-    updateUI();
+    // Start Auto-Transition
+    eraStartTime = Date.now();
 }
 
 function createParticles() {
@@ -80,50 +64,45 @@ function createParticles() {
     const colors = new Float32Array(PARTICLE_COUNT * 3);
     const targetPositions = new Float32Array(PARTICLE_COUNT * 3);
 
-    // Initial Random Positions (Big Bang)
+    // Initial Positions (Earth)
+    const earthPoints = getShapePoints('earth');
+    
     for (let i = 0; i < PARTICLE_COUNT; i++) {
-        const x = (Math.random() - 0.5) * 10;
-        const y = (Math.random() - 0.5) * 10;
-        const z = (Math.random() - 0.5) * 10;
-
-        positions[i * 3] = x;
-        positions[i * 3 + 1] = y;
-        positions[i * 3 + 2] = z;
+        positions[i * 3] = earthPoints[i * 3];
+        positions[i * 3 + 1] = earthPoints[i * 3 + 1];
+        positions[i * 3 + 2] = earthPoints[i * 3 + 2];
         
-        // Initialize targets to same
-        targetPositions[i * 3] = x;
-        targetPositions[i * 3 + 1] = y;
-        targetPositions[i * 3 + 2] = z;
+        targetPositions[i * 3] = positions[i * 3];
+        targetPositions[i * 3 + 1] = positions[i * 3 + 1];
+        targetPositions[i * 3 + 2] = positions[i * 3 + 2];
 
-        colors[i * 3] = 1;
-        colors[i * 3 + 1] = 1;
-        colors[i * 3 + 2] = 1;
+        // Initial Colors (Earth-like)
+        const color = new THREE.Color();
+        if (Math.random() > 0.7) color.setHex(0x2196f3); // Ocean
+        else color.setHex(0x4caf50); // Land
+        
+        colors[i * 3] = color.r;
+        colors[i * 3 + 1] = color.g;
+        colors[i * 3 + 2] = color.b;
     }
 
     geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
     geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
     geometry.setAttribute('targetPosition', new THREE.BufferAttribute(targetPositions, 3));
 
-    // Shader Material for Glowing Dots
+    // Material for Vivid Dots
     const material = new THREE.PointsMaterial({
         size: PARTICLE_SIZE,
         vertexColors: true,
         blending: THREE.AdditiveBlending,
         depthTest: false,
         transparent: true,
-        opacity: 0.8
+        opacity: 0.9
     });
 
     particles = new THREE.Points(geometry, material);
+    particles.userData = { targetColor: null }; // Initialize userData
     scene.add(particles);
-}
-
-function createSunMoon() {
-    const geometry = new THREE.SphereGeometry(0.5, 32, 32);
-    const material = new THREE.MeshBasicMaterial({ color: 0xffaa00 });
-    sunMoon = new THREE.Mesh(geometry, material);
-    sunMoon.position.set(3, 2, -2);
-    scene.add(sunMoon);
 }
 
 // Shape Generation Functions
@@ -131,74 +110,124 @@ function getShapePoints(type) {
     const points = [];
     for (let i = 0; i < PARTICLE_COUNT; i++) {
         let x, y, z;
+        const t = i / PARTICLE_COUNT;
         
-        if (type === 'random') {
-            const r = 5 * Math.random();
-            const theta = Math.random() * Math.PI * 2;
-            const phi = Math.random() * Math.PI;
-            x = r * Math.sin(phi) * Math.cos(theta);
-            y = r * Math.sin(phi) * Math.sin(theta);
-            z = r * Math.cos(phi);
-        } 
-        else if (type === 'plow') {
-            // Simple wedge shape
-            const t = i / PARTICLE_COUNT;
-            if (t < 0.7) {
-                // Blade
-                x = (Math.random() - 0.5) * 2;
-                z = (Math.random() - 0.5) * 4;
-                y = Math.abs(x) * 0.5 - 1; 
-            } else {
-                // Handle
-                x = 0;
-                y = (Math.random()) * 2 - 1;
-                z = 1 + Math.random();
-            }
-        }
-        else if (type === 'ship') {
-            // Hull
-            const t = i / PARTICLE_COUNT;
-            const u = Math.random() * Math.PI; // 0 to PI
-            const v = Math.random() * Math.PI * 2;
-            
-            // Ellipsoid hull
-            x = 3 * Math.cos(u) * Math.sin(v);
-            y = -1 + 1 * Math.cos(v); // Bottom curve
-            z = 1.5 * Math.sin(u) * Math.sin(v);
-            
-            // Flatten top
-            if (y > 0) y = 0;
-            
-            // Mast
-            if (i > PARTICLE_COUNT * 0.8) {
-                x = 0;
-                z = 0;
-                y = Math.random() * 3;
-            }
-        }
-        else if (type === 'train') {
-            // Boxy shape
-            const t = i / PARTICLE_COUNT;
-            if (t < 0.2) {
-                // Wheels
-                x = (Math.random() - 0.5) * 3;
-                y = -1;
-                z = (Math.random() > 0.5 ? 0.5 : -0.5);
-            } else {
-                // Body
-                x = (Math.random() - 0.5) * 4;
-                y = (Math.random() - 0.5) * 1.5;
-                z = (Math.random() - 0.5) * 1.5;
-            }
-        }
-        else if (type === 'sphere') {
-            // Digital Sphere
+        if (type === 'earth') {
             const r = 2.5;
             const theta = Math.random() * Math.PI * 2;
             const phi = Math.acos(2 * Math.random() - 1);
             x = r * Math.sin(phi) * Math.cos(theta);
             y = r * Math.sin(phi) * Math.sin(theta);
             z = r * Math.cos(phi);
+        } 
+        else if (type === 'sickle') {
+            // Crescent shape
+            const angle = t * Math.PI * 1.5; // 270 degrees
+            const radius = 2 + Math.cos(angle) * 0.5;
+            x = Math.cos(angle) * radius;
+            y = Math.sin(angle) * radius;
+            z = (Math.random() - 0.5) * 0.5;
+            
+            // Handle
+            if (i > PARTICLE_COUNT * 0.8) {
+                x = 0 + (Math.random() - 0.5) * 0.5;
+                y = -2 - Math.random() * 2;
+                z = (Math.random() - 0.5) * 0.5;
+            }
+        }
+        else if (type === 'cart') {
+            // Simple cart
+            if (t < 0.3) { // Wheels
+                const wheelR = 0.8;
+                const wAngle = Math.random() * Math.PI * 2;
+                // Two wheels
+                const isLeft = Math.random() > 0.5;
+                x = (isLeft ? 1.5 : -1.5) + Math.cos(wAngle) * wheelR * 0.1; // Thickness
+                y = -1.5 + Math.sin(wAngle) * wheelR;
+                z = (isLeft ? 1 : -1) + (Math.random() - 0.5) * 0.2;
+                // Swap axes to make wheels face correct way
+                const temp = x; x = z; z = temp;
+                x = (isLeft ? 1.5 : -1.5);
+            } else { // Body
+                x = (Math.random() - 0.5) * 3;
+                y = (Math.random() - 0.5) * 1.0 - 0.5;
+                z = (Math.random() - 0.5) * 2;
+            }
+        }
+        else if (type === 'locomotive') {
+            // Steam engine shape
+            if (t < 0.2) { // Wheels
+                x = (Math.random() - 0.5) * 4;
+                y = -1.5;
+                z = (Math.random() > 0.5 ? 0.8 : -0.8);
+            } else if (t < 0.6) { // Boiler
+                const cylAngle = Math.random() * Math.PI * 2;
+                const cylR = 0.8;
+                x = (Math.random() - 0.5) * 3;
+                y = Math.sin(cylAngle) * cylR;
+                z = Math.cos(cylAngle) * cylR;
+            } else { // Cab
+                x = -1.5 + (Math.random() - 0.5);
+                y = 0.5 + (Math.random() - 0.5) * 2;
+                z = (Math.random() - 0.5) * 2;
+            }
+        }
+        else if (type === 'lightbulb') {
+            // Bulb shape
+            const u = Math.random();
+            const v = Math.random();
+            const theta = 2 * Math.PI * u;
+            const phi = Math.PI * v;
+            
+            // Sphere top
+            if (v < 0.7) {
+                const r = 1.5;
+                x = r * Math.sin(phi) * Math.cos(theta);
+                y = r * Math.sin(phi) * Math.sin(theta) + 0.5;
+                z = r * Math.cos(phi);
+            } else {
+                // Base
+                x = 0.8 * Math.cos(theta) * (1-v);
+                y = -1.5 + v; 
+                z = 0.8 * Math.sin(theta) * (1-v);
+            }
+            
+            // Filament (Electricity effect)
+            if (i % 20 === 0) {
+                x = (Math.random() - 0.5) * 0.5;
+                y = 0.5 + (Math.random() - 0.5) * 0.5;
+                z = (Math.random() - 0.5) * 0.5;
+            }
+        }
+        else if (type === 'computer') {
+            // Monitor and keyboard
+            if (t < 0.7) { // Screen
+                x = (Math.random() - 0.5) * 4;
+                y = (Math.random() - 0.5) * 2.5 + 0.5;
+                z = 0;
+            } else { // Keyboard
+                x = (Math.random() - 0.5) * 4;
+                y = -1.5;
+                z = 1 + (Math.random() - 0.5) * 1.5;
+            }
+        }
+        else if (type === 'face') {
+            // Approximate face shape (Ellipsoid looking left)
+            const u = Math.random() * Math.PI;
+            const v = Math.random() * Math.PI * 2;
+            
+            // Rotate to look left (towards text)
+            x = -1.5 * Math.cos(u) * Math.sin(v) - 1; // Shift left
+            y = 2 * Math.cos(v);
+            z = 1.5 * Math.sin(u) * Math.sin(v);
+            
+            // Eyes
+            if (i % 100 === 0) {
+                // Left eye area
+                if (x < -1.5 && y > 0.5 && z > 0.5) {
+                    // Keep
+                }
+            }
         }
 
         points.push(x, y, z);
@@ -213,9 +242,6 @@ function nextEra() {
     currentEraIndex = (currentEraIndex + 1) % ERAS.length;
     const era = ERAS[currentEraIndex];
     
-    // Update UI
-    updateUI();
-    
     // Generate Target Points
     const targetPoints = getShapePoints(era.type);
     const attr = particles.geometry.attributes.targetPosition;
@@ -225,26 +251,11 @@ function nextEra() {
     }
     attr.needsUpdate = true;
 
-    // Transition Sun/Moon Color
-    new TWEEN.Tween(sunMoon.material.color)
-        .to(new THREE.Color(era.sunColor), TRANSITION_DURATION)
-        .start();
-
-    // Transition Particle Color
+    // Transition Colors
     const targetColor = new THREE.Color(era.color);
-    const colors = particles.geometry.attributes.color;
-    // We'll just tween a global color uniform or re-color all points over time
-    // For simplicity, let's just lerp the particle positions in the animate loop
-    
-    // Reset transition timer
+    particles.userData.targetColor = targetColor;
+
     transitionStartTime = Date.now();
-}
-
-let transitionStartTime = 0;
-
-function updateUI() {
-    if(uiEra) uiEra.innerText = `ERA: ${ERAS[currentEraIndex].name}`;
-    if(uiParticles) uiParticles.innerText = `PARTICLES: ${PARTICLE_COUNT}`;
 }
 
 function onWindowResize() {
@@ -258,28 +269,22 @@ function animate() {
     requestAnimationFrame(animate);
 
     const time = Date.now();
-    const delta = time - lastTime;
-    lastTime = time;
     
-    // FPS Calculation
-    if (frameCount % 30 === 0) {
-        if(uiFPS) uiFPS.innerText = `FPS: ${Math.round(1000 / delta)}`;
+    // Auto-Transition Logic
+    if (!isTransitioning && time - eraStartTime > ERA_DURATION) {
+        nextEra();
+        eraStartTime = time;
     }
-    frameCount++;
-
-    TWEEN.update();
 
     // Particle Morphing Logic
     if (isTransitioning) {
         const progress = Math.min((time - transitionStartTime) / TRANSITION_DURATION, 1);
-        const ease = 1 - Math.pow(1 - progress, 3); // Cubic ease out
+        // const ease = 1 - Math.pow(1 - progress, 3); // Cubic ease out
         
         const positions = particles.geometry.attributes.position;
         const targets = particles.geometry.attributes.targetPosition;
-        
-        // We need to store "start" positions to lerp correctly, 
-        // but for a continuous flow effect, simple lerping towards target every frame works too
-        // creating a "magnetic" pull.
+        const colors = particles.geometry.attributes.color;
+        const targetColor = particles.userData.targetColor;
         
         for (let i = 0; i < PARTICLE_COUNT; i++) {
             const cx = positions.getX(i);
@@ -290,103 +295,51 @@ function animate() {
             const ty = targets.getY(i);
             const tz = targets.getZ(i);
             
-            // Simple lerp for smooth flow
+            // Smooth lerp
             positions.setXYZ(i, 
-                cx + (tx - cx) * 0.05,
-                cy + (ty - cy) * 0.05,
-                cz + (tz - cz) * 0.05
+                cx + (tx - cx) * 0.03,
+                cy + (ty - cy) * 0.03,
+                cz + (tz - cz) * 0.03
             );
+
+            // Color lerp
+            if (targetColor) {
+                const r = colors.getX(i);
+                const g = colors.getY(i);
+                const b = colors.getZ(i);
+                
+                colors.setXYZ(i,
+                    r + (targetColor.r - r) * 0.02,
+                    g + (targetColor.g - g) * 0.02,
+                    b + (targetColor.b - b) * 0.02
+                );
+            }
         }
         positions.needsUpdate = true;
+        colors.needsUpdate = true;
         
-        if (progress >= 1 && Math.abs(positions.getX(0) - targets.getX(0)) < 0.1) {
+        if (progress >= 1) {
             isTransitioning = false;
+            eraStartTime = time; // Reset auto-timer
         }
     }
 
-    // Rotation
-    particles.rotation.y += 0.001;
+    // Gentle Rotation
+    particles.rotation.y += 0.002;
     
-    // Sun/Moon Orbit
-    sunMoon.position.x = Math.sin(time * 0.0005) * 4;
-    sunMoon.position.z = Math.cos(time * 0.0005) * 4;
+    // Electricity Effect for Lightbulb Era
+    if (ERAS[currentEraIndex].type === 'lightbulb' && !isTransitioning) {
+        const positions = particles.geometry.attributes.position;
+        for (let i = 0; i < PARTICLE_COUNT; i++) {
+            if (i % 50 === 0) {
+                positions.setY(i, positions.getY(i) + (Math.random() - 0.5) * 0.1);
+            }
+        }
+        positions.needsUpdate = true;
+    }
 
     renderer.render(scene, camera);
 }
-
-// Simple Tweening Library (since we didn't import one)
-const TWEEN = {
-    tweens: [],
-    getAll() { return this.tweens; },
-    removeAll() { this.tweens = []; },
-    add(tween) { this.tweens.push(tween); },
-    remove(tween) {
-        const i = this.tweens.indexOf(tween);
-        if (i !== -1) this.tweens.splice(i, 1);
-    },
-    update(time) {
-        if (this.tweens.length === 0) return false;
-        let i = 0;
-        time = time !== undefined ? time : Date.now();
-        while (i < this.tweens.length) {
-            if (this.tweens[i].update(time)) {
-                i++;
-            } else {
-                this.tweens.splice(i, 1);
-            }
-        }
-        return true;
-    }
-};
-
-TWEEN.Tween = function(object) {
-    this._object = object;
-    this._valuesStart = {};
-    this._valuesEnd = {};
-    this._duration = 1000;
-    this._startTime = null;
-    this._onUpdateCallback = null;
-};
-
-TWEEN.Tween.prototype = {
-    to: function(properties, duration) {
-        this._valuesEnd = properties;
-        if (duration !== undefined) this._duration = duration;
-        return this;
-    },
-    start: function(time) {
-        TWEEN.add(this);
-        this._startTime = time !== undefined ? time : Date.now();
-        for (const property in this._valuesEnd) {
-            if (this._object[property] === null || this._object[property] === undefined) continue;
-            this._valuesStart[property] = this._object[property]; // Simple copy
-            if(this._object[property] instanceof THREE.Color) {
-                 this._valuesStart[property] = this._object[property].clone();
-            }
-        }
-        return this;
-    },
-    update: function(time) {
-        if (time < this._startTime) return true;
-        let elapsed = (time - this._startTime) / this._duration;
-        elapsed = elapsed > 1 ? 1 : elapsed;
-        
-        for (const property in this._valuesEnd) {
-            const start = this._valuesStart[property];
-            const end = this._valuesEnd[property];
-            
-            if (start instanceof THREE.Color) {
-                this._object[property].r = start.r + (end.r - start.r) * elapsed;
-                this._object[property].g = start.g + (end.g - start.g) * elapsed;
-                this._object[property].b = start.b + (end.b - start.b) * elapsed;
-            } else {
-                this._object[property] = start + (end - start) * elapsed;
-            }
-        }
-        if (elapsed === 1) return false;
-        return true;
-    }
-};
 
 // Start
 init();
