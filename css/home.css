@@ -70,6 +70,17 @@
     font-weight: 300;
 }
 
+.subtitle-break {
+    display: none; /* Hidden by default */
+}
+
+/* Desktop only: break line at 'they' */
+@media (min-width: 769px) {
+    .subtitle-break {
+        display: block; /* Creates line break */
+    }
+}
+
 .hero-cta {
     display: flex;
     gap: 1rem;
@@ -183,16 +194,28 @@
 /* Responsive Adjustments */
 @media (max-width: 768px) {
     .hero-section {
-        align-items: center; /* Center vertically on mobile */
-        justify-content: center;
-        flex-direction: column;
-        padding-top: 80px; /* Space for nav */
+        min-height: 100vh;
+        align-items: flex-end; /* Keep content at bottom on mobile */
+        justify-content: flex-start;
+        padding-top: 0;
     }
 
     .hero-content {
         text-align: center;
-        margin-bottom: 2rem;
-        order: 2; /* Content below effect */
+        padding: 0 1.5rem;
+        margin-bottom: 3rem; /* More space from bottom */
+        max-width: 100%;
+    }
+    
+    .hero-title {
+        font-size: clamp(1.5rem, 5vw, 2.5rem); /* Larger on mobile */
+        margin-bottom: 1rem;
+    }
+    
+    .hero-subtitle {
+        font-size: clamp(0.95rem, 3.5vw, 1.1rem); /* Better mobile size */
+        line-height: 1.6;
+        margin: 0 auto 2rem;
     }
 
     .hero-cta {
@@ -200,21 +223,27 @@
     }
 
     #canvas-container {
-        position: relative; /* Flow in document */
-        height: 50vh; /* Half height */
+        position: absolute; /* Keep as background */
+        height: 100%;
         width: 100%;
-        order: 1; /* Effect on top */
-    }
-    
-    .hero-ui-panel {
-        top: auto;
-        bottom: 1rem;
-        right: 1rem;
-        transform: scale(0.8); /* Smaller on mobile */
     }
     
     .hero-overlay {
-        display: none; /* Remove overlay on mobile to see effect clearly */
+        background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.85) 100%);
+    }
+    
+    .scene-caption {
+        top: 100px;
+        right: 1.5rem;
+        left: auto;
+    }
+    
+    .caption-title {
+        font-size: 0.75rem;
+    }
+    
+    .caption-subtitle {
+        font-size: 0.7rem;
     }
 }
 

@@ -581,9 +581,10 @@ function animate() {
     const time = Date.now();
     
     // Auto-Transition Logic
-    const currentDuration = currentEraIndex === 0 ? INITIAL_ERA_DURATION : ERA_DURATION;
     const elapsed = Date.now() - eraStartTime;
-    if (!isTransitioning && elapsed > currentDuration) {
+    const currentDuration = currentEraIndex === 0 ? INITIAL_ERA_DURATION : ERA_DURATION;
+    
+    if (!isTransitioning && elapsed > currentDuration && eraStartTime > 0) {
         nextEra();
         eraStartTime = Date.now();
     }
