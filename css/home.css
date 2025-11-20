@@ -195,16 +195,18 @@
 @media (max-width: 768px) {
     .hero-section {
         min-height: 100vh;
-        align-items: flex-end; /* Keep content at bottom on mobile */
-        justify-content: flex-start;
+        align-items: center; /* Center content vertically */
+        justify-content: center;
         padding-top: 0;
+        flex-direction: column;
     }
 
     .hero-content {
         text-align: center;
         padding: 0 1.5rem;
-        margin-bottom: calc(3rem + 7.5rem); /* 3rem base + 3 title heights (2.5rem each) */
+        margin-bottom: 2rem;
         max-width: 100%;
+        order: 2; /* Content appears below the effect */
     }
     
     .hero-title {
@@ -223,13 +225,14 @@
     }
 
     #canvas-container {
-        position: absolute; /* Keep as background */
-        height: 100%;
+        position: relative; /* Flow in document */
+        height: 50vh; /* Half viewport height */
         width: 100%;
+        order: 1; /* Effect appears above content */
     }
     
     .hero-overlay {
-        background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.85) 100%);
+        background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.5) 100%);
     }
     
     .scene-caption {
