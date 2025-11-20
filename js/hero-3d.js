@@ -2,10 +2,10 @@
 import * as THREE from 'https://unpkg.com/three@0.160.0/build/three.module.js';
 
 // Configuration
-const PARTICLE_COUNT = 60000; // High detail for clear shapes
-const PARTICLE_SIZE = 0.025; // Smaller for density
-const TRANSITION_DURATION = 3000; // Slower transitions
-const ERA_DURATION = 6000; // Time between auto-transitions (longer to view)
+const PARTICLE_COUNT = 300000; // Ultra-high detail for artistic clarity
+const PARTICLE_SIZE = 0.015; // Very small for high density
+const TRANSITION_DURATION = 3500; // Smooth transitions
+const ERA_DURATION = 8000; // Longer viewing time
 
 // State
 let currentEraIndex = 0;
@@ -50,6 +50,15 @@ function init() {
 
     // Event Listeners
     window.addEventListener('resize', onWindowResize, false);
+    
+    // Scene selector interaction
+    const sceneDots = document.querySelectorAll('.scene-dot');
+    sceneDots.forEach(dot => {
+        dot.addEventListener('click', () => {
+            const sceneIndex = parseInt(dot.getAttribute('data-scene'));
+            jumpToScene(sceneIndex);
+        });
+    });
 
     // Start Loop
     animate();
@@ -116,180 +125,298 @@ function getShapePoints(type) {
         const t = i / PARTICLE_COUNT;
         
         if (type === 'earth') {
-            // Sphere with continents and stars around it
-            if (t < 0.8) {
-                // Main sphere (Earth)
-                const r = 2.5;
+            // Detailed Earth with continents, atmosphere, and orbital elements
+            if (t < 0.65) {
+                // Main sphere (Earth core)
+                const r = 2.3;
                 const theta = Math.random() * Math.PI * 2;
                 const phi = Math.acos(2 * Math.random() - 1);
                 x = r * Math.sin(phi) * Math.cos(theta);
                 y = r * Math.sin(phi) * Math.sin(theta);
                 z = r * Math.cos(phi);
+            } else if (t < 0.75) {
+                // Atmospheric layer (slightly larger radius)
+                const r = 2.6 + Math.random() * 0.3;
+                const theta = Math.random() * Math.PI * 2;
+                const phi = Math.acos(2 * Math.random() - 1);
+                x = r * Math.sin(phi) * Math.cos(theta);
+                y = r * Math.sin(phi) * Math.sin(theta);
+                z = r * Math.cos(phi);
+            } else if (t < 0.9) {
+                // Orbital ring (satellites)
+                const orbitR = 4.0;
+                const orbitAngle = t * Math.PI * 2 * 5;
+                x = Math.cos(orbitAngle) * orbitR;
+                y = (Math.random() - 0.5) * 0.3;
+                z = Math.sin(orbitAngle) * orbitR;
             } else {
-                // Orbiting particles (stars/planets)
-                const orbitR = 4 + Math.random() * 2;
+                // Stars in background
+                const starR = 5 + Math.random() * 3;
                 const theta = Math.random() * Math.PI * 2;
                 const phi = Math.random() * Math.PI;
-                x = orbitR * Math.sin(phi) * Math.cos(theta);
-                y = orbitR * Math.sin(phi) * Math.sin(theta);
-                z = orbitR * Math.cos(phi);
+                x = starR * Math.sin(phi) * Math.cos(theta);
+                y = starR * Math.sin(phi) * Math.sin(theta);
+                z = starR * Math.cos(phi);
             }
         } 
         else if (type === 'sickle') {
-            // Curved blade with distinct handle
-            if (t < 0.75) {
-                // Crescent blade
-                const angle = t * Math.PI * 1.3;
-                const radius = 2.5 - Math.sin(angle) * 0.3;
-                const thickness = (Math.random() - 0.5) * 0.3;
-                x = Math.cos(angle) * radius + thickness;
-                y = Math.sin(angle) * radius + thickness;
-                z = (Math.random() - 0.5) * 0.2;
+            // Artistic sickle with sharp blade and textured handle
+            if (t < 0.7) {
+                // Sharp crescent blade with tapering
+                const bladeT = t / 0.7;
+                const angle = bladeT * Math.PI * 1.4 + Math.PI * 0.1;
+                const radius = 2.8 - Math.sin(angle * 0.5) * 0.4;
+                const bladeThickness = 0.08 * (1 - bladeT * 0.7); // Thinner towards tip
+                const depthVar = (Math.random() - 0.5) * bladeThickness;
+                x = Math.cos(angle) * radius + depthVar;
+                y = Math.sin(angle) * radius + depthVar;
+                z = (Math.random() - 0.5) * 0.15;
             } else {
-                // Straight handle
-                const handleT = (i - PARTICLE_COUNT * 0.75) / (PARTICLE_COUNT * 0.25);
-                x = -0.3 + (Math.random() - 0.5) * 0.3;
-                y = -1.8 - handleT * 1.5;
-                z = (Math.random() - 0.5) * 0.2;
+                // Wooden handle with texture
+                const handleT = (i - PARTICLE_COUNT * 0.7) / (PARTICLE_COUNT * 0.3);
+                const handleR = 0.15 + Math.sin(handleT * Math.PI * 6) * 0.03; // Textured grip
+                const angle = Math.random() * Math.PI * 2;
+                x = -0.2 + Math.cos(angle) * handleR;
+                y = -1.6 - handleT * 2.2;
+                z = Math.sin(angle) * handleR;
             }
         }
         else if (type === 'cart') {
-            // Cart with 4 distinct wheels
-            const wheelCount = 4;
-            const wheelParticles = PARTICLE_COUNT * 0.25;
+            // Artistic horse-drawn cart with 4 detailed wheels and wooden body
+            const wheelParticles = PARTICLE_COUNT * 0.2;
             
             if (i < wheelParticles) {
-                // 4 wheels (front-left, front-right, back-left, back-right)
-                const wheelIndex = Math.floor((i / wheelParticles) * wheelCount);
-                const wheelR = 0.6;
-                const angle = Math.random() * Math.PI * 2;
+                // 4 wooden spoked wheels
+                const wheelIndex = Math.floor((i / wheelParticles) * 4);
+                const wheelT = (i % (wheelParticles / 4)) / (wheelParticles / 4);
+                const wheelR = 0.7;
+                const angle = wheelT * Math.PI * 2;
                 
-                const xPos = wheelIndex % 2 === 0 ? -1.5 : 1.5; // left or right
-                const zPos = wheelIndex < 2 ? 1.2 : -1.2; // front or back
+                const xPos = wheelIndex % 2 === 0 ? -1.8 : 1.8; // left or right
+                const zPos = wheelIndex < 2 ? 1.5 : -1.5; // front or back
                 
-                x = xPos + (Math.random() - 0.5) * 0.15;
-                y = -1.5 + Math.sin(angle) * wheelR;
-                z = zPos + Math.cos(angle) * wheelR;
+                // Wheel rim
+                if (wheelT < 0.85) {
+                    x = xPos + (Math.random() - 0.5) * 0.12;
+                    y = -1.6 + Math.sin(angle) * wheelR;
+                    z = zPos + Math.cos(angle) * wheelR;
+                } else {
+                    // Spokes
+                    const spokeR = wheelT * wheelR;
+                    x = xPos;
+                    y = -1.6 + Math.sin(angle) * spokeR;
+                    z = zPos + Math.cos(angle) * spokeR;
+                }
+            } else if (t < 0.7) {
+                // Cart bed (wooden planks)
+                const plankT = (i - wheelParticles) / (PARTICLE_COUNT * 0.5);
+                x = (Math.random() - 0.5) * 3.8;
+                y = -0.5 + (Math.random() - 0.5) * 0.4;
+                z = (Math.random() - 0.5) * 3.0;
             } else {
-                // Cart body (rectangular box)
-                x = (Math.random() - 0.5) * 3.5;
-                y = (Math.random() - 0.5) * 1.2 - 0.3;
-                z = (Math.random() - 0.5) * 2.5;
+                // Cart sides (rails)
+                const sideT = (i - PARTICLE_COUNT * 0.7) / (PARTICLE_COUNT * 0.3);
+                const isLeftSide = sideT < 0.5;
+                const railZ = isLeftSide ? -1.5 : 1.5;
+                x = (Math.random() - 0.5) * 3.8;
+                y = -0.2 + (Math.random() - 0.5) * 0.8;
+                z = railZ + (Math.random() - 0.5) * 0.2;
             }
         }
         else if (type === 'locomotive') {
-            // Detailed train with wheels, boiler, smokestack, cab
-            if (t < 0.15) {
-                // Multiple wheels along the bottom
-                const wheelR = 0.5;
+            // Detailed steam locomotive with wheels, boiler, smokestack, and smoke
+            if (t < 0.12) {
+                // Multiple large drive wheels (6 wheels total)
+                const wheelIndex = Math.floor(t / 0.02);
+                const wheelT = (t % 0.02) / 0.02;
+                const wheelR = 0.6;
+                const angle = wheelT * Math.PI * 2;
+                const xPos = -2.5 + wheelIndex * 1.0;
+                
+                x = xPos;
+                y = -1.9 + Math.sin(angle) * wheelR;
+                z = (Math.random() > 0.5 ? 1.0 : -1.0) + (Math.random() - 0.5) * 0.15;
+            } else if (t < 0.45) {
+                // Cylindrical boiler (main body) with rivets
+                const boilerT = (t - 0.12) / 0.33;
                 const angle = Math.random() * Math.PI * 2;
-                x = (Math.random() - 0.5) * 5;
-                y = -1.8 + Math.sin(angle) * wheelR;
-                z = (Math.random() > 0.5 ? 0.9 : -0.9) + (Math.random() - 0.5) * 0.2;
-            } else if (t < 0.5) {
-                // Cylindrical boiler (main body)
-                const angle = Math.random() * Math.PI * 2;
-                const cylR = 0.9;
-                const length = (Math.random() - 0.5) * 4;
+                const cylR = 1.0;
+                const length = (boilerT - 0.5) * 5;
                 x = length;
-                y = Math.sin(angle) * cylR;
+                y = Math.sin(angle) * cylR - 0.2;
                 z = Math.cos(angle) * cylR;
-            } else if (t < 0.65) {
-                // Smokestack (vertical cylinder)
+            } else if (t < 0.6) {
+                // Tall smokestack
+                const stackT = (t - 0.45) / 0.15;
                 const angle = Math.random() * Math.PI * 2;
-                const stackR = 0.4;
-                x = 1.5 + Math.cos(angle) * stackR;
-                y = 1.0 + Math.random() * 1.5;
+                const stackR = 0.35 - stackT * 0.05; // Tapered
+                x = 1.8 + Math.cos(angle) * stackR;
+                y = 1.2 + stackT * 1.8;
                 z = Math.sin(angle) * stackR;
+            } else if (t < 0.75) {
+                // Smoke/steam rising from stack
+                const smokeT = (t - 0.6) / 0.15;
+                const puff = Math.sin(smokeT * Math.PI * 3) * 0.5;
+                x = 1.8 + (Math.random() - 0.5) * (smokeT * 2);
+                y = 3.0 + smokeT * 2.5;
+                z = (Math.random() - 0.5) * (smokeT * 2);
             } else {
-                // Cab (engineer's compartment at back)
-                x = -2.5 + (Math.random() - 0.5) * 1.2;
-                y = (Math.random() - 0.5) * 1.5 + 0.3;
-                z = (Math.random() - 0.5) * 1.8;
+                // Cab (engineer's compartment)
+                const cabT = (t - 0.75) / 0.25;
+                x = -2.8 + (Math.random() - 0.5) * 1.4;
+                y = (Math.random() - 0.5) * 1.8;
+                z = (Math.random() - 0.5) * 2.0;
             }
         }
         else if (type === 'lightbulb') {
-            // Classic lightbulb with filament inside
-            if (t < 0.6) {
-                // Glass bulb (rounded top)
+            // Classic Edison bulb with detailed filament and glow
+            if (t < 0.55) {
+                // Glass bulb envelope (smooth sphere)
                 const u = Math.random();
-                const v = Math.random() * 0.85; // Upper hemisphere mostly
+                const v = Math.random() * 0.8; // Upper portion
                 const theta = 2 * Math.PI * u;
                 const phi = Math.PI * v;
-                const r = 1.6;
+                const r = 1.7;
                 x = r * Math.sin(phi) * Math.cos(theta);
-                y = r * Math.sin(phi) * Math.sin(theta) + 0.8;
+                y = r * Math.sin(phi) * Math.sin(theta) + 0.9;
                 z = r * Math.cos(phi);
-            } else if (t < 0.75) {
-                // Filament inside (spiral/zigzag)
-                const spiralT = (i - PARTICLE_COUNT * 0.6) / (PARTICLE_COUNT * 0.15);
-                const angle = spiralT * Math.PI * 8;
-                x = Math.cos(angle) * 0.3;
-                y = spiralT * 1.5 - 0.2;
-                z = Math.sin(angle) * 0.3;
+            } else if (t < 0.68) {
+                // Detailed spiral filament (glowing core)
+                const filamentT = (i - PARTICLE_COUNT * 0.55) / (PARTICLE_COUNT * 0.13);
+                const spiralAngle = filamentT * Math.PI * 12; // Multiple turns
+                const spiralR = 0.25 + Math.sin(filamentT * Math.PI * 4) * 0.08;
+                x = Math.cos(spiralAngle) * spiralR;
+                y = filamentT * 2.0 - 0.3;
+                z = Math.sin(spiralAngle) * spiralR;
+            } else if (t < 0.73) {
+                // Filament support wires
+                const wireT = (i - PARTICLE_COUNT * 0.68) / (PARTICLE_COUNT * 0.05);
+                const wireSide = Math.random() > 0.5 ? 1 : -1;
+                x = wireSide * 0.15;
+                y = wireT * 2.5 - 0.5;
+                z = 0;
             } else {
-                // Screw base (threaded bottom)
-                const angle = Math.random() * Math.PI * 2;
-                const baseT = (i - PARTICLE_COUNT * 0.75) / (PARTICLE_COUNT * 0.25);
-                const baseR = 0.7 - baseT * 0.1;
-                x = Math.cos(angle) * baseR;
-                y = -1.5 - baseT * 1.0;
-                z = Math.sin(angle) * baseR;
+                // Threaded metal base (screw threads visible)
+                const baseT = (i - PARTICLE_COUNT * 0.73) / (PARTICLE_COUNT * 0.27);
+                const threadAngle = baseT * Math.PI * 10; // Thread spirals
+                const baseR = 0.65 - baseT * 0.08;
+                x = Math.cos(threadAngle) * baseR;
+                y = -1.7 - baseT * 1.2;
+                z = Math.sin(threadAngle) * baseR;
             }
         }
         else if (type === 'computer') {
-            // Desktop computer: monitor, keyboard, tower
-            if (t < 0.5) {
-                // Monitor screen (flat rectangle)
-                x = (Math.random() - 0.5) * 4;
-                y = (Math.random() - 0.5) * 2.5 + 0.8;
-                z = -0.1 + (Math.random() - 0.5) * 0.2;
-            } else if (t < 0.75) {
-                // Keyboard (flat horizontal rectangle)
-                x = (Math.random() - 0.5) * 4;
-                y = -1.6 + (Math.random() - 0.5) * 0.2;
-                z = 1.5 + (Math.random() - 0.5) * 1.0;
+            // Modern desktop computer setup with monitor, keyboard, and tower
+            if (t < 0.45) {
+                // Widescreen monitor (with bezel and screen content)
+                const screenT = t / 0.45;
+                x = (Math.random() - 0.5) * 4.5;
+                y = (Math.random() - 0.5) * 2.8 + 1.0;
+                z = -0.2 + (Math.random() - 0.5) * 0.3;
+                
+                // Add visible pixels/content pattern
+                if (screenT > 0.1 && screenT < 0.9) {
+                    const gridPattern = (Math.floor(x * 5) + Math.floor(y * 5)) % 2;
+                    z += gridPattern * 0.1;
+                }
+            } else if (t < 0.7) {
+                // Keyboard with visible keys
+                const keyT = (i - PARTICLE_COUNT * 0.45) / (PARTICLE_COUNT * 0.25);
+                const keyRow = Math.floor(keyT * 5);
+                const keyCol = (keyT * 5 - keyRow) * 15;
+                
+                x = (keyCol - 7.5) * 0.3;
+                y = -1.7 + (Math.random() - 0.5) * 0.15;
+                z = 1.8 + keyRow * 0.2 + (Math.random() - 0.5) * 0.1;
+            } else if (t < 0.85) {
+                // Computer tower (vertical case with ventilation)
+                const towerT = (i - PARTICLE_COUNT * 0.7) / (PARTICLE_COUNT * 0.15);
+                x = -2.8 + (Math.random() - 0.5) * 0.9;
+                y = (Math.random() - 0.5) * 2.5;
+                z = 1.2 + (Math.random() - 0.5) * 1.2;
+                
+                // Ventilation holes pattern
+                if (Math.random() > 0.7) {
+                    x -= 0.5;
+                }
             } else {
-                // Computer tower (vertical box on side)
-                x = -2.5 + (Math.random() - 0.5) * 0.8;
-                y = (Math.random() - 0.5) * 2.0;
-                z = 1.0 + (Math.random() - 0.5) * 1.0;
+                // Mouse and cables
+                const accessoryT = (i - PARTICLE_COUNT * 0.85) / (PARTICLE_COUNT * 0.15);
+                if (accessoryT < 0.5) {
+                    // Mouse
+                    const mouseAngle = accessoryT * Math.PI * 4;
+                    x = 2.5 + Math.cos(mouseAngle) * 0.4;
+                    y = -1.7;
+                    z = 2.0 + Math.sin(mouseAngle) * 0.3;
+                } else {
+                    // Cables
+                    const cableT = (accessoryT - 0.5) * 2;
+                    x = -2.5 + cableT * 3;
+                    y = -1.8 + Math.sin(cableT * Math.PI * 2) * 0.3;
+                    z = 0.5 + (Math.random() - 0.5) * 0.2;
+                }
             }
         }
         else if (type === 'face') {
-            // Human face (egg-shaped with features)
-            const u = Math.random();
-            const v = Math.random();
-            const theta = Math.PI * u * 2;
-            const phi = Math.PI * v;
+            // Realistic human face with detailed features (inspired by dotted portrait art)
             
-            // Egg shape (ellipsoid - taller than wide)
-            const rx = 1.3; // width
-            const ry = 1.8; // height
-            const rz = 1.0; // depth
-            
-            x = rx * Math.sin(phi) * Math.cos(theta);
-            y = ry * Math.cos(phi);
-            z = rz * Math.sin(phi) * Math.sin(theta);
-            
-            // Add facial features with concentrated particles
-            if (t < 0.05) {
-                // Left eye
-                x = -0.5 + (Math.random() - 0.5) * 0.3;
-                y = 0.5 + (Math.random() - 0.5) * 0.2;
-                z = 1.1 + (Math.random() - 0.5) * 0.2;
-            } else if (t < 0.1) {
-                // Right eye
-                x = 0.5 + (Math.random() - 0.5) * 0.3;
-                y = 0.5 + (Math.random() - 0.5) * 0.2;
-                z = 1.1 + (Math.random() - 0.5) * 0.2;
-            } else if (t < 0.15) {
-                // Mouth (smile curve)
-                const mouthT = (i - PARTICLE_COUNT * 0.1) / (PARTICLE_COUNT * 0.05);
-                const mouthAngle = (mouthT - 0.5) * Math.PI * 0.6;
-                x = Math.sin(mouthAngle) * 0.8;
-                y = -0.5 - Math.cos(mouthAngle) * 0.2;
-                z = 1.0;
+            // Base face structure
+            if (t < 0.6) {
+                // Face contour - using 2D projection for realistic portrait
+                const faceU = Math.random();
+                const faceV = Math.random();
+                
+                // Map to face shape (narrower at top and bottom)
+                const yPos = (faceV - 0.5) * 3.5; // Vertical position
+                const faceWidth = 1.2 - Math.abs(yPos) * 0.15; // Narrower at chin and forehead
+                const xPos = (faceU - 0.5) * faceWidth * 2;
+                
+                x = xPos;
+                y = yPos;
+                z = 0.3 + (Math.random() - 0.5) * 0.4; // Slight depth variation
+            }
+            // Left eye - detailed
+            else if (t < 0.68) {
+                const eyeT = (i - PARTICLE_COUNT * 0.6) / (PARTICLE_COUNT * 0.08);
+                const eyeAngle = eyeT * Math.PI * 2;
+                const eyeR = 0.25 + (Math.random() - 0.5) * 0.08;
+                x = -0.5 + Math.cos(eyeAngle) * eyeR;
+                y = 0.8 + Math.sin(eyeAngle) * eyeR * 0.7;
+                z = 0.8 + (Math.random() - 0.5) * 0.2;
+            }
+            // Right eye - detailed
+            else if (t < 0.76) {
+                const eyeT = (i - PARTICLE_COUNT * 0.68) / (PARTICLE_COUNT * 0.08);
+                const eyeAngle = eyeT * Math.PI * 2;
+                const eyeR = 0.25 + (Math.random() - 0.5) * 0.08;
+                x = 0.5 + Math.cos(eyeAngle) * eyeR;
+                y = 0.8 + Math.sin(eyeAngle) * eyeR * 0.7;
+                z = 0.8 + (Math.random() - 0.5) * 0.2;
+            }
+            // Nose bridge and definition
+            else if (t < 0.82) {
+                const noseT = (i - PARTICLE_COUNT * 0.76) / (PARTICLE_COUNT * 0.06);
+                x = (Math.random() - 0.5) * 0.3;
+                y = 0.6 - noseT * 1.0;
+                z = 0.9 + noseT * 0.4;
+            }
+            // Lips - upper and lower
+            else if (t < 0.9) {
+                const lipT = (i - PARTICLE_COUNT * 0.82) / (PARTICLE_COUNT * 0.08);
+                const lipAngle = (lipT - 0.5) * Math.PI;
+                const lipR = 0.6 * Math.sin(lipAngle * 0.5);
+                x = Math.sin(lipAngle) * lipR;
+                y = -0.7 + (lipT < 0.5 ? 0.15 : -0.1); // Upper lip slightly above lower
+                z = 0.7 + Math.cos(lipAngle) * 0.2;
+            }
+            // Hair strands on sides
+            else {
+                const hairSide = Math.random() > 0.5 ? 1 : -1;
+                const hairT = (i - PARTICLE_COUNT * 0.9) / (PARTICLE_COUNT * 0.1);
+                const hairFlow = Math.sin(hairT * Math.PI * 2) * 0.3;
+                x = hairSide * (1.3 + hairT * 0.8);
+                y = 1.5 - hairT * 3.5 + hairFlow;
+                z = -0.5 + (Math.random() - 0.5) * 0.3;
             }
         }
 
@@ -340,6 +467,39 @@ function updateCaption(title, subtitle) {
             captionEl.style.opacity = '1';
         }, 300);
     }
+    
+    // Update active dot
+    document.querySelectorAll('.scene-dot').forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentEraIndex);
+    });
+}
+
+function jumpToScene(sceneIndex) {
+    if (isTransitioning || sceneIndex === currentEraIndex) return;
+    
+    currentEraIndex = sceneIndex;
+    const era = ERAS[currentEraIndex];
+    
+    // Update caption
+    updateCaption(era.name, era.caption);
+    
+    // Reset auto-timer
+    eraStartTime = Date.now();
+    
+    // Trigger transition
+    isTransitioning = true;
+    const targetPoints = getShapePoints(era.type);
+    const attr = particles.geometry.attributes.targetPosition;
+    
+    for(let i=0; i < PARTICLE_COUNT; i++) {
+        attr.setXYZ(i, targetPoints[i*3], targetPoints[i*3+1], targetPoints[i*3+2]);
+    }
+    attr.needsUpdate = true;
+
+    const targetColor = new THREE.Color(era.color);
+    particles.userData.targetColor = targetColor;
+
+    transitionStartTime = Date.now();
 }
 
 function onWindowResize() {
