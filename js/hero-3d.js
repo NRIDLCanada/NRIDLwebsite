@@ -525,9 +525,18 @@ function updateCaption(title, subtitle) {
         }, 300);
     }
     
-    // Update active dot
+    // Update active dot and ensure click listeners are attached
     document.querySelectorAll('.scene-dot').forEach((dot, index) => {
         dot.classList.toggle('active', index === currentEraIndex);
+        
+        // Re-attach click listener if not already attached
+        if (!dot.hasAttribute('data-listener-attached')) {
+            dot.setAttribute('data-listener-attached', 'true');
+            dot.addEventListener('click', () => {
+                const sceneIndex = parseInt(dot.getAttribute('data-scene'));
+                jumpToScene(sceneIndex);
+            });
+        }
     });
 }
 
@@ -573,9 +582,10 @@ function animate() {
     
     // Auto-Transition Logic
     const currentDuration = currentEraIndex === 0 ? INITIAL_ERA_DURATION : ERA_DURATION;
-    if (!isTransitioning && time - eraStartTime > currentDuration) {
+    const elapsed = Date.now() - eraStartTime;
+    if (!isTransitioning && elapsed > currentDuration) {
         nextEra();
-        eraStartTime = time;
+        eraStartTime = Date.now();
     }
 
     // Particle Morphing Logic
@@ -622,7 +632,7 @@ function animate() {
         
         if (progress >= 1) {
             isTransitioning = false;
-            eraStartTime = time; // Reset auto-timer
+            eraStartTime = Date.now(); // Reset auto-timer
         }
     }
 
