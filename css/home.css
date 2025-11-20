@@ -115,6 +115,7 @@
     justify-content: flex-end;
     align-items: center;
     margin-top: 1rem;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
 }
 
 .scene-dot {
@@ -126,6 +127,7 @@
     cursor: pointer;
     transition: all 0.3s ease;
     position: relative;
+    flex-shrink: 0; /* Prevent dots from shrinking */
 }
 
 .scene-dot:hover {
@@ -158,6 +160,24 @@
 
 .scene-dot:hover::after {
     opacity: 1;
+}
+
+/* Mobile responsiveness for scene selector */
+@media (max-width: 768px) {
+    .scene-selector {
+        gap: 0.5rem;
+        justify-content: center;
+    }
+    
+    .scene-dot {
+        width: 10px;
+        height: 10px;
+    }
+    
+    .scene-dot::after {
+        font-size: 0.5rem;
+        bottom: -25px;
+    }
 }
 
 /* Responsive Adjustments */

@@ -6,6 +6,7 @@ const PARTICLE_COUNT = 80000; // Optimized for detail and performance
 const PARTICLE_SIZE = 0.02; // Visible but not too large
 const TRANSITION_DURATION = 3500; // Smooth transitions
 const ERA_DURATION = 8000; // Longer viewing time
+const INITIAL_ERA_DURATION = 10000; // First scene stays 10 seconds
 
 // State
 let currentEraIndex = 0; // Start with Earth
@@ -23,8 +24,7 @@ const ERAS = [
     { name: "AGE OF TRANSPORT", caption: "Horse-Drawn Commerce", color: 0x999999, type: 'cart' },
     { name: "INDUSTRIAL AGE", caption: "Steam & Railways", color: 0x888888, type: 'locomotive' },
     { name: "ELECTRIC ERA", caption: "Power & Light", color: 0xbbbbbb, type: 'lightbulb' },
-    { name: "DIGITAL AGE", caption: "Computing & Information", color: 0xdddddd, type: 'computer' },
-    { name: "HUMANITY", caption: "The Human Spirit", color: 0xe0e0e0, type: 'face' }
+    { name: "DIGITAL AGE", caption: "Computing & Information", color: 0xdddddd, type: 'computer' }
 ];
 
 // Initialize
@@ -97,13 +97,19 @@ function createParticles() {
         targetPositions[i * 3 + 1] = positions[i * 3 + 1];
         targetPositions[i * 3 + 2] = positions[i * 3 + 2];
 
-        // Initial Colors (Earth-like) - Grayscale with variation
+        // Initial Colors (Earth-like) - Darker for oceans, brighter for continents
         const color = new THREE.Color();
-        const rand = Math.random();
-        if (rand > 0.7) color.setHex(0x666666); // Dark gray (oceans)
-        else if (rand > 0.5) color.setHex(0xcccccc); // Light gray (land)
-        else if (rand > 0.3) color.setHex(0x555555); // Darker (deep ocean)
-        else color.setHex(0xdddddd); // Lighter (ice/clouds)
+        const isLand = window.earthLandData && window.earthLandData[i];
+        
+        if (isLand) {
+            // Brighter dots for continents (land)
+            const brightness = 0xcccccc + Math.floor(Math.random() * 0x222222);
+            color.setHex(Math.min(brightness, 0xeeeeee));
+        } else {
+            // Darker dots for oceans
+            const darkness = 0x444444 + Math.floor(Math.random() * 0x222222);
+            color.setHex(Math.min(darkness, 0x666666));
+        }
         
         colors[i * 3] = color.r;
         colors[i * 3 + 1] = color.g;
@@ -140,16 +146,20 @@ function getShapePoints(type) {
         const t = i / PARTICLE_COUNT;
         
         if (type === 'earth') {
-            // Realistic Earth with dense continents and empty oceans
+            // Sphere with grayscale shading: darker dots for oceans, brighter for continents
             const r = 2.5;
             const theta = Math.random() * Math.PI * 2;
             const phi = Math.acos(2 * Math.random() - 1);
             
-            // Calculate latitude and longitude
+            x = r * Math.sin(phi) * Math.cos(theta);
+            y = r * Math.sin(phi) * Math.sin(theta);
+            z = r * Math.cos(phi);
+            
+            // Calculate latitude and longitude for continent detection
             const lat = (phi - Math.PI / 2) * (180 / Math.PI); // -90 to 90
             const lon = theta * (180 / Math.PI); // 0 to 360
             
-            // Define continents with more detailed boundaries
+            // Determine if this point is land or ocean
             let isLand = false;
             
             // North America (lon: 220-300, lat: 15-70)
@@ -173,26 +183,18 @@ function getShapePoints(type) {
             // Antarctica (all longitudes, lat: <-60)
             if (lat < -60) isLand = true;
             
-            // Only render particles on land (dense continents)
-            if (isLand) {
-                // Dense packing for land - use more particles
-                if (Math.random() > 0.15) { // 85% fill rate for dense continents
-                    x = r * Math.sin(phi) * Math.cos(theta);
-                    y = r * Math.sin(phi) * Math.sin(theta);
-                    z = r * Math.cos(phi);
-                } else {
-                    // Hide this particle
-                    x = y = z = 0;
-                    x = -1000; // Far away
-                }
-            } else {
-                // Ocean - no dots at all
-                x = y = z = 0;
-                x = -1000; // Hide far away
+            // Store land/ocean info for color assignment (used in createParticles)
+            // This will be accessed via the particle index during color assignment
+            if (i === 0) {
+                // Create a temporary storage for land/ocean data
+                if (!window.earthLandData) window.earthLandData = [];
+            }
+            if (window.earthLandData) {
+                window.earthLandData[i] = isLand;
             }
             
             // Few stars in deep space
-            if (t > 0.95 && Math.random() > 0.7) {
+            if (t > 0.97 && Math.random() > 0.8) {
                 const starR = 6 + Math.random() * 2;
                 const starTheta = Math.random() * Math.PI * 2;
                 const starPhi = Math.random() * Math.PI;
@@ -570,7 +572,8 @@ function animate() {
     const time = Date.now();
     
     // Auto-Transition Logic
-    if (!isTransitioning && time - eraStartTime > ERA_DURATION) {
+    const currentDuration = currentEraIndex === 0 ? INITIAL_ERA_DURATION : ERA_DURATION;
+    if (!isTransitioning && time - eraStartTime > currentDuration) {
         nextEra();
         eraStartTime = time;
     }
