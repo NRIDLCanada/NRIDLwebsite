@@ -1,6 +1,5 @@
 
 import * as THREE from 'https://unpkg.com/three@0.160.0/build/three.module.js';
-import { OrbitControls } from 'https://unpkg.com/three@0.160.0/examples/jsm/controls/OrbitControls.js';
 
 // Configuration
 const PARTICLE_COUNT = 80000; // Optimized for detail and performance
@@ -12,7 +11,7 @@ const ERA_DURATION = 8000; // Longer viewing time
 let currentEraIndex = 0;
 let isTransitioning = false;
 let particles;
-let renderer, scene, camera, controls;
+let renderer, scene, camera;
 let eraStartTime = 0;
 let transitionStartTime = 0;
 let sceneLines = []; // Store line geometries for each scene
@@ -54,16 +53,6 @@ function init() {
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2)); // Limit for performance
     renderer.setClearColor(0x000000, 1); // Black background
     container.appendChild(renderer.domElement);
-
-    // Orbit Controls for rotation
-    controls = new OrbitControls(camera, renderer.domElement);
-    controls.enableDamping = true;
-    controls.dampingFactor = 0.05;
-    controls.enableZoom = true;
-    controls.minDistance = 4;
-    controls.maxDistance = 12;
-    controls.autoRotate = false;
-    controls.rotateSpeed = 0.5;
 
     // Particles
     createParticles();
@@ -617,11 +606,6 @@ function animate() {
 
     // Gentle Rotation
     particles.rotation.y += 0.002;
-    
-    // Update controls
-    if (controls) {
-        controls.update();
-    }
     
     // Electricity Effect for Lightbulb Era
     if (ERAS[currentEraIndex].type === 'lightbulb' && !isTransitioning) {
