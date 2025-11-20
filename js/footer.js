@@ -34,8 +34,8 @@ class Footer {
                     <div class="footer-section">
                         <h6 class="footer-section-title">Resources</h6>
                         <ul class="footer-links">
-                            <li><a href="sustainability.html" class="footer-link">Sustainability</a></li>
-                            <li><a href="#" class="footer-link">StoryBee Library</a></li>
+                            <li><a href="#" class="footer-link">Learning Programs</a></li>
+                            <li><a href="https://www.storybee.space" class="footer-link" target="_blank" rel="noopener noreferrer">StoryBee Library</a></li>
                             <li><a href="#" class="footer-link">AI Solutions</a></li>
                             <li><a href="#" class="footer-link">Research</a></li>
                         </ul>

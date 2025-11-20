@@ -39,17 +39,19 @@
 
 .footer-logo {
     font-family: var(--font-heading);
-    font-size: 1.625rem;
-    font-weight: 700;
+    font-size: 1.5rem;
+    font-weight: 300;
     color: var(--text-light);
+    letter-spacing: -0.02em;
     margin-bottom: 1.25rem;
     display: block;
 }
 
 .footer-description {
     color: rgba(255, 255, 255, 0.75);
-    line-height: 1.7;
-    font-size: 0.9375rem;
+    line-height: 1.9;
+    font-size: 1rem;
+    font-weight: 300;
     margin-bottom: 1.75rem;
 }
 
@@ -61,6 +63,7 @@
     padding-left: 1.25rem;
     border-left: 3px solid var(--accent-light);
     line-height: 1.6;
+    font-weight: 300;
 }
 
 /* Footer Links Section - Improved spacing */
@@ -89,7 +92,8 @@
 .footer-link {
     color: rgba(255, 255, 255, 0.75);
     text-decoration: none;
-    font-size: 0.9375rem;
+    font-size: 1rem;
+    font-weight: 300;
     transition: all var(--transition-fast);
     display: inline-block;
     position: relative;
