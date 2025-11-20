@@ -14,7 +14,7 @@ class Navigation {
                 <a href="index.html" class="nav-logo">
                     <div class="nav-logo-text">
                         <span class="nav-logo-main">NRIDL</span>
-                        <span class="nav-logo-sub">Democratized Learning</span>
+                        <span class="nav-logo-sub">The National Institute for Democratized Learning</span>
                     </div>
                 </a>
                 
