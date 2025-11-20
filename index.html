@@ -23,18 +23,31 @@
     
     <!-- Hero Section -->
     <section class="hero-section">
-        <div class="hero-video-container">
-            <!-- Video placeholder - will be replaced with actual video -->
-            <video class="hero-video" autoplay muted loop playsinline poster="">
-                <!-- <source src="videos/hero-video.mp4" type="video/mp4"> -->
-            </video>
+        <div id="canvas-container"></div>
+        
+        <!-- Holographic Data Panel -->
+        <div class="hero-ui-panel">
+            <div class="ui-header">SYSTEM STATUS</div>
+            <div class="ui-row">
+                <span class="ui-label">FPS</span>
+                <span class="ui-value" id="ui-fps">60</span>
+            </div>
+            <div class="ui-row">
+                <span class="ui-label">PARTICLES</span>
+                <span class="ui-value" id="ui-particles">20000</span>
+            </div>
+            <div class="ui-row">
+                <span class="ui-label">ERA</span>
+                <span class="ui-value highlight" id="ui-era">GENESIS</span>
+            </div>
+            <button id="btn-switch" class="ui-btn">INITIATE JUMP</button>
         </div>
+
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <h1 class="hero-title">Building Bridges Over the World's Divides</h1>
             <p class="hero-subtitle">
-                We believe the world's greatest resource is its people. Our work is to ensure everyone 
-                has access to the knowledge they need to learn, create, and succeed.
+                Our work is to ensure everyone has access to the knowledge they need to learn, create, and succeed.
             </p>
             <div class="hero-cta">
                 <a href="#problems" class="btn btn-primary btn-large">Discover Our Impact</a>
@@ -293,6 +306,7 @@
     <!-- Footer will be injected by footer.js -->
 
     <!-- Scripts -->
+    <script type="module" src="js/hero-3d.js"></script>
     <script src="js/navigation.js?v=1.2"></script>
     <script src="js/footer.js"></script>
     <script src="js/common.js"></script>
