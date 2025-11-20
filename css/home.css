@@ -195,17 +195,17 @@
 @media (max-width: 768px) {
     .hero-section {
         min-height: 100vh;
-        align-items: flex-end; /* Align to bottom */
-        justify-content: center;
-        padding-top: 0;
-        padding-bottom: 3rem; /* Push everything up from bottom */
+        align-items: center; /* Center vertically */
+        justify-content: flex-start;
+        padding-top: 15vh; /* Push content down from top */
+        padding-bottom: 2rem;
         flex-direction: column;
     }
 
     .hero-content {
         text-align: center;
         padding: 0 1.5rem;
-        margin-bottom: 3rem; /* Space below content */
+        margin-bottom: 2rem; /* Reduced space below content */
         max-width: 100%;
         order: 2; /* Content appears below the effect */
     }
@@ -218,7 +218,7 @@
     .hero-subtitle {
         font-size: clamp(0.71rem, 2.63vw, 0.825rem); /* 25% smaller (0.95 * 0.75 = 0.71, 1.1 * 0.75 = 0.825) */
         line-height: 1.6;
-        margin: 0 auto 2rem;
+        margin: 0 auto 1rem; /* Reduced margin */
     }
 
     .hero-cta {
@@ -227,7 +227,7 @@
 
     #canvas-container {
         position: relative; /* Flow in document */
-        height: 50vh; /* Half viewport height */
+        height: 45vh; /* Slightly smaller */
         width: 100%;
         order: 1; /* Effect appears above content */
     }
