@@ -2,8 +2,8 @@
 import * as THREE from 'https://unpkg.com/three@0.160.0/build/three.module.js';
 
 // Configuration
-const PARTICLE_COUNT = 15000; // Reduced slightly for better performance with dots
-const PARTICLE_SIZE = 0.04; // Slightly larger for visibility
+const PARTICLE_COUNT = 25000; // Increased for better detail
+const PARTICLE_SIZE = 0.035; // Adjusted for density
 const TRANSITION_DURATION = 3000; // Slower transitions
 const ERA_DURATION = 5000; // Time between auto-transitions
 
@@ -76,10 +76,13 @@ function createParticles() {
         targetPositions[i * 3 + 1] = positions[i * 3 + 1];
         targetPositions[i * 3 + 2] = positions[i * 3 + 2];
 
-        // Initial Colors (Earth-like)
+        // Initial Colors (Earth-like) - More variety
         const color = new THREE.Color();
-        if (Math.random() > 0.7) color.setHex(0x2196f3); // Ocean
-        else color.setHex(0x4caf50); // Land
+        const rand = Math.random();
+        if (rand > 0.7) color.setHex(0x2196f3); // Ocean Blue
+        else if (rand > 0.5) color.setHex(0x4caf50); // Land Green
+        else if (rand > 0.3) color.setHex(0x1976d2); // Deep Ocean
+        else color.setHex(0x81c784); // Light Green
         
         colors[i * 3] = color.r;
         colors[i * 3 + 1] = color.g;
@@ -97,7 +100,7 @@ function createParticles() {
         blending: THREE.AdditiveBlending,
         depthTest: false,
         transparent: true,
-        opacity: 0.9
+        opacity: 1.0 // Full opacity for vivid colors
     });
 
     particles = new THREE.Points(geometry, material);
