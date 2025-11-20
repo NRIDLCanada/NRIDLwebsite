@@ -60,9 +60,9 @@
     font-family: var(--font-accent);
     font-size: 0.6875rem;
     text-transform: uppercase;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.15em;
     color: var(--accent-color);
-    font-weight: 300;
+    font-weight: 200;
     margin-top: 0.125rem;
 }
 
