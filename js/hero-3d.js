@@ -3,8 +3,8 @@ import * as THREE from 'https://unpkg.com/three@0.160.0/build/three.module.js';
 import { OrbitControls } from 'https://unpkg.com/three@0.160.0/examples/jsm/controls/OrbitControls.js';
 
 // Configuration
-const PARTICLE_COUNT = 300000; // Ultra-high detail for artistic clarity
-const PARTICLE_SIZE = 0.015; // Very small for high density
+const PARTICLE_COUNT = 80000; // Optimized for detail and performance
+const PARTICLE_SIZE = 0.02; // Visible but not too large
 const TRANSITION_DURATION = 3500; // Smooth transitions
 const ERA_DURATION = 8000; // Longer viewing time
 
@@ -32,19 +32,26 @@ const ERAS = [
 function init() {
     const container = document.getElementById('canvas-container');
     
+    if (!container) {
+        console.error('Canvas container not found!');
+        return;
+    }
+    
+    console.log('Initializing 3D scene...');
+    
     // Scene
     scene = new THREE.Scene();
     scene.background = new THREE.Color(0x000000); // Pure black background
 
     // Camera
     camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
-    camera.position.z = 6;
-    camera.position.y = 0;
+    camera.position.set(0, 0, 8); // Move camera back further
+    camera.lookAt(0, 0, 0);
 
     // Renderer
-    renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+    renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setSize(container.clientWidth, container.clientHeight);
-    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2)); // Limit for performance
     renderer.setClearColor(0x000000, 1); // Black background
     container.appendChild(renderer.domElement);
 
@@ -78,9 +85,12 @@ function init() {
     
     // Start Auto-Transition
     eraStartTime = Date.now();
+    
+    console.log('3D scene initialized successfully');
 }
 
 function createParticles() {
+    console.log('Creating particles...');
     const geometry = new THREE.BufferGeometry();
     const positions = new Float32Array(PARTICLE_COUNT * 3);
     const colors = new Float32Array(PARTICLE_COUNT * 3);
@@ -128,6 +138,9 @@ function createParticles() {
     particles = new THREE.Points(geometry, material);
     particles.userData = { targetColor: null }; // Initialize userData
     scene.add(particles);
+    
+    console.log('Particles created:', PARTICLE_COUNT);
+    console.log('Particle system added to scene');
 }
 
 // Shape Generation Functions
