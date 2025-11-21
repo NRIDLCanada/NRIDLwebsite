@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Financial Literacy Programs - NRIDL">
+    <meta name="description" content="Financial Literacy Programs - Building Economic Confidence">
     <title>Financial Literacy - NRIDL</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,44 +13,410 @@
     <link rel="stylesheet" href="css/main.css?v=1.4">
     <link rel="stylesheet" href="css/navigation.css?v=1.4">
     <link rel="stylesheet" href="css/footer.css?v=1.4">
+    <link rel="stylesheet" href="css/home.css?v=1.4">
+    <link rel="stylesheet" href="css/literacy.css">
     
     <style>
-        .construction-container {
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('image assets/financial literacy hero.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 50vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            min-height: 70vh;
-            padding: 2rem;
-        }
-        
-        .construction-content {
             text-align: center;
-            max-width: 600px;
+            padding: clamp(4rem, 10vw, 8rem) 2rem;
         }
         
-        .construction-content h1 {
-            font-size: clamp(2rem, 5vw, 3rem);
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .hero-content h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            color: #ffffff;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+            letter-spacing: -0.02em;
+        }
+        
+        .hero-content p {
+            font-size: clamp(1.125rem, 2vw, 1.375rem);
+            color: #e0e0e0;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+        
+        .big-three-section {
+            background: #ffffff;
+            padding: clamp(4rem, 10vw, 8rem) 0;
+        }
+        
+        .big-three-intro {
+            max-width: 900px;
+            margin: 0 auto 3rem;
+        }
+        
+        .big-three-intro h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: #1a1a1a;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+            letter-spacing: -0.02em;
+            text-align: center;
+        }
+        
+        .big-three-intro p {
+            font-size: 1.125rem;
+            color: #666666;
+            line-height: 1.9;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+            text-align: center;
+        }
+        
+        .big-three-credit {
+            font-size: 0.875rem;
+            color: #999999;
+            font-style: italic;
+            margin-top: 2rem;
+            margin-bottom: 0;
+            text-align: center;
+        }
+        
+        .quiz-cta {
+            text-align: center;
+            margin: 3rem 0;
+        }
+        
+        .data-section {
+            background: #f8f9fa;
+            padding: clamp(3rem, 6vw, 5rem) 0;
+        }
+        
+        .data-intro {
+            max-width: 900px;
+            margin: 0 auto 3rem;
+        }
+        
+        .data-intro h3 {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            color: #1a1a1a;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+            text-align: center;
+        }
+        
+        .data-intro p {
+            font-size: 1.125rem;
+            color: #666666;
+            line-height: 1.9;
+            font-weight: 300;
+            text-align: center;
+        }
+        
+        .data-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .data-card {
+            background: #ffffff;
+            padding: 2rem;
+            border-left: 3px solid #e0e0e0;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+        }
+        
+        .data-card h4 {
+            font-size: 1.25rem;
+            color: #333333;
             margin-bottom: 1rem;
-            color: var(--text-primary);
+            font-weight: 500;
+            font-family: var(--font-accent);
         }
         
-        .construction-content p {
-            font-size: clamp(1rem, 2vw, 1.25rem);
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
+        .data-card p {
+            font-size: 1rem;
+            color: #666666;
+            line-height: 1.8;
+            margin-bottom: 0.75rem;
+            font-weight: 300;
+        }
+        
+        .data-card .stat {
+            font-size: 2.5rem;
+            color: #1a1a2e;
+            font-weight: 700;
+            display: block;
+            margin: 1rem 0;
+        }
+        
+        .data-source {
+            font-size: 0.875rem;
+            color: #999999;
+            font-style: italic;
+            text-align: center;
+            margin-top: 3rem;
+            white-space: nowrap;
+        }
+        
+        .resources-section {
+            background: #ffffff;
+            padding: clamp(4rem, 10vw, 8rem) 0;
+        }
+        
+        .resources-header {
+            max-width: 900px;
+            margin: 0 auto 4rem;
+        }
+        
+        .resources-header h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: #1a1a1a;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+            letter-spacing: -0.02em;
+            text-align: center;
+        }
+        
+        .resources-header p {
+            font-size: 1.125rem;
+            color: #666666;
+            line-height: 1.9;
+            font-weight: 300;
+            text-align: center;
+        }
+        
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem;
+        }
+        
+        .resource-card {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .resource-card:hover {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+            transform: translateY(-4px);
+        }
+        
+        .resource-card h3 {
+            font-size: 1.5rem;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+        
+        .resource-card-content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .resource-card p {
+            font-size: 1rem;
+            color: #666666;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
+        
+        .resource-card .credit {
+            font-size: 0.875rem;
+            color: #999999;
+            font-style: italic;
+            margin-top: auto;
+            margin-bottom: 1.5rem;
+        }
+        
+        .resource-card .btn {
+            width: 100%;
+            text-align: center;
+            margin-top: auto;
+        }
+        
+        @media (max-width: 992px) {
+            .data-source {
+                white-space: normal;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .data-grid,
+            .resource-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="construction-container">
-        <div class="construction-content">
-            <h1>Under Construction</h1>
-            <p>Coming Soon</p>
-            <a href="literacy.html" class="btn btn-outline">Back to Literacy Programs</a>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Financial Literacy Programs</h1>
+            <p>Build confidence in managing money, creating wealth, and securing your financial future through evidence-based learning resources</p>
         </div>
-    </div>
+    </section>
 
+    <!-- The Big Three Section -->
+    <section class="big-three-section">
+        <div class="container">
+            <div class="big-three-intro">
+                <h2>Do You Have the Knowledge Needed to Make Savvy Personal Finance Decisions?</h2>
+                <p>
+                    <strong>The Big Three</strong>, a trio of simple financial literacy questions, have become the gold standard for measuring whether people understand the basic concepts needed to manage money, build wealth, and create a financially secure future. The Big Three have been used to gauge financial literacy since 2004.
+                </p>
+                <p>
+                    The Big Three evaluate understanding of <strong>compound interest</strong>, <strong>inflation</strong>, and <strong>risk diversification</strong> — three fundamental financial concepts that are stepping stones to sound financial decision-making. Wondering whether you have the financial know-how you need?
+                </p>
+                <p class="big-three-credit">
+                    Credit: Stanford University - Initiative for Financial Decision-Making
+                </p>
+            </div>
+            
+            <div class="quiz-cta">
+                <a href="https://ifdm.stanford.edu/the-big-three/quiz" target="_blank" class="btn btn-outline">Take the Test</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Data Insights Section -->
+    <section class="data-section">
+        <div class="container">
+            <div class="data-intro">
+                <h3>Understanding Financial Literacy in America</h3>
+                <p>
+                    Financial literacy is low among American adults. Only <strong>29% answered all three questions correctly</strong>. 
+                    If we focus on individual questions, we see that respondents performed best on the interest question (69%) and worst on the risk question (42%).
+                </p>
+            </div>
+            
+            <div class="data-grid">
+                <div class="data-card">
+                    <h4>Age & Financial Literacy</h4>
+                    <span class="stat">14%</span>
+                    <p>Only 14% of those under age 35 answered all three questions correctly. Young people's financial literacy knowledge lags that of older adults. Nevertheless, less than half of those 66 and older were able to correctly answer the Big Three.</p>
+                </div>
+                
+                <div class="data-card">
+                    <h4>Gender Gap</h4>
+                    <span class="stat">18pts</span>
+                    <p>Thirty-eight percent of men responded correctly to all three questions, while only 20% of women did so. This is an 18 percentage point gender gap. There is a gender gap for each of the three questions.</p>
+                </div>
+                
+                <div class="data-card">
+                    <h4>Education Level</h4>
+                    <span class="stat">12% to 51%</span>
+                    <p>Only 12% of those with, at most, a high-school diploma answered all three questions correctly, while 51% of those with a graduate degree did so. Respondents had the most difficulty with the risk question, irrespective of education level.</p>
+                </div>
+                
+                <div class="data-card">
+                    <h4>Marital Status</h4>
+                    <span class="stat">36%</span>
+                    <p>Married respondents have higher levels of financial literacy than unmarried respondents; 36% of married respondents answered the Big Three correctly. Respondents had the most difficulty with the risk question, irrespective of marital status.</p>
+                </div>
+                
+                <div class="data-card">
+                    <h4>Income Level</h4>
+                    <span class="stat">12% to 49%</span>
+                    <p>The fraction of Americans that answered all three questions correctly ranges from 12% for those with incomes lower than $25K to 49% for those with incomes higher than $100K. Respondents had the most difficulty with the risk question, irrespective of income level.</p>
+                </div>
+                
+                <div class="data-card">
+                    <h4>Race & Ethnicity</h4>
+                    <span class="stat">Results</span>
+                    <p>A smaller fraction of Black and Hispanic Americans answered all three questions correctly compared to White and Asian Americans. This pattern holds for each question.</p>
+                </div>
+            </div>
+            
+            <p class="data-source">
+                Source: Stanford IFDM calculation | Data: FINRA Foundation's 2021 National Financial Capability Study
+            </p>
+        </div>
+    </section>
+
+    <!-- Learning Resources Section -->
+    <section class="resources-section">
+        <div class="container">
+            <div class="resources-header">
+                <h2>Free Financial Literacy Learning Resources</h2>
+                <p>
+                    Access world-class financial education from leading universities. These comprehensive guides and courses cover everything from budgeting basics to advanced investment strategies.
+                </p>
+            </div>
+            
+            <div class="resource-grid">
+                <!-- Stanford Programs -->
+                <div class="resource-card">
+                    <h3>Stanford Programs</h3>
+                    <div class="resource-card-content">
+                        <p>
+                            Gain the knowledge, skills, and habits to be financially well during your time at Stanford and beyond. See our self-paced content and Stanford personal finance courses for your financial literacy and capability.
+                        </p>
+                        <span class="credit">Credit: Stanford - Mind over Money</span>
+                        <a href="https://mindovermoney.stanford.edu/education" target="_blank" class="btn btn-outline">Access Course</a>
+                    </div>
+                </div>
+                
+                <!-- Harvard College Guide -->
+                <div class="resource-card">
+                    <h3>Harvard College Guide</h3>
+                    <div class="resource-card-content">
+                        <p>
+                            Harvard College has focused their resources on providing support and education on financial understanding for all students. The more you know, and the more tools you have at your disposal, the better prepared you will be.
+                        </p>
+                        <p>
+                            In this guide, you'll find information on budgeting, credit, saving and investing, and taxes for Harvard College students, and you!
+                        </p>
+                        <span class="credit">Credit: Harvard College</span>
+                        <a href="https://college.harvard.edu/guides/financial-literacy" target="_blank" class="btn btn-outline">Access Guide</a>
+                    </div>
+                </div>
+                
+                <!-- Harvard Graduate School of Education -->
+                <div class="resource-card">
+                    <h3>Harvard Graduate School of Education</h3>
+                    <div class="resource-card-content">
+                        <p>
+                            Reach your financial goals one step at a time. Join iGrad, a personal finance platform provided by Harvard Graduate School of Education. This structured course helps you understand your finances and improve your financial literacy better.
+                        </p>
+                        <span class="credit">Credit: Harvard Graduate School of Education</span>
+                        <a href="https://hgse.igrad.com/" target="_blank" class="btn btn-outline">Access Platform</a>
+                    </div>
+                </div>
+                
+                <!-- Financial Literacy in Business -->
+                <div class="resource-card">
+                    <h3>Financial Literacy in Business</h3>
+                    <div class="resource-card-content">
+                        <p>
+                            Financial literacy is the understanding of financial terminology, statements, and concepts, and knowing how to use this information to make a financial impact. The first step is to read up on the language and documents your company uses to talk about and track finances.
+                        </p>
+                        <span class="credit">Credit: Catherine Cote - HBS Online</span>
+                        <a href="https://online.hbs.edu/blog/post/financial-literacy" target="_blank" class="btn btn-outline">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer will be injected by footer.js -->
+
+    <!-- Scripts -->
     <script src="js/navigation.js?v=1.6"></script>
     <script src="js/footer.js?v=1.6"></script>
+    <script src="js/common.js?v=1.6"></script>
 </body>
 </html>
