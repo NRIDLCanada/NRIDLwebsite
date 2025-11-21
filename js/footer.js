@@ -22,19 +22,9 @@ class Footer {
                     </div>
                     
                     <div class="footer-section">
-                        <h6 class="footer-section-title">Explore</h6>
-                        <ul class="footer-links">
-                            <li><a href="index.html" class="footer-link">Home</a></li>
-                            <li><a href="literacy.html" class="footer-link">Literacy Programs</a></li>
-                            <li><a href="digital-futures.html" class="footer-link">Digital Futures</a></li>
-                            <li><a href="heritage.html" class="footer-link">Cultural Heritage</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="footer-section">
                         <h6 class="footer-section-title">Resources</h6>
                         <ul class="footer-links">
-                            <li><a href="#" class="footer-link">Learning Programs</a></li>
+                            <li><a href="learning-programs.html" class="footer-link">Learning Programs</a></li>
                             <li><a href="https://www.storybee.space" class="footer-link" target="_blank" rel="noopener noreferrer">StoryBee Library</a></li>
                             <li><a href="#" class="footer-link">AI Solutions</a></li>
                             <li><a href="#" class="footer-link">Research</a></li>
