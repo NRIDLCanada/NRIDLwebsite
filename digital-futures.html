@@ -10,69 +10,299 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700;900&family=Montserrat:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/navigation.css?v=1.2">
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/main.css?v=1.4">
+    <link rel="stylesheet" href="css/navigation.css?v=1.4">
+    <link rel="stylesheet" href="css/footer.css?v=1.4">
+    <link rel="stylesheet" href="css/home.css?v=1.4">
+    <link rel="stylesheet" href="css/literacy.css">
+    <style>
+        /* Desktop styles - matching literacy page */
+        .hero-section {
+            height: 100vh !important;
+            min-height: 700px !important;
+            background-image: url('image assets/AR/AR Business4.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        .hero-overlay {
+            background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.7) 100%);
+        }
+        
+        .hero-content {
+            text-align: left !important;
+        }
+        
+        .hero-title {
+            font-size: clamp(1rem, 2.5vw, 2rem) !important;
+            text-align: left !important;
+        }
+        
+        .hero-subtitle {
+            font-size: clamp(0.8rem, 1.6vw, 1rem) !important;
+            text-align: left !important;
+        }
+        
+        /* Mobile responsive adjustments */
+        @media (max-width: 768px) {
+            .hero-section {
+                min-height: 100vh !important;
+                align-items: center !important;
+                justify-content: center !important;
+                padding: 2rem 1.5rem !important;
+            }
+            
+            .hero-content {
+                text-align: center !important;
+                padding: 0 !important;
+                max-width: 100% !important;
+            }
+            
+            .hero-title {
+                font-size: clamp(1.5rem, 5vw, 2.5rem) !important;
+                margin-bottom: 1rem !important;
+                text-align: center !important;
+            }
+            
+            .hero-subtitle {
+                font-size: clamp(0.71rem, 2.63vw, 0.825rem) !important;
+                line-height: 1.6 !important;
+                margin: 0 auto 1rem !important;
+                text-align: center !important;
+            }
+            
+            .title-line {
+                display: block !important;
+            }
+        }
+        
+        /* Button alignment styles */
+        .btn-container {
+            text-align: left;
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .btn-container {
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 <body>
-    <section class="hero-section" style="height: 70vh;">
+    <section class="hero-section">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1 class="hero-title">Digital Futures</h1>
+            <h1 class="hero-title">
+                <span class="title-line">Demystifying Technology</span>
+                <span class="title-line">for a Digital Future</span>
+            </h1>
             <p class="hero-subtitle">
-                Demystifying Technology: We ensure no community is left behind in the age of AI, 
-                the metaverse, and digital transformation.
+                Bridging the technology divide through cutting-edge research in AR/VR, semiconductors, and AI—ensuring no community is left behind in the digital age.
             </p>
         </div>
     </section>
 
-    <section style="padding: var(--spacing-xl) 0;">
-        <div class="container-narrow">
-            <div class="reveal">
-                <h2 style="text-align: center; margin-bottom: var(--spacing-lg);">Our Solution: We Demystify Technology</h2>
-                
-                <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: var(--spacing-md);">
-                    Rapid advancements in AI, the metaverse, and finance are creating a world of insiders and outsiders. 
-                    When technology isn't understood, it creates fear and leaves communities behind. NRIDL bridges this 
-                    technology divide through education, research, and community engagement.
-                </p>
-                
-                <div style="background-color: var(--bg-secondary); padding: var(--spacing-lg); border-radius: var(--radius-lg); margin: var(--spacing-lg) 0;">
-                    <h3 style="color: var(--accent-color); margin-bottom: var(--spacing-md);">Our Approach</h3>
-                    <ul style="list-style: none; padding: 0;">
-                        <li style="padding: var(--spacing-sm) 0; border-bottom: 1px solid var(--border-color);">
-                            <strong>🤖 AI Research & Education:</strong> Making artificial intelligence accessible and ethical
-                        </li>
-                        <li style="padding: var(--spacing-sm) 0; border-bottom: 1px solid var(--border-color);">
-                            <strong>🔬 Emerging Technology Analysis:</strong> Staying ahead of trends to prepare communities
-                        </li>
-                        <li style="padding: var(--spacing-sm) 0; border-bottom: 1px solid var(--border-color);">
-                            <strong>💡 Innovation Workshops:</strong> Hands-on learning experiences with cutting-edge technology
-                        </li>
-                        <li style="padding: var(--spacing-sm) 0;">
-                            <strong>🌐 Digital Transformation Support:</strong> Helping small businesses navigate digital change
-                        </li>
-                    </ul>
-                </div>
-                
-                <div style="background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-light) 100%); color: white; padding: var(--spacing-lg); border-radius: var(--radius-lg); margin: var(--spacing-lg) 0; text-align: center;">
-                    <h3 style="color: white; margin-bottom: var(--spacing-sm);">Purposeful AI Integration</h3>
-                    <p style="color: rgba(255, 255, 255, 0.95);">
-                        AI can accelerate discovery, but it cannot replace the human responsibility to reflect and question. 
-                        We ensure our learners are not passive recipients of AI-driven answers but active, critical participants.
+    </section>
+
+    <!-- Our Works and Impact Section -->
+    <section id="our-works-impact" class="what-we-do-section">
+        <div id="digital-futures-strategic-canvas-container"></div>
+        <div class="container">
+            <div class="strategic-content">
+                <div class="section-header reveal">
+                    <h2 class="section-title">Our Works and Impact</h2>
+                    <div class="title-divider"></div>
+                    <p class="section-intro">
+                        Pioneering Research. Transforming Communities. At NRIDL, we lead cutting-edge research in emerging 
+                        technologies to ensure communities are equipped, informed, and empowered to thrive in the digital future.
                     </p>
                 </div>
-                
-                <p style="text-align: center; margin-top: var(--spacing-lg);">
-                    <a href="responsible-ai-policy.html" class="btn btn-primary">View Our Responsible AI Policy</a>
-                </p>
+
+                <!-- Interactive Strategic Tabs -->
+                <div class="strategic-tabs reveal">
+                    <button class="strategic-tab active" data-tab="0">
+                        <span class="tab-number">01</span>
+                        <span class="tab-title">AR Research & Services</span>
+                    </button>
+                    <button class="strategic-tab" data-tab="1">
+                        <span class="tab-number">02</span>
+                        <span class="tab-title">Semiconductor Research</span>
+                    </button>
+                    <button class="strategic-tab" data-tab="2">
+                        <span class="tab-number">03</span>
+                        <span class="tab-title">AI Research</span>
+                    </button>
+                </div>
+
+                <!-- Strategic Content Cards -->
+                <div class="strategic-content-container reveal">
+                    <!-- Card 1: AR Research & Services -->
+                    <div class="strategic-content-card active">
+                        <h3>AR Research and Services: Bridging Physical and Digital Worlds</h3>
+                        <div class="card-content">
+                            <p>
+                                Augmented Reality (AR) represents one of the most transformative technologies of our time, overlaying 
+                                digital information onto the physical world to enhance learning, productivity, and human experience. 
+                                Our AR research and services focus on making this technology accessible, practical, and beneficial for 
+                                educational institutions, small businesses, and communities.
+                            </p>
+                            <div class="highlights-container">
+                                <div class="content-highlight">
+                                    <h4>Educational AR Applications</h4>
+                                    <p>
+                                        We develop AR experiences that transform traditional learning into immersive, interactive adventures. 
+                                        From visualizing complex scientific concepts to exploring historical events in 3D, our AR solutions 
+                                        make abstract ideas tangible and memorable for learners of all ages.
+                                    </p>
+                                </div>
+                                <div class="content-highlight">
+                                    <h4>Business AR Solutions</h4>
+                                    <p>
+                                        Small businesses can leverage AR for virtual product demonstrations, enhanced customer experiences, 
+                                        remote collaboration, and training programs. We help organizations adopt AR technology without 
+                                        prohibitive costs or technical barriers.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="why-box">
+                                <strong>Why we do this</strong>
+                                <p>
+                                    AR technology should not be exclusive to tech giants. By democratizing access to AR research and 
+                                    development, we empower communities and small businesses to compete in the digital economy while 
+                                    enhancing education through immersive learning experiences.
+                                </p>
+                            </div>
+                            <div class="btn-container">
+                                <a href="ar-research.html" class="btn btn-outline">Explore AR Research</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Semiconductor Research -->
+                    <div class="strategic-content-card">
+                        <h3>Semiconductor Research: Understanding the Foundation of Modern Technology</h3>
+                        <div class="card-content">
+                            <p>
+                                Semiconductors are the invisible infrastructure powering every digital device, from smartphones to 
+                                artificial intelligence systems. Our semiconductor research focuses on understanding supply chains, 
+                                emerging technologies, geopolitical implications, and opportunities for community participation in 
+                                this critical industry.
+                            </p>
+                            <div class="highlights-container">
+                                <div class="content-highlight">
+                                    <h4>Supply Chain Analysis</h4>
+                                    <p>
+                                        We research semiconductor supply chains, helping policymakers and businesses understand vulnerabilities, 
+                                        opportunities for local manufacturing, and strategies for technological sovereignty. Our work demystifies 
+                                        the complex global networks behind chip production.
+                                    </p>
+                                </div>
+                                <div class="content-highlight">
+                                    <h4>Emerging Chip Technologies</h4>
+                                    <p>
+                                        From quantum computing to neuromorphic chips and beyond, we track cutting-edge semiconductor innovations. 
+                                        We translate complex technical advances into accessible insights for educators, businesses, and community 
+                                        leaders preparing for tomorrow's technology landscape.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="why-box">
+                                <strong>Why we do this</strong>
+                                <p>
+                                    Semiconductor technology determines global economic and technological power. By making this knowledge 
+                                    accessible, we enable communities to participate in critical conversations about technology policy, 
+                                    workforce development, and economic opportunity in the digital age.
+                                </p>
+                            </div>
+                            <div class="btn-container">
+                                <a href="semiconductor-research.html" class="btn btn-outline">Explore Semiconductor Research</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: AI Research -->
+                    <div class="strategic-content-card">
+                        <h3>AI Research: Ethical, Accessible, and Community-Centered</h3>
+                        <div class="card-content">
+                            <p>
+                                Artificial Intelligence is reshaping society at unprecedented speed. Our AI research prioritizes ethics, 
+                                accessibility, and community benefit. We explore not only what AI can do, but what AI should do—ensuring 
+                                technology serves humanity's highest values and most pressing needs.
+                            </p>
+                            <div class="highlights-container">
+                                <div class="content-highlight">
+                                    <h4>Responsible AI Development</h4>
+                                    <p>
+                                        Our research examines AI bias, transparency, privacy, and accountability. We develop frameworks for 
+                                        ethical AI deployment in education, healthcare, and public services. Our Responsible AI Policy guides 
+                                        all our work, ensuring technology serves communities equitably.
+                                    </p>
+                                </div>
+                                <div class="content-highlight">
+                                    <h4>AI for Social Good</h4>
+                                    <p>
+                                        We research AI applications that address real community challenges: personalized education, healthcare 
+                                        accessibility, environmental sustainability, and economic opportunity. Our focus is leveraging AI's 
+                                        power for equity and inclusion, not profit extraction.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="why-box">
+                                <strong>Why we do this</strong>
+                                <p>
+                                    AI will define the 21st century. Our research ensures this technology development is guided by community 
+                                    values, ethical principles, and equitable access. We prevent the creation of AI haves and have-nots by 
+                                    democratizing both AI knowledge and AI benefits.
+                                </p>
+                            </div>
+                            <div class="btn-container">
+                                <a href="ai-research.html" class="btn btn-outline">Explore AI Research</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Looking Toward 2030 -->
+                <div class="timeline-section reveal">
+                    <div class="timeline-content">
+                        <h3>Looking Toward 2030: Leading Technology Research for Community Benefit</h3>
+                        <p>
+                            By 2030, NRIDL will have established itself as a trusted voice in emerging technology research, known 
+                            for translating complex innovations into accessible knowledge and practical applications that serve 
+                            communities, not just corporations.
+                        </p>
+                        <ul>
+                            <li><strong>Community-Centered Research:</strong> Our research agenda is shaped by real community needs, ensuring our work on AR, semiconductors, and AI addresses practical challenges faced by educators, small businesses, and underserved populations.</li>
+                            <li><strong>Local Technology Workforce Development:</strong> We partner with educational institutions to train the next generation of Canadian technology researchers, engineers, and innovators, creating pathways for youth to participate in high-value tech careers.</li>
+                            <li><strong>Accessible Technology Knowledge:</strong> We publish research in plain language, create educational resources, and host community workshops that demystify complex technologies, empowering informed participation in technology policy and adoption decisions.</li>
+                            <li><strong>Ethical Technology Leadership:</strong> Our research establishes ethical frameworks and best practices for emerging technologies, ensuring Canadian communities lead in responsible innovation that prioritizes human wellbeing over pure technological advancement.</li>
+                        </ul>
+                        <div class="timeline-footer">
+                            <p>
+                                Through our research programs, we create not just knowledge but opportunity—training local researchers, 
+                                publishing accessible insights, and ensuring Canadian communities shape the trajectory of emerging technologies 
+                                rather than simply consuming them.
+                            </p>
+                            <p>
+                                Our model demonstrates that world-class technology research can be rooted in community values, accessible to 
+                                all, and designed to benefit society broadly rather than concentrate power in the hands of a few tech giants.
+                            </p>
+                            <p><strong>Together, we're building a future where technological advancement and community empowerment go hand in hand.</strong></p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <script src="js/navigation.js?v=1.2"></script>
-    <script src="js/footer.js"></script>
-    <script src="js/common.js"></script>
+    <!-- Footer will be injected by footer.js -->
+
+    <!-- Scripts -->
+    <script src="js/navigation.js?v=1.6"></script>
+    <script src="js/footer.js?v=1.6"></script>
+    <script src="js/common.js?v=1.6"></script>
+    <script type="module" src="js/digital-futures-strategic.js"></script>
 </body>
 </html>
