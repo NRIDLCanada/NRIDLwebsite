@@ -247,9 +247,159 @@
             margin-top: auto;
         }
         
+        .learning-programs-section {
+            background: #f8f9fa;
+            padding: clamp(4rem, 10vw, 8rem) 0;
+        }
+        
+        .programs-header {
+            max-width: 900px;
+            margin: 0 auto 4rem;
+        }
+        
+        .programs-header h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: #1a1a1a;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+            letter-spacing: -0.02em;
+            text-align: center;
+        }
+        
+        .programs-header p {
+            font-size: 1.125rem;
+            color: #666666;
+            line-height: 1.9;
+            font-weight: 300;
+            text-align: center;
+        }
+        
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 4rem;
+        }
+        
+        .program-card {
+            background: #ffffff;
+            padding: 2.5rem;
+            border-left: 4px solid #1a1a2e;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .program-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+        
+        .program-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .icon-number {
+            color: #ffffff;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .program-card h3 {
+            font-size: 1.75rem;
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+            font-weight: 400;
+        }
+        
+        .program-audience {
+            font-size: 0.9375rem;
+            color: #1a1a2e;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1.5rem;
+        }
+        
+        .program-description {
+            font-size: 1rem;
+            color: #666666;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+        
+        .program-topics,
+        .program-outcomes {
+            margin-bottom: 2rem;
+        }
+        
+        .program-topics h4,
+        .program-outcomes h4 {
+            font-size: 1.125rem;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+            font-weight: 500;
+            font-family: var(--font-accent);
+        }
+        
+        .program-topics ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .program-topics li {
+            font-size: 0.9375rem;
+            color: #666666;
+            line-height: 1.8;
+            padding-left: 1.5rem;
+            position: relative;
+            margin-bottom: 0.5rem;
+        }
+        
+        .program-topics li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #1a1a2e;
+            font-weight: 600;
+        }
+        
+        .program-outcomes p {
+            font-size: 0.9375rem;
+            color: #666666;
+            line-height: 1.8;
+            font-weight: 300;
+            font-style: italic;
+        }
+        
+        .programs-cta {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        .cta-text {
+            font-size: 1.25rem;
+            color: #1a1a1a;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+        
         @media (max-width: 992px) {
             .data-source {
                 white-space: normal;
+            }
+            
+            .programs-grid {
+                grid-template-columns: 1fr;
             }
         }
         
@@ -347,6 +497,115 @@
         </div>
     </section>
 
+    <!-- Learning Programs Section -->
+    <section class="learning-programs-section">
+        <div class="container">
+            <div class="programs-header">
+                <h2>Our Financial Literacy Learning Programs</h2>
+                <p>
+                    Tailored educational pathways designed for different life stages—empowering teens, young adults, and business owners with the financial knowledge needed to thrive.
+                </p>
+            </div>
+            
+            <div class="programs-grid">
+                <!-- Teens Program (Ages 12-18) -->
+                <div class="program-card">
+                    <div class="program-icon">
+                        <span class="icon-number">01</span>
+                    </div>
+                    <h3>Teens Program</h3>
+                    <p class="program-audience">Ages 12-18</p>
+                    <p class="program-description">
+                        Build a strong financial foundation early. Learn essential money management skills, understand the power of saving and investing, and prepare for financial independence.
+                    </p>
+                    
+                    <div class="program-topics">
+                        <h4>What You'll Learn</h4>
+                        <ul>
+                            <li>Understanding money and banking basics</li>
+                            <li>Budgeting and saving strategies</li>
+                            <li>The power of compound interest</li>
+                            <li>Credit scores and responsible borrowing</li>
+                            <li>Introduction to investing and stocks</li>
+                            <li>Financial goal setting</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="program-outcomes">
+                        <h4>Outcomes & Benefits</h4>
+                        <p>Develop confidence in managing money, make informed financial decisions, and establish healthy financial habits that last a lifetime.</p>
+                    </div>
+                </div>
+                
+                <!-- Young Adults Program (University Level) -->
+                <div class="program-card">
+                    <div class="program-icon">
+                        <span class="icon-number">02</span>
+                    </div>
+                    <h3>Young Adults Program</h3>
+                    <p class="program-audience">University Students & Early Career</p>
+                    <p class="program-description">
+                        Navigate the transition to financial independence. Master student loans, build credit, start investing, and create a sustainable financial plan for your future.
+                    </p>
+                    
+                    <div class="program-topics">
+                        <h4>What You'll Learn</h4>
+                        <ul>
+                            <li>Managing student loans and debt</li>
+                            <li>Building and maintaining credit</li>
+                            <li>Tax basics and filing strategies</li>
+                            <li>Investment fundamentals and portfolio building</li>
+                            <li>Insurance essentials (health, auto, renter's)</li>
+                            <li>Retirement planning and RRSP/TFSA strategies</li>
+                            <li>Negotiating salaries and benefits</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="program-outcomes">
+                        <h4>Outcomes & Benefits</h4>
+                        <p>Achieve financial independence, reduce financial stress, build wealth through smart investing, and create a roadmap for long-term financial security.</p>
+                    </div>
+                </div>
+                
+                <!-- Business Owners Program -->
+                <div class="program-card">
+                    <div class="program-icon">
+                        <span class="icon-number">03</span>
+                    </div>
+                    <h3>Business Owners Program</h3>
+                    <p class="program-audience">Entrepreneurs & Small Business Leaders</p>
+                    <p class="program-description">
+                        Transform your business finances from overwhelming to empowering. Understand financial statements, optimize cash flow, and make data-driven decisions for sustainable growth.
+                    </p>
+                    
+                    <div class="program-topics">
+                        <h4>What You'll Learn</h4>
+                        <ul>
+                            <li>Reading and analyzing financial statements</li>
+                            <li>Cash flow management and forecasting</li>
+                            <li>Business budgeting and expense tracking</li>
+                            <li>Tax planning and deductions for businesses</li>
+                            <li>Financing options and capital raising</li>
+                            <li>Financial ratios and performance metrics</li>
+                            <li>Risk management and business insurance</li>
+                            <li>Exit strategies and business valuation</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="program-outcomes">
+                        <h4>Outcomes & Benefits</h4>
+                        <p>Gain financial clarity, make confident strategic decisions, improve profitability, and build a financially sustainable business that supports your vision and goals.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="programs-cta">
+                <p class="cta-text">Ready to start your financial literacy journey?</p>
+                <a href="literacy.html" class="btn btn-outline btn-large">Explore All Learning Programs</a>
+            </div>
+        </div>
+    </section>
+
     <!-- Learning Resources Section -->
     <section class="resources-section">
         <div class="container">
@@ -405,7 +664,7 @@
                             Financial literacy is the understanding of financial terminology, statements, and concepts, and knowing how to use this information to make a financial impact. The first step is to read up on the language and documents your company uses to talk about and track finances.
                         </p>
                         <span class="credit">Credit: Catherine Cote - HBS Online</span>
-                        <a href="https://online.hbs.edu/blog/post/financial-literacy" target="_blank" class="btn btn-outline">Learn More</a>
+                        <a href="https://online.hbs.edu/blog/post/importance-of-financial-literacy" target="_blank" class="btn btn-outline">Learn More</a>
                     </div>
                 </div>
             </div>
