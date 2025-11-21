@@ -37,7 +37,7 @@
 .footer-branding {
     max-width: 100%;
     padding-right: 2rem;
-    text-align: center;
+    text-align: left;
 }
 
 .footer-logo {
@@ -49,6 +49,10 @@
     margin-bottom: 1.25rem;
     font-weight: 600;
     display: block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: fit-content;
 }
 
 .footer-description {
