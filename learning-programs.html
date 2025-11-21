@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Comprehensive Learning Programs - Financial Literacy, Digital Skills, and More">
+    <title>Learning Programs - NRIDL</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700;900&family=Montserrat:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/main.css?v=1.4">
+    <link rel="stylesheet" href="css/navigation.css?v=1.4">
+    <link rel="stylesheet" href="css/footer.css?v=1.4">
+    <link rel="stylesheet" href="css/home.css?v=1.4">
+    
+    <style>
+        .hero-section {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: clamp(4rem, 10vw, 8rem) 2rem;
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .hero-content h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            color: #ffffff;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+            letter-spacing: -0.02em;
+        }
+        
+        .hero-content p {
+            font-size: clamp(1.125rem, 2vw, 1.375rem);
+            color: #e0e0e0;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+        
+        .programs-overview-section {
+            background: #ffffff;
+            padding: clamp(4rem, 10vw, 8rem) 0;
+        }
+        
+        .section-intro {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 4rem;
+        }
+        
+        .section-intro h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: #1a1a1a;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+            letter-spacing: -0.02em;
+        }
+        
+        .section-intro p {
+            font-size: 1.125rem;
+            color: #666666;
+            line-height: 1.9;
+            font-weight: 300;
+        }
+        
+        .programs-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-bottom: 5rem;
+        }
+        
+        .category-card {
+            background: #f8f9fa;
+            padding: 3rem 2.5rem;
+            border-top: 4px solid #1a1a2e;
+            transition: all 0.3s ease;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        }
+        
+        .category-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+        
+        .category-icon span {
+            font-size: 2rem;
+            color: #ffffff;
+        }
+        
+        .category-card h3 {
+            font-size: 1.75rem;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+            font-weight: 400;
+            font-family: var(--font-primary);
+        }
+        
+        .category-card p {
+            font-size: 1rem;
+            color: #666666;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+        
+        .category-card .btn {
+            width: 100%;
+        }
+        
+        .coming-soon-section {
+            background: #f8f9fa;
+            padding: clamp(3rem, 6vw, 5rem) 0;
+            text-align: center;
+        }
+        
+        .coming-soon-section h2 {
+            font-size: clamp(1.75rem, 3vw, 2.5rem);
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
+        
+        .coming-soon-section p {
+            font-size: 1.125rem;
+            color: #666666;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        
+        @media (max-width: 768px) {
+            .programs-categories {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Learning Programs</h1>
+            <p>Empowering individuals and communities through accessible, world-class education</p>
+        </div>
+    </section>
+
+    <!-- Programs Overview Section -->
+    <section class="programs-overview-section">
+        <div class="container">
+            <div class="section-intro">
+                <h2>Explore Our Learning Pathways</h2>
+                <p>
+                    From early childhood literacy to advanced digital skills, our comprehensive learning programs are designed to meet learners where they are and guide them toward their goals. All programs are free and accessible to everyone.
+                </p>
+            </div>
+            
+            <div class="programs-categories">
+                <!-- StoryBee Library -->
+                <div class="category-card">
+                    <div class="category-icon">
+                        <span>📚</span>
+                    </div>
+                    <h3>StoryBee Library</h3>
+                    <p>
+                        Free digital picture books for children ages 3-12. Curriculum-aligned stories that make learning engaging, accessible, and fun. Over 1,000,000 pages read worldwide.
+                    </p>
+                    <a href="https://www.storybee.space" target="_blank" class="btn btn-outline">Visit StoryBee</a>
+                </div>
+                
+                <!-- Financial Literacy -->
+                <div class="category-card">
+                    <div class="category-icon">
+                        <span>💰</span>
+                    </div>
+                    <h3>Financial Literacy</h3>
+                    <p>
+                        Learn essential money management skills, from budgeting and saving to investing and entrepreneurship. Programs for teens, young adults, and business owners.
+                    </p>
+                    <a href="financial-literacy.html" class="btn btn-outline">Start Learning</a>
+                </div>
+                
+                <!-- Digital Literacy -->
+                <div class="category-card">
+                    <div class="category-icon">
+                        <span>💻</span>
+                    </div>
+                    <h3>Digital Literacy</h3>
+                    <p>
+                        Master essential digital skills for the modern world. From basic computer literacy to advanced online collaboration, cybersecurity, and digital citizenship.
+                    </p>
+                    <a href="digital-literacy.html" class="btn btn-outline">Access Courses</a>
+                </div>
+                
+                <!-- AI Literacy -->
+                <div class="category-card">
+                    <div class="category-icon">
+                        <span>🤖</span>
+                    </div>
+                    <h3>AI Literacy</h3>
+                    <p>
+                        Understand artificial intelligence and its impact on society. Learn how AI works, how to use AI tools responsibly, and how to think critically about AI ethics.
+                    </p>
+                    <a href="ai-literacy.html" class="btn btn-outline">Explore AI</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coming Soon Section -->
+    <section class="coming-soon-section">
+        <div class="container">
+            <h2>More Programs Coming Soon</h2>
+            <p>
+                We're constantly developing new learning programs to meet the evolving needs of our communities. Stay tuned for courses on entrepreneurship, creative skills, environmental literacy, and more.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer will be injected by footer.js -->
+
+    <!-- Scripts -->
+    <script src="js/navigation.js?v=1.6"></script>
+    <script src="js/footer.js?v=1.6"></script>
+    <script src="js/common.js?v=1.6"></script>
+</body>
+</html>
