@@ -27,7 +27,6 @@ class Footer {
                             <li><a href="learning-programs.html" class="footer-link">Learning Programs</a></li>
                             <li><a href="https://www.storybee.space" class="footer-link" target="_blank" rel="noopener noreferrer">StoryBee Library</a></li>
                             <li><a href="#" class="footer-link">AI Solutions</a></li>
-                            <li><a href="#" class="footer-link">Research</a></li>
                         </ul>
                     </div>
                     
