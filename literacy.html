@@ -10,19 +10,74 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700;900&family=Montserrat:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/navigation.css?v=1.2">
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/main.css?v=1.4">
+    <link rel="stylesheet" href="css/navigation.css?v=1.4">
+    <link rel="stylesheet" href="css/footer.css?v=1.4">
+    <link rel="stylesheet" href="css/home.css?v=1.4">
+    <style>
+        #literacy-tree-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            background: #000;
+        }
+        
+        /* Mobile responsive adjustments matching index page */
+        @media (max-width: 768px) {
+            section.hero-section {
+                height: 85vh !important;
+                min-height: 600px !important;
+                align-items: flex-end !important;
+                display: flex !important;
+                padding-top: 0 !important;
+                padding-bottom: 0 !important;
+                justify-content: flex-start !important;
+                flex-direction: column !important;
+            }
+            
+            section.hero-section .hero-content {
+                padding: 0 1.5rem !important;
+                margin-bottom: 1rem !important;
+                text-align: left !important;
+                max-width: 100% !important;
+                order: 0 !important;
+            }
+            
+            section.hero-section .hero-title {
+                font-size: clamp(1.25rem, 6vw, 2rem) !important;
+                margin-bottom: 0.75rem !important;
+                text-align: left !important;
+                line-height: 1.2 !important;
+            }
+            
+            section.hero-section .hero-subtitle {
+                font-size: clamp(0.75rem, 3vw, 0.9rem) !important;
+                margin-bottom: 1rem !important;
+                line-height: 1.5 !important;
+                margin-top: 0 !important;
+                text-align: left !important;
+            }
+            
+            section.hero-section .title-line {
+                display: block !important;
+            }
+        }
+    </style>
 </head>
 <body>
-    <section class="hero-section" style="height: 70vh;">
+    <section class="hero-section">
+        <div id="literacy-tree-container"></div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1 class="hero-title">Literacy Programs</h1>
+            <h1 class="hero-title">
+                <span class="title-line">Building Essential Skills</span>
+                <span class="title-line">for a Brighter Future</span>
+            </h1>
             <p class="hero-subtitle">
-                Democratizing Learning: We bridge the opportunity gap by providing accessible, high-quality 
-                literacy tools and resources to millions of children and adults worldwide.
+                Watch knowledge grow like a tree: <span class="subtitle-break"></span>From core literacy to advanced skills, illuminate pathways to learning, opportunity, and empowerment for all.
             </p>
         </div>
     </section>
@@ -63,8 +118,9 @@
         </div>
     </section>
 
-    <script src="js/navigation.js?v=1.2"></script>
-    <script src="js/footer.js"></script>
-    <script src="js/common.js"></script>
+    <script src="js/navigation.js?v=1.6"></script>
+    <script src="js/footer.js?v=1.6"></script>
+    <script src="js/common.js?v=1.6"></script>
+    <script type="module" src="js/literacy-tree.js?v=2.2"></script>
 </body>
 </html>
