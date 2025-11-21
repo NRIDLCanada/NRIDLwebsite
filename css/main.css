@@ -71,6 +71,11 @@ body {
     padding-top: 90px;
 }
 
+/* Global Hero Section Fix - Remove white gap with fixed navigation */
+.hero-section {
+    margin-top: -90px;
+}
+
 /* Typography - Professional and Elegant */
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);

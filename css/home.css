@@ -10,7 +10,6 @@
     justify-content: flex-start; /* Align content to left */
     overflow: hidden;
     background-color: #000; /* Fallback */
-    margin-top: -90px; /* Offset body padding to start at viewport top */
 }
 
 #canvas-container {
