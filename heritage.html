@@ -10,70 +10,301 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700;900&family=Montserrat:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/navigation.css?v=1.2">
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/main.css?v=1.4">
+    <link rel="stylesheet" href="css/navigation.css?v=1.4">
+    <link rel="stylesheet" href="css/footer.css?v=1.4">
+    <link rel="stylesheet" href="css/home.css?v=1.4">
+    <link rel="stylesheet" href="css/literacy.css">
+    <style>
+        /* Desktop styles - matching literacy page */
+        .hero-section {
+            height: 100vh !important;
+            min-height: 700px !important;
+            background-image: url('image assets/heritage2.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        .hero-overlay {
+            background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.7) 100%);
+        }
+        
+        .hero-content {
+            text-align: left !important;
+        }
+        
+        .hero-title {
+            font-size: clamp(1rem, 2.5vw, 2rem) !important;
+            text-align: left !important;
+        }
+        
+        .hero-subtitle {
+            font-size: clamp(0.8rem, 1.6vw, 1rem) !important;
+            text-align: left !important;
+        }
+        
+        /* Mobile responsive adjustments */
+        @media (max-width: 768px) {
+            .hero-section {
+                min-height: 100vh !important;
+                align-items: center !important;
+                justify-content: center !important;
+                padding: 2rem 1.5rem !important;
+            }
+            
+            .hero-content {
+                text-align: center !important;
+                padding: 0 !important;
+                max-width: 100% !important;
+            }
+            
+            .hero-title {
+                font-size: clamp(1.5rem, 5vw, 2.5rem) !important;
+                margin-bottom: 1rem !important;
+                text-align: center !important;
+            }
+            
+            .hero-subtitle {
+                font-size: clamp(0.71rem, 2.63vw, 0.825rem) !important;
+                line-height: 1.6 !important;
+                margin: 0 auto 1rem !important;
+                text-align: center !important;
+            }
+            
+            .title-line {
+                display: block !important;
+            }
+        }
+        
+        /* Button alignment styles */
+        .btn-container {
+            text-align: left;
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .btn-container {
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 <body>
-    <section class="hero-section" style="height: 70vh;">
+    <section class="hero-section">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1 class="hero-title">Cultural Heritage</h1>
+            <h1 class="hero-title">
+                <span class="title-line">Preserving Cultural Heritage</span>
+                <span class="title-line">for Future Generations</span>
+            </h1>
             <p class="hero-subtitle">
-                Preserving Knowledge: We protect and share the invaluable wisdom of Indigenous peoples 
-                and cultural communities for future generations.
+                Honoring the wisdom, stories, and traditions of Indigenous peoples and cultural communities—safeguarding our collective identity and shared humanity.
             </p>
         </div>
     </section>
 
-    <section style="padding: var(--spacing-xl) 0;">
-        <div class="container-narrow">
-            <div class="reveal">
-                <h2 style="text-align: center; margin-bottom: var(--spacing-lg);">Our Solution: We Preserve and Share Knowledge</h2>
-                
-                <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: var(--spacing-md);">
-                    Invaluable human knowledge, especially the histories and wisdom of Indigenous peoples, is at risk of 
-                    being lost forever. When a culture's story is erased, we all lose a part of our collective identity. 
-                    NRIDL is committed to preserving and democratizing access to this irreplaceable heritage.
-                </p>
-                
-                <div style="background-color: var(--bg-secondary); padding: var(--spacing-lg); border-radius: var(--radius-lg); margin: var(--spacing-lg) 0;">
-                    <h3 style="color: var(--accent-color); margin-bottom: var(--spacing-md);">Our Commitment</h3>
-                    <ul style="list-style: none; padding: 0;">
-                        <li style="padding: var(--spacing-sm) 0; border-bottom: 1px solid var(--border-color);">
-                            <strong>🏛️ Digital Preservation:</strong> Safeguarding cultural knowledge through digital archiving
-                        </li>
-                        <li style="padding: var(--spacing-sm) 0; border-bottom: 1px solid var(--border-color);">
-                            <strong>🗣️ Indigenous Language Programs:</strong> Supporting the preservation of endangered languages
-                        </li>
-                        <li style="padding: var(--spacing-sm) 0; border-bottom: 1px solid var(--border-color);">
-                            <strong>📜 Story Collection & Documentation:</strong> Recording oral histories and traditional knowledge
-                        </li>
-                        <li style="padding: var(--spacing-sm) 0;">
-                            <strong>🤝 Community Partnerships:</strong> Working directly with cultural communities to honor their heritage
-                        </li>
-                    </ul>
-                </div>
-                
-                <div style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%); color: white; padding: var(--spacing-lg); border-radius: var(--radius-lg); margin: var(--spacing-lg) 0;">
-                    <h3 style="color: white; margin-bottom: var(--spacing-sm); text-align: center;">Honoring Our Collective Identity</h3>
-                    <p style="color: rgba(255, 255, 255, 0.95); text-align: center; font-size: 1.0625rem; line-height: 1.7;">
-                        When we preserve cultural heritage, we preserve the wisdom, resilience, and innovations of generations 
-                        past. This knowledge enriches our present and illuminates paths forward for a more inclusive, 
-                        understanding, and connected world.
+    </section>
+
+    <!-- Our Works and Impact Section -->
+    <section id="our-works-impact" class="what-we-do-section">
+        <div id="heritage-strategic-canvas-container"></div>
+        <div class="container">
+            <div class="strategic-content">
+                <div class="section-header reveal">
+                    <h2 class="section-title">Our Works and Impact</h2>
+                    <div class="title-divider"></div>
+                    <p class="section-intro">
+                        Honoring the Past. Enriching the Present. At NRIDL, we believe that cultural heritage is not static—it 
+                        lives, breathes, and evolves. Our work ensures that the wisdom of generations past informs and inspires 
+                        the future.
                     </p>
                 </div>
-                
-                <p style="text-align: center; margin-top: var(--spacing-lg);">
-                    <a href="index.html#mission" class="btn btn-primary">Learn About Our Mission</a>
-                </p>
+
+                <!-- Interactive Strategic Tabs -->
+                <div class="strategic-tabs reveal">
+                    <button class="strategic-tab active" data-tab="0">
+                        <span class="tab-number">01</span>
+                        <span class="tab-title">Digital Preservation</span>
+                    </button>
+                    <button class="strategic-tab" data-tab="1">
+                        <span class="tab-number">02</span>
+                        <span class="tab-title">Indigenous Languages</span>
+                    </button>
+                    <button class="strategic-tab" data-tab="2">
+                        <span class="tab-number">03</span>
+                        <span class="tab-title">Oral Histories</span>
+                    </button>
+                </div>
+
+                <!-- Strategic Content Cards -->
+                <div class="strategic-content-container reveal">
+                    <!-- Card 1: Digital Preservation -->
+                    <div class="strategic-content-card active">
+                        <h3>Digital Preservation: Safeguarding Cultural Knowledge</h3>
+                        <div class="card-content">
+                            <p>
+                                Cultural artifacts, documents, and knowledge systems are fragile. Natural disasters, conflict, 
+                                and time threaten irreplaceable heritage. Our digital preservation initiatives use cutting-edge 
+                                technology to create permanent, accessible archives that protect cultural knowledge for future 
+                                generations while respecting community ownership and cultural protocols.
+                            </p>
+                            <div class="highlights-container">
+                                <div class="content-highlight">
+                                    <h4>Community-Led Digitization</h4>
+                                    <p>
+                                        We partner with cultural communities to digitize artifacts, documents, photographs, and cultural 
+                                        materials. Communities maintain control over their heritage, deciding what is shared, how it's 
+                                        presented, and who has access—honoring traditional knowledge protocols and intellectual property rights.
+                                    </p>
+                                </div>
+                                <div class="content-highlight">
+                                    <h4>Long-Term Digital Stewardship</h4>
+                                    <p>
+                                        Digital preservation requires ongoing maintenance, format migration, and technological updating. 
+                                        We provide sustainable infrastructure ensuring cultural archives remain accessible and secure 
+                                        across decades, protecting heritage from technological obsolescence.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="why-box">
+                                <strong>Why we do this</strong>
+                                <p>
+                                    When cultural heritage is lost, humanity loses irreplaceable wisdom, art, and perspectives that 
+                                    enrich our understanding of what it means to be human. Digital preservation democratizes access 
+                                    while protecting originals, ensuring future generations inherit the full diversity of human experience.
+                                </p>
+                            </div>
+                            <div class="btn-container">
+                                <a href="digital-preservation.html" class="btn btn-outline">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Indigenous Languages -->
+                    <div class="strategic-content-card">
+                        <h3>Indigenous Language Programs: Revitalizing Living Languages</h3>
+                        <div class="card-content">
+                            <p>
+                                Language carries culture, worldview, and knowledge systems. When a language disappears, humanity 
+                                loses unique ways of understanding reality. Our Indigenous language programs support revitalization 
+                                efforts, create learning resources, and empower communities to pass languages to new generations.
+                            </p>
+                            <div class="highlights-container">
+                                <div class="content-highlight">
+                                    <h4>Language Learning Resources</h4>
+                                    <p>
+                                        We develop accessible digital tools—audio recordings, interactive lessons, picture books, and 
+                                        apps—that support Indigenous language learning. Resources are created with community elders and 
+                                        language keepers, ensuring authentic pronunciation, grammar, and cultural context.
+                                    </p>
+                                </div>
+                                <div class="content-highlight">
+                                    <h4>Community-Driven Revitalization</h4>
+                                    <p>
+                                        Language revitalization succeeds when communities lead. We provide technical support, training, 
+                                        and resources while communities determine priorities, pedagogical approaches, and cultural protocols. 
+                                        Youth are trained as language teachers, creating intergenerational transmission.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="why-box">
+                                <strong>Why we do this</strong>
+                                <p>
+                                    Every two weeks, a language dies. With it disappears unique knowledge about ecology, medicine, 
+                                    philosophy, and human relationships. Supporting Indigenous language revitalization preserves 
+                                    irreplaceable wisdom while empowering communities to reclaim cultural identity and self-determination.
+                                </p>
+                            </div>
+                            <div class="btn-container">
+                                <a href="indigenous-languages.html" class="btn btn-outline">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Oral Histories -->
+                    <div class="strategic-content-card">
+                        <h3>Oral Histories: Recording Living Memory and Traditional Knowledge</h3>
+                        <div class="card-content">
+                            <p>
+                                Oral traditions carry knowledge, history, and wisdom passed through generations. Our oral history 
+                                programs respectfully record elders' stories, traditional knowledge, and lived experiences, creating 
+                                permanent records that honor storytellers while making wisdom accessible to future generations.
+                            </p>
+                            <div class="highlights-container">
+                                <div class="content-highlight">
+                                    <h4>Culturally Sensitive Documentation</h4>
+                                    <p>
+                                        We train community members in ethical oral history practices—informed consent, cultural protocols, 
+                                        and respectful interviewing. Communities control recordings, deciding what's public and what remains 
+                                        restricted, honoring sacred knowledge and traditional governance structures.
+                                    </p>
+                                </div>
+                                <div class="content-highlight">
+                                    <h4>Intergenerational Knowledge Transfer</h4>
+                                    <p>
+                                        Oral history projects connect elders with youth, facilitating knowledge transmission while building 
+                                        community bonds. Young people learn interviewing, audio editing, and archiving skills while gaining 
+                                        deep appreciation for their cultural heritage and identity.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="why-box">
+                                <strong>Why we do this</strong>
+                                <p>
+                                    Elders carry irreplaceable knowledge—historical events, traditional practices, ecological wisdom, 
+                                    and cultural values. Recording oral histories before knowledge is lost preserves community memory, 
+                                    strengthens cultural identity, and provides educational resources for generations to come.
+                                </p>
+                            </div>
+                            <div class="btn-container">
+                                <a href="oral-histories.html" class="btn btn-outline">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Looking Toward 2030 -->
+                <div class="timeline-section reveal">
+                    <div class="timeline-content">
+                        <h3>Looking Toward 2030: Honoring Heritage, Empowering Communities</h3>
+                        <p>
+                            By 2030, NRIDL will have established comprehensive cultural heritage programs that respect community 
+                            sovereignty, preserve irreplaceable knowledge, and empower Indigenous peoples and cultural communities 
+                            to share their stories on their own terms.
+                        </p>
+                        <ul>
+                            <li><strong>Community Sovereignty:</strong> All heritage projects are led by cultural communities themselves, with NRIDL providing technical support, training, and infrastructure while communities maintain ownership, control, and decision-making authority over their cultural materials.</li>
+                            <li><strong>Local Employment & Capacity Building:</strong> We train community members—particularly youth—in digital archiving, language documentation, oral history recording, and heritage management, creating local jobs while building sustainable community capacity for ongoing heritage work.</li>
+                            <li><strong>Accessible Cultural Archives:</strong> Digital archives make cultural knowledge accessible to community members worldwide while respecting access restrictions and cultural protocols, enabling diaspora communities to connect with heritage and youth to learn traditional knowledge.</li>
+                            <li><strong>Intergenerational Knowledge Transmission:</strong> Our programs facilitate knowledge transfer from elders to youth, strengthening cultural identity, community bonds, and traditional governance structures while ensuring wisdom is passed forward authentically.</li>
+                        </ul>
+                        <div class="timeline-footer">
+                            <p>
+                                Through respectful partnerships, we help preserve what makes each culture unique while celebrating our 
+                                shared humanity. By 2030, thousands of cultural artifacts, hours of oral histories, and endangered 
+                                languages will be preserved through community-led initiatives that honor tradition while embracing 
+                                technology's potential.
+                            </p>
+                            <p>
+                                Our work proves that cultural preservation and technological innovation can coexist when communities 
+                                lead, cultural protocols are respected, and technology serves cultural sovereignty rather than 
+                                appropriation or extraction.
+                            </p>
+                            <p><strong>Together, we're ensuring that future generations inherit the full richness of human cultural diversity—a gift that enriches us all.</strong></p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <script src="js/navigation.js?v=1.2"></script>
-    <script src="js/footer.js"></script>
-    <script src="js/common.js"></script>
+    <!-- Footer will be injected by footer.js -->
+
+    <!-- Scripts -->
+    <script src="js/navigation.js?v=1.6"></script>
+    <script src="js/footer.js?v=1.6"></script>
+    <script src="js/common.js?v=1.6"></script>
+    <script type="module" src="js/heritage-strategic.js"></script>
 </body>
 </html>
