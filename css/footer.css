@@ -190,23 +190,92 @@
 
 /* Responsive Footer */
 @media (max-width: 768px) {
+    .main-footer {
+        padding: 3rem 0 2rem;
+        margin-top: 4rem;
+    }
+    
+    .footer-container {
+        padding: 0 1.5rem;
+    }
+    
     .footer-content {
         grid-template-columns: 1fr;
-        gap: var(--spacing-md);
+        gap: 2rem;
+        padding-bottom: 2rem;
     }
     
     .footer-branding {
         max-width: 100%;
+        text-align: center;
     }
     
-    .footer-policies {
-        flex-direction: column;
+    .footer-logo {
+        font-size: 1.75rem;
+        margin-bottom: 1rem;
+    }
+    
+    .footer-description {
+        font-size: 0.9375rem;
+        line-height: 1.7;
+        margin-bottom: 1.25rem;
+    }
+    
+    .footer-mission {
+        font-size: 0.8125rem;
+        padding-left: 1rem;
+        margin: 0 auto;
+        max-width: 90%;
+    }
+    
+    .footer-section {
+        text-align: center;
+    }
+    
+    .footer-section-title {
+        font-size: 0.8125rem;
+        margin-bottom: 1rem;
+    }
+    
+    .footer-links {
         gap: 0.75rem;
         align-items: center;
     }
     
+    .footer-link {
+        font-size: 0.9375rem;
+    }
+    
+    .footer-link::before {
+        display: none;
+    }
+    
+    .footer-link:hover {
+        transform: translateX(0);
+    }
+    
     .footer-bottom {
-        text-align: center;
+        padding-top: 1.5rem;
+        gap: 1rem;
+    }
+    
+    .footer-policies {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem 1rem;
+        justify-items: center;
+        margin-bottom: 0.75rem;
+    }
+    
+    .footer-policy-link {
+        font-size: 0.6875rem;
+        letter-spacing: 0.05em;
+    }
+    
+    .footer-copyright {
+        font-size: 0.75rem;
+        line-height: 1.5;
+        padding: 0 1rem;
     }
     
     .footer-social {
@@ -215,7 +284,49 @@
 }
 
 @media (max-width: 480px) {
+    .main-footer {
+        padding: 2.5rem 0 1.5rem;
+    }
+    
+    .footer-content {
+        gap: 1.5rem;
+        padding-bottom: 1.5rem;
+    }
+    
+    .footer-logo {
+        font-size: 1.5rem;
+    }
+    
+    .footer-description {
+        font-size: 0.875rem;
+    }
+    
+    .footer-mission {
+        font-size: 0.75rem;
+        padding-left: 0.75rem;
+    }
+    
+    .footer-section-title {
+        font-size: 0.75rem;
+    }
+    
+    .footer-links {
+        gap: 0.625rem;
+    }
+    
+    .footer-link {
+        font-size: 0.875rem;
+    }
+    
+    .footer-policies {
+        gap: 0.375rem 0.75rem;
+    }
+    
     .footer-policy-link {
+        font-size: 0.625rem;
+    }
+    
+    .footer-copyright {
         font-size: 0.6875rem;
     }
 }
