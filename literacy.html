@@ -14,7 +14,14 @@
     <link rel="stylesheet" href="css/navigation.css?v=1.4">
     <link rel="stylesheet" href="css/footer.css?v=1.4">
     <link rel="stylesheet" href="css/home.css?v=1.4">
+    <link rel="stylesheet" href="css/literacy.css">
     <style>
+        /* Desktop styles - matching index page */
+        .hero-section {
+            height: 100vh !important;
+            min-height: 700px !important;
+        }
+        
         #literacy-tree-container {
             position: absolute;
             top: 0;
@@ -25,43 +32,60 @@
             background: #000;
         }
         
+        .hero-content {
+            text-align: left !important;
+        }
+        
+        .hero-title {
+            font-size: clamp(1rem, 2.5vw, 2rem) !important;
+            text-align: left !important;
+        }
+        
+        .hero-subtitle {
+            font-size: clamp(0.8rem, 1.6vw, 1rem) !important;
+            text-align: left !important;
+        }
+        
         /* Mobile responsive adjustments matching index page */
         @media (max-width: 768px) {
-            section.hero-section {
-                height: 85vh !important;
-                min-height: 600px !important;
-                align-items: flex-end !important;
-                display: flex !important;
-                padding-top: 0 !important;
-                padding-bottom: 0 !important;
+            .hero-section {
+                min-height: 100vh !important;
+                align-items: center !important;
                 justify-content: flex-start !important;
+                padding-top: 15vh !important;
+                padding-bottom: 2rem !important;
                 flex-direction: column !important;
             }
             
-            section.hero-section .hero-content {
+            #literacy-tree-container {
+                position: relative !important;
+                height: 45vh !important;
+                width: 100% !important;
+                order: 1 !important;
+            }
+            
+            .hero-content {
+                text-align: center !important;
                 padding: 0 1.5rem !important;
-                margin-bottom: 1rem !important;
-                text-align: left !important;
+                margin-bottom: 2rem !important;
                 max-width: 100% !important;
-                order: 0 !important;
+                order: 2 !important;
             }
             
-            section.hero-section .hero-title {
-                font-size: clamp(1.25rem, 6vw, 2rem) !important;
-                margin-bottom: 0.75rem !important;
-                text-align: left !important;
-                line-height: 1.2 !important;
-            }
-            
-            section.hero-section .hero-subtitle {
-                font-size: clamp(0.75rem, 3vw, 0.9rem) !important;
+            .hero-title {
+                font-size: clamp(1.5rem, 5vw, 2.5rem) !important;
                 margin-bottom: 1rem !important;
-                line-height: 1.5 !important;
-                margin-top: 0 !important;
-                text-align: left !important;
+                text-align: center !important;
             }
             
-            section.hero-section .title-line {
+            .hero-subtitle {
+                font-size: clamp(0.71rem, 2.63vw, 0.825rem) !important;
+                line-height: 1.6 !important;
+                margin: 0 auto 1rem !important;
+                text-align: center !important;
+            }
+            
+            .title-line {
                 display: block !important;
             }
         }
@@ -82,45 +106,241 @@
         </div>
     </section>
 
-    <section style="padding: var(--spacing-xl) 0;">
-        <div class="container-narrow">
-            <div class="reveal">
-                <h2 style="text-align: center; margin-bottom: var(--spacing-lg);">Our Solution: We Democratize Learning</h2>
-                
-                <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: var(--spacing-md);">
-                    Millions of children lack access to basic literacy tools, while young adults are unprepared for the 
-                    jobs of the future. Potential is being wasted, and economic inequality is growing. At NRIDL, we're 
-                    changing this through innovative, accessible learning solutions.
-                </p>
-                
-                <div style="background-color: var(--bg-secondary); padding: var(--spacing-lg); border-radius: var(--radius-lg); margin: var(--spacing-lg) 0;">
-                    <h3 style="color: var(--accent-color); margin-bottom: var(--spacing-md);">Key Initiatives</h3>
-                    <ul style="list-style: none; padding: 0;">
-                        <li style="padding: var(--spacing-sm) 0; border-bottom: 1px solid var(--border-color);">
-                            <strong>📚 StoryBee Library:</strong> Open-access digital library of children's picture books
-                        </li>
-                        <li style="padding: var(--spacing-sm) 0; border-bottom: 1px solid var(--border-color);">
-                            <strong>💻 Digital Literacy Courses:</strong> Free courses covering essential digital skills
-                        </li>
-                        <li style="padding: var(--spacing-sm) 0; border-bottom: 1px solid var(--border-color);">
-                            <strong>📖 Financial Literacy Programs:</strong> Empowering communities with financial knowledge
-                        </li>
-                        <li style="padding: var(--spacing-sm) 0;">
-                            <strong>🤖 AI Literacy Education:</strong> Making AI accessible and understandable for all
-                        </li>
-                    </ul>
+    <!-- Our Works and Impact Section -->
+    <section id="our-works-impact" class="what-we-do-section">
+        <div id="literacy-strategic-canvas-container"></div>
+        <div class="container">
+            <div class="strategic-content">
+                <div class="section-header reveal">
+                    <h2 class="section-title">Our Works and Impact</h2>
+                    <div class="title-divider"></div>
+                    <p class="section-intro">
+                        Cultivating Minds. Strengthening Communities. At NRIDL, we believe that every question asked 
+                        and every mind engaged is a step toward collective transformation.
+                    </p>
                 </div>
-                
-                <p style="text-align: center; margin-top: var(--spacing-lg);">
-                    <a href="index.html#what-we-do" class="btn btn-primary">Learn More About Our Programs</a>
-                </p>
+
+                <!-- Interactive Strategic Tabs -->
+                <div class="strategic-tabs reveal">
+                    <button class="strategic-tab active" data-tab="0">
+                        <span class="tab-number">01</span>
+                        <span class="tab-title">StoryBee Library</span>
+                    </button>
+                    <button class="strategic-tab" data-tab="1">
+                        <span class="tab-number">02</span>
+                        <span class="tab-title">Financial Literacy</span>
+                    </button>
+                    <button class="strategic-tab" data-tab="2">
+                        <span class="tab-number">03</span>
+                        <span class="tab-title">Digital Literacy</span>
+                    </button>
+                    <button class="strategic-tab" data-tab="3">
+                        <span class="tab-number">04</span>
+                        <span class="tab-title">AI Literacy</span>
+                    </button>
+                </div>
+
+                <!-- Strategic Content Cards -->
+                <div class="strategic-content-container reveal">
+                    <!-- Card 1: StoryBee Library -->
+                    <div class="strategic-content-card active">
+                        <h3>StoryBee.Space Library: Open-Access Digital Picture Books</h3>
+                        <div class="card-content">
+                            <p>
+                                StoryBee is a digital platform offering free children's picture books aligned with educational curricula. 
+                                By combining storytelling with visuals, we help children grasp and remember complex concepts while making 
+                                learning accessible, engaging, and fun. Our books are curriculum-aligned, covering diverse subjects and 
+                                cultural themes that reflect the world's rich tapestry of knowledge.
+                            </p>
+                            <div class="highlights-container">
+                                <div class="content-highlight">
+                                    <h4>Global Accessibility & Impact</h4>
+                                    <p>
+                                        Accessible worldwide, StoryBee has achieved over 1,000,000 aggregated reading minutes since inception. 
+                                        Our books align with AP and IB educational standards, supporting academic excellence while closing 
+                                        educational gaps for underserved communities.
+                                    </p>
+                                </div>
+                                <div class="content-highlight">
+                                    <h4>Evidence-Based Learning</h4>
+                                    <p>
+                                        Through dual coding theory, our picture books activate multiple brain areas, improving comprehension 
+                                        and retention. Visual engagement, simplified content, and storytelling create emotional connections 
+                                        that make facts memorable and inspire lifelong learning.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="why-box">
+                                <strong>Why we do this</strong>
+                                <p>
+                                    Digital books reduce environmental impact while ensuring every child, regardless of background, has 
+                                    access to quality educational materials. We're building a sustainable, eco-friendly educational solution 
+                                    that reaches learners globally.
+                                </p>
+                            </div>
+                            <p style="text-align: center; margin-top: 2rem;">
+                                <a href="https://www.storybee.space" target="_blank" class="btn btn-outline">Visit StoryBee.Space</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Financial Literacy -->
+                    <div class="strategic-content-card">
+                        <h3>Financial Literacy Programs: Building Economic Confidence</h3>
+                        <div class="card-content">
+                            <p>
+                                Financial literacy is essential for personal empowerment and community prosperity. Our programs teach 
+                                fundamental money management skills, from budgeting and saving to understanding credit, investing, and 
+                                entrepreneurship. We make complex financial concepts accessible to learners of all ages and backgrounds.
+                            </p>
+                            <div class="highlights-container">
+                                <div class="content-highlight">
+                                    <h4>Practical Life Skills</h4>
+                                    <p>
+                                        Our curriculum covers real-world financial scenarios including household budgeting, debt management, 
+                                        retirement planning, and smart consumer decisions. We empower individuals to make informed financial 
+                                        choices that support long-term stability and growth.
+                                    </p>
+                                </div>
+                                <div class="content-highlight">
+                                    <h4>Breaking Barriers</h4>
+                                    <p>
+                                        Financial literacy is often gatekept by socioeconomic status. We democratize this knowledge, ensuring 
+                                        that underserved communities gain the tools to build wealth, start businesses, and achieve financial 
+                                        independence.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="why-box">
+                                <strong>Why we do this</strong>
+                                <p>
+                                    Financially literate communities are economically resilient communities. By equipping individuals with 
+                                    money management skills, we contribute to reduced poverty, increased entrepreneurship, and stronger 
+                                    local economies.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Digital Literacy -->
+                    <div class="strategic-content-card">
+                        <h3>Digital Literacy Courses: Essential Skills for the Modern World</h3>
+                        <div class="card-content">
+                            <p>
+                                In today's digital-first world, digital literacy is no longer optional—it's essential. Our free courses 
+                                cover fundamental digital skills including internet navigation, online safety, digital communication, 
+                                productivity tools, and critical evaluation of online information. We bridge the digital divide by ensuring 
+                                everyone can participate confidently in the digital economy.
+                            </p>
+                            <div class="highlights-container">
+                                <div class="content-highlight">
+                                    <h4>Comprehensive Skill Development</h4>
+                                    <p>
+                                        From basic computer skills to advanced topics like cybersecurity, data privacy, and digital collaboration 
+                                        tools, our courses prepare learners for education, employment, and everyday life in the digital age.
+                                    </p>
+                                </div>
+                                <div class="content-highlight">
+                                    <h4>Inclusive Learning Pathways</h4>
+                                    <p>
+                                        We design courses for diverse learners—seniors discovering technology, job seekers upgrading skills, 
+                                        students preparing for digital careers, and anyone seeking to navigate the online world with confidence 
+                                        and competence.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="why-box">
+                                <strong>Why we do this</strong>
+                                <p>
+                                    Digital literacy opens doors to employment, education, healthcare, and civic participation. By providing 
+                                    free digital skills training, we ensure no one is left behind as society becomes increasingly digitized.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: AI Literacy -->
+                    <div class="strategic-content-card">
+                        <h3>AI Literacy Education: Demystifying Artificial Intelligence</h3>
+                        <div class="card-content">
+                            <p>
+                                Artificial Intelligence is reshaping every aspect of modern life, yet remains mysterious to many. Our AI 
+                                literacy programs make AI accessible and understandable for all, teaching not just how to use AI tools, 
+                                but how to think critically about AI's capabilities, limitations, and ethical implications. We prepare 
+                                learners to be informed participants in an AI-driven future.
+                            </p>
+                            <div class="highlights-container">
+                                <div class="content-highlight">
+                                    <h4>Understanding AI Fundamentals</h4>
+                                    <p>
+                                        Our curriculum demystifies machine learning, neural networks, and AI applications in everyday life. 
+                                        We teach learners how AI works, where it's being used, and how to evaluate AI-generated content 
+                                        with a critical eye.
+                                    </p>
+                                </div>
+                                <div class="content-highlight">
+                                    <h4>Ethical AI Citizenship</h4>
+                                    <p>
+                                        Beyond technical understanding, we explore AI ethics, bias, privacy concerns, and societal impact. 
+                                        Our Responsible AI Policy ensures learners understand both AI's promise and its risks, fostering 
+                                        thoughtful, ethical engagement with AI technology.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="why-box">
+                                <strong>Why we do this</strong>
+                                <p>
+                                    AI literacy is the new digital literacy. By empowering communities to understand and engage with AI 
+                                    responsibly, we prevent the creation of a two-tier society of AI insiders and outsiders, ensuring 
+                                    equitable participation in the AI economy.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Looking Toward 2030 -->
+                <div class="timeline-section reveal">
+                    <div class="timeline-content">
+                        <h3>Looking Toward 2030: Empowering Communities, Amplifying Local Talent</h3>
+                        <p>
+                            By 2030, NRIDL will have transformed literacy education through our four major initiatives: StoryBee.Space 
+                            Library, Financial Literacy Programs, Digital Literacy Courses, and AI Literacy Education. Our impact 
+                            extends beyond content creation—we are building sustainable ecosystems where communities thrive and local 
+                            talent shines on the global stage.
+                        </p>
+                        <ul>
+                            <li><strong>Community-Centered Teaching:</strong> We launch regular local and virtual teaching programs, nurturing communities through accessible, culturally relevant education that addresses real needs and builds collective knowledge.</li>
+                            <li><strong>Local Economic Growth:</strong> We prioritize hiring local Canadian creative professionals and youth—illustrators, writers, editors, designers—providing meaningful employment that boosts local economies while creating world-class educational content.</li>
+                            <li><strong>Global Showcasing of Local Talent:</strong> Our platforms professionally promote and showcase the work of Canadian creators at international and global scales, opening doors to opportunities and recognition they might not otherwise access.</li>
+                            <li><strong>Diverse & Equal Opportunity Hiring:</strong> We are committed to diverse hiring practices that reflect Canada's multicultural fabric, ensuring equal opportunities for underrepresented groups, youth, and emerging professionals to contribute their unique perspectives and skills.</li>
+                        </ul>
+                        <div class="timeline-footer">
+                            <p>
+                                Through local hiring, we create jobs, develop professional portfolios, and invest directly in community 
+                                prosperity. By 2030, hundreds of Canadian youth and creative professionals will have gained valuable 
+                                experience, built international reputations, and contributed to both local GDP growth and global education.
+                            </p>
+                            <p>
+                                Our model proves that education, employment, and economic development are inseparable. When we invest in 
+                                literacy programs, we simultaneously invest in local talent, community resilience, and equitable access to 
+                                opportunity.
+                            </p>
+                            <p><strong>Together, we're not just teaching literacy—we're building thriving communities where local talent fuels global impact, and where learning truly empowers everyone to succeed.</strong></p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- Footer will be injected by footer.js -->
+
+    <!-- Scripts -->
     <script src="js/navigation.js?v=1.6"></script>
     <script src="js/footer.js?v=1.6"></script>
     <script src="js/common.js?v=1.6"></script>
     <script type="module" src="js/literacy-tree.js?v=2.2"></script>
+    <script type="module" src="js/literacy-strategic.js"></script>
 </body>
 </html>

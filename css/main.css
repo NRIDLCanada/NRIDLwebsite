@@ -241,6 +241,20 @@ section {
     transform: translateY(-2px);
 }
 
+.btn-outline {
+    background-color: transparent;
+    color: var(--text-primary);
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.btn-outline:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    border-color: rgba(0, 0, 0, 0.4);
+    color: var(--text-primary);
+    transform: translateY(-2px);
+}
+
 .btn-large {
     padding: 1.375rem 3rem;
     font-size: 0.9375rem;
