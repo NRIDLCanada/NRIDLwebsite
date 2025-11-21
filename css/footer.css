@@ -215,11 +215,16 @@
     
     .footer-branding {
         max-width: 100%;
+        text-align: center;
     }
     
     .footer-logo {
         font-size: 1.75rem;
         margin-bottom: 1rem;
+        position: static;
+        left: auto;
+        transform: none;
+        width: auto;
     }
     
     .footer-description {
