@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Digital Literacy Courses - NRIDL">
+    <meta name="description" content="Digital Literacy Programs - Building Essential Skills for the Digital Age">
     <title>Digital Literacy - NRIDL</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,44 +13,817 @@
     <link rel="stylesheet" href="css/main.css?v=1.4">
     <link rel="stylesheet" href="css/navigation.css?v=1.4">
     <link rel="stylesheet" href="css/footer.css?v=1.4">
+    <link rel="stylesheet" href="css/home.css?v=1.4">
     
     <style>
-        .construction-container {
+        .hero-section {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 60vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            min-height: 70vh;
-            padding: 2rem;
-        }
-        
-        .construction-content {
             text-align: center;
-            max-width: 600px;
+            padding: clamp(4rem, 10vw, 8rem) 2rem;
         }
         
-        .construction-content h1 {
-            font-size: clamp(2rem, 5vw, 3rem);
+        .hero-content h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            color: #ffffff;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+            letter-spacing: -0.02em;
+        }
+        
+        .hero-content p {
+            font-size: clamp(1.125rem, 2vw, 1.375rem);
+            color: #e0e0e0;
+            line-height: 1.8;
+            font-weight: 300;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .importance-section {
+            background: #ffffff;
+            padding: clamp(4rem, 10vw, 8rem) 0;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .section-header h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: #1a1a1a;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+            letter-spacing: -0.02em;
+        }
+        
+        .section-header p {
+            font-size: 1.125rem;
+            color: #666666;
+            line-height: 1.9;
+            font-weight: 300;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin: 4rem 0;
+        }
+        
+        .stat-card {
+            background: #ffffff;
+            padding: 2.5rem;
+            border-left: 4px solid #1a1a2e;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            color: #1a1a2e;
+            font-weight: 700;
+            display: block;
             margin-bottom: 1rem;
-            color: var(--text-primary);
+            font-family: var(--font-primary);
         }
         
-        .construction-content p {
-            font-size: clamp(1rem, 2vw, 1.25rem);
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
+        .stat-label {
+            font-size: 1.125rem;
+            color: #333333;
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+            font-family: var(--font-accent);
+        }
+        
+        .stat-description {
+            font-size: 0.9375rem;
+            color: #666666;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+        
+        .stat-source {
+            font-size: 0.8125rem;
+            color: #999999;
+            font-style: italic;
+            margin-top: 1rem;
+            display: block;
+        }
+        
+        .reasons-section {
+            background: #f8f9fa;
+            padding: clamp(4rem, 10vw, 8rem) 0;
+        }
+        
+        .reasons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .reason-card {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+        }
+        
+        .reason-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.75rem;
+        }
+        
+        .reason-card h3 {
+            font-size: 1.375rem;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+        
+        .reason-card p {
+            font-size: 1rem;
+            color: #666666;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+        
+        .cta-section {
+            background: #1a1a2e;
+            padding: clamp(4rem, 8vw, 6rem) 0;
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            font-size: clamp(1.75rem, 3vw, 2.5rem);
+            color: #ffffff;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
+        
+        .cta-section p {
+            font-size: 1.125rem;
+            color: #e0e0e0;
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+        }
+        
+        .resources-section {
+            background: #ffffff;
+            padding: clamp(4rem, 10vw, 8rem) 0;
+        }
+        
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+        
+        .resource-card {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .resource-card:hover {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+            transform: translateY(-4px);
+            border-color: #1a1a2e;
+        }
+        
+        .resource-badge {
+            display: inline-block;
+            padding: 0.375rem 0.875rem;
+            background: #f0f0f0;
+            color: #1a1a2e;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1.25rem;
+            font-family: var(--font-accent);
+            border-radius: 4px;
+        }
+        
+        .resource-card h3 {
+            font-size: 1.5rem;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+        
+        .resource-description {
+            font-size: 1rem;
+            color: #666666;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+            flex-grow: 1;
+        }
+        
+        .resource-meta {
+            margin-bottom: 1.5rem;
+        }
+        
+        .resource-meta-item {
+            font-size: 0.875rem;
+            color: #666666;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .resource-meta-item strong {
+            color: #1a1a1a;
+            font-weight: 500;
+            min-width: 100px;
+            font-family: var(--font-accent);
+        }
+        
+        .resource-card .btn {
+            width: 100%;
+            text-align: center;
+            margin-top: auto;
+        }
+        
+        @media (max-width: 768px) {
+            .stats-grid,
+            .reasons-grid,
+            .resources-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="construction-container">
-        <div class="construction-content">
-            <h1>Under Construction</h1>
-            <p>Coming Soon</p>
-            <a href="literacy.html" class="btn btn-outline">Back to Literacy Programs</a>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Digital Literacy for the Modern World</h1>
+            <p>Empowering individuals with essential digital skills to thrive in an increasingly connected, technology-driven society</p>
         </div>
-    </div>
+    </section>
 
+    <!-- Importance & Statistics Section -->
+    <section class="importance-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Digital Literacy Matters More Than Ever</h2>
+                <p>
+                    Digital literacy is no longer optional—it's a fundamental requirement for full participation in modern society. 
+                    Even in developed nations, significant portions of the population lack basic digital skills, creating barriers 
+                    to employment, education, healthcare, and civic engagement.
+                </p>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">1 in 4</span>
+                    <div class="stat-label">Americans Lack Digital Skills</div>
+                    <p class="stat-description">
+                        Approximately 25% of American adults lack foundational digital literacy skills needed for today's economy, 
+                        limiting access to job opportunities and essential services.
+                    </p>
+                    <span class="stat-source">Source: National Skills Coalition, 2021</span>
+                </div>
+                
+                <div class="stat-card">
+                    <span class="stat-number">92%</span>
+                    <div class="stat-label">Jobs Require Digital Skills</div>
+                    <p class="stat-description">
+                        92% of all jobs require digital skills, yet millions of workers lack the training needed to compete 
+                        in the modern workforce, widening the employment gap.
+                    </p>
+                    <span class="stat-source">Source: Burning Glass Technologies, 2020</span>
+                </div>
+                
+                <div class="stat-card">
+                    <span class="stat-number">16M+</span>
+                    <div class="stat-label">Canadian Adults Affected</div>
+                    <p class="stat-description">
+                        Over 16 million Canadian adults lack adequate digital literacy skills, impacting their ability to 
+                        access government services, banking, and healthcare online.
+                    </p>
+                    <span class="stat-source">Source: Statistics Canada, 2019</span>
+                </div>
+                
+                <div class="stat-card">
+                    <span class="stat-number">87M</span>
+                    <div class="stat-label">Europeans at Risk</div>
+                    <p class="stat-description">
+                        87 million Europeans lack basic digital skills, creating a significant digital divide that affects 
+                        economic participation and social inclusion across the continent.
+                    </p>
+                    <span class="stat-source">Source: European Commission, 2022</span>
+                </div>
+                
+                <div class="stat-card">
+                    <span class="stat-number">$10T</span>
+                    <div class="stat-label">Global Economic Impact</div>
+                    <p class="stat-description">
+                        The global economy stands to gain $10 trillion by 2030 through improved digital literacy and inclusion, 
+                        yet billions remain digitally excluded.
+                    </p>
+                    <span class="stat-source">Source: World Economic Forum, 2020</span>
+                </div>
+                
+                <div class="stat-card">
+                    <span class="stat-number">60%</span>
+                    <div class="stat-label">Seniors Need Support</div>
+                    <p class="stat-description">
+                        60% of seniors over 65 struggle with basic digital tasks like using smartphones, online banking, 
+                        or video calling, limiting their independence and connection.
+                    </p>
+                    <span class="stat-source">Source: Pew Research Center, 2022</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reasons for Digital Literacy Gap -->
+    <section class="reasons-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Understanding the Digital Divide</h2>
+                <p>
+                    The digital literacy gap exists for complex, interconnected reasons that affect individuals across all demographics, 
+                    even in the world's most developed economies.
+                </p>
+            </div>
+            
+            <div class="reasons-grid">
+                <div class="reason-card">
+                    <div class="reason-icon">🏫</div>
+                    <h3>Educational Disparities</h3>
+                    <p>
+                        Many education systems have not kept pace with technological advancement. Schools in underserved 
+                        communities often lack resources for technology training, creating a gap that persists into adulthood. 
+                        Older generations missed digital education entirely during their formative years.
+                    </p>
+                </div>
+                
+                <div class="reason-card">
+                    <div class="reason-icon">💰</div>
+                    <h3>Economic Barriers</h3>
+                    <p>
+                        The cost of devices, internet access, and training programs creates significant barriers. Low-income 
+                        families often cannot afford computers, smartphones, or reliable internet, preventing them from 
+                        developing digital skills or accessing online learning resources.
+                    </p>
+                </div>
+                
+                <div class="reason-card">
+                    <div class="reason-icon">👴</div>
+                    <h3>Generational Gap</h3>
+                    <p>
+                        Older adults face unique challenges adapting to rapidly evolving technology. Many feel overwhelmed 
+                        by constant changes, lack accessible training, or experience "technology anxiety" that prevents them 
+                        from seeking help or trying new digital tools.
+                    </p>
+                </div>
+                
+                <div class="reason-card">
+                    <div class="reason-icon">🌐</div>
+                    <h3>Language and Cultural Barriers</h3>
+                    <p>
+                        Digital resources are predominantly in English, creating barriers for non-English speakers. Cultural 
+                        differences in technology adoption, lack of culturally relevant content, and insufficient multilingual 
+                        support limit access for immigrant and minority communities.
+                    </p>
+                </div>
+                
+                <div class="reason-card">
+                    <div class="reason-icon">🏘️</div>
+                    <h3>Rural-Urban Divide</h3>
+                    <p>
+                        Rural areas often lack high-speed internet infrastructure, limiting access to online learning and 
+                        digital services. Distance from training centers, lower digital literacy rates, and fewer tech job 
+                        opportunities perpetuate the gap in rural communities.
+                    </p>
+                </div>
+                
+                <div class="reason-card">
+                    <div class="reason-icon">♿</div>
+                    <h3>Accessibility Challenges</h3>
+                    <p>
+                        People with disabilities face additional barriers when technology is not designed with accessibility 
+                        in mind. Lack of adaptive technologies, inadequate accommodations, and insufficient awareness about 
+                        assistive tools limit digital participation.
+                    </p>
+                </div>
+                
+                <div class="reason-card">
+                    <div class="reason-icon">⚡</div>
+                    <h3>Rapid Technological Change</h3>
+                    <p>
+                        Technology evolves faster than people can adapt. Constant updates, new platforms, and changing 
+                        interfaces create a "moving target" that makes it difficult for individuals to maintain proficiency, 
+                        especially those without ongoing training opportunities.
+                    </p>
+                </div>
+                
+                <div class="reason-card">
+                    <div class="reason-icon">👨‍🏫</div>
+                    <h3>Limited Training Resources</h3>
+                    <p>
+                        Quality, free digital literacy training is scarce. Many programs are expensive, inaccessible, or 
+                        don't meet learners where they are. Lack of personalized instruction and fear of judgment prevent 
+                        people from seeking help with basic skills.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Build Your Digital Skills?</h2>
+            <p>Explore our comprehensive learning programs designed for learners at every level</p>
+            <a href="learning-programs.html" class="btn btn-large" style="background: #ffffff; color: #1a1a2e;">Explore Learning Programs</a>
+        </div>
+    </section>
+
+    <!-- Free Resources Section -->
+    <section class="resources-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Free Digital Literacy Learning Resources</h2>
+                <p>
+                    Access world-class digital literacy training from leading technology companies and educational platforms. 
+                    These comprehensive guides cover everything from basic device usage to advanced programming skills.
+                </p>
+            </div>
+            
+            <div class="resources-grid">
+                <!-- iPhone User Guide -->
+                <div class="resource-card">
+                    <span class="resource-badge">Mobile Basics</span>
+                    <h3>iPhone User Guide</h3>
+                    <p class="resource-description">
+                        Master your iPhone with Apple's comprehensive official guide. Learn essential features, settings, 
+                        apps, and tips to get the most out of your device with step-by-step tutorials and visual guides.
+                    </p>
+                    <div class="resource-meta">
+                        <div class="resource-meta-item">
+                            <strong>Best For:</strong>
+                            <span>iPhone users of all ages and skill levels</span>
+                        </div>
+                        <div class="resource-meta-item">
+                            <strong>You'll Learn:</strong>
+                            <span>Basic navigation, settings, apps, photos, messages, safety features</span>
+                        </div>
+                    </div>
+                    <a href="https://support.apple.com/en-ca/guide/iphone/welcome/ios" target="_blank" class="btn btn-outline">Access Guide</a>
+                </div>
+                
+                <!-- iPad User Guide -->
+                <div class="resource-card">
+                    <span class="resource-badge">Tablet Skills</span>
+                    <h3>iPad User Guide</h3>
+                    <p class="resource-description">
+                        Unlock the full potential of your iPad with Apple's detailed user guide. Perfect for education, 
+                        productivity, and creativity, learn how to use your iPad for work, school, and personal projects.
+                    </p>
+                    <div class="resource-meta">
+                        <div class="resource-meta-item">
+                            <strong>Best For:</strong>
+                            <span>iPad users, students, educators, creative professionals</span>
+                        </div>
+                        <div class="resource-meta-item">
+                            <strong>You'll Learn:</strong>
+                            <span>Multitasking, Apple Pencil, productivity apps, accessibility features</span>
+                        </div>
+                    </div>
+                    <a href="https://support.apple.com/en-ca/guide/ipad/ipad99d8ff68/ipados" target="_blank" class="btn btn-outline">Access Guide</a>
+                </div>
+                
+                <!-- Android User Guide -->
+                <div class="resource-card">
+                    <span class="resource-badge">Mobile Basics</span>
+                    <h3>Android User Guide</h3>
+                    <p class="resource-description">
+                        Navigate the world of Android with Google's official support resources. Learn about your Android 
+                        device's features, troubleshoot issues, and discover tips to enhance your mobile experience.
+                    </p>
+                    <div class="resource-meta">
+                        <div class="resource-meta-item">
+                            <strong>Best For:</strong>
+                            <span>Android phone and tablet users worldwide</span>
+                        </div>
+                        <div class="resource-meta-item">
+                            <strong>You'll Learn:</strong>
+                            <span>Device setup, Google services, customization, security, app management</span>
+                        </div>
+                    </div>
+                    <a href="https://support.google.com/android/?hl=en#topic=7313011" target="_blank" class="btn btn-outline">Access Guide</a>
+                </div>
+                
+                <!-- Adobe Scan -->
+                <div class="resource-card">
+                    <span class="resource-badge">Productivity</span>
+                    <h3>Adobe Scan User Guide</h3>
+                    <p class="resource-description">
+                        Transform your mobile device into a powerful scanner. Learn to digitize documents, receipts, 
+                        whiteboards, and more with automatic text recognition and cloud storage integration.
+                    </p>
+                    <div class="resource-meta">
+                        <div class="resource-meta-item">
+                            <strong>Best For:</strong>
+                            <span>Students, professionals, anyone needing paperless document management</span>
+                        </div>
+                        <div class="resource-meta-item">
+                            <strong>You'll Learn:</strong>
+                            <span>Document scanning, OCR, PDF creation, cloud sync, organization</span>
+                        </div>
+                    </div>
+                    <a href="https://www.adobe.com/devnet-docs/adobescan/ios/en/scan.html" target="_blank" class="btn btn-outline">Access Guide</a>
+                </div>
+                
+                <!-- Apple Coding Lab for Kids -->
+                <div class="resource-card">
+                    <span class="resource-badge">Kids & Teens</span>
+                    <h3>Apple Coding Lab for Kids</h3>
+                    <p class="resource-description">
+                        Introduce children to the exciting world of coding through fun, hands-on sessions at Apple stores. 
+                        Kids learn to create their first app, develop problem-solving skills, and discover computational thinking.
+                    </p>
+                    <div class="resource-meta">
+                        <div class="resource-meta-item">
+                            <strong>Best For:</strong>
+                            <span>Children ages 6-12, parents, families interested in coding</span>
+                        </div>
+                        <div class="resource-meta-item">
+                            <strong>You'll Learn:</strong>
+                            <span>Basic coding concepts, app creation, Swift Playgrounds, creativity</span>
+                        </div>
+                    </div>
+                    <a href="https://www.apple.com/today/calendar/?topics=coding-apps&cid=rem-us-taa-newsroom-post-code-first-app%2F" target="_blank" class="btn btn-outline">Explore Sessions</a>
+                </div>
+                
+                <!-- Apple Learning Coach -->
+                <div class="resource-card">
+                    <span class="resource-badge">For Educators</span>
+                    <h3>Apple Learning Coach for Teachers</h3>
+                    <p class="resource-description">
+                        Empower educators to integrate technology effectively in the classroom. Gain strategies for 
+                        personalized learning, student engagement, and leveraging Apple devices for educational success.
+                    </p>
+                    <div class="resource-meta">
+                        <div class="resource-meta-item">
+                            <strong>Best For:</strong>
+                            <span>K-12 teachers, instructional coaches, school administrators</span>
+                        </div>
+                        <div class="resource-meta-item">
+                            <strong>You'll Learn:</strong>
+                            <span>Tech integration, personalized instruction, digital citizenship, collaboration</span>
+                        </div>
+                    </div>
+                    <a href="https://www.apple.com/ca/newsroom/2022/10/apple-learning-coach-now-open-to-more-teachers-across-the-us/" target="_blank" class="btn btn-outline">Learn More</a>
+                </div>
+                
+                <!-- Apple Product Learning -->
+                <div class="resource-card">
+                    <span class="resource-badge">All Devices</span>
+                    <h3>Apple Product Learning</h3>
+                    <p class="resource-description">
+                        Comprehensive learning center for all Apple products and services. Access tutorials, guides, and 
+                        resources for educators to maximize the potential of Apple technology in teaching and learning.
+                    </p>
+                    <div class="resource-meta">
+                        <div class="resource-meta-item">
+                            <strong>Best For:</strong>
+                            <span>Educators, students, Apple device users at any level</span>
+                        </div>
+                        <div class="resource-meta-item">
+                            <strong>You'll Learn:</strong>
+                            <span>Device mastery, educational apps, creative projects, teaching strategies</span>
+                        </div>
+                    </div>
+                    <a href="https://education.apple.com/" target="_blank" class="btn btn-outline">Start Learning</a>
+                </div>
+                
+                <!-- Becoming an Apple Teacher -->
+                <div class="resource-card">
+                    <span class="resource-badge">Certification</span>
+                    <h3>Becoming an Apple Teacher</h3>
+                    <p class="resource-description">
+                        Earn free professional recognition as an Apple Teacher. Build skills in using Apple products for 
+                        teaching and learning, earn badges, and join a global community of innovative educators.
+                    </p>
+                    <div class="resource-meta">
+                        <div class="resource-meta-item">
+                            <strong>Best For:</strong>
+                            <span>K-12 educators seeking professional development and certification</span>
+                        </div>
+                        <div class="resource-meta-item">
+                            <strong>You'll Learn:</strong>
+                            <span>iPad/Mac skills, Pages, Keynote, GarageBand, iMovie, Clips, teaching methods</span>
+                        </div>
+                    </div>
+                    <a href="https://education.apple.com/learning-center/T006360A?backTo=https%3A%2F%2Feducation.apple.com%2F" target="_blank" class="btn btn-outline">Get Certified</a>
+                </div>
+                
+                <!-- Microsoft Product Learning -->
+                <div class="resource-card">
+                    <span class="resource-badge">All Devices</span>
+                    <h3>Microsoft Product Learning</h3>
+                    <p class="resource-description">
+                        Master Microsoft products with official support and training resources. From Windows to Office 365, 
+                        find tutorials, troubleshooting guides, and tips for personal and professional productivity.
+                    </p>
+                    <div class="resource-meta">
+                        <div class="resource-meta-item">
+                            <strong>Best For:</strong>
+                            <span>Windows users, Office suite users, professionals, students</span>
+                        </div>
+                        <div class="resource-meta-item">
+                            <strong>You'll Learn:</strong>
+                            <span>Windows, Word, Excel, PowerPoint, Outlook, OneDrive, Teams, security</span>
+                        </div>
+                    </div>
+                    <a href="https://support.microsoft.com/en-us" target="_blank" class="btn btn-outline">Access Support</a>
+                </div>
+                
+                <!-- Microsoft for Small Business -->
+                <div class="resource-card">
+                    <span class="resource-badge">Business</span>
+                    <h3>Microsoft Learning for Small Businesses</h3>
+                    <p class="resource-description">
+                        Grow your small business with Microsoft's tailored resources. Learn to use technology for 
+                        operations, marketing, customer management, and collaboration to compete in the digital economy.
+                    </p>
+                    <div class="resource-meta">
+                        <div class="resource-meta-item">
+                            <strong>Best For:</strong>
+                            <span>Small business owners, entrepreneurs, startup teams</span>
+                        </div>
+                        <div class="resource-meta-item">
+                            <strong>You'll Learn:</strong>
+                            <span>Business software, cloud storage, email marketing, online presence, security</span>
+                        </div>
+                    </div>
+                    <a href="https://support.microsoft.com/en-us/smallbusiness?ICID=StoreSupportHub_SMBhelp" target="_blank" class="btn btn-outline">Explore Resources</a>
+                </div>
+                
+                <!-- Microsoft Copilot -->
+                <div class="resource-card">
+                    <span class="resource-badge">AI Tools</span>
+                    <h3>Learning Microsoft Copilot</h3>
+                    <p class="resource-description">
+                        Harness the power of AI with Microsoft Copilot. Learn to use AI assistance for writing, research, 
+                        problem-solving, and creativity to boost your productivity and accomplish more with less effort.
+                    </p>
+                    <div class="resource-meta">
+                        <div class="resource-meta-item">
+                            <strong>Best For:</strong>
+                            <span>Professionals, students, anyone interested in AI productivity tools</span>
+                        </div>
+                        <div class="resource-meta-item">
+                            <strong>You'll Learn:</strong>
+                            <span>AI assistance, prompt engineering, content creation, research, automation</span>
+                        </div>
+                    </div>
+                    <a href="https://www.microsoft.com/en-us/microsoft-copilot/for-individuals/do-more-with-ai?form=MA13KP" target="_blank" class="btn btn-outline">Learn Copilot</a>
+                </div>
+                
+                <!-- Microsoft Copilot Search -->
+                <div class="resource-card">
+                    <span class="resource-badge">AI Search</span>
+                    <h3>Microsoft Copilot Search</h3>
+                    <p class="resource-description">
+                        Experience the future of search with AI-powered Copilot integrated into Bing. Get intelligent 
+                        answers, creative content, and comprehensive research results in conversational format.
+                    </p>
+                    <div class="resource-meta">
+                        <div class="resource-meta-item">
+                            <strong>Best For:</strong>
+                            <span>Researchers, students, professionals seeking better search experiences</span>
+                        </div>
+                        <div class="resource-meta-item">
+                            <strong>You'll Learn:</strong>
+                            <span>AI search, question asking, content synthesis, fact verification, research</span>
+                        </div>
+                    </div>
+                    <a href="https://www.microsoft.com/en-us/bing?ep=140&es=31&form=MA13FV" target="_blank" class="btn btn-outline">Try Copilot Search</a>
+                </div>
+                
+                <!-- Swift Programming -->
+                <div class="resource-card">
+                    <span class="resource-badge">Programming</span>
+                    <h3>Learning How to Program with Swift</h3>
+                    <p class="resource-description">
+                        Start your programming journey with Swift, Apple's powerful and intuitive programming language. 
+                        Build iOS, macOS, and web apps while learning modern programming concepts and best practices.
+                    </p>
+                    <div class="resource-meta">
+                        <div class="resource-meta-item">
+                            <strong>Best For:</strong>
+                            <span>Beginners to programming, aspiring app developers, students</span>
+                        </div>
+                        <div class="resource-meta-item">
+                            <strong>You'll Learn:</strong>
+                            <span>Swift syntax, app development, Xcode, iOS frameworks, problem-solving</span>
+                        </div>
+                    </div>
+                    <a href="https://developer.apple.com/swift/get-started/" target="_blank" class="btn btn-outline">Start Coding</a>
+                </div>
+                
+                <!-- Google Developer -->
+                <div class="resource-card">
+                    <span class="resource-badge">Programming</span>
+                    <h3>Google Developer Learning Pathways</h3>
+                    <p class="resource-description">
+                        Explore structured learning paths from Google covering web development, mobile apps, machine learning, 
+                        and cloud computing. Progress from beginner to advanced with hands-on projects and certifications.
+                    </p>
+                    <div class="resource-meta">
+                        <div class="resource-meta-item">
+                            <strong>Best For:</strong>
+                            <span>Aspiring developers, career changers, tech enthusiasts</span>
+                        </div>
+                        <div class="resource-meta-item">
+                            <strong>You'll Learn:</strong>
+                            <span>Web dev, Android, Flutter, Firebase, ML, Cloud, JavaScript, Kotlin</span>
+                        </div>
+                    </div>
+                    <a href="https://developers.google.com/learn/pathways" target="_blank" class="btn btn-outline">Explore Pathways</a>
+                </div>
+                
+                <!-- Project-Based Learning -->
+                <div class="resource-card">
+                    <span class="resource-badge">Programming</span>
+                    <h3>Project-Based Learning: How to Code</h3>
+                    <p class="resource-description">
+                        Learn programming by building real projects across multiple languages and technologies. This curated 
+                        collection of tutorials teaches coding through practical, hands-on application development.
+                    </p>
+                    <div class="resource-meta">
+                        <div class="resource-meta-item">
+                            <strong>Best For:</strong>
+                            <span>Self-directed learners, developers wanting project experience</span>
+                        </div>
+                        <div class="resource-meta-item">
+                            <strong>You'll Learn:</strong>
+                            <span>Python, JavaScript, Java, C++, web apps, games, bots, real projects</span>
+                        </div>
+                    </div>
+                    <a href="https://github.com/practical-tutorials/project-based-learning" target="_blank" class="btn btn-outline">View Projects</a>
+                </div>
+                
+                <!-- Free Code Camp -->
+                <div class="resource-card">
+                    <span class="resource-badge">Programming</span>
+                    <h3>Free Code Camp</h3>
+                    <p class="resource-description">
+                        Learn to code for free with one of the world's most respected coding education platforms. Complete 
+                        certifications in web development, data science, machine learning, and more through interactive lessons.
+                    </p>
+                    <div class="resource-meta">
+                        <div class="resource-meta-item">
+                            <strong>Best For:</strong>
+                            <span>Career changers, self-taught developers, students, all skill levels</span>
+                        </div>
+                        <div class="resource-meta-item">
+                            <strong>You'll Learn:</strong>
+                            <span>HTML/CSS, JavaScript, React, Python, data viz, APIs, testing, algorithms</span>
+                        </div>
+                    </div>
+                    <a href="https://www.freecodecamp.org/" target="_blank" class="btn btn-outline">Start Learning</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer will be injected by footer.js -->
+
+    <!-- Scripts -->
     <script src="js/navigation.js?v=1.6"></script>
     <script src="js/footer.js?v=1.6"></script>
+    <script src="js/common.js?v=1.6"></script>
 </body>
 </html>
