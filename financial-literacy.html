@@ -422,9 +422,95 @@
             }
         }
         
+        .tools-section {
+            background: #f8f9fa;
+            padding: clamp(4rem, 10vw, 8rem) 0;
+        }
+        
+        .tools-header {
+            max-width: 900px;
+            margin: 0 auto 4rem;
+        }
+        
+        .tools-header h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: #1a1a1a;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+            letter-spacing: -0.02em;
+            text-align: center;
+        }
+        
+        .tools-header p {
+            font-size: 1.125rem;
+            color: #666666;
+            line-height: 1.9;
+            font-weight: 300;
+            text-align: center;
+        }
+        
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+        
+        .tool-card {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .tool-card:hover {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+            transform: translateY(-4px);
+            border-color: #1a1a2e;
+        }
+        
+        .tool-badge {
+            display: inline-block;
+            padding: 0.375rem 0.875rem;
+            background: #f0f0f0;
+            color: #1a1a2e;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1.25rem;
+            font-family: var(--font-accent);
+            border-radius: 4px;
+        }
+        
+        .tool-card h3 {
+            font-size: 1.5rem;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+        
+        .tool-description {
+            font-size: 1rem;
+            color: #666666;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+            flex-grow: 1;
+        }
+        
+        .tool-card .btn {
+            width: 100%;
+            text-align: center;
+            margin-top: auto;
+        }
+        
         @media (max-width: 768px) {
             .data-grid,
-            .resource-grid {
+            .resource-grid,
+            .tools-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -685,6 +771,141 @@
                         <span class="credit">Credit: Catherine Cote - HBS Online</span>
                         <a href="https://online.hbs.edu/blog/post/importance-of-financial-literacy" target="_blank" class="btn btn-outline">Learn More</a>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Financial Tools Section -->
+    <section class="tools-section">
+        <div class="container">
+            <div class="tools-header">
+                <h2>Financial Tools & Calculators</h2>
+                <p>
+                    Practical, easy-to-use financial tools to help you plan your budget, calculate investments, 
+                    estimate loans, and make informed financial decisions with confidence.
+                </p>
+            </div>
+            
+            <div class="tools-grid">
+                <!-- Budget Planning -->
+                <div class="tool-card">
+                    <span class="tool-badge">Budgeting</span>
+                    <h3>Budget Planner</h3>
+                    <p class="tool-description">
+                        Create a personalized budget that works for you. This interactive tool from the Government of Canada 
+                        helps you track income, expenses, and savings goals to take control of your finances and build a 
+                        sustainable spending plan.
+                    </p>
+                    <a href="https://www.canada.ca/en/financial-consumer-agency/services/make-budget.html" target="_blank" class="btn btn-outline">Create Budget</a>
+                </div>
+                
+                <!-- Budget Templates -->
+                <div class="tool-card">
+                    <span class="tool-badge">Budgeting</span>
+                    <h3>Free Budget Templates</h3>
+                    <p class="tool-description">
+                        Download professional budget templates for Excel and Microsoft 365. Choose from monthly budgets, 
+                        household expense trackers, savings planners, and more. Fully customizable and ready to use for 
+                        personal or family financial planning.
+                    </p>
+                    <a href="https://excel.cloud.microsoft/create/en/budget-templates/?source=create_flow" target="_blank" class="btn btn-outline">Download Templates</a>
+                </div>
+                
+                <!-- Compound Interest Calculator -->
+                <div class="tool-card">
+                    <span class="tool-badge">Investing</span>
+                    <h3>Compound Interest Calculator</h3>
+                    <p class="tool-description">
+                        See the power of compound interest in action. Calculate how your investments can grow over time 
+                        with regular contributions and reinvested earnings. Understand the long-term impact of starting 
+                        early and investing consistently.
+                    </p>
+                    <a href="https://www.getsmarteraboutmoney.ca/calculators/compound-interest-calculator/" target="_blank" class="btn btn-outline">Calculate Growth</a>
+                </div>
+                
+                <!-- TD Investment Calculator -->
+                <div class="tool-card">
+                    <span class="tool-badge">Investing</span>
+                    <h3>TD Investment Calculator</h3>
+                    <p class="tool-description">
+                        Plan your investment strategy with TD's compound interest calculator. See how different contribution 
+                        amounts, frequencies, and time horizons affect your wealth accumulation. Make informed decisions about 
+                        your financial future.
+                    </p>
+                    <a href="https://www.td.com/ca/en/personal-banking/personal-investing/compound-interest-calculator" target="_blank" class="btn btn-outline">Plan Investments</a>
+                </div>
+                
+                <!-- Student Loan Repayment -->
+                <div class="tool-card">
+                    <span class="tool-badge">Loans</span>
+                    <h3>Student Loan Repayment Estimator</h3>
+                    <p class="tool-description">
+                        Estimate your student loan repayment schedule and monthly payments. This Government of Canada tool 
+                        helps you understand your loan obligations, plan your budget after graduation, and explore repayment 
+                        assistance options.
+                    </p>
+                    <a href="https://tools.canlearn.ca/cslgs-scpse/cln-cln/crp-lrc/af.nlindex-eng.do" target="_blank" class="btn btn-outline">Estimate Payments</a>
+                </div>
+                
+                <!-- Car Loan Calculator -->
+                <div class="tool-card">
+                    <span class="tool-badge">Loans</span>
+                    <h3>Auto Loan Payment Calculator</h3>
+                    <p class="tool-description">
+                        Calculate your car loan payments before you buy. Scotiabank's calculator shows you monthly payment 
+                        amounts based on vehicle price, down payment, interest rate, and loan term. Compare financing options 
+                        and make a smart purchase decision.
+                    </p>
+                    <a href="https://www.scotiabank.com/ca/en/personal/loans-lines/auto-loan/auto-loan-payment-calculator.html" target="_blank" class="btn btn-outline">Calculate Payment</a>
+                </div>
+                
+                <!-- Mortgage Calculator -->
+                <div class="tool-card">
+                    <span class="tool-badge">Mortgages</span>
+                    <h3>TD Mortgage Payment Calculator</h3>
+                    <p class="tool-description">
+                        Plan for homeownership with TD's mortgage calculator. Estimate monthly payments, see the impact of 
+                        different down payments and amortization periods, and understand the total cost of your mortgage. 
+                        Essential for first-time homebuyers.
+                    </p>
+                    <a href="https://ix0.apps.td.com/en/mortgage-payment-calculator" target="_blank" class="btn btn-outline">Calculate Mortgage</a>
+                </div>
+                
+                <!-- Credit Report -->
+                <div class="tool-card">
+                    <span class="tool-badge">Credit</span>
+                    <h3>Get Your Credit Report</h3>
+                    <p class="tool-description">
+                        Access your free credit report to understand your credit history and score. Learn how to order your 
+                        report, what information it contains, and how to dispute errors. Monitor your credit health and protect 
+                        yourself from identity theft.
+                    </p>
+                    <a href="https://www.canada.ca/en/financial-consumer-agency/services/credit-reports-score/order-credit-report.html" target="_blank" class="btn btn-outline">Order Report</a>
+                </div>
+                
+                <!-- Tax Software -->
+                <div class="tool-card">
+                    <span class="tool-badge">Taxes</span>
+                    <h3>Tax Filing Software</h3>
+                    <p class="tool-description">
+                        Find free and certified tax software to file your personal income taxes. Browse CRA-approved options 
+                        that meet your needs, many offering free filing for simple returns. File with confidence and maximize 
+                        your refund.
+                    </p>
+                    <a href="https://www.canada.ca/en/services/taxes/income-tax/personal-income-tax/how-file/tax-software/find-software.html" target="_blank" class="btn btn-outline">Find Software</a>
+                </div>
+                
+                <!-- Payroll Calculator -->
+                <div class="tool-card">
+                    <span class="tool-badge">Taxes</span>
+                    <h3>Payroll Deductions Calculator</h3>
+                    <p class="tool-description">
+                        Calculate income tax deductions, CPP contributions, and EI premiums on your paycheck. Essential for 
+                        employees to understand net pay, and for small business owners managing payroll. Accurate and 
+                        up-to-date with current CRA rates.
+                    </p>
+                    <a href="https://www.canada.ca/en/revenue-agency/services/e-services/digital-services-businesses/payroll-deductions-online-calculator.html" target="_blank" class="btn btn-outline">Calculate Deductions</a>
                 </div>
             </div>
         </div>
