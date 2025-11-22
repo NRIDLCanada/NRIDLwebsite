@@ -234,6 +234,122 @@
                 padding: 0.75rem;
             }
         }
+
+        /* Glossary Styles - Accordion Design */
+        .glossary-container {
+            margin-top: 2.5rem;
+        }
+
+        .glossary-category {
+            margin-bottom: 1rem;
+            border: 1px solid #e0e0e0;
+            background: #ffffff;
+        }
+
+        .glossary-category-header {
+            width: 100%;
+            padding: 1.25rem 1.5rem;
+            background: #f8f9fa;
+            border: none;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            font-family: var(--font-accent);
+        }
+
+        .glossary-category-header:hover {
+            background: #e9ecef;
+        }
+
+        .glossary-category-header.active {
+            background: #333333;
+            color: #ffffff;
+        }
+
+        .category-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #333333;
+            letter-spacing: 0.02em;
+        }
+
+        .glossary-category-header.active .category-title {
+            color: #ffffff;
+        }
+
+        .category-icon {
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: #666666;
+            transition: transform 0.3s ease;
+        }
+
+        .glossary-category-header.active .category-icon {
+            transform: rotate(45deg);
+            color: #ffffff;
+        }
+
+        .glossary-terms {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out;
+            background: #ffffff;
+        }
+
+        .glossary-terms.active {
+            max-height: 5000px;
+            transition: max-height 0.6s ease-in;
+        }
+
+        .glossary-term {
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .glossary-term:last-child {
+            border-bottom: none;
+        }
+
+        .glossary-term strong {
+            display: block;
+            color: #333333;
+            font-size: 1.0625rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-family: var(--font-accent);
+        }
+
+        .glossary-term p {
+            color: #666666;
+            font-size: 0.9375rem;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .glossary-category-header {
+                padding: 1rem;
+            }
+
+            .category-title {
+                font-size: 1rem;
+            }
+
+            .glossary-term {
+                padding: 1rem;
+            }
+
+            .glossary-term strong {
+                font-size: 1rem;
+            }
+
+            .glossary-term p {
+                font-size: 0.875rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -875,6 +991,384 @@
 
                 </div>
 
+                <!-- Glossary Section -->
+                <div class="timeline-section reveal" style="margin-bottom: 4rem;">
+                    <div class="timeline-content">
+                        <h3>Semiconductor Glossary: Essential Terms and Concepts</h3>
+                        <p>
+                            Understanding semiconductor technology requires familiarity with specialized terminology. This comprehensive 
+                            glossary organizes key terms by category, making it easier to navigate the complex vocabulary of chips, 
+                            processors, and computing architecture.
+                        </p>
+                        
+                        <div style="text-align: center; margin: 2rem 0;">
+                            <a href="Semiconductor Glossary.pdf" target="_blank" class="btn btn-outline" style="display: inline-block;">
+                                Download Complete Glossary PDF
+                            </a>
+                        </div>
+
+                        <!-- Glossary Categories -->
+                        <div class="glossary-container">
+                            
+                            <!-- Category 1: Basic Semiconductor Concepts -->
+                            <div class="glossary-category">
+                                <button class="glossary-category-header">
+                                    <span class="category-title">Basic Semiconductor Concepts</span>
+                                    <span class="category-icon">+</span>
+                                </button>
+                                <div class="glossary-terms">
+                                    <div class="glossary-term">
+                                        <strong>Semiconductor</strong>
+                                        <p>A material with electrical conductivity between a conductor and insulator, typically silicon, whose properties can be modified by adding impurities (doping) to create transistors and integrated circuits.</p>
+                                    </div>
+                                    <div class="glossary-term">
+                                        <strong>Silicon (Si)</strong>
+                                        <p>The primary material used in semiconductor manufacturing due to its abundance, stable properties, and ability to form high-quality oxide layers. Silicon wafers serve as the substrate for chip fabrication.</p>
+                                    </div>
+                                    <div class="glossary-term">
+                                        <strong>Transistor</strong>
+                                        <p>The fundamental building block of modern electronics—a semiconductor device that can amplify or switch electrical signals. Modern chips contain billions of transistors, each acting as a microscopic on/off switch.</p>
+                                    </div>
+                                    <div class="glossary-term">
+                                        <strong>Integrated Circuit (IC)</strong>
+                                        <p>A complete electronic circuit fabricated on a single piece of semiconductor material, containing transistors, resistors, capacitors, and interconnections. Also called a "chip" or "microchip."</p>
+                                    </div>
+                                    <div class="glossary-term">
+                                        <strong>Die</strong>
+                                        <p>A single functional unit on a semiconductor wafer before it's packaged. After testing and packaging, a die becomes a finished chip.</p>
+                                    </div>
+                                    <div class="glossary-term">
+                                        <strong>Wafer</strong>
+                                        <p>A thin, circular slice of semiconductor material (typically 200mm or 300mm diameter) on which hundreds of chips are fabricated simultaneously through photolithography and etching processes.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Category 2: Manufacturing & Fabrication -->
+                            <div class="glossary-category">
+                                <button class="glossary-category-header">
+                                    <span class="category-title">Manufacturing & Fabrication</span>
+                                    <span class="category-icon">+</span>
+                                </button>
+                                <div class="glossary-terms">
+                                    <div class="glossary-term">
+                                        <strong>Foundry</strong>
+                                        <p>A semiconductor fabrication plant that manufactures chips designed by other companies. TSMC and Samsung are leading foundries, producing chips for Apple, NVIDIA, AMD, and others.</p>
+                                    </div>
+                                    <div class="glossary-term">
+                                        <strong>Fab (Fabrication Facility)</strong>
+                                        <p>An ultra-clean manufacturing facility where semiconductor wafers are processed. Modern fabs cost $10-20 billion to build and require Class 1 cleanrooms (fewer than 1 particle per cubic foot of air).</p>
+                                    </div>
+                                    <div class="glossary-term">
+                                        <strong>Process Node (nm)</strong>
+                                        <p>A nominal measurement indicating the manufacturing technology generation (e.g., 5nm, 3nm). Smaller nodes generally mean more transistors per chip, better performance, and lower power consumption, though the number no longer directly represents physical feature sizes.</p>
+                                    </div>
+                                    <div class="glossary-term">
+                                        <strong>Lithography</strong>
+                                        <p>The process of transferring circuit patterns onto silicon wafers using light (photolithography) or extreme ultraviolet radiation (EUV). Critical for creating the microscopic features of modern chips.</p>
+                                    </div>
+                                    <div class="glossary-term">
+                                        <strong>EUV (Extreme Ultraviolet Lithography)</strong>
+                                        <p>Advanced lithography technology using 13.5nm wavelength light to pattern features smaller than 7nm. ASML is the only company manufacturing EUV systems, which cost over $150 million each.</p>
+                                    </div>
+                                    <div class="glossary-term">
+                                        <strong>Doping</strong>
+                                        <p>The process of intentionally introducing impurities (like boron or phosphorus) into pure silicon to modify its electrical properties and create n-type or p-type semiconductors.</p>
+                                    </div>
+                                    <div class="glossary-term">
+                                        <strong>Etching</strong>
+                                        <p>The process of selectively removing material from a wafer to create circuit patterns, using either chemical solutions (wet etching) or plasma (dry etching).</p>
+                                    </div>
+                                    <div class="glossary-term">
+                                        <strong>Yield</strong>
+                                        <p>The percentage of functional chips produced from a wafer. Higher yields reduce manufacturing costs. Typical yields range from 70-95% depending on complexity and maturity of the process.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Category 3: Processor Types & Architectures -->
+                            <div class="glossary-category">
+                                <button class="glossary-category-header">
+                                    <span class="category-title">Processor Types & Architectures</span>
+                                    <span class="category-icon">+</span>
+                                </button>
+                                <div class="glossary-terms">
+                                    <div class="glossary-term">
+                                        <strong>CPU (Central Processing Unit)</strong>
+                                        <p>The general-purpose processor that executes program instructions sequentially. CPUs excel at complex logic and control flow but are less efficient than specialized chips for parallel workloads like AI or graphics.</p>
+                                    </div>
+                                    <div class="glossary-term">
+                                        <strong>GPU (Graphics Processing Unit)</strong>
+                                        <p>Originally designed for graphics rendering, GPUs contain thousands of smaller cores optimized for parallel processing. Now essential for AI/ML training and inference due to their ability to perform massive matrix operations simultaneously.</p>
+                                    </div>
+                                    <div class="glossary-term">
+                                        <strong>TPU (Tensor Processing Unit)</strong>
+                                        <p>Google's custom-designed AI accelerator optimized specifically for neural network computations. TPUs offer superior efficiency for TensorFlow workloads compared to general-purpose GPUs.</p>
+                                    </div>
+                                    <div class="glossary-term">
+                                        <strong>NPU (Neural Processing Unit)</strong>
+                                        <p>A specialized processor designed for accelerating neural network operations, typically integrated into mobile devices and edge computing platforms for on-device AI inference.</p>
+                                    </div>
+                                    <div class="glossary-term">
+                                        <strong>ASIC (Application-Specific Integrated Circuit)</strong>
+                                        <p>A chip designed for a specific application rather than general-purpose computing. ASICs offer maximum efficiency for targeted workloads (e.g., Bitcoin mining, AI inference) but cannot be reprogrammed.</p>
+                                    </div>
+                                    <div class="glossary-term">
+                                        <strong>FPGA (Field-Programmable Gate Array)</strong>
+                                        <p>A reconfigurable chip that can be programmed after manufacturing to implement custom digital circuits. FPGAs offer flexibility between general CPUs and specialized ASICs, used in prototyping and specialized computing tasks.</p>
+                                    </div>
+                                    <div class="glossary-term">
+                                        <strong>SoC (System on Chip)</strong>
+                                        <p>An integrated circuit combining multiple components (CPU, GPU, memory, I/O controllers) on a single chip. Apple's M-series and smartphone processors are SoCs, offering better performance and power efficiency than discrete components.</p>
+                                    </div>
+                                    <div class="glossary-term">
+                                        <strong>MCU (Microcontroller Unit)</strong>
+                                        <p>A compact integrated circuit containing a processor, memory, and I/O peripherals, designed for embedded control applications in IoT devices, robotics, and automotive systems.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Category 4: Memory & Storage -->
+                            <div class="glossary-category">
+                                <button class="glossary-category-header">
+                                    <span class="category-title">Memory & Storage Technologies</span>
+                                    <span class="category-icon">+</span>
+                                </button>
+                                <div class="glossary-terms">
+                                    <div class="glossary-term">
+                                        <strong>RAM (Random Access Memory)</strong>
+                                        <p>Volatile memory that temporarily stores data and program instructions while a computer is running. Faster than storage but loses contents when powered off.</p>
+                                    </div>
+                                    <div class="glossary-term">
+                                        <strong>DRAM (Dynamic RAM)</strong>
+                                        <p>The most common type of RAM, storing data as electrical charges in capacitors that must be refreshed thousands of times per second. Used for main system memory due to high density and low cost.</p>
+                                    </div>
+                                    <div class="glossary-term">
+                                        <strong>SRAM (Static RAM)</strong>
+                                        <p>Faster but more expensive than DRAM, using transistor circuits that don't require refresh. Used for CPU caches due to speed advantages, despite lower density.</p>
+                                    </div>
+                                    <div class="glossary-term">
+                                        <strong>HBM (High Bandwidth Memory)</strong>
+                                        <p>Advanced memory technology stacking DRAM dies vertically and connecting them with through-silicon vias. Provides massive bandwidth (up to 1TB/s) essential for high-end GPUs and AI accelerators.</p>
+                                    </div>
+                                    <div class="glossary-term">
+                                        <strong>GDDR (Graphics DDR)</strong>
+                                        <p>Specialized high-bandwidth memory designed for graphics cards and gaming applications, offering higher data rates than standard DDR memory.</p>
+                                    </div>
+                                    <div class="glossary-term">
+                                        <strong>Flash Memory</strong>
+                                        <p>Non-volatile storage that retains data without power, used in SSDs, USB drives, and smartphones. Based on floating-gate transistors that trap electrical charge.</p>
+                                    </div>
+                                    <div class="glossary-term">
+                                        <strong>NAND Flash</strong>
+                                        <p>The most common type of flash memory, organized in pages and blocks. Used in SSDs and memory cards with different types (SLC, MLC, TLC, QLC) trading durability for capacity.</p>
+                                    </div>
+                                    <div class="glossary-term">
+                                        <strong>Cache</strong>
+                                        <p>Small, extremely fast memory located close to the processor core (L1, L2, L3) that stores frequently accessed data, dramatically reducing average memory access time.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Category 5: AI/ML Hardware Concepts -->
+                            <div class="glossary-category">
+                                <button class="glossary-category-header">
+                                    <span class="category-title">AI & Machine Learning Hardware</span>
+                                    <span class="category-icon">+</span>
+                                </button>
+                                <div class="glossary-terms">
+                                    <div class="glossary-term">
+                                        <strong>Tensor Core</strong>
+                                        <p>Specialized processing units in NVIDIA GPUs designed to accelerate matrix multiplication operations (tensor operations) used in deep learning. Provide 10-20x speedup for AI workloads compared to standard CUDA cores.</p>
+                                    </div>
+                                    <div class="glossary-term">
+                                        <strong>CUDA Core</strong>
+                                        <p>The fundamental parallel processing unit in NVIDIA GPUs. Modern GPUs contain thousands of CUDA cores that execute computations simultaneously, enabling massive parallelism for graphics and AI workloads.</p>
+                                    </div>
+                                    <div class="glossary-term">
+                                        <strong>Inference Accelerator</strong>
+                                        <p>Hardware optimized for running trained AI models (inference) rather than training them. Inference accelerators prioritize low latency and power efficiency over raw training performance.</p>
+                                    </div>
+                                    <div class="glossary-term">
+                                        <strong>Neural Engine</strong>
+                                        <p>Apple's dedicated AI processor integrated into their chips, capable of trillions of operations per second for machine learning tasks like image recognition, natural language processing, and computational photography.</p>
+                                    </div>
+                                    <div class="glossary-term">
+                                        <strong>Edge AI Chip</strong>
+                                        <p>Low-power processors designed to run AI models on devices (smartphones, IoT, cameras) rather than in cloud data centers, enabling real-time processing, privacy, and offline operation.</p>
+                                    </div>
+                                    <div class="glossary-term">
+                                        <strong>Neuromorphic Chip</strong>
+                                        <p>Processors inspired by biological neural networks, using event-driven computation and analog circuits to achieve extreme energy efficiency for AI tasks. Intel Loihi and IBM TrueNorth are examples.</p>
+                                    </div>
+                                    <div class="glossary-term">
+                                        <strong>Mixed Precision</strong>
+                                        <p>Using different numerical precisions (FP32, FP16, INT8) for different operations to optimize performance and memory usage. AI workloads often use lower precision without significant accuracy loss.</p>
+                                    </div>
+                                    <div class="glossary-term">
+                                        <strong>FLOPS (Floating Point Operations Per Second)</strong>
+                                        <p>A measure of computing performance, especially relevant for AI and scientific computing. Modern AI accelerators achieve hundreds of teraFLOPS (trillions of operations per second).</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Category 6: Performance & Specifications -->
+                            <div class="glossary-category">
+                                <button class="glossary-category-header">
+                                    <span class="category-title">Performance & Specifications</span>
+                                    <span class="category-icon">+</span>
+                                </button>
+                                <div class="glossary-terms">
+                                    <div class="glossary-term">
+                                        <strong>Clock Speed (GHz)</strong>
+                                        <p>The frequency at which a processor executes instructions, measured in gigahertz (billions of cycles per second). Higher clock speeds generally mean faster processing, but power consumption increases significantly.</p>
+                                    </div>
+                                    <div class="glossary-term">
+                                        <strong>Bandwidth</strong>
+                                        <p>The rate at which data can be transferred between components (e.g., memory bandwidth, interconnect bandwidth). Measured in GB/s or TB/s, critical for data-intensive workloads like AI and graphics.</p>
+                                    </div>
+                                    <div class="glossary-term">
+                                        <strong>Latency</strong>
+                                        <p>The time delay between a request and response. Low latency is critical for real-time applications like autonomous driving, gaming, and high-frequency trading.</p>
+                                    </div>
+                                    <div class="glossary-term">
+                                        <strong>TDP (Thermal Design Power)</strong>
+                                        <p>The maximum amount of heat a chip generates under normal operation, measured in watts. Determines cooling requirements and practical deployment constraints.</p>
+                                    </div>
+                                    <div class="glossary-term">
+                                        <strong>Throughput</strong>
+                                        <p>The amount of work completed per unit time. In AI, often measured in images/second for inference or examples/second for training.</p>
+                                    </div>
+                                    <div class="glossary-term">
+                                        <strong>Core Count</strong>
+                                        <p>The number of independent processing units in a chip. More cores enable better parallel processing but don't always translate to proportional performance gains due to overhead.</p>
+                                    </div>
+                                    <div class="glossary-term">
+                                        <strong>IPC (Instructions Per Cycle)</strong>
+                                        <p>A measure of processor efficiency indicating how many instructions can be executed in a single clock cycle. Architectural improvements increase IPC without raising clock speed.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Category 7: Connectivity & Interfaces -->
+                            <div class="glossary-category">
+                                <button class="glossary-category-header">
+                                    <span class="category-title">Connectivity & Interfaces</span>
+                                    <span class="category-icon">+</span>
+                                </button>
+                                <div class="glossary-terms">
+                                    <div class="glossary-term">
+                                        <strong>PCIe (Peripheral Component Interconnect Express)</strong>
+                                        <p>High-speed interface standard connecting GPUs, SSDs, and other peripherals to the CPU. PCIe 5.0 offers 32 GT/s per lane, essential for feeding data to hungry AI accelerators.</p>
+                                    </div>
+                                    <div class="glossary-term">
+                                        <strong>NVLink</strong>
+                                        <p>NVIDIA's proprietary high-bandwidth interconnect enabling direct GPU-to-GPU communication at up to 900 GB/s, far exceeding PCIe bandwidth for multi-GPU AI training.</p>
+                                    </div>
+                                    <div class="glossary-term">
+                                        <strong>Infinity Fabric</strong>
+                                        <p>AMD's interconnect technology linking CPU cores, GPUs, and memory with high bandwidth and low latency, enabling efficient data sharing in their processors.</p>
+                                    </div>
+                                    <div class="glossary-term">
+                                        <strong>CXL (Compute Express Link)</strong>
+                                        <p>Industry-standard interconnect enabling CPUs to efficiently access accelerator memory and share memory pools, critical for heterogeneous computing and AI workloads.</p>
+                                    </div>
+                                    <div class="glossary-term">
+                                        <strong>SerDes (Serializer/Deserializer)</strong>
+                                        <p>Circuits that convert parallel data to serial for high-speed transmission and back to parallel. Essential for chip-to-chip communication at multi-gigabit rates.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Category 8: Advanced Concepts -->
+                            <div class="glossary-category">
+                                <button class="glossary-category-header">
+                                    <span class="category-title">Advanced Semiconductor Concepts</span>
+                                    <span class="category-icon">+</span>
+                                </button>
+                                <div class="glossary-terms">
+                                    <div class="glossary-term">
+                                        <strong>FinFET (Fin Field-Effect Transistor)</strong>
+                                        <p>A 3D transistor structure with a fin-shaped channel that allows better control of current flow. Enabled continuation of Moore's Law below 22nm by reducing power leakage.</p>
+                                    </div>
+                                    <div class="glossary-term">
+                                        <strong>GAA (Gate-All-Around)</strong>
+                                        <p>Next-generation transistor architecture beyond FinFET, where the gate completely surrounds the channel. Samsung's 3nm and beyond use GAA for improved performance and efficiency.</p>
+                                    </div>
+                                    <div class="glossary-term">
+                                        <strong>Chiplet</strong>
+                                        <p>Modular chip design where multiple smaller dies are combined into one package, allowing mixing of different process nodes and reducing manufacturing costs. AMD's Ryzen and EPYC use chiplet architectures.</p>
+                                    </div>
+                                    <div class="glossary-term">
+                                        <strong>2.5D/3D Packaging</strong>
+                                        <p>Advanced packaging techniques stacking chips vertically or placing them side-by-side on an interposer, enabling higher density and shorter interconnects than traditional packaging.</p>
+                                    </div>
+                                    <div class="glossary-term">
+                                        <strong>TSV (Through-Silicon Via)</strong>
+                                        <p>Vertical electrical connections passing through silicon dies, enabling 3D chip stacking with high bandwidth and low latency. Critical for HBM memory and advanced packaging.</p>
+                                    </div>
+                                    <div class="glossary-term">
+                                        <strong>Moore's Law</strong>
+                                        <p>The observation that transistor density on chips doubles approximately every two years, driving exponential growth in computing power. While slowing, innovations in architecture and packaging continue progress.</p>
+                                    </div>
+                                    <div class="glossary-term">
+                                        <strong>Dennard Scaling</strong>
+                                        <p>The principle that as transistors shrink, power density remains constant because voltage and current scale down. Broke down around 2005, leading to multi-core processors and specialized accelerators.</p>
+                                    </div>
+                                    <div class="glossary-term">
+                                        <strong>Photonics</strong>
+                                        <p>Using light instead of electricity for data transmission in chips. Silicon photonics promises 100x higher bandwidth with lower power for chip-to-chip communication in future data centers.</p>
+                                    </div>
+                                    <div class="glossary-term">
+                                        <strong>Quantum Dot</strong>
+                                        <p>Nanoscale semiconductor particles with unique optical and electronic properties. Potential applications in quantum computing, displays, and biological imaging.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Category 9: Industry & Business Terms -->
+                            <div class="glossary-category">
+                                <button class="glossary-category-header">
+                                    <span class="category-title">Industry & Business Terms</span>
+                                    <span class="category-icon">+</span>
+                                </button>
+                                <div class="glossary-terms">
+                                    <div class="glossary-term">
+                                        <strong>Fabless</strong>
+                                        <p>Companies that design chips but outsource manufacturing to foundries. NVIDIA, AMD, Qualcomm, and Apple are fabless, focusing on design while TSMC/Samsung handle production.</p>
+                                    </div>
+                                    <div class="glossary-term">
+                                        <strong>IDM (Integrated Device Manufacturer)</strong>
+                                        <p>Companies that both design and manufacture their own chips. Intel and Samsung are IDMs with in-house fabs, though Intel now offers foundry services to others.</p>
+                                    </div>
+                                    <div class="glossary-term">
+                                        <strong>IP (Intellectual Property) Core</strong>
+                                        <p>Pre-designed circuit blocks licensed for integration into custom chips. ARM licenses processor IP that powers most smartphones and increasingly data center servers.</p>
+                                    </div>
+                                    <div class="glossary-term">
+                                        <strong>EDA (Electronic Design Automation)</strong>
+                                        <p>Software tools for designing and verifying integrated circuits. Synopsys, Cadence, and Mentor Graphics dominate this critical enabler of chip design.</p>
+                                    </div>
+                                    <div class="glossary-term">
+                                        <strong>Tape-Out</strong>
+                                        <p>The final stage of chip design when the completed design is sent to the foundry for manufacturing. Historically referred to recording the design on magnetic tape.</p>
+                                    </div>
+                                    <div class="glossary-term">
+                                        <strong>Supply Chain</strong>
+                                        <p>The complex global network of suppliers, manufacturers, and logistics spanning raw materials (silicon, rare earths) to finished chips. Concentrated in East Asia, creating geopolitical vulnerabilities.</p>
+                                    </div>
+                                    <div class="glossary-term">
+                                        <strong>Geopolitical Risk</strong>
+                                        <p>Vulnerabilities arising from semiconductor manufacturing concentration in Taiwan and South Korea. Trade restrictions, export controls, and potential conflicts threaten global chip supply.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
                 <!-- Conclusion Section -->
                 <div class="timeline-section reveal">
                     <div class="timeline-content">
@@ -945,6 +1439,26 @@
                     cards[index].classList.add('active');
                 });
             });
+
+            // Glossary accordion functionality
+            const glossaryHeaders = document.querySelectorAll('.glossary-category-header');
+            
+            glossaryHeaders.forEach(header => {
+                header.addEventListener('click', () => {
+                    const isActive = header.classList.contains('active');
+                    const termsDiv = header.nextElementSibling;
+                    
+                    // Toggle active state
+                    header.classList.toggle('active');
+                    termsDiv.classList.toggle('active');
+                });
+            });
+
+            // Optional: Open first glossary category by default
+            if (glossaryHeaders.length > 0) {
+                glossaryHeaders[0].classList.add('active');
+                glossaryHeaders[0].nextElementSibling.classList.add('active');
+            }
         });
     </script>
 </body>
