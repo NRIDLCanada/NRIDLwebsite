@@ -113,12 +113,14 @@ class SidebarNav {
             const heading = section.querySelector('h3');
             if (heading && !section.querySelector('.glossary-container')) {
                 const titleText = heading.textContent.trim();
-                // Only include sections with "vision", "goal", or "conclusion" in the title
+                // Only include sections with "vision", "goal", "conclusion", "2030", or "toward" in the title
                 // Skip glossary and general overview/technology sections
                 if (!titleText.toLowerCase().includes('glossary') && 
                     (titleText.toLowerCase().includes('vision') || 
                      titleText.toLowerCase().includes('goal') || 
-                     titleText.toLowerCase().includes('conclusion'))) {
+                     titleText.toLowerCase().includes('conclusion') ||
+                     titleText.toLowerCase().includes('2030') ||
+                     titleText.toLowerCase().includes('toward'))) {
                     sections.push({
                         id: `conclusion-${index}`,
                         title: titleText.length > 40 ? '2030 Goals' : titleText,
