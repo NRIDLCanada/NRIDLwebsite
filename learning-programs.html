@@ -250,46 +250,50 @@
         
         .bootcamp-header {
             background: linear-gradient(135deg, #f8f9fa 0%, #e8ecf1 100%);
-            padding: 2.5rem 2rem;
+            padding: 3rem 2rem;
             text-align: center;
         }
         
         .bootcamp-title {
-            font-size: 1.75rem;
+            font-size: 1.875rem;
             color: #1a202c;
-            margin-bottom: 0.75rem;
+            margin-bottom: 1rem;
             font-weight: 500;
             line-height: 1.3;
         }
         
         .bootcamp-duration {
-            font-size: 1rem;
+            font-size: 1.125rem;
             color: #7a8fb8;
             font-weight: 600;
         }
         
         .bootcamp-body {
-            padding: 2.5rem 2rem;
+            padding: 2.5rem 2rem 3rem;
         }
         
         .bootcamp-description {
-            font-size: 1rem;
+            font-size: 1.0625rem;
             color: #4a5568;
             line-height: 1.8;
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
         }
         
         .bootcamp-highlights {
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
+        }
+        
+        .bootcamp-highlights:last-child {
+            margin-bottom: 0;
         }
         
         .bootcamp-highlights h4 {
-            font-size: 0.875rem;
+            font-size: 0.9375rem;
             color: #2d3748;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.12em;
             font-weight: 600;
-            margin-bottom: 1rem;
+            margin-bottom: 1.25rem;
         }
         
         .bootcamp-highlights ul {
@@ -300,9 +304,10 @@
         .bootcamp-highlights li {
             font-size: 0.9375rem;
             color: #4a5568;
-            padding: 0.5rem 0;
+            padding: 0.625rem 0;
             padding-left: 1.5rem;
             position: relative;
+            line-height: 1.7;
         }
         
         .bootcamp-highlights li::before {
@@ -355,14 +360,15 @@
         /* Detailed Course View */
         .course-tabs {
             display: flex;
-            gap: 1rem;
-            margin-bottom: 2rem;
+            gap: 0.5rem;
+            margin-bottom: 2.5rem;
+            margin-top: 0.5rem;
             border-bottom: 2px solid #e2e8f0;
             flex-wrap: wrap;
         }
         
         .course-tab-btn {
-            padding: 1rem 1.5rem;
+            padding: 1rem 1.75rem;
             background: none;
             border: none;
             font-size: 1rem;
@@ -371,6 +377,7 @@
             cursor: pointer;
             position: relative;
             transition: all 0.3s ease;
+            font-family: var(--font-primary);
         }
         
         .course-tab-btn:hover {
@@ -408,29 +415,32 @@
         /* Session Cards */
         .sessions-grid {
             display: grid;
-            gap: 2rem;
+            gap: 2.5rem;
             margin-top: 2rem;
         }
         
         .session-card {
             background: #f8f9fa;
             border-radius: 12px;
-            padding: 2rem;
+            padding: 2.5rem;
             border-left: 4px solid #7a8fb8;
         }
         
         .session-card h4 {
             font-size: 1.5rem;
             color: #1a202c;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             font-weight: 500;
+            line-height: 1.4;
         }
         
         .session-subtitle {
             font-size: 1.125rem;
             color: #7a8fb8;
-            font-weight: 500;
+            font-weight: 600;
             margin-bottom: 1rem;
+            margin-top: 1.5rem;
+            line-height: 1.5;
         }
         
         .session-description {
@@ -441,16 +451,21 @@
         }
         
         .session-section {
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
+        }
+        
+        .session-section:last-child {
+            margin-bottom: 0;
         }
         
         .session-section h5 {
-            font-size: 1rem;
+            font-size: 0.875rem;
             color: #2d3748;
             text-transform: uppercase;
             letter-spacing: 0.1em;
             font-weight: 600;
             margin-bottom: 1rem;
+            margin-top: 1.5rem;
         }
         
         .session-section ul {
@@ -475,24 +490,36 @@
             font-weight: 600;
         }
         
+        .bootcamp-highlights a {
+            color: #7a8fb8;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .bootcamp-highlights a:hover {
+            color: #5a6f98;
+            text-decoration: underline;
+        }
+        
         /* FAQ Section */
         .faq-grid {
             display: grid;
-            gap: 1.5rem;
+            gap: 1.75rem;
             margin-top: 2rem;
         }
         
         .faq-item {
             background: #f8f9fa;
-            border-radius: 8px;
-            padding: 1.5rem;
+            border-radius: 10px;
+            padding: 2rem;
         }
         
         .faq-question {
             font-size: 1.125rem;
             color: #1a202c;
             font-weight: 600;
-            margin-bottom: 0.75rem;
+            margin-bottom: 1rem;
+            line-height: 1.5;
         }
         
         .faq-answer {
@@ -501,13 +528,24 @@
             line-height: 1.8;
         }
         
+        .faq-answer strong {
+            display: block;
+            color: #2d3748;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
         .faq-answer ul {
-            margin-top: 0.75rem;
+            margin-top: 0.5rem;
+            margin-bottom: 1rem;
             padding-left: 1.5rem;
+            list-style-type: disc;
         }
         
         .faq-answer li {
             margin-bottom: 0.5rem;
+            line-height: 1.7;
         }
         
         .price-highlight {
@@ -1034,9 +1072,6 @@
                                 </ul>
                             </div>
                         </div>
-                    </div>
-                    <div class="bootcamp-footer">
-                        <a href="#" class="bootcamp-btn">Enroll Now - $199 CAD</a>
                     </div>
                 </div>
                 
