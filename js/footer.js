@@ -9,6 +9,7 @@ class Footer {
         footer.className = 'main-footer';
         footer.innerHTML = `
             <div class="footer-container">
+                <div class="footer-wave"></div>
                 <div class="footer-content">
                     <div class="footer-branding">
                         <span class="footer-logo">NRIDL</span>
@@ -22,11 +23,21 @@ class Footer {
                     </div>
                     
                     <div class="footer-section">
-                        <h6 class="footer-section-title">Resources</h6>
+                        <h6 class="footer-section-title">Literacy</h6>
                         <ul class="footer-links">
+                            <li><a href="https://www.storybee.space" class="footer-link" target="_blank" rel="noopener noreferrer">Open-Access Children's Books</a></li>
+                            <li><a href="financial-literacy.html" class="footer-link">Financial Literacy</a></li>
+                            <li><a href="digital-literacy.html" class="footer-link">Digital Literacy</a></li>
+                            <li><a href="ai-literacy.html" class="footer-link">AI Literacy</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h6 class="footer-section-title">Services</h6>
+                        <ul class="footer-links">
+                            <li><a href="ar-research.html" class="footer-link">AR Technology</a></li>
                             <li><a href="learning-programs.html" class="footer-link">Learning Programs</a></li>
-                            <li><a href="https://www.storybee.space" class="footer-link" target="_blank" rel="noopener noreferrer">StoryBee Library</a></li>
-                            <li><a href="#" class="footer-link">AI Solutions</a></li>
+                            <li><a href="semiconductor-research.html" class="footer-link">Semiconductor Research</a></li>
                         </ul>
                     </div>
                     
@@ -34,7 +45,7 @@ class Footer {
                         <h6 class="footer-section-title">Contact</h6>
                         <ul class="footer-links">
                             <li><a href="mailto:support@nridl.org" class="footer-link">support@nridl.org</a></li>
-                            <li><span class="footer-link" style="cursor: default; color: rgba(255, 255, 255, 0.7);">Toronto, Canada</span></li>
+                            <li><span class="footer-text">Toronto, Canada</span></li>
                         </ul>
                     </div>
                 </div>
