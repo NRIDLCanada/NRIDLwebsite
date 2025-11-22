@@ -159,13 +159,13 @@
         }
         
         .ai-categories-section {
-            background: #ffffff;
+            background: #f8f9fa;
             padding: clamp(4rem, 10vw, 8rem) 0;
         }
         
         .categories-intro {
             max-width: 900px;
-            margin: 0 auto 4rem;
+            margin: 0 auto 3rem;
             text-align: center;
         }
         
@@ -176,18 +176,87 @@
             font-weight: 300;
         }
         
-        .category-card {
-            background: #f8f9fa;
-            padding: 3rem;
-            margin-bottom: 3rem;
+        .categories-folder {
+            max-width: 1200px;
+            margin: 3rem auto;
+            background: #ffffff;
             border-radius: 8px;
-            border-left: 6px solid #1a1a2e;
-            transition: all 0.3s ease;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+            overflow: hidden;
         }
         
-        .category-card:hover {
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-            transform: translateX(4px);
+        .folder-tabs {
+            display: flex;
+            background: #e8e8e8;
+            border-bottom: 2px solid #d0d0d0;
+            overflow-x: auto;
+            flex-wrap: wrap;
+        }
+        
+        .folder-tab {
+            padding: 1rem 2rem;
+            background: #e8e8e8;
+            border: none;
+            border-right: 1px solid #d0d0d0;
+            cursor: pointer;
+            font-size: 0.9375rem;
+            font-weight: 500;
+            color: #666666;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            font-family: var(--font-accent);
+            min-width: fit-content;
+        }
+        
+        .folder-tab:hover {
+            background: #f5f5f5;
+            color: #1a1a1a;
+        }
+        
+        .folder-tab.active {
+            background: #ffffff;
+            color: #1a1a2e;
+            border-bottom: 2px solid #1a1a2e;
+            margin-bottom: -2px;
+            font-weight: 600;
+        }
+        
+        .folder-content {
+            padding: 3rem;
+            min-height: 400px;
+        }
+        
+        .tab-panel {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .tab-panel.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .summary-panel h3 {
+            font-size: 1.5rem;
+            color: #1a1a1a;
+            margin-bottom: 2rem;
+            font-weight: 400;
+            text-align: center;
+        }
+        
+        .category-panel {
+            max-width: 900px;
+            margin: 0 auto;
         }
         
         .category-header {
@@ -259,7 +328,7 @@
         }
         
         .example-item {
-            background: #ffffff;
+            background: #f8f9fa;
             padding: 1rem 1.5rem;
             border-radius: 4px;
             border-left: 3px solid #e0e0e0;
@@ -279,14 +348,9 @@
             font-weight: 300;
         }
         
-        .summary-section {
-            background: #f8f9fa;
-            padding: clamp(4rem, 10vw, 8rem) 0;
-        }
-        
         .summary-table-container {
-            max-width: 1200px;
-            margin: 3rem auto;
+            max-width: 100%;
+            margin: 0 auto;
             overflow-x: auto;
         }
         
@@ -294,7 +358,7 @@
             width: 100%;
             background: #ffffff;
             border-collapse: collapse;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
         }
         
         .summary-table thead {
@@ -404,6 +468,19 @@
             
             .summary-table {
                 min-width: 600px;
+            }
+            
+            .folder-tabs {
+                overflow-x: auto;
+            }
+            
+            .folder-tab {
+                font-size: 0.875rem;
+                padding: 0.875rem 1.5rem;
+            }
+            
+            .folder-content {
+                padding: 2rem 1.5rem;
             }
         }
     </style>
@@ -556,307 +633,315 @@
                 </p>
             </div>
             
-            <!-- Category 1: Generative AI -->
-            <div class="category-card">
-                <div class="category-header">
-                    <div class="category-number">01</div>
-                    <div class="category-title-group">
-                        <h3 class="category-name">Generative AI (AIGC)</h3>
-                        <div class="category-nickname">"The Creator"</div>
-                    </div>
+            <!-- Tabbed Folder Interface -->
+            <div class="categories-folder">
+                <div class="folder-tabs">
+                    <button class="folder-tab active" onclick="openTab(event, 'summary')">Quick Reference</button>
+                    <button class="folder-tab" onclick="openTab(event, 'generative')">01 - Generative AI</button>
+                    <button class="folder-tab" onclick="openTab(event, 'predictive')">02 - Predictive AI</button>
+                    <button class="folder-tab" onclick="openTab(event, 'vision')">03 - Computer Vision</button>
+                    <button class="folder-tab" onclick="openTab(event, 'autonomous')">04 - Autonomous Systems</button>
+                    <button class="folder-tab" onclick="openTab(event, 'conversational')">05 - Conversational AI</button>
                 </div>
                 
-                <p class="category-description">
-                    This category focuses on creating new data that didn't exist before. Generative AI takes a prompt—whether 
-                    text, image, or other input—and generates entirely new content as output. It's the most visible and talked-about 
-                    category of AI in recent years, revolutionizing creative work, content production, and software development.
-                </p>
-                
-                <div class="category-examples">
-                    <h4>Common Use Cases & Applications</h4>
-                    <div class="examples-list">
-                        <div class="example-item">
-                            <div class="example-title">Text Generation</div>
-                            <p class="example-description">
-                                Marketing copy, coding assistance (GitHub Copilot), creative writing, content summarization 
-                                (ChatGPT, Claude, Gemini).
-                            </p>
+                <div class="folder-content">
+                    <!-- Summary Tab (Cover Page) -->
+                    <div id="summary" class="tab-panel active summary-panel">
+                        <h3>AI Categories at a Glance</h3>
+                        <div class="summary-table-container">
+                            <table class="summary-table">
+                                <thead>
+                                    <tr>
+                                        <th>Category</th>
+                                        <th>Primary Function</th>
+                                        <th>Common Use Cases</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>AIGC (Generative)</td>
+                                        <td>Create</td>
+                                        <td>Writing code, generating art, marketing text, video creation</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Predictive AI</td>
+                                        <td>Anticipate</td>
+                                        <td>Netflix recommendations, stock forecasting, fraud alerts, medical diagnosis</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Computer Vision</td>
+                                        <td>See</td>
+                                        <td>Facial recognition, medical scan analysis, self-driving car "eyes," quality control</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Autonomous AI</td>
+                                        <td>Act</td>
+                                        <td>Self-driving cars, warehouse robots, manufacturing automation, delivery drones</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Conversational AI</td>
+                                        <td>Understand</td>
+                                        <td>Language translation, sentiment analysis, voice assistants, customer support</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
-                        <div class="example-item">
-                            <div class="example-title">Image & Design</div>
-                            <p class="example-description">
-                                Art creation, photo editing, logo design, visual concept generation (Midjourney, DALL-E, 
-                                Stable Diffusion).
-                            </p>
+                    </div>
+                    
+                    <!-- Category 1: Generative AI -->
+                    <div id="generative" class="tab-panel category-panel">
+                        <div class="category-header">
+                            <div class="category-number">01</div>
+                            <div class="category-title-group">
+                                <h3 class="category-name">Generative AI (AIGC)</h3>
+                                <div class="category-nickname">"The Creator"</div>
+                            </div>
                         </div>
-                        <div class="example-item">
-                            <div class="example-title">Audio & Video</div>
-                            <p class="example-description">
-                                Music composition, voice cloning, podcast generation, AI video creation (Sora, Suno, ElevenLabs).
-                            </p>
+                        
+                        <p class="category-description">
+                            This category focuses on creating new data that didn't exist before. Generative AI takes a prompt—whether 
+                            text, image, or other input—and generates entirely new content as output. It's the most visible and talked-about 
+                            category of AI in recent years, revolutionizing creative work, content production, and software development.
+                        </p>
+                        
+                        <div class="category-examples">
+                            <h4>Common Use Cases & Applications</h4>
+                            <div class="examples-list">
+                                <div class="example-item">
+                                    <div class="example-title">Text Generation</div>
+                                    <p class="example-description">
+                                        Marketing copy, coding assistance (GitHub Copilot), creative writing, content summarization 
+                                        (ChatGPT, Claude, Gemini).
+                                    </p>
+                                </div>
+                                <div class="example-item">
+                                    <div class="example-title">Image & Design</div>
+                                    <p class="example-description">
+                                        Art creation, photo editing, logo design, visual concept generation (Midjourney, DALL-E, 
+                                        Stable Diffusion).
+                                    </p>
+                                </div>
+                                <div class="example-item">
+                                    <div class="example-title">Audio & Video</div>
+                                    <p class="example-description">
+                                        Music composition, voice cloning, podcast generation, AI video creation (Sora, Suno, ElevenLabs).
+                                    </p>
+                                </div>
+                                <div class="example-item">
+                                    <div class="example-title">3D & Virtual Worlds</div>
+                                    <p class="example-description">
+                                        Generating 3D assets for gaming, architectural visualization, metaverse environments, 
+                                        and virtual reality experiences.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="example-item">
-                            <div class="example-title">3D & Virtual Worlds</div>
-                            <p class="example-description">
-                                Generating 3D assets for gaming, architectural visualization, metaverse environments, 
-                                and virtual reality experiences.
-                            </p>
+                    </div>
+                    
+                    <!-- Category 2: Predictive & Analytical AI -->
+                    <div id="predictive" class="tab-panel category-panel">
+                        <div class="category-header">
+                            <div class="category-number">02</div>
+                            <div class="category-title-group">
+                                <h3 class="category-name">Predictive & Analytical AI</h3>
+                                <div class="category-nickname">"The Forecaster"</div>
+                            </div>
+                        </div>
+                        
+                        <p class="category-description">
+                            Before generative AI became famous, this was the dominant form of AI. It doesn't create new content; 
+                            instead, it analyzes existing historical data to predict what will happen next or to identify patterns 
+                            and insights. This category powers much of the AI you interact with daily, often invisibly.
+                        </p>
+                        
+                        <div class="category-examples">
+                            <h4>Common Use Cases & Applications</h4>
+                            <div class="examples-list">
+                                <div class="example-item">
+                                    <div class="example-title">Recommendation Engines</div>
+                                    <p class="example-description">
+                                        "Because you watched X, you might like Y" algorithms powering Netflix, YouTube, TikTok, 
+                                        Spotify, and e-commerce platforms.
+                                    </p>
+                                </div>
+                                <div class="example-item">
+                                    <div class="example-title">Forecasting</div>
+                                    <p class="example-description">
+                                        Predicting stock market trends, weather patterns, supply chain demand, sales forecasts, 
+                                        and energy consumption.
+                                    </p>
+                                </div>
+                                <div class="example-item">
+                                    <div class="example-title">Risk Assessment</div>
+                                    <p class="example-description">
+                                        Credit scoring for loan applications, fraud detection in banking by spotting unusual 
+                                        transaction patterns, insurance underwriting.
+                                    </p>
+                                </div>
+                                <div class="example-item">
+                                    <div class="example-title">Medical Diagnosis</div>
+                                    <p class="example-description">
+                                        Analyzing patient medical history, lab results, and symptoms to predict likelihood of 
+                                        diseases or recommend treatment options.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Category 3: Computer Vision -->
+                    <div id="vision" class="tab-panel category-panel">
+                        <div class="category-header">
+                            <div class="category-number">03</div>
+                            <div class="category-title-group">
+                                <h3 class="category-name">Computer Vision (Perceptive AI)</h3>
+                                <div class="category-nickname">"The Watcher"</div>
+                            </div>
+                        </div>
+                        
+                        <p class="category-description">
+                            This category gives machines the ability to "see" and interpret visual information from the real world. 
+                            It is distinct from generating images; it's about understanding them. Computer Vision enables machines 
+                            to extract meaning from digital images, videos, and other visual inputs.
+                        </p>
+                        
+                        <div class="category-examples">
+                            <h4>Common Use Cases & Applications</h4>
+                            <div class="examples-list">
+                                <div class="example-item">
+                                    <div class="example-title">Facial Recognition</div>
+                                    <p class="example-description">
+                                        Unlocking smartphones, airport security checkpoints, attendance systems, photo organization, 
+                                        and social media tagging.
+                                    </p>
+                                </div>
+                                <div class="example-item">
+                                    <div class="example-title">Object Detection</div>
+                                    <p class="example-description">
+                                        Quality control in manufacturing (spotting defects on conveyor belts), inventory management, 
+                                        surveillance systems.
+                                    </p>
+                                </div>
+                                <div class="example-item">
+                                    <div class="example-title">Medical Imaging Analysis</div>
+                                    <p class="example-description">
+                                        Reading X-rays, MRIs, and CT scans to identify tumors, fractures, or abnormalities faster 
+                                        and sometimes more accurately than human doctors.
+                                    </p>
+                                </div>
+                                <div class="example-item">
+                                    <div class="example-title">Retail Analytics</div>
+                                    <p class="example-description">
+                                        Tracking customer movement through physical stores (heatmaps), analyzing shelf inventory, 
+                                        cashier-less checkout systems (Amazon Go).
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Category 4: Autonomous Systems & Robotics -->
+                    <div id="autonomous" class="tab-panel category-panel">
+                        <div class="category-header">
+                            <div class="category-number">04</div>
+                            <div class="category-title-group">
+                                <h3 class="category-name">Autonomous Systems & Robotics</h3>
+                                <div class="category-nickname">"The Mover"</div>
+                            </div>
+                        </div>
+                        
+                        <p class="category-description">
+                            This category combines AI with hardware to allow machines to act independently in the physical world. 
+                            Autonomous systems often use a combination of Computer Vision and Predictive AI to navigate environments, 
+                            make decisions, and perform physical tasks without human intervention.
+                        </p>
+                        
+                        <div class="category-examples">
+                            <h4>Common Use Cases & Applications</h4>
+                            <div class="examples-list">
+                                <div class="example-item">
+                                    <div class="example-title">Autonomous Vehicles</div>
+                                    <p class="example-description">
+                                        Self-driving cars (Waymo, Tesla Full Self-Driving), delivery drones, autonomous trucks, 
+                                        and aerial vehicles for surveillance or mapping.
+                                    </p>
+                                </div>
+                                <div class="example-item">
+                                    <div class="example-title">Warehouse Robotics</div>
+                                    <p class="example-description">
+                                        Amazon Kiva robots that autonomously navigate warehouses to sort and move packages, 
+                                        optimizing fulfillment operations.
+                                    </p>
+                                </div>
+                                <div class="example-item">
+                                    <div class="example-title">Manufacturing Robotics</div>
+                                    <p class="example-description">
+                                        Robotic arms that adapt to different objects and tasks rather than repeating one motion, 
+                                        enabling flexible manufacturing lines.
+                                    </p>
+                                </div>
+                                <div class="example-item">
+                                    <div class="example-title">Agricultural Automation</div>
+                                    <p class="example-description">
+                                        Autonomous tractors, harvesting robots, and drones for crop monitoring, precision agriculture, 
+                                        and pesticide application.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Category 5: Conversational AI / NLP -->
+                    <div id="conversational" class="tab-panel category-panel">
+                        <div class="category-header">
+                            <div class="category-number">05</div>
+                            <div class="category-title-group">
+                                <h3 class="category-name">Conversational AI / Natural Language Processing</h3>
+                                <div class="category-nickname">"The Communicator"</div>
+                            </div>
+                        </div>
+                        
+                        <p class="category-description">
+                            While there's significant overlap with Generative AI, this category's use case is fundamentally different. 
+                            Conversational AI focuses on interaction, translation, and understanding human intent rather than just content 
+                            creation. It enables machines to comprehend, interpret, and respond to human language in meaningful ways.
+                        </p>
+                        
+                        <div class="category-examples">
+                            <h4>Common Use Cases & Applications</h4>
+                            <div class="examples-list">
+                                <div class="example-item">
+                                    <div class="example-title">Language Translation</div>
+                                    <p class="example-description">
+                                        Real-time translation services (Google Translate, DeepL), breaking down language barriers 
+                                        for global communication and commerce.
+                                    </p>
+                                </div>
+                                <div class="example-item">
+                                    <div class="example-title">Sentiment Analysis</div>
+                                    <p class="example-description">
+                                        Analyzing thousands of social media posts, customer reviews, or survey responses to gauge 
+                                        public sentiment about brands, products, or events.
+                                    </p>
+                                </div>
+                                <div class="example-item">
+                                    <div class="example-title">Virtual Assistants</div>
+                                    <p class="example-description">
+                                        Siri, Alexa, Google Assistant handling voice commands, setting reminders, controlling 
+                                        smart home devices, and answering questions.
+                                    </p>
+                                </div>
+                                <div class="example-item">
+                                    <div class="example-title">Customer Support Chatbots</div>
+                                    <p class="example-description">
+                                        AI-powered chatbots that understand customer inquiries, classify issues (refund vs. 
+                                        tech support), and provide appropriate responses or routing.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            
-            <!-- Category 2: Predictive & Analytical AI -->
-            <div class="category-card">
-                <div class="category-header">
-                    <div class="category-number">02</div>
-                    <div class="category-title-group">
-                        <h3 class="category-name">Predictive & Analytical AI</h3>
-                        <div class="category-nickname">"The Forecaster"</div>
-                    </div>
-                </div>
-                
-                <p class="category-description">
-                    Before generative AI became famous, this was the dominant form of AI. It doesn't create new content; 
-                    instead, it analyzes existing historical data to predict what will happen next or to identify patterns 
-                    and insights. This category powers much of the AI you interact with daily, often invisibly.
-                </p>
-                
-                <div class="category-examples">
-                    <h4>Common Use Cases & Applications</h4>
-                    <div class="examples-list">
-                        <div class="example-item">
-                            <div class="example-title">Recommendation Engines</div>
-                            <p class="example-description">
-                                "Because you watched X, you might like Y" algorithms powering Netflix, YouTube, TikTok, 
-                                Spotify, and e-commerce platforms.
-                            </p>
-                        </div>
-                        <div class="example-item">
-                            <div class="example-title">Forecasting</div>
-                            <p class="example-description">
-                                Predicting stock market trends, weather patterns, supply chain demand, sales forecasts, 
-                                and energy consumption.
-                            </p>
-                        </div>
-                        <div class="example-item">
-                            <div class="example-title">Risk Assessment</div>
-                            <p class="example-description">
-                                Credit scoring for loan applications, fraud detection in banking by spotting unusual 
-                                transaction patterns, insurance underwriting.
-                            </p>
-                        </div>
-                        <div class="example-item">
-                            <div class="example-title">Medical Diagnosis</div>
-                            <p class="example-description">
-                                Analyzing patient medical history, lab results, and symptoms to predict likelihood of 
-                                diseases or recommend treatment options.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Category 3: Computer Vision -->
-            <div class="category-card">
-                <div class="category-header">
-                    <div class="category-number">03</div>
-                    <div class="category-title-group">
-                        <h3 class="category-name">Computer Vision (Perceptive AI)</h3>
-                        <div class="category-nickname">"The Watcher"</div>
-                    </div>
-                </div>
-                
-                <p class="category-description">
-                    This category gives machines the ability to "see" and interpret visual information from the real world. 
-                    It is distinct from generating images; it's about understanding them. Computer Vision enables machines 
-                    to extract meaning from digital images, videos, and other visual inputs.
-                </p>
-                
-                <div class="category-examples">
-                    <h4>Common Use Cases & Applications</h4>
-                    <div class="examples-list">
-                        <div class="example-item">
-                            <div class="example-title">Facial Recognition</div>
-                            <p class="example-description">
-                                Unlocking smartphones, airport security checkpoints, attendance systems, photo organization, 
-                                and social media tagging.
-                            </p>
-                        </div>
-                        <div class="example-item">
-                            <div class="example-title">Object Detection</div>
-                            <p class="example-description">
-                                Quality control in manufacturing (spotting defects on conveyor belts), inventory management, 
-                                surveillance systems.
-                            </p>
-                        </div>
-                        <div class="example-item">
-                            <div class="example-title">Medical Imaging Analysis</div>
-                            <p class="example-description">
-                                Reading X-rays, MRIs, and CT scans to identify tumors, fractures, or abnormalities faster 
-                                and sometimes more accurately than human doctors.
-                            </p>
-                        </div>
-                        <div class="example-item">
-                            <div class="example-title">Retail Analytics</div>
-                            <p class="example-description">
-                                Tracking customer movement through physical stores (heatmaps), analyzing shelf inventory, 
-                                cashier-less checkout systems (Amazon Go).
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Category 4: Autonomous Systems & Robotics -->
-            <div class="category-card">
-                <div class="category-header">
-                    <div class="category-number">04</div>
-                    <div class="category-title-group">
-                        <h3 class="category-name">Autonomous Systems & Robotics</h3>
-                        <div class="category-nickname">"The Mover"</div>
-                    </div>
-                </div>
-                
-                <p class="category-description">
-                    This category combines AI with hardware to allow machines to act independently in the physical world. 
-                    Autonomous systems often use a combination of Computer Vision and Predictive AI to navigate environments, 
-                    make decisions, and perform physical tasks without human intervention.
-                </p>
-                
-                <div class="category-examples">
-                    <h4>Common Use Cases & Applications</h4>
-                    <div class="examples-list">
-                        <div class="example-item">
-                            <div class="example-title">Autonomous Vehicles</div>
-                            <p class="example-description">
-                                Self-driving cars (Waymo, Tesla Full Self-Driving), delivery drones, autonomous trucks, 
-                                and aerial vehicles for surveillance or mapping.
-                            </p>
-                        </div>
-                        <div class="example-item">
-                            <div class="example-title">Warehouse Robotics</div>
-                            <p class="example-description">
-                                Amazon Kiva robots that autonomously navigate warehouses to sort and move packages, 
-                                optimizing fulfillment operations.
-                            </p>
-                        </div>
-                        <div class="example-item">
-                            <div class="example-title">Manufacturing Robotics</div>
-                            <p class="example-description">
-                                Robotic arms that adapt to different objects and tasks rather than repeating one motion, 
-                                enabling flexible manufacturing lines.
-                            </p>
-                        </div>
-                        <div class="example-item">
-                            <div class="example-title">Agricultural Automation</div>
-                            <p class="example-description">
-                                Autonomous tractors, harvesting robots, and drones for crop monitoring, precision agriculture, 
-                                and pesticide application.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Category 5: Conversational AI / NLP -->
-            <div class="category-card">
-                <div class="category-header">
-                    <div class="category-number">05</div>
-                    <div class="category-title-group">
-                        <h3 class="category-name">Conversational AI / Natural Language Processing</h3>
-                        <div class="category-nickname">"The Communicator"</div>
-                    </div>
-                </div>
-                
-                <p class="category-description">
-                    While there's significant overlap with Generative AI, this category's use case is fundamentally different. 
-                    Conversational AI focuses on interaction, translation, and understanding human intent rather than just content 
-                    creation. It enables machines to comprehend, interpret, and respond to human language in meaningful ways.
-                </p>
-                
-                <div class="category-examples">
-                    <h4>Common Use Cases & Applications</h4>
-                    <div class="examples-list">
-                        <div class="example-item">
-                            <div class="example-title">Language Translation</div>
-                            <p class="example-description">
-                                Real-time translation services (Google Translate, DeepL), breaking down language barriers 
-                                for global communication and commerce.
-                            </p>
-                        </div>
-                        <div class="example-item">
-                            <div class="example-title">Sentiment Analysis</div>
-                            <p class="example-description">
-                                Analyzing thousands of social media posts, customer reviews, or survey responses to gauge 
-                                public sentiment about brands, products, or events.
-                            </p>
-                        </div>
-                        <div class="example-item">
-                            <div class="example-title">Virtual Assistants</div>
-                            <p class="example-description">
-                                Siri, Alexa, Google Assistant handling voice commands, setting reminders, controlling 
-                                smart home devices, and answering questions.
-                            </p>
-                        </div>
-                        <div class="example-item">
-                            <div class="example-title">Customer Support Chatbots</div>
-                            <p class="example-description">
-                                AI-powered chatbots that understand customer inquiries, classify issues (refund vs. 
-                                tech support), and provide appropriate responses or routing.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Summary Table Section -->
-    <section class="summary-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Quick Reference: AI Categories Summary</h2>
-                <div class="title-divider"></div>
-            </div>
-            
-            <div class="summary-table-container">
-                <table class="summary-table">
-                    <thead>
-                        <tr>
-                            <th>Category</th>
-                            <th>Primary Function</th>
-                            <th>Common Use Cases</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>AIGC (Generative)</td>
-                            <td>Create</td>
-                            <td>Writing code, generating art, marketing text, video creation</td>
-                        </tr>
-                        <tr>
-                            <td>Predictive AI</td>
-                            <td>Anticipate</td>
-                            <td>Netflix recommendations, stock forecasting, fraud alerts, medical diagnosis</td>
-                        </tr>
-                        <tr>
-                            <td>Computer Vision</td>
-                            <td>See</td>
-                            <td>Facial recognition, medical scan analysis, self-driving car "eyes," quality control</td>
-                        </tr>
-                        <tr>
-                            <td>Autonomous AI</td>
-                            <td>Act</td>
-                            <td>Self-driving cars, warehouse robots, manufacturing automation, delivery drones</td>
-                        </tr>
-                        <tr>
-                            <td>Conversational AI</td>
-                            <td>Understand</td>
-                            <td>Language translation, sentiment analysis, voice assistants, customer support</td>
-                        </tr>
-                    </tbody>
-                </table>
             </div>
         </div>
     </section>
@@ -921,5 +1006,27 @@
     <script src="js/navigation.js?v=1.6"></script>
     <script src="js/footer.js?v=1.6"></script>
     <script src="js/common.js?v=1.6"></script>
+    
+    <script>
+        function openTab(evt, tabName) {
+            // Hide all tab panels
+            var tabPanels = document.getElementsByClassName('tab-panel');
+            for (var i = 0; i < tabPanels.length; i++) {
+                tabPanels[i].classList.remove('active');
+            }
+            
+            // Remove active class from all tabs
+            var tabs = document.getElementsByClassName('folder-tab');
+            for (var i = 0; i < tabs.length; i++) {
+                tabs[i].classList.remove('active');
+            }
+            
+            // Show the selected tab panel
+            document.getElementById(tabName).classList.add('active');
+            
+            // Add active class to the clicked tab
+            evt.currentTarget.classList.add('active');
+        }
+    </script>
 </body>
 </html>
