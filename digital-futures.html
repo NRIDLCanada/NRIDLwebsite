@@ -20,14 +20,23 @@
         .hero-section {
             height: 100vh !important;
             min-height: 700px !important;
-            background-image: url('image assets/AR/AR Business4.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        #digital-futures-hero-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
         }
         
         .hero-overlay {
-            background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.7) 100%);
+            position: relative;
+            z-index: 2;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.6) 100%);
         }
         
         .hero-content {
@@ -92,6 +101,7 @@
 </head>
 <body>
     <section class="hero-section">
+        <div id="digital-futures-hero-canvas"></div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <h1 class="hero-title">
@@ -102,8 +112,6 @@
                 Bridging the technology divide through cutting-edge research in AR/VR, semiconductors, and AI.
             </p>
         </div>
-    </section>
-
     </section>
 
     <!-- Our Works and Impact Section -->
@@ -301,6 +309,7 @@
     <script src="js/navigation.js?v=1.6"></script>
     <script src="js/footer.js?v=1.6"></script>
     <script src="js/common.js?v=1.6"></script>
+    <script type="module" src="js/digital-futures-hero.js"></script>
     <script type="module" src="js/digital-futures-strategic.js"></script>
 </body>
 </html>

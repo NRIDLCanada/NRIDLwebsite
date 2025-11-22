@@ -269,7 +269,7 @@ class SidebarNav {
             // If there's a tab element, click it to switch tabs
             section.tabElement.click();
             
-            // Wait for tab animation, then scroll to tabs
+            // Wait for tab animation, then scroll to tabs with proper offset
             setTimeout(() => {
                 const tabsContainer = document.querySelector('.strategic-tabs');
                 if (tabsContainer) {
@@ -279,12 +279,22 @@ class SidebarNav {
                         behavior: 'smooth'
                     });
                 }
-            }, 100);
-        } else {
-            // Direct scroll to element
+            }, 150);
+        } else if (section.type === 'intro') {
+            // Scroll to the introduction section
             const targetElement = section.element;
             if (targetElement) {
-                const offsetTop = targetElement.offsetTop - this.options.offset;
+                const offsetTop = targetElement.offsetTop - 80;
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        } else {
+            // Direct scroll to element (glossary, conclusion, etc.)
+            const targetElement = section.element;
+            if (targetElement) {
+                const offsetTop = targetElement.offsetTop - 100;
                 window.scrollTo({
                     top: offsetTop,
                     behavior: 'smooth'
