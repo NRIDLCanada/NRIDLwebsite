@@ -88,21 +88,21 @@
         }
 
         .stat-card {
-            background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
             padding: 2.5rem 2rem;
             border-radius: 0;
             text-align: center;
-            color: #ffffff;
+            color: #2c3e50;
             border-top: 3px solid;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
             position: relative;
             overflow: hidden;
         }
 
-        .stat-card:nth-child(1) { border-top-color: #a7b8d6; }
-        .stat-card:nth-child(2) { border-top-color: #b4a7d6; }
-        .stat-card:nth-child(3) { border-top-color: #a7d6c7; }
-        .stat-card:nth-child(4) { border-top-color: #d6c7a7; }
+        .stat-card:nth-child(1) { border-top-color: #7a8fb8; }
+        .stat-card:nth-child(2) { border-top-color: #9681b8; }
+        .stat-card:nth-child(3) { border-top-color: #81b8a3; }
+        .stat-card:nth-child(4) { border-top-color: #b8a381; }
 
         .stat-card::before {
             content: '';
@@ -112,7 +112,7 @@
             width: 100%;
             height: 2px;
             background: linear-gradient(to right, transparent, currentColor, transparent);
-            opacity: 0.3;
+            opacity: 0.2;
         }
 
         .stat-number {
@@ -122,12 +122,13 @@
             margin-bottom: 0.75rem;
             display: block;
             letter-spacing: -0.02em;
+            color: #1a202c;
         }
 
         .stat-label {
             font-size: 0.875rem;
             font-weight: 400;
-            opacity: 0.85;
+            color: #4a5568;
             letter-spacing: 0.05em;
             text-transform: uppercase;
         }
@@ -141,13 +142,14 @@
         }
 
         .value-card {
-            background: linear-gradient(135deg, #2a2a2a 0%, #1f1f1f 100%);
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
             padding: 2.5rem 2rem;
             border-top: 2px solid;
-            border-left: 1px solid rgba(255, 255, 255, 0.05);
+            border-left: 1px solid rgba(0, 0, 0, 0.05);
             position: relative;
             transition: all 0.3s ease;
             overflow: hidden;
+            box-shadow: 0 1px 8px rgba(0, 0, 0, 0.06);
         }
 
         .value-card::before {
@@ -167,8 +169,8 @@
 
         .value-card:hover {
             transform: translateY(-6px);
-            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
-            background: linear-gradient(135deg, #2f2f2f 0%, #242424 100%);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+            background: linear-gradient(135deg, #fafbfc 0%, #f0f2f5 100%);
         }
 
         .value-card:nth-child(1) {
@@ -218,7 +220,7 @@
         }
 
         .value-card h4 {
-            color: #ffffff;
+            color: #1a202c;
             font-size: 1.125rem;
             font-weight: 500;
             margin-bottom: 1rem;
@@ -227,7 +229,7 @@
         }
 
         .value-card p {
-            color: #b8b8b8;
+            color: #4a5568;
             font-size: 0.9375rem;
             line-height: 1.8;
             margin: 0;
@@ -236,19 +238,19 @@
 
         /* Solution Cards */
         .solution-card {
-            background: linear-gradient(135deg, #1f1f1f 0%, #1a1a1a 100%);
-            border: none;
-            border-left: 3px solid #a7c7d6;
+            background: linear-gradient(135deg, #ffffff 0%, #fafbfc 100%);
+            border: 1px solid #e8eaed;
+            border-left: 3px solid #7a9fb8;
             padding: 2.5rem;
             margin-bottom: 2rem;
             border-radius: 0;
             position: relative;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
             transition: all 0.3s ease;
         }
 
         .solution-card:hover {
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
             transform: translateX(4px);
         }
 
@@ -263,28 +265,28 @@
         }
 
         .solution-card:nth-child(2) {
-            border-left-color: #c7b8a7;
+            border-left-color: #a39581;
         }
         .solution-card:nth-child(2)::after {
-            background: linear-gradient(to right, #c7b8a7, transparent);
+            background: linear-gradient(to right, #a39581, transparent);
         }
 
         .solution-card:nth-child(3) {
-            border-left-color: #a7c7b8;
+            border-left-color: #81a395;
         }
         .solution-card:nth-child(3)::after {
-            background: linear-gradient(to right, #a7c7b8, transparent);
+            background: linear-gradient(to right, #81a395, transparent);
         }
 
         .solution-card:nth-child(4) {
-            border-left-color: #c7a7b8;
+            border-left-color: #a38195;
         }
         .solution-card:nth-child(4)::after {
-            background: linear-gradient(to right, #c7a7b8, transparent);
+            background: linear-gradient(to right, #a38195, transparent);
         }
 
         .solution-card h4 {
-            color: #ffffff;
+            color: #1a202c;
             font-size: 1.375rem;
             font-weight: 500;
             margin-bottom: 1.25rem;
@@ -295,7 +297,7 @@
         }
 
         .solution-card p {
-            color: #c4c4c4;
+            color: #4a5568;
             font-size: 1rem;
             line-height: 1.8;
             margin-bottom: 1rem;
@@ -311,7 +313,7 @@
             position: relative;
             padding-left: 2rem;
             margin-bottom: 0.75rem;
-            color: #c4c4c4;
+            color: #4a5568;
             line-height: 1.7;
         }
 
@@ -322,28 +324,28 @@
             top: 0.6em;
             width: 14px;
             height: 2px;
-            background: linear-gradient(to right, #9fb3d6, #a7b8c7);
-            opacity: 0.8;
+            background: linear-gradient(to right, #7a8fb8, #8195a3);
         }
 
         /* Audience Sections */
         .audience-section {
-            background: linear-gradient(135deg, #242424 0%, #1f1f1f 100%);
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
             padding: 2.5rem;
             margin: 2rem 0;
             border-radius: 0;
             border-top: 2px solid;
-            border-left: 1px solid rgba(255, 255, 255, 0.03);
+            border: 1px solid #e8eaed;
+            border-top-width: 2px;
             position: relative;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
         }
 
         .audience-section:nth-child(odd) {
-            border-top-color: #9fb3d6;
+            border-top-color: #7a8fb8;
         }
 
         .audience-section:nth-child(even) {
-            border-top-color: #a7b8c7;
+            border-top-color: #8195a3;
         }
 
         .audience-section::before {
@@ -357,20 +359,20 @@
         }
 
         .audience-section h4 {
-            color: #ffffff;
+            color: #1a202c;
             font-size: 1.25rem;
             font-weight: 500;
             margin-bottom: 1.5rem;
             padding-bottom: 1rem;
             font-family: var(--font-accent);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
             padding-left: 0;
             border-left: none;
             letter-spacing: 0.02em;
         }
 
         .audience-section > p {
-            color: #c4c4c4;
+            color: #4a5568;
         }
 
         .benefit-list {
@@ -382,7 +384,7 @@
             position: relative;
             padding-left: 2.5rem;
             margin-bottom: 1rem;
-            color: #c4c4c4;
+            color: #4a5568;
             line-height: 1.8;
         }
 
@@ -393,17 +395,15 @@
             top: 0.7em;
             width: 16px;
             height: 2px;
-            background: linear-gradient(to right, #9fb3d6, #b4c7e0);
-            opacity: 0.8;
+            background: linear-gradient(to right, #7a8fb8, #8fa3cc);
         }
 
         .audience-section:nth-child(even) .benefit-list li::before {
-            background: linear-gradient(to right, #a7b8c7, #bcc9d6);
-            opacity: 0.8;
+            background: linear-gradient(to right, #8195a3, #95aab8);
         }
 
         .benefit-list li strong {
-            color: #e8e8e8;
+            color: #2d3748;
             font-weight: 600;
         }
 
@@ -418,26 +418,28 @@
         .impact-item {
             text-align: center;
             padding: 2rem 1.5rem;
-            background: linear-gradient(135deg, #1f1f1f 0%, #1a1a1a 100%);
+            background: linear-gradient(135deg, #ffffff 0%, #fafbfc 100%);
             border-top: 3px solid;
+            border: 1px solid #e8eaed;
+            border-top-width: 3px;
             position: relative;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
         }
 
         .impact-item:nth-child(1) {
-            border-top-color: #9fb3d6;
+            border-top-color: #7a8fb8;
         }
 
         .impact-item:nth-child(2) {
-            border-top-color: #a7b8c7;
+            border-top-color: #8195a3;
         }
 
         .impact-item:nth-child(3) {
-            border-top-color: #c7b8a7;
+            border-top-color: #a39581;
         }
 
         .impact-item:nth-child(4) {
-            border-top-color: #bfa7c7;
+            border-top-color: #9581a3;
         }
 
         .impact-item::before {
@@ -456,7 +458,7 @@
         }
 
         .impact-item h5 {
-            color: #ffffff;
+            color: #1a202c;
             font-size: 1.125rem;
             font-weight: 500;
             margin-bottom: 0.75rem;
@@ -466,7 +468,7 @@
         }
 
         .impact-item p {
-            color: #b8b8b8;
+            color: #4a5568;
             font-size: 0.9375rem;
             line-height: 1.8;
             margin: 0;
@@ -485,17 +487,19 @@
             position: relative;
             text-align: center;
             padding: 2rem 1.5rem;
-            background: linear-gradient(135deg, #242424 0%, #1f1f1f 100%);
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
             border-top: 3px solid;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+            border: 1px solid #e8eaed;
+            border-top-width: 3px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
         }
 
-        .process-step:nth-child(1) { border-top-color: #9fb3d6; }
-        .process-step:nth-child(2) { border-top-color: #a7b8c7; }
-        .process-step:nth-child(3) { border-top-color: #c7b8a7; }
-        .process-step:nth-child(4) { border-top-color: #bfa7c7; }
-        .process-step:nth-child(5) { border-top-color: #a7c7b8; }
-        .process-step:nth-child(6) { border-top-color: #c7a7b8; }
+        .process-step:nth-child(1) { border-top-color: #7a8fb8; }
+        .process-step:nth-child(2) { border-top-color: #8195a3; }
+        .process-step:nth-child(3) { border-top-color: #a39581; }
+        .process-step:nth-child(4) { border-top-color: #9581a3; }
+        .process-step:nth-child(5) { border-top-color: #81a395; }
+        .process-step:nth-child(6) { border-top-color: #a38195; }
 
         .process-step::before {
             content: '';
@@ -511,7 +515,7 @@
         .step-number {
             display: inline-block;
             background: none;
-            color: #b8b8b8;
+            color: #718096;
             border-radius: 0;
             font-size: 0.8125rem;
             font-weight: 400;
@@ -523,11 +527,11 @@
 
         .step-number::before {
             content: 'Step ';
-            opacity: 0.5;
+            opacity: 0.6;
         }
 
         .process-step h5 {
-            color: #ffffff;
+            color: #1a202c;
             font-size: 1.125rem;
             font-weight: 500;
             margin-bottom: 0.75rem;
@@ -536,7 +540,7 @@
         }
 
         .process-step p {
-            color: #b8b8b8;
+            color: #4a5568;
             font-size: 0.9375rem;
             line-height: 1.7;
             margin: 0;
