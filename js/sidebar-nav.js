@@ -45,6 +45,21 @@ class SidebarNav {
     getSections() {
         const sections = [];
         
+        // Check for problems/challenges section (on index page)
+        const problemsSection = document.querySelector('.problems-section');
+        if (problemsSection) {
+            const problemsIntro = problemsSection.querySelector('.problems-intro h2');
+            if (problemsIntro) {
+                sections.push({
+                    id: 'challenges-section',
+                    title: 'The Challenges',
+                    number: '⚠',
+                    element: problemsSection,
+                    type: 'challenges'
+                });
+            }
+        }
+        
         // Get the main section title first
         const mainTitle = document.querySelector('.section-title');
         if (mainTitle) {
@@ -302,6 +317,24 @@ class SidebarNav {
                 const rect = targetElement.getBoundingClientRect();
                 const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
                 const targetPosition = rect.top + scrollTop - 100;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+                
+                // Re-enable automatic updates after scroll completes
+                setTimeout(() => {
+                    this.isNavigating = false;
+                }, 800);
+            }
+        } else if (section.type === 'challenges') {
+            // Scroll to the challenges/problems section
+            const targetElement = section.element;
+            if (targetElement) {
+                const rect = targetElement.getBoundingClientRect();
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                const targetPosition = rect.top + scrollTop - 80;
                 
                 window.scrollTo({
                     top: targetPosition,
