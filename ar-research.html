@@ -19,32 +19,64 @@
     <style>
         /* Hero Section */
         .hero-section {
-            height: 100vh !important;
-            min-height: 700px !important;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             position: relative;
+            height: 100vh;
+            min-height: 700px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-start;
             overflow: hidden;
+            background-color: #0a0015;
+        }
+
+        #ar-hero-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
         }
         
         .hero-overlay {
-            background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.6) 100%);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.8) 100%);
+            z-index: 2;
+            pointer-events: none;
         }
         
         .hero-content {
-            text-align: left !important;
+            position: relative;
+            z-index: 3;
+            text-align: left;
+            color: var(--text-light);
+            max-width: 800px;
+            padding: 0 clamp(2rem, 5vw, 4rem);
+            margin-bottom: clamp(1rem, 2vw, 1.5rem);
         }
         
         .hero-title {
-            font-size: clamp(1.75rem, 3vw, 2.5rem) !important;
-            text-align: left !important;
-            line-height: 1.3;
+            font-size: clamp(1rem, 2.5vw, 2rem);
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.8);
+            font-weight: 700;
         }
         
         .hero-subtitle {
-            font-size: clamp(0.9rem, 1.8vw, 1.125rem) !important;
-            text-align: left !important;
-            max-width: 900px;
+            font-size: clamp(0.8rem, 1.6vw, 1rem);
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 700px;
+            margin: 0 0 2rem 0;
             line-height: 1.7;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+            font-weight: 300;
         }
 
         /* Stats Section */
@@ -289,48 +321,6 @@
             margin: 0;
         }
 
-        /* CTA Section */
-        .cta-section {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 4rem 2rem;
-            text-align: center;
-            color: #ffffff;
-            margin-top: 4rem;
-            border-radius: 12px;
-        }
-
-        .cta-section h3 {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            font-family: var(--font-accent);
-        }
-
-        .cta-section p {
-            font-size: 1.125rem;
-            margin-bottom: 2rem;
-            opacity: 0.95;
-        }
-
-        .cta-button {
-            background: #ffffff;
-            color: #667eea;
-            padding: 1rem 2.5rem;
-            font-size: 1.125rem;
-            font-weight: 600;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-        }
-
         @media (max-width: 768px) {
             .hero-section {
                 min-height: 100vh !important;
@@ -353,11 +343,12 @@
 <body>
     <!-- Hero Section -->
     <section class="hero-section">
+        <div id="ar-hero-canvas"></div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <h1 class="hero-title">
                 Augmented Reality Research & Services:<br>
-                <span style="font-weight: 400; opacity: 0.95;">Transforming Tourism, Retail, and Education Through WebAR</span>
+                Transforming Tourism, Retail, and Education Through WebAR
             </h1>
             <p class="hero-subtitle">
                 NRIDL delivers cutting-edge Augmented Reality solutions that drive customer engagement, boost tourism, 
@@ -429,21 +420,15 @@
                                 <h4>Cost-Effective Deployment</h4>
                                 <p>Eliminate app development costs, platform-specific versions, and ongoing app store maintenance. One WebAR experience works everywhere.</p>
                             </div>
-                            <div class="value-card">
-                                <span class="value-icon">📊</span>
-                                <h4>Real-Time Analytics</h4>
-                                <p>Track user interactions, engagement metrics, and conversion data to measure ROI and optimize experiences continuously.</p>
-                            </div>
                         </div>
 
                         <div class="why-box">
                             <strong>Technical Advantages</strong>
                             <p>
-                                Our WebAR solutions leverage WebXR APIs, 8th Wall technology, and responsive design principles to deliver 
-                                high-performance AR experiences that work seamlessly across devices. With support for marker-based tracking, 
-                                markerless surface detection, and location-based AR, we can create experiences tailored to any use case—from 
-                                interactive product displays to citywide scavenger hunts. Cross-platform compatibility ensures your investment 
-                                reaches the widest possible audience without fragmenting development efforts.
+                                With support for marker-based tracking, markerless surface detection, and location-based AR, we can create 
+                                experiences tailored to any use case—from interactive product displays to citywide scavenger hunts. 
+                                Cross-platform compatibility ensures your investment reaches the widest possible audience without 
+                                fragmenting development efforts.
                             </p>
                         </div>
                     </div>
@@ -935,68 +920,6 @@
 
                 </div>
 
-                <!-- Economic Impact Section -->
-                <div class="timeline-section reveal">
-                    <div class="timeline-content">
-                        <h3>Economic Impact: AR as a Tourism and Business Growth Driver</h3>
-                        <p>
-                            Augmented Reality isn't just engaging technology—it's a proven economic development tool. Cities, businesses, 
-                            and cultural institutions that adopt AR solutions experience measurable increases in tourism revenue, customer 
-                            spending, visitor satisfaction, and competitive positioning.
-                        </p>
-
-                        <div class="impact-grid">
-                            <div class="impact-item">
-                                <span class="icon">📈</span>
-                                <h5>Tourism Revenue Growth</h5>
-                                <p>Destinations with AR experiences see 20-35% increases in visitor spending and extended stay durations</p>
-                            </div>
-                            <div class="impact-item">
-                                <span class="icon">🏪</span>
-                                <h5>Local Business Support</h5>
-                                <p>AR drives foot traffic to partner businesses, with participants 3x more likely to visit recommended locations</p>
-                            </div>
-                            <div class="impact-item">
-                                <span class="icon">⭐</span>
-                                <h5>Visitor Satisfaction</h5>
-                                <p>AR-enhanced experiences receive 40% higher satisfaction scores and generate positive word-of-mouth</p>
-                            </div>
-                            <div class="impact-item">
-                                <span class="icon">🎯</span>
-                                <h5>Competitive Positioning</h5>
-                                <p>Cities offering AR tourism experiences attract younger, tech-savvy demographics and differentiate from competitors</p>
-                            </div>
-                        </div>
-
-                        <h4 style="color: #333; margin-top: 2.5rem; margin-bottom: 1.5rem; font-size: 1.25rem;">Case for Government Investment</h4>
-                        <p>
-                            AR installations represent high-impact, cost-effective infrastructure that serves multiple stakeholder groups 
-                            simultaneously. Unlike traditional tourism marketing or physical infrastructure, AR experiences:
-                        </p>
-                        <ul class="benefit-list">
-                            <li><strong>Scale Efficiently:</strong> Once created, AR content serves unlimited users without incremental costs</li>
-                            <li><strong>Update Dynamically:</strong> Content refreshes remotely, keeping experiences current and seasonal without reinstallation</li>
-                            <li><strong>Generate Data:</strong> Provide valuable insights into visitor behavior, preferences, and economic impact for evidence-based planning</li>
-                            <li><strong>Support Equity:</strong> Accessible technology (smartphones) ensures broad participation across socioeconomic groups</li>
-                            <li><strong>Foster Innovation:</strong> Position municipalities as forward-thinking, attracting businesses and talent seeking innovative communities</li>
-                            <li><strong>Create Jobs:</strong> AR development, content creation, and ongoing management provide employment opportunities for local creative talent</li>
-                        </ul>
-
-                        <div class="why-box">
-                            <strong>Restaurant AR Initiative: A Strategic Investment</strong>
-                            <p>
-                                Supporting AR installations for restaurant owners specifically addresses multiple municipal goals: enhancing 
-                                the dining experience for residents and tourists, reducing barriers for international visitors through visual 
-                                menus and multilingual support, differentiating the city's culinary scene from competitors, supporting small 
-                                business resilience through technology adoption, and creating shareable moments that drive organic tourism 
-                                marketing. Restaurant AR installations serve as entry points for broader AR tourism ecosystems—visitors who 
-                                engage with AR menus are significantly more likely to participate in AR city tours, scavenger hunts, and 
-                                cultural experiences, creating a virtuous cycle of engagement and spending.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
                 <!-- 2030 Vision -->
                 <div class="timeline-section reveal">
                     <div class="timeline-content">
@@ -1033,18 +956,10 @@
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <div class="cta-section">
-        <div class="container">
-            <h3>Ready to Transform Your City or Business with AR?</h3>
-            <p>Let's discuss how our Augmented Reality solutions can drive engagement, boost tourism, and create unforgettable experiences.</p>
-            <a href="mailto:info@nridl.ca" class="cta-button">Get in Touch</a>
-        </div>
-    </div>
-
     <!-- Footer will be injected by footer.js -->
 
     <!-- Scripts -->
+    <script type="module" src="js/ar-hero.js"></script>
     <script src="js/navigation.js?v=1.6"></script>
     <script src="js/footer.js?v=1.6"></script>
     <script src="js/common.js?v=1.6"></script>
