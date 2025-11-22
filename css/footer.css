@@ -112,6 +112,7 @@
     font-weight: 600;
     position: relative;
     padding-bottom: 0.75rem;
+    display: inline-block;
 }
 
 .footer-section-title::after {
