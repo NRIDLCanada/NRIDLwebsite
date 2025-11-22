@@ -392,6 +392,111 @@
             color: #1a1a1a;
         }
         
+        .cta-section {
+            background: #e8f4f8;
+            padding: clamp(4rem, 8vw, 6rem) 0;
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            font-size: clamp(1.75rem, 3vw, 2.5rem);
+            color: #1a1a1a;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
+        
+        .cta-section p {
+            font-size: 1.125rem;
+            color: #666666;
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .resources-section {
+            background: #ffffff;
+            padding: clamp(4rem, 10vw, 8rem) 0;
+        }
+        
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+        
+        .resource-card {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .resource-card:hover {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+            transform: translateY(-4px);
+            border-color: #1a1a2e;
+        }
+        
+        .resource-badge {
+            display: inline-block;
+            padding: 0.375rem 0.875rem;
+            background: #f0f0f0;
+            color: #1a1a2e;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1.25rem;
+            font-family: var(--font-accent);
+            border-radius: 4px;
+        }
+        
+        .resource-card h3 {
+            font-size: 1.5rem;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+        
+        .resource-description {
+            font-size: 1rem;
+            color: #666666;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+            flex-grow: 1;
+        }
+        
+        .resource-meta {
+            margin-bottom: 1.5rem;
+        }
+        
+        .resource-meta-item {
+            font-size: 0.875rem;
+            color: #666666;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .resource-meta-item strong {
+            color: #1a1a1a;
+            font-weight: 500;
+            min-width: 100px;
+            font-family: var(--font-accent);
+        }
+        
+        .resource-card .btn {
+            width: 100%;
+            text-align: center;
+            margin-top: auto;
+        }
+        
         .convergence-section {
             background: #ffffff;
             padding: clamp(4rem, 10vw, 8rem) 0;
@@ -481,6 +586,10 @@
             
             .folder-content {
                 padding: 2rem 1.5rem;
+            }
+            
+            .resources-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -999,56 +1108,428 @@
         </div>
     </section>
 
-    <!-- Convergence Section -->
-    <section class="convergence-section">
+    <!-- CTA Section -->
+    <section class="cta-section">
         <div class="container">
-            <div class="convergence-content">
-                <div class="convergence-header">
-                    <h2>Where Are We Heading? The AI Convergence Era</h2>
+            <h2>Build Your AI Skills</h2>
+            <p>Ready to develop practical AI competencies and stay ahead in the age of artificial intelligence?</p>
+            <a href="learning-programs.html" class="btn btn-outline btn-large">Explore Learning Programs</a>
+        </div>
+    </section>
+
+    <!-- Free Resources Section -->
+    <section class="resources-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Free AI Learning Resources</h2>
+                <p>
+                    Access comprehensive AI learning materials from industry leaders and top institutions. From prompt engineering 
+                    to machine learning fundamentals, these resources will help you build essential AI skills at your own pace.
+                </p>
+            </div>
+            
+            <div class="resources-grid">
+                <!-- Prompt Engineering Resources -->
+                <div class="resource-card">
+                    <span class="resource-badge">Prompt Engineering</span>
+                    <h3>Prompt Engineering by OpenAI</h3>
+                    <p class="resource-description">
+                        Master the art of crafting effective prompts for AI models. Learn best practices, strategies, and techniques 
+                        directly from OpenAI to get better results from ChatGPT and other language models.
+                    </p>
+                    <div class="resource-meta">
+                        <div class="resource-meta-item">
+                            <strong>Provider:</strong> OpenAI
+                        </div>
+                        <div class="resource-meta-item">
+                            <strong>Audience:</strong> All levels - Beginners to advanced users
+                        </div>
+                    </div>
+                    <a href="https://platform.openai.com/docs/guides/prompt-engineering" target="_blank" class="btn btn-outline">Access Guide</a>
                 </div>
                 
-                <p class="convergence-text">
-                    Currently, we are witnessing a fascinating convergence of AI technologies. Modern AI systems increasingly 
-                    combine multiple categories to create more sophisticated, versatile, and powerful applications. This integration 
-                    represents the next evolution of AI—moving from specialized, single-purpose systems to multimodal, general-purpose 
-                    intelligence that mirrors the way humans process information across different sensory and cognitive domains.
-                </p>
-                
-                <div class="convergence-examples">
-                    <div class="convergence-card">
-                        <h4>Self-Driving Cars</h4>
-                        <p>
-                            Modern autonomous vehicles combine <strong>Computer Vision</strong> to "see" the road, pedestrians, 
-                            and obstacles; <strong>Predictive AI</strong> to anticipate what pedestrians and other drivers will do; 
-                            and <strong>Autonomous Systems</strong> to navigate and control the vehicle safely.
-                        </p>
+                <div class="resource-card">
+                    <span class="resource-badge">Prompt Engineering</span>
+                    <h3>Prompt Engineering by Google Cloud</h3>
+                    <p class="resource-description">
+                        Explore Google's approach to prompt engineering for generative AI. Learn how to design prompts that produce 
+                        accurate, relevant, and contextually appropriate responses from AI systems.
+                    </p>
+                    <div class="resource-meta">
+                        <div class="resource-meta-item">
+                            <strong>Provider:</strong> Google Cloud
+                        </div>
+                        <div class="resource-meta-item">
+                            <strong>Audience:</strong> Developers and AI practitioners
+                        </div>
                     </div>
-                    
-                    <div class="convergence-card">
-                        <h4>Advanced Chatbots</h4>
-                        <p>
-                            Today's sophisticated chatbots integrate <strong>Conversational AI</strong> to understand user intent 
-                            and context; <strong>Generative AI</strong> to create natural, contextually appropriate responses; 
-                            and <strong>Predictive AI</strong> to anticipate user needs and personalize interactions.
-                        </p>
-                    </div>
-                    
-                    <div class="convergence-card">
-                        <h4>Smart Healthcare Systems</h4>
-                        <p>
-                            Modern medical AI combines <strong>Computer Vision</strong> to analyze medical imaging; 
-                            <strong>Predictive AI</strong> to assess disease risk and treatment outcomes; and 
-                            <strong>Conversational AI</strong> to interact with patients and healthcare providers.
-                        </p>
-                    </div>
+                    <a href="https://cloud.google.com/docs/prompting" target="_blank" class="btn btn-outline">Access Guide</a>
                 </div>
                 
-                <p class="convergence-text" style="margin-top: 3rem;">
-                    This convergence trend will only accelerate. As AI systems become more integrated and multimodal, the boundaries 
-                    between these categories will blur further. Understanding these fundamental categories, however, remains crucial 
-                    for comprehending how AI works, its capabilities and limitations, and how it will continue to shape our world 
-                    in the years ahead.
-                </p>
+                <div class="resource-card">
+                    <span class="resource-badge">Prompt Engineering</span>
+                    <h3>Create Effective Prompts by Microsoft</h3>
+                    <p class="resource-description">
+                        Structured training module on creating effective prompts for generative AI tools. Perfect for those wanting 
+                        a systematic approach to learning prompt engineering with hands-on exercises.
+                    </p>
+                    <div class="resource-meta">
+                        <div class="resource-meta-item">
+                            <strong>Provider:</strong> Microsoft Learn
+                        </div>
+                        <div class="resource-meta-item">
+                            <strong>Audience:</strong> Beginners and intermediate users
+                        </div>
+                    </div>
+                    <a href="https://learn.microsoft.com/en-us/training/modules/create-prompts-for-generative-ai-training-tools/" target="_blank" class="btn btn-outline">Start Learning</a>
+                </div>
+                
+                <div class="resource-card">
+                    <span class="resource-badge">Coding with AI</span>
+                    <h3>Claude Code Prompting</h3>
+                    <p class="resource-description">
+                        Practical guide to getting excellent results from Claude when coding. Learn proven strategies and techniques 
+                        from experienced developer Chris Dzombak for AI-assisted programming.
+                    </p>
+                    <div class="resource-meta">
+                        <div class="resource-meta-item">
+                            <strong>Provider:</strong> Chris Dzombak
+                        </div>
+                        <div class="resource-meta-item">
+                            <strong>Audience:</strong> Developers and programmers
+                        </div>
+                    </div>
+                    <a href="https://www.dzombak.com/blog/2025/08/getting-good-results-from-claude-code/" target="_blank" class="btn btn-outline">Read Guide</a>
+                </div>
+                
+                <div class="resource-card">
+                    <span class="resource-badge">Coding with AI</span>
+                    <h3>Vibe Coding Essentials</h3>
+                    <p class="resource-description">
+                        Discover "Vibe Coding" - Google Cloud's approach to AI-assisted development. Learn how to collaborate with 
+                        AI to write code faster and more efficiently while maintaining quality.
+                    </p>
+                    <div class="resource-meta">
+                        <div class="resource-meta-item">
+                            <strong>Provider:</strong> Google Cloud
+                        </div>
+                        <div class="resource-meta-item">
+                            <strong>Audience:</strong> Developers and engineers
+                        </div>
+                    </div>
+                    <a href="https://cloud.google.com/discover/what-is-vibe-coding?hl=en#what-is-vibe-coding" target="_blank" class="btn btn-outline">Learn More</a>
+                </div>
+                
+                <!-- Machine Learning Fundamentals -->
+                <div class="resource-card">
+                    <span class="resource-badge">ML Fundamentals</span>
+                    <h3>Machine Learning & AI by Google Cloud</h3>
+                    <p class="resource-description">
+                        Comprehensive training on machine learning and artificial intelligence from Google Cloud. Build foundational 
+                        knowledge and practical skills in ML/AI technologies and applications.
+                    </p>
+                    <div class="resource-meta">
+                        <div class="resource-meta-item">
+                            <strong>Provider:</strong> Google Cloud
+                        </div>
+                        <div class="resource-meta-item">
+                            <strong>Audience:</strong> Technical professionals and aspiring ML engineers
+                        </div>
+                    </div>
+                    <a href="https://cloud.google.com/learn/training/machinelearning-ai" target="_blank" class="btn btn-outline">Start Training</a>
+                </div>
+                
+                <div class="resource-card">
+                    <span class="resource-badge">ML Fundamentals</span>
+                    <h3>Google Machine Learning</h3>
+                    <p class="resource-description">
+                        Google's developer-focused machine learning resources and courses. Learn ML concepts, tools, and best practices 
+                        with hands-on tutorials and interactive examples from Google experts.
+                    </p>
+                    <div class="resource-meta">
+                        <div class="resource-meta-item">
+                            <strong>Provider:</strong> Google Developers
+                        </div>
+                        <div class="resource-meta-item">
+                            <strong>Audience:</strong> Developers and ML practitioners
+                        </div>
+                    </div>
+                    <a href="https://developers.google.com/machine-learning" target="_blank" class="btn btn-outline">Explore Resources</a>
+                </div>
+                
+                <div class="resource-card">
+                    <span class="resource-badge">ML Fundamentals</span>
+                    <h3>AI Learning Essentials by NVIDIA</h3>
+                    <p class="resource-description">
+                        Essential AI learning resources from the leader in AI computing. Perfect introduction to AI concepts, 
+                        applications, and technologies with focus on practical understanding.
+                    </p>
+                    <div class="resource-meta">
+                        <div class="resource-meta-item">
+                            <strong>Provider:</strong> NVIDIA
+                        </div>
+                        <div class="resource-meta-item">
+                            <strong>Audience:</strong> Beginners and professionals exploring AI
+                        </div>
+                    </div>
+                    <a href="https://www.nvidia.com/en-us/learn/ai-learning-essentials/" target="_blank" class="btn btn-outline">Get Started</a>
+                </div>
+                
+                <!-- Advanced AI/ML -->
+                <div class="resource-card">
+                    <span class="resource-badge">Advanced ML</span>
+                    <h3>Build a LLM from Scratch</h3>
+                    <p class="resource-description">
+                        Deep dive into building Large Language Models from the ground up. Comprehensive guide by Sebastian Raschka 
+                        for understanding LLM architecture, training, and implementation.
+                    </p>
+                    <div class="resource-meta">
+                        <div class="resource-meta-item">
+                            <strong>Provider:</strong> Sebastian Raschka
+                        </div>
+                        <div class="resource-meta-item">
+                            <strong>Audience:</strong> Advanced developers and ML researchers
+                        </div>
+                    </div>
+                    <a href="https://github.com/rasbt/LLMs-from-scratch?tab=readme-ov-file" target="_blank" class="btn btn-outline">View Project</a>
+                </div>
+                
+                <div class="resource-card">
+                    <span class="resource-badge">Advanced ML</span>
+                    <h3>NVIDIA Deep Learning Institute</h3>
+                    <p class="resource-description">
+                        Professional deep learning training and certification from NVIDIA. Hands-on courses covering neural networks, 
+                        computer vision, NLP, and GPU-accelerated computing.
+                    </p>
+                    <div class="resource-meta">
+                        <div class="resource-meta-item">
+                            <strong>Provider:</strong> NVIDIA
+                        </div>
+                        <div class="resource-meta-item">
+                            <strong>Audience:</strong> Technical professionals and data scientists
+                        </div>
+                    </div>
+                    <a href="https://www.nvidia.com/en-us/training/" target="_blank" class="btn btn-outline">Explore Training</a>
+                </div>
+                
+                <!-- Platform-Specific Learning -->
+                <div class="resource-card">
+                    <span class="resource-badge">Google Platforms</span>
+                    <h3>Google Learn</h3>
+                    <p class="resource-description">
+                        Google's comprehensive learning platform covering AI, machine learning, data analytics, and digital skills. 
+                        Free courses and certifications to boost your technical capabilities.
+                    </p>
+                    <div class="resource-meta">
+                        <div class="resource-meta-item">
+                            <strong>Provider:</strong> Google
+                        </div>
+                        <div class="resource-meta-item">
+                            <strong>Audience:</strong> All levels - Career changers to professionals
+                        </div>
+                    </div>
+                    <a href="https://learning.google/" target="_blank" class="btn btn-outline">Start Learning</a>
+                </div>
+                
+                <div class="resource-card">
+                    <span class="resource-badge">Google Platforms</span>
+                    <h3>Google Skills</h3>
+                    <p class="resource-description">
+                        Build in-demand digital skills with Google's curated learning paths. From AI basics to advanced data analytics, 
+                        gain practical skills recognized by employers worldwide.
+                    </p>
+                    <div class="resource-meta">
+                        <div class="resource-meta-item">
+                            <strong>Provider:</strong> Google
+                        </div>
+                        <div class="resource-meta-item">
+                            <strong>Audience:</strong> Job seekers and career developers
+                        </div>
+                    </div>
+                    <a href="https://www.skills.google/" target="_blank" class="btn btn-outline">Build Skills</a>
+                </div>
+                
+                <div class="resource-card">
+                    <span class="resource-badge">Google Platforms</span>
+                    <h3>Google Cloud Learning</h3>
+                    <p class="resource-description">
+                        Master Google Cloud Platform with official training resources. Learn cloud computing, AI/ML services, 
+                        data engineering, and infrastructure management with hands-on labs.
+                    </p>
+                    <div class="resource-meta">
+                        <div class="resource-meta-item">
+                            <strong>Provider:</strong> Google Cloud
+                        </div>
+                        <div class="resource-meta-item">
+                            <strong>Audience:</strong> Cloud professionals and developers
+                        </div>
+                    </div>
+                    <a href="https://cloud.google.com/learn/training?hl=en" target="_blank" class="btn btn-outline">Access Training</a>
+                </div>
+                
+                <div class="resource-card">
+                    <span class="resource-badge">Microsoft Platforms</span>
+                    <h3>Microsoft Learn</h3>
+                    <p class="resource-description">
+                        Microsoft's official learning platform with comprehensive courses on AI, Azure, development, and more. 
+                        Free, self-paced learning paths with certifications and hands-on labs.
+                    </p>
+                    <div class="resource-meta">
+                        <div class="resource-meta-item">
+                            <strong>Provider:</strong> Microsoft
+                        </div>
+                        <div class="resource-meta-item">
+                            <strong>Audience:</strong> All levels - Beginners to professionals
+                        </div>
+                    </div>
+                    <a href="https://learn.microsoft.com/en-us/training/" target="_blank" class="btn btn-outline">Start Learning</a>
+                </div>
+                
+                <div class="resource-card">
+                    <span class="resource-badge">Microsoft Platforms</span>
+                    <h3>AI Skills Navigator by Microsoft</h3>
+                    <p class="resource-description">
+                        Navigate your AI learning journey with Microsoft's personalized skills assessment and learning recommendations. 
+                        Discover which AI skills to develop and how to build them effectively.
+                    </p>
+                    <div class="resource-meta">
+                        <div class="resource-meta-item">
+                            <strong>Provider:</strong> Microsoft
+                        </div>
+                        <div class="resource-meta-item">
+                            <strong>Audience:</strong> Professionals planning AI career development
+                        </div>
+                    </div>
+                    <a href="https://aiskillsnavigator.microsoft.com/" target="_blank" class="btn btn-outline">Explore Navigator</a>
+                </div>
+                
+                <div class="resource-card">
+                    <span class="resource-badge">Microsoft Platforms</span>
+                    <h3>AI Learning Hub by Microsoft</h3>
+                    <p class="resource-description">
+                        Centralized hub for all Microsoft AI learning resources. Access courses, documentation, and tools for 
+                        developers, data scientists, and business professionals working with AI.
+                    </p>
+                    <div class="resource-meta">
+                        <div class="resource-meta-item">
+                            <strong>Provider:</strong> Microsoft Learn
+                        </div>
+                        <div class="resource-meta-item">
+                            <strong>Audience:</strong> Developers and AI practitioners
+                        </div>
+                    </div>
+                    <a href="https://learn.microsoft.com/en-us/ai/?tabs=developer" target="_blank" class="btn btn-outline">Visit Hub</a>
+                </div>
+                
+                <div class="resource-card">
+                    <span class="resource-badge">Microsoft Platforms</span>
+                    <h3>AI for Beginners by Microsoft</h3>
+                    <p class="resource-description">
+                        Complete AI curriculum designed for beginners. 12-week, 24-lesson program covering AI fundamentals, 
+                        machine learning, neural networks, and practical applications with code examples.
+                    </p>
+                    <div class="resource-meta">
+                        <div class="resource-meta-item">
+                            <strong>Provider:</strong> Microsoft
+                        </div>
+                        <div class="resource-meta-item">
+                            <strong>Audience:</strong> Beginners with basic programming knowledge
+                        </div>
+                    </div>
+                    <a href="https://microsoft.github.io/AI-For-Beginners/" target="_blank" class="btn btn-outline">Start Curriculum</a>
+                </div>
+                
+                <div class="resource-card">
+                    <span class="resource-badge">Microsoft Platforms</span>
+                    <h3>AI Skills Learning by Microsoft</h3>
+                    <p class="resource-description">
+                        Microsoft's commitment to democratizing AI education through free learning resources and community programs. 
+                        Access global initiatives making AI skills accessible to everyone.
+                    </p>
+                    <div class="resource-meta">
+                        <div class="resource-meta-item">
+                            <strong>Provider:</strong> Microsoft Corporate Responsibility
+                        </div>
+                        <div class="resource-meta-item">
+                            <strong>Audience:</strong> Global learners and communities
+                        </div>
+                    </div>
+                    <a href="https://www.microsoft.com/en-us/corporate-responsibility/skills-employability/ai-skills" target="_blank" class="btn btn-outline">Learn More</a>
+                </div>
+                
+                <div class="resource-card">
+                    <span class="resource-badge">AWS Platform</span>
+                    <h3>Learn AI by AWS</h3>
+                    <p class="resource-description">
+                        Amazon Web Services' comprehensive AI and machine learning education. Learn to build, train, and deploy 
+                        AI models using AWS services with free tier access and hands-on tutorials.
+                    </p>
+                    <div class="resource-meta">
+                        <div class="resource-meta-item">
+                            <strong>Provider:</strong> Amazon Web Services
+                        </div>
+                        <div class="resource-meta-item">
+                            <strong>Audience:</strong> Cloud developers and ML practitioners
+                        </div>
+                    </div>
+                    <a href="https://aws.amazon.com/ai/learn/" target="_blank" class="btn btn-outline">Explore AWS AI</a>
+                </div>
+                
+                <!-- AI Platform Support -->
+                <div class="resource-card">
+                    <span class="resource-badge">AI Tools</span>
+                    <h3>Claude Support by Anthropic</h3>
+                    <p class="resource-description">
+                        Official support documentation for Claude AI. Learn how to use Claude effectively, understand its capabilities, 
+                        and get the most out of this advanced AI assistant for various tasks.
+                    </p>
+                    <div class="resource-meta">
+                        <div class="resource-meta-item">
+                            <strong>Provider:</strong> Anthropic
+                        </div>
+                        <div class="resource-meta-item">
+                            <strong>Audience:</strong> Claude users at all levels
+                        </div>
+                    </div>
+                    <a href="https://support.claude.com/en/" target="_blank" class="btn btn-outline">Access Support</a>
+                </div>
+                
+                <div class="resource-card">
+                    <span class="resource-badge">AI Tools</span>
+                    <h3>Learn AI by Hugging Face</h3>
+                    <p class="resource-description">
+                        Learn from the open-source AI community's leading platform. Access courses on transformers, NLP, 
+                        computer vision, and more with hands-on notebooks and pre-trained models.
+                    </p>
+                    <div class="resource-meta">
+                        <div class="resource-meta-item">
+                            <strong>Provider:</strong> Hugging Face
+                        </div>
+                        <div class="resource-meta-item">
+                            <strong>Audience:</strong> ML practitioners and researchers
+                        </div>
+                    </div>
+                    <a href="https://huggingface.co/learn" target="_blank" class="btn btn-outline">Start Learning</a>
+                </div>
+                
+                <!-- Academic Resources -->
+                <div class="resource-card">
+                    <span class="resource-badge">Academic</span>
+                    <h3>MIT OpenCourseWare</h3>
+                    <p class="resource-description">
+                        Free access to MIT's world-class courses including AI, machine learning, and computer science. 
+                        Complete course materials, lecture videos, and assignments from one of the world's top universities.
+                    </p>
+                    <div class="resource-meta">
+                        <div class="resource-meta-item">
+                            <strong>Provider:</strong> Massachusetts Institute of Technology
+                        </div>
+                        <div class="resource-meta-item">
+                            <strong>Audience:</strong> Self-learners seeking university-level education
+                        </div>
+                    </div>
+                    <a href="https://ocw.mit.edu/" target="_blank" class="btn btn-outline">Browse Courses</a>
+                </div>
             </div>
         </div>
     </section>
