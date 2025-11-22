@@ -345,16 +345,42 @@ class SidebarNav {
         
         const scrollPos = window.pageYOffset + 150;
         
-        // Find which section is currently in view
+        // Special handling for tab sections - check which tab is currently active
+        const activeCard = document.querySelector('.strategic-content-card.active');
+        if (activeCard) {
+            // Find which section index corresponds to this active card
+            for (let i = 0; i < this.sections.length; i++) {
+                const section = this.sections[i];
+                if (section.type === 'tab' && section.element === activeCard) {
+                    // Check if we're in the tabs area
+                    const tabsContainer = document.querySelector('.strategic-tabs');
+                    if (tabsContainer) {
+                        const tabsTop = tabsContainer.getBoundingClientRect().top + window.pageYOffset;
+                        const cardBottom = activeCard.getBoundingClientRect().bottom + window.pageYOffset;
+                        
+                        // If we're between the tabs and the end of the active card, highlight this tab
+                        if (scrollPos >= tabsTop - 200 && scrollPos <= cardBottom) {
+                            this.setActiveSection(i);
+                            return;
+                        }
+                    }
+                }
+            }
+        }
+        
+        // For non-tab sections, check normally
         for (let i = this.sections.length - 1; i >= 0; i--) {
             const section = this.sections[i];
+            // Skip tab sections in this loop since we handled them above
+            if (section.type === 'tab') continue;
+            
             if (section.element) {
                 const rect = section.element.getBoundingClientRect();
                 const elementTop = rect.top + window.pageYOffset;
                 
                 if (elementTop <= scrollPos) {
                     this.setActiveSection(i);
-                    break;
+                    return;
                 }
             }
         }
