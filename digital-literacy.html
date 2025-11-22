@@ -137,21 +137,16 @@
         
         .reason-card {
             background: #ffffff;
-            padding: 2rem;
-            border-radius: 8px;
+            padding: 2.5rem;
+            border-left: 3px solid #1a1a2e;
             box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
         }
         
-        .reason-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-            font-size: 1.75rem;
+        .reason-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+            border-left-color: #0f3460;
         }
         
         .reason-card h3 {
@@ -377,7 +372,6 @@
             
             <div class="reasons-grid">
                 <div class="reason-card">
-                    <div class="reason-icon">🏫</div>
                     <h3>Educational Disparities</h3>
                     <p>
                         Many education systems have not kept pace with technological advancement. Schools in underserved 
@@ -387,7 +381,6 @@
                 </div>
                 
                 <div class="reason-card">
-                    <div class="reason-icon">💰</div>
                     <h3>Economic Barriers</h3>
                     <p>
                         The cost of devices, internet access, and training programs creates significant barriers. Low-income 
@@ -397,7 +390,6 @@
                 </div>
                 
                 <div class="reason-card">
-                    <div class="reason-icon">👴</div>
                     <h3>Generational Gap</h3>
                     <p>
                         Older adults face unique challenges adapting to rapidly evolving technology. Many feel overwhelmed 
@@ -407,7 +399,6 @@
                 </div>
                 
                 <div class="reason-card">
-                    <div class="reason-icon">🌐</div>
                     <h3>Language and Cultural Barriers</h3>
                     <p>
                         Digital resources are predominantly in English, creating barriers for non-English speakers. Cultural 
@@ -417,7 +408,6 @@
                 </div>
                 
                 <div class="reason-card">
-                    <div class="reason-icon">🏘️</div>
                     <h3>Rural-Urban Divide</h3>
                     <p>
                         Rural areas often lack high-speed internet infrastructure, limiting access to online learning and 
@@ -427,7 +417,6 @@
                 </div>
                 
                 <div class="reason-card">
-                    <div class="reason-icon">♿</div>
                     <h3>Accessibility Challenges</h3>
                     <p>
                         People with disabilities face additional barriers when technology is not designed with accessibility 
@@ -437,7 +426,6 @@
                 </div>
                 
                 <div class="reason-card">
-                    <div class="reason-icon">⚡</div>
                     <h3>Rapid Technological Change</h3>
                     <p>
                         Technology evolves faster than people can adapt. Constant updates, new platforms, and changing 
@@ -447,12 +435,20 @@
                 </div>
                 
                 <div class="reason-card">
-                    <div class="reason-icon">👨‍🏫</div>
                     <h3>Limited Training Resources</h3>
                     <p>
                         Quality, free digital literacy training is scarce. Many programs are expensive, inaccessible, or 
                         don't meet learners where they are. Lack of personalized instruction and fear of judgment prevent 
                         people from seeking help with basic skills.
+                    </p>
+                </div>
+                
+                <div class="reason-card">
+                    <h3>Digital Security & Privacy Concerns</h3>
+                    <p>
+                        Fear of cybersecurity threats, identity theft, and privacy violations prevents many from engaging 
+                        with digital technology. Lack of understanding about online safety, secure passwords, phishing scams, 
+                        and data protection creates anxiety and reluctance to adopt digital tools.
                     </p>
                 </div>
             </div>
@@ -463,8 +459,7 @@
     <section class="cta-section">
         <div class="container">
             <h2>Ready to Build Your Digital Skills?</h2>
-            <p>Explore our comprehensive learning programs designed for learners at every level</p>
-            <a href="learning-programs.html" class="btn btn-large" style="background: #ffffff; color: #1a1a2e;">Explore Learning Programs</a>
+            <a href="learning-programs.html" class="btn btn-outline btn-large">Explore Learning Programs</a>
         </div>
     </section>
 
