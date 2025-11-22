@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AR Research and Services - NRIDL">
-    <title>AR Research - NRIDL</title>
+    <meta name="description" content="Augmented Reality Research and Services - Transforming Tourism, Retail, and Education Through WebAR Technology">
+    <title>AR Research & Services - NRIDL</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,44 +13,1060 @@
     <link rel="stylesheet" href="css/main.css?v=1.4">
     <link rel="stylesheet" href="css/navigation.css?v=1.4">
     <link rel="stylesheet" href="css/footer.css?v=1.4">
+    <link rel="stylesheet" href="css/home.css?v=1.4">
+    <link rel="stylesheet" href="css/literacy.css">
     
     <style>
-        .construction-container {
+        /* Hero Section */
+        .hero-section {
+            height: 100vh !important;
+            min-height: 700px !important;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-overlay {
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.6) 100%);
+        }
+        
+        .hero-content {
+            text-align: left !important;
+        }
+        
+        .hero-title {
+            font-size: clamp(1.75rem, 3vw, 2.5rem) !important;
+            text-align: left !important;
+            line-height: 1.3;
+        }
+        
+        .hero-subtitle {
+            font-size: clamp(0.9rem, 1.8vw, 1.125rem) !important;
+            text-align: left !important;
+            max-width: 900px;
+            line-height: 1.7;
+        }
+
+        /* Stats Section */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            color: #ffffff;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            font-family: var(--font-accent);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            font-weight: 500;
+            opacity: 0.95;
+        }
+
+        /* Value Proposition Boxes */
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2.5rem 0;
+        }
+
+        .value-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-left: 4px solid #667eea;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .value-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .value-card h4 {
+            color: #333333;
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            font-family: var(--font-accent);
+        }
+
+        .value-card p {
+            color: #666666;
+            font-size: 0.9375rem;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        /* Solution Cards */
+        .solution-card {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+        }
+
+        .solution-card h4 {
+            color: #667eea;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-family: var(--font-accent);
+        }
+
+        .solution-card p {
+            color: #666666;
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .solution-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+
+        .solution-card ul li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 0.75rem;
+            color: #666666;
+            line-height: 1.7;
+        }
+
+        .solution-card ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+
+        /* Audience Sections */
+        .audience-section {
+            background: #f8f9fa;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+
+        .audience-section h4 {
+            color: #333333;
+            font-size: 1.375rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            font-family: var(--font-accent);
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+
+        .benefit-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .benefit-list li {
+            position: relative;
+            padding-left: 2.5rem;
+            margin-bottom: 1rem;
+            color: #666666;
+            line-height: 1.8;
+        }
+
+        .benefit-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: 600;
+            font-size: 1.5rem;
+        }
+
+        .benefit-list li strong {
+            color: #333333;
+            font-weight: 600;
+        }
+
+        /* Impact Metrics */
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2.5rem 0;
+        }
+
+        .impact-item {
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .impact-item .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .impact-item h5 {
+            color: #333333;
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-family: var(--font-accent);
+        }
+
+        .impact-item p {
+            color: #666666;
+            font-size: 0.9375rem;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        /* Process Steps */
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .process-step {
+            position: relative;
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #ffffff;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            min-height: 70vh;
-            padding: 2rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 1rem;
+            font-family: var(--font-accent);
         }
-        
-        .construction-content {
+
+        .process-step h5 {
+            color: #333333;
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-family: var(--font-accent);
+        }
+
+        .process-step p {
+            color: #666666;
+            font-size: 0.9375rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 4rem 2rem;
             text-align: center;
-            max-width: 600px;
+            color: #ffffff;
+            margin-top: 4rem;
+            border-radius: 12px;
         }
-        
-        .construction-content h1 {
-            font-size: clamp(2rem, 5vw, 3rem);
+
+        .cta-section h3 {
+            font-size: 2rem;
+            font-weight: 700;
             margin-bottom: 1rem;
-            color: var(--text-primary);
+            font-family: var(--font-accent);
         }
-        
-        .construction-content p {
-            font-size: clamp(1rem, 2vw, 1.25rem);
-            color: var(--text-secondary);
+
+        .cta-section p {
+            font-size: 1.125rem;
             margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            background: #ffffff;
+            color: #667eea;
+            padding: 1rem 2.5rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                min-height: 100vh !important;
+                padding: 2rem 1.5rem !important;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+
+            .stats-grid,
+            .value-grid,
+            .impact-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="construction-container">
-        <div class="construction-content">
-            <h1>Under Construction</h1>
-            <p>Coming Soon</p>
-            <a href="digital-futures.html" class="btn btn-outline">Back to Digital Futures</a>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">
+                Augmented Reality Research & Services:<br>
+                <span style="font-weight: 400; opacity: 0.95;">Transforming Tourism, Retail, and Education Through WebAR</span>
+            </h1>
+            <p class="hero-subtitle">
+                NRIDL delivers cutting-edge Augmented Reality solutions that drive customer engagement, boost tourism, 
+                and create unforgettable experiences. Our WebAR technology reaches 4.5 billion iOS and Android users 
+                globally with 97.43% browser compatibility—no app downloads required. From interactive city adventures 
+                to retail innovations, we're making AR accessible, affordable, and impactful for businesses and 
+                communities across Canada.
+            </p>
+        </div>
+    </section>
+
+    <!-- Main Content Section -->
+    <section class="what-we-do-section" data-sidebar-nav data-sidebar-position="right">
+        <div class="container">
+            <div class="strategic-content">
+                <div class="section-header reveal">
+                    <h2 class="section-title">Our AR Solutions</h2>
+                    <div class="title-divider"></div>
+                    <p class="section-intro">
+                        NRIDL combines technical expertise with creative storytelling to deliver WebAR experiences that 
+                        attract visitors, increase engagement, and generate measurable economic impact. Our technology-first 
+                        approach ensures scalability, accessibility, and seamless integration across devices and platforms.
+                    </p>
+                </div>
+
+                <!-- WebAR Technology Overview -->
+                <div class="timeline-section reveal">
+                    <div class="timeline-content">
+                        <h3>WebAR Technology: The Foundation of Accessible AR</h3>
+                        <p>
+                            WebAR (Web-based Augmented Reality) represents the future of accessible immersive technology. Unlike 
+                            traditional AR applications that require users to download large apps from app stores, WebAR delivers 
+                            AR experiences directly through web browsers—accessible with a simple URL or QR code scan.
+                        </p>
+
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <span class="stat-number">4.5B+</span>
+                                <span class="stat-label">iOS & Android Users Globally</span>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-number">97.43%</span>
+                                <span class="stat-label">Browser Compatibility Worldwide</span>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-number">0</span>
+                                <span class="stat-label">App Downloads Required</span>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-number">Instant</span>
+                                <span class="stat-label">Access & Engagement</span>
+                            </div>
+                        </div>
+
+                        <h4 style="color: #333; margin-top: 2.5rem; margin-bottom: 1.5rem; font-size: 1.25rem;">Why WebAR Matters</h4>
+                        <div class="value-grid">
+                            <div class="value-card">
+                                <span class="value-icon">🌐</span>
+                                <h4>Universal Accessibility</h4>
+                                <p>No app store approvals, no storage requirements, no barriers. Users access AR content instantly through any modern web browser.</p>
+                            </div>
+                            <div class="value-card">
+                                <span class="value-icon">⚡</span>
+                                <h4>Instant Engagement</h4>
+                                <p>QR codes or URLs provide immediate access—perfect for tourism signage, restaurant tables, retail displays, and marketing materials.</p>
+                            </div>
+                            <div class="value-card">
+                                <span class="value-icon">💰</span>
+                                <h4>Cost-Effective Deployment</h4>
+                                <p>Eliminate app development costs, platform-specific versions, and ongoing app store maintenance. One WebAR experience works everywhere.</p>
+                            </div>
+                            <div class="value-card">
+                                <span class="value-icon">📊</span>
+                                <h4>Real-Time Analytics</h4>
+                                <p>Track user interactions, engagement metrics, and conversion data to measure ROI and optimize experiences continuously.</p>
+                            </div>
+                        </div>
+
+                        <div class="why-box">
+                            <strong>Technical Advantages</strong>
+                            <p>
+                                Our WebAR solutions leverage WebXR APIs, 8th Wall technology, and responsive design principles to deliver 
+                                high-performance AR experiences that work seamlessly across devices. With support for marker-based tracking, 
+                                markerless surface detection, and location-based AR, we can create experiences tailored to any use case—from 
+                                interactive product displays to citywide scavenger hunts. Cross-platform compatibility ensures your investment 
+                                reaches the widest possible audience without fragmenting development efforts.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Tabs -->
+                <div class="strategic-tabs reveal">
+                    <button class="strategic-tab active" data-tab="0">
+                        <span class="tab-number">01</span>
+                        <span class="tab-title">AR Games & Tourism</span>
+                    </button>
+                    <button class="strategic-tab" data-tab="1">
+                        <span class="tab-number">02</span>
+                        <span class="tab-title">AR for Businesses</span>
+                    </button>
+                    <button class="strategic-tab" data-tab="2">
+                        <span class="tab-number">03</span>
+                        <span class="tab-title">Target Audiences</span>
+                    </button>
+                    <button class="strategic-tab" data-tab="3">
+                        <span class="tab-number">04</span>
+                        <span class="tab-title">Implementation</span>
+                    </button>
+                </div>
+
+                <!-- Content Cards -->
+                <div class="strategic-content-container reveal">
+                    
+                    <!-- Card 1: AR Games & Tourism -->
+                    <div class="strategic-content-card active">
+                        <h3>AR Games & Tourism: Transforming Cities into Interactive Playgrounds</h3>
+                        <div class="card-content">
+                            <p>
+                                Welcome to AR Games, where ordinary places become extraordinary destinations. We transform cities 
+                                into living game boards using Augmented Reality, creating immersive experiences that attract tourists, 
+                                engage residents, and generate economic activity. With just a smartphone, participants unlock hidden 
+                                stories, interact with animated characters, and discover their city in ways never before possible.
+                            </p>
+
+                            <div class="solution-card">
+                                <h4>🗺️ Citywide Scavenger Hunts</h4>
+                                <p>
+                                    Transform your city into an interactive adventure destination. Participants follow clues, solve puzzles, 
+                                    and interact with digital characters who appear at famous landmarks, public art installations, and hidden 
+                                    corners. Each adventure is carefully designed to:
+                                </p>
+                                <ul>
+                                    <li><strong>Spark Curiosity:</strong> Reveal fascinating stories and historical facts hidden in plain sight</li>
+                                    <li><strong>Encourage Exploration:</strong> Guide visitors to lesser-known neighborhoods, supporting local businesses</li>
+                                    <li><strong>Foster Teamwork:</strong> Create shared experiences that bring families, friends, and colleagues together</li>
+                                    <li><strong>Promote Local Culture:</strong> Showcase community heritage, art, and traditions in engaging, memorable ways</li>
+                                </ul>
+                                <p>
+                                    <strong>Economic Impact:</strong> Scavenger hunts increase visitor dwell time by an average of 2.5 hours 
+                                    and drive foot traffic to partner businesses, with participants 3x more likely to visit recommended locations.
+                                </p>
+                            </div>
+
+                            <div class="solution-card">
+                                <h4>🏆 AR Treasure Hunts</h4>
+                                <p>
+                                    Unlike traditional scavenger hunts where players find items in any order, AR Treasure Hunts are structured, 
+                                    goal-oriented adventures requiring players to solve clues in sequence to reach a final prize. Guided by GPS 
+                                    coordinates or environmental clues, participants explore real-world locations while viewing virtual treasures—treasure 
+                                    chests, artifacts, or characters—superimposed over their surroundings through their device's camera.
+                                </p>
+                                <p>
+                                    <strong>Perfect For:</strong> Tourism campaigns, downtown revitalization initiatives, cultural festivals, 
+                                    and promotional events. Treasure hunts create buzz, drive social media engagement, and deliver tangible rewards 
+                                    (discount codes, prizes, exclusive content) that reinforce positive brand associations.
+                                </p>
+                            </div>
+
+                            <div class="solution-card">
+                                <h4>🎨 AR Art & Museum Tours</h4>
+                                <p>
+                                    Bring art history and cultural heritage to life with interactive AR installations at museums, galleries, 
+                                    and public art sites. Our technology introduces animated guides, virtual storytellers, and immersive narratives 
+                                    that transform passive viewing into active exploration.
+                                </p>
+                                <ul>
+                                    <li><strong>Animated Artist Guides:</strong> Famous artists appear to reveal secrets behind masterpieces</li>
+                                    <li><strong>Historical Reenactments:</strong> Witness historical figures sharing their stories in front of relevant artworks</li>
+                                    <li><strong>Multilingual Accessibility:</strong> Provide tours in multiple languages without additional staffing</li>
+                                    <li><strong>Behind-the-Scenes Content:</strong> Show restoration processes, technique demonstrations, and creation stories</li>
+                                </ul>
+                                <p>
+                                    <strong>Institutional Benefits:</strong> Museums using AR tours report 40% increases in youth engagement, 
+                                    35% longer visit durations, and higher visitor satisfaction scores. AR makes cultural institutions more 
+                                    accessible to diverse audiences and supports educational outcomes.
+                                </p>
+                            </div>
+
+                            <div class="solution-card">
+                                <h4>🎪 Special Events & Custom Installations</h4>
+                                <p>
+                                    Hosting a festival, cultural celebration, or educational program? We create custom AR experiences that 
+                                    captivate audiences and add interactive magic to any occasion. From holiday-themed treasure hunts to 
+                                    conference networking games, our solutions are flexible, scalable, and designed to meet specific event goals.
+                                </p>
+                                <p>
+                                    <strong>Capabilities:</strong> Real-time multiplayer experiences, leaderboards, photo opportunities with AR characters, 
+                                    branded content integration, data collection for post-event analysis, and seamless integration with existing 
+                                    marketing materials.
+                                </p>
+                            </div>
+
+                            <div class="impact-grid">
+                                <div class="impact-item">
+                                    <span class="icon">👨‍👩‍👧‍👦</span>
+                                    <h5>Family Bonding</h5>
+                                    <p>Screen-positive activities that get everyone moving, thinking, and creating memories together</p>
+                                </div>
+                                <div class="impact-item">
+                                    <span class="icon">🌍</span>
+                                    <h5>Tourism Growth</h5>
+                                    <p>Transform sightseeing into interactive journeys that increase visitor satisfaction and spending</p>
+                                </div>
+                                <div class="impact-item">
+                                    <span class="icon">🎓</span>
+                                    <h5>Educational Value</h5>
+                                    <p>Turn cities into outdoor classrooms, reinforcing curriculum concepts through hands-on exploration</p>
+                                </div>
+                                <div class="impact-item">
+                                    <span class="icon">📸</span>
+                                    <h5>Shareable Moments</h5>
+                                    <p>AR photo opportunities drive organic social media promotion and word-of-mouth marketing</p>
+                                </div>
+                            </div>
+
+                            <div class="why-box">
+                                <strong>Why AR Games Drive Tourism and Economic Growth</strong>
+                                <p>
+                                    AR Games aren't just entertainment—they're economic development tools. By increasing visitor dwell time, 
+                                    directing foot traffic to underutilized areas, and creating shareable experiences, AR installations generate 
+                                    measurable returns. Cities with AR tourism initiatives report increased hotel bookings, restaurant revenues, 
+                                    and retail sales. Our solutions support municipal tourism strategies while providing valuable data on visitor 
+                                    behavior, preferences, and engagement patterns that inform future planning and investment decisions.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: AR for Businesses -->
+                    <div class="strategic-content-card">
+                        <h3>AR for Businesses: Drive Engagement, Increase Sales, Stand Out</h3>
+                        <div class="card-content">
+                            <p>
+                                In today's competitive marketplace, capturing attention and creating memorable experiences is essential. 
+                                Our AR for Businesses solutions help storefronts, restaurants, retailers, and event exhibitors attract 
+                                customers, communicate value propositions, and convert interest into sales—all through engaging, interactive 
+                                AR experiences.
+                            </p>
+
+                            <div class="solution-card">
+                                <h4>🤖 AR Brand Ambassadors</h4>
+                                <p>
+                                    Install a virtual host directly at your entrance, counter, or expo booth. Our AR Brand Ambassadors greet 
+                                    every visitor with personalized messages, share your unique story, and guide customers through products 
+                                    and services in an engaging, interactive format.
+                                </p>
+                                <ul>
+                                    <li><strong>24/7 Availability:</strong> Never tired, always enthusiastic, always on-brand</li>
+                                    <li><strong>Multilingual Support:</strong> Communicate with customers in their preferred language</li>
+                                    <li><strong>Consistent Messaging:</strong> Deliver your value proposition perfectly every time</li>
+                                    <li><strong>Data Collection:</strong> Track interactions, preferences, and customer journey insights</li>
+                                </ul>
+                                <p>
+                                    <strong>Use Cases:</strong> Restaurant menus with chef introductions, retail product demonstrations, 
+                                    service explanations for complex offerings, brand storytelling at trade shows, and customer onboarding 
+                                    experiences.
+                                </p>
+                            </div>
+
+                            <div class="solution-card">
+                                <h4>🎁 Interactive Promotions & Coupons</h4>
+                                <p>
+                                    Boost sales and customer loyalty with AR-enabled promotions. Customers scan QR codes to unlock exclusive 
+                                    offers, participate in gamified experiences, or enter virtual lucky draws—creating excitement while 
+                                    driving immediate action.
+                                </p>
+                                <ul>
+                                    <li><strong>Digital Coupons:</strong> Deliver instant discounts that customers can redeem immediately</li>
+                                    <li><strong>Flash Sales:</strong> Create urgency with time-limited AR experiences and offers</li>
+                                    <li><strong>Loyalty Rewards:</strong> Gamify repeat visits with collectible AR characters or badges</li>
+                                    <li><strong>Referral Programs:</strong> Encourage social sharing with AR photo opportunities and sharable content</li>
+                                </ul>
+                                <p>
+                                    <strong>Results:</strong> Businesses using AR promotions report 65% higher engagement rates compared to 
+                                    traditional coupons, with customers 2.5x more likely to return for future purchases.
+                                </p>
+                            </div>
+
+                            <div class="solution-card">
+                                <h4>📱 Product Demonstrations & Storytelling</h4>
+                                <p>
+                                    Show, don't just tell. Use AR to display product features, tutorials, and behind-the-scenes content directly 
+                                    in your storefront or at customer locations. Bring static displays to life and make complex offerings simple, 
+                                    engaging, and fun to understand.
+                                </p>
+                                <ul>
+                                    <li><strong>Virtual Try-Ons:</strong> Let customers visualize products in their own space or on themselves</li>
+                                    <li><strong>Feature Highlights:</strong> Animate product benefits and specifications in 3D</li>
+                                    <li><strong>Tutorial Content:</strong> Provide step-by-step usage instructions through interactive AR guides</li>
+                                    <li><strong>Comparison Tools:</strong> Allow customers to compare products side-by-side in AR</li>
+                                </ul>
+                                <p>
+                                    <strong>Competitive Advantage:</strong> AR product demonstrations reduce purchase hesitation by 40% and 
+                                    decrease return rates by up to 25%, as customers make more informed, confident decisions.
+                                </p>
+                            </div>
+
+                            <div class="solution-card">
+                                <h4>🎪 Events & Trade Shows</h4>
+                                <p>
+                                    Make your brand impossible to ignore at summits, fairs, and trade shows. Our portable AR installations 
+                                    attract crowds, create buzz, and help you stand out from competitors in crowded exhibition halls.
+                                </p>
+                                <ul>
+                                    <li><strong>Interactive Booth Experiences:</strong> Draw attendees with engaging AR games and demonstrations</li>
+                                    <li><strong>Lead Capture:</strong> Collect contact information through AR experiences and follow-up automatically</li>
+                                    <li><strong>Product Launches:</strong> Unveil new offerings with dramatic, memorable AR reveals</li>
+                                    <li><strong>Brand Awareness:</strong> Create photo-worthy moments that attendees share on social media</li>
+                                </ul>
+                            </div>
+
+                            <h4 style="color: #333; margin-top: 2.5rem; margin-bottom: 1.5rem; font-size: 1.25rem;">Why Businesses Choose Our AR Solutions</h4>
+                            <div class="value-grid">
+                                <div class="value-card">
+                                    <span class="value-icon">🚀</span>
+                                    <h4>Instant Engagement</h4>
+                                    <p>Capture attention from the moment customers walk in or pass by your location</p>
+                                </div>
+                                <div class="value-card">
+                                    <span class="value-icon">💡</span>
+                                    <h4>Easy Setup</h4>
+                                    <p>Plug-and-play solutions that install in minutes—no technical expertise required</p>
+                                </div>
+                                <div class="value-card">
+                                    <span class="value-icon">📊</span>
+                                    <h4>Actionable Insights</h4>
+                                    <p>Track interactions, foot traffic patterns, and customer preferences with built-in analytics</p>
+                                </div>
+                                <div class="value-card">
+                                    <span class="value-icon">🎨</span>
+                                    <h4>Custom Branding</h4>
+                                    <p>Every AR experience tailored to your unique business goals and brand identity</p>
+                                </div>
+                                <div class="value-card">
+                                    <span class="value-icon">💰</span>
+                                    <h4>Cost-Effective</h4>
+                                    <p>No app development, no ongoing maintenance fees—just immediate impact</p>
+                                </div>
+                                <div class="value-card">
+                                    <span class="value-icon">🔄</span>
+                                    <h4>Always Current</h4>
+                                    <p>Update content, promotions, and experiences remotely without reinstalling hardware</p>
+                                </div>
+                            </div>
+
+                            <div class="why-box">
+                                <strong>Restaurant-Specific AR Solutions</strong>
+                                <p>
+                                    For restaurants and hospitality venues, our AR solutions address key challenges: reducing staff workload 
+                                    during peak times, overcoming language barriers with international visitors, showcasing menu items visually 
+                                    to reduce order errors, and creating shareable moments that drive social media promotion. AR menus allow 
+                                    customers to see dishes in 3D, view ingredient information, and access chef recommendations—all before ordering. 
+                                    Virtual restaurant tours let potential diners explore ambiance and seating options before making reservations. 
+                                    These innovations position your establishment as forward-thinking, customer-focused, and worthy of sharing 
+                                    with friends and family.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Target Audiences -->
+                    <div class="strategic-content-card">
+                        <h3>Who Benefits from Our AR Solutions</h3>
+                        <div class="card-content">
+                            <p>
+                                Our AR technology serves diverse audiences—each with unique needs and goals. From families seeking 
+                                memorable experiences to businesses driving revenue growth, our solutions deliver measurable value 
+                                across multiple stakeholder groups.
+                            </p>
+
+                            <div class="audience-section">
+                                <h4>For Shop Owners & Retailers</h4>
+                                <p>
+                                    Augmented Reality transforms retail environments by increasing customer engagement, reducing product 
+                                    returns, and differentiating your brand from competitors. AR solutions compensate for labor shortages 
+                                    by providing virtual sales assistance while collecting valuable customer data to refine strategies.
+                                </p>
+                                <ul class="benefit-list">
+                                    <li><strong>Increased Sales:</strong> Immersive AR experiences boost customer engagement and conversion rates by 30-40%</li>
+                                    <li><strong>Reduced Returns:</strong> Virtual try-ons and product visualization lead to more confident purchase decisions, decreasing returns by 25%</li>
+                                    <li><strong>Competitive Edge:</strong> Innovative AR technology sets your store apart and signals customer-centricity</li>
+                                    <li><strong>Cost Savings:</strong> Reduce need for physical product displays, extensive photography, and excess staffing</li>
+                                    <li><strong>Customer Insights:</strong> Collect data on preferences, buying habits, and interests to optimize inventory and marketing</li>
+                                    <li><strong>Brand Loyalty:</strong> Seamless, engaging AR experiences foster positive associations and encourage repeat business</li>
+                                </ul>
+                            </div>
+
+                            <div class="audience-section">
+                                <h4>For Consumers & Families</h4>
+                                <ul class="benefit-list">
+                                    <li><strong>Virtual Try-Ons:</strong> See how clothes, makeup, or furniture look before purchasing, increasing confidence and satisfaction</li>
+                                    <li><strong>Better Product Understanding:</strong> Interactive 3D views and detailed information help customers make informed decisions</li>
+                                    <li><strong>Enhanced Shopping Experience:</strong> AR guides customers to products and promotions efficiently, saving time</li>
+                                    <li><strong>Personalized Recommendations:</strong> Receive tailored suggestions based on preferences and AR interactions</li>
+                                    <li><strong>Memorable Experiences:</strong> Create photo opportunities and shareable moments with AR characters and environments</li>
+                                </ul>
+                            </div>
+
+                            <div class="audience-section">
+                                <h4>For Local Residents</h4>
+                                <ul class="benefit-list">
+                                    <li><strong>Rediscover Your City:</strong> Experience familiar places in new ways, uncovering hidden gems and fascinating stories</li>
+                                    <li><strong>Family Activities:</strong> Enjoy screen-positive adventures that get everyone moving and thinking together</li>
+                                    <li><strong>Community Connection:</strong> Learn about local history, culture, and heritage through interactive storytelling</li>
+                                    <li><strong>Create Keepsakes:</strong> Take photos and videos with AR characters for lasting memories</li>
+                                </ul>
+                            </div>
+
+                            <div class="audience-section">
+                                <h4>For Visiting Tourists</h4>
+                                <ul class="benefit-list">
+                                    <li><strong>Interactive Sightseeing:</strong> Transform traditional tours into engaging adventures with AR-enhanced landmarks</li>
+                                    <li><strong>Insider Stories:</strong> Access local legends, cultural trivia, and historical context not found in guidebooks</li>
+                                    <li><strong>Self-Guided Freedom:</strong> Explore at your own pace without scheduled tours or group constraints</li>
+                                    <li><strong>Extended Engagement:</strong> Spend more time exploring, benefiting local businesses and the tourism economy</li>
+                                </ul>
+                            </div>
+
+                            <div class="audience-section">
+                                <h4>For Educators & School Groups</h4>
+                                <ul class="benefit-list">
+                                    <li><strong>Active Learning:</strong> Transform cities into outdoor classrooms with hands-on, experiential education</li>
+                                    <li><strong>Curriculum Integration:</strong> Reinforce history, art, science, and geography concepts in memorable, engaging ways</li>
+                                    <li><strong>Teamwork Development:</strong> Scavenger hunts and challenges build collaboration and problem-solving skills</li>
+                                    <li><strong>Accessible Technology:</strong> No special equipment needed—students use familiar smartphones or tablets</li>
+                                </ul>
+                            </div>
+
+                            <div class="audience-section">
+                                <h4>For Corporate Teams & Organizations</h4>
+                                <ul class="benefit-list">
+                                    <li><strong>Team Building:</strong> AR challenges foster collaboration, communication, and trust among colleagues</li>
+                                    <li><strong>Boost Morale:</strong> Break routine with unique, tech-savvy experiences that everyone enjoys</li>
+                                    <li><strong>Enhance Creativity:</strong> Imaginative AR storytelling inspires new thinking and innovative approaches</li>
+                                    <li><strong>Measurable Outcomes:</strong> Track participation, completion rates, and team performance metrics</li>
+                                </ul>
+                            </div>
+
+                            <div class="audience-section">
+                                <h4>For Museums, Galleries & Cultural Institutions</h4>
+                                <ul class="benefit-list">
+                                    <li><strong>Visitor Engagement:</strong> AR guides and characters make exhibits more interactive and accessible</li>
+                                    <li><strong>Attract New Audiences:</strong> Appeal to younger, tech-savvy visitors and families seeking immersive experiences</li>
+                                    <li><strong>Custom Narratives:</strong> Bring artworks, artifacts, and history to life with tailor-made AR stories</li>
+                                    <li><strong>Multilingual Access:</strong> Provide tours in multiple languages without additional staffing costs</li>
+                                    <li><strong>Extended Visit Duration:</strong> Engaging AR content keeps visitors exploring longer, increasing satisfaction</li>
+                                </ul>
+                            </div>
+
+                            <div class="audience-section">
+                                <h4>For Tourism Bureaus & Community Organizations</h4>
+                                <ul class="benefit-list">
+                                    <li><strong>Activate Public Spaces:</strong> Transform parks, plazas, and landmarks into stages for exploration and engagement</li>
+                                    <li><strong>Promote Local Culture:</strong> Share stories and heritage that make your community unique and memorable</li>
+                                    <li><strong>Drive Foot Traffic:</strong> Encourage visitors to explore new neighborhoods and support local businesses</li>
+                                    <li><strong>Economic Impact:</strong> Increase visitor spending and dwell time, benefiting the entire local economy</li>
+                                    <li><strong>Data-Driven Planning:</strong> Gain insights into visitor behavior and preferences to inform future initiatives</li>
+                                </ul>
+                            </div>
+
+                            <div class="audience-section">
+                                <h4>For Small Business Partners</h4>
+                                <ul class="benefit-list">
+                                    <li><strong>Increased Visibility:</strong> Become a point of interest on AR adventure maps, drawing new customers</li>
+                                    <li><strong>Create Buzz:</strong> Offer special discounts, AR rewards, or unique experiences tied to your location</li>
+                                    <li><strong>Strengthen Community:</strong> Show support for local culture, innovation, and educational initiatives</li>
+                                    <li><strong>Low-Cost Marketing:</strong> Benefit from AR-driven foot traffic without significant advertising investment</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Implementation -->
+                    <div class="strategic-content-card">
+                        <h3>How We Bring Your AR Vision to Life</h3>
+                        <div class="card-content">
+                            <p>
+                                Our proven implementation process ensures seamless deployment, measurable results, and ongoing success. 
+                                From initial consultation to post-launch optimization, we partner with you every step of the way.
+                            </p>
+
+                            <h4 style="color: #333; margin-top: 2rem; margin-bottom: 1.5rem; font-size: 1.25rem;">Our Process</h4>
+                            <div class="process-steps">
+                                <div class="process-step">
+                                    <div class="step-number">1</div>
+                                    <h5>Consultation</h5>
+                                    <p>We listen to your goals, challenges, and vision. Understanding your unique needs drives our solution design.</p>
+                                </div>
+                                <div class="process-step">
+                                    <div class="step-number">2</div>
+                                    <h5>Custom Design</h5>
+                                    <p>Our team creates AR experiences tailored to your brand, location, and target audience with compelling narratives.</p>
+                                </div>
+                                <div class="process-step">
+                                    <div class="step-number">3</div>
+                                    <h5>Development</h5>
+                                    <p>We build, test, and refine your AR experience using cutting-edge WebAR technology and best practices.</p>
+                                </div>
+                                <div class="process-step">
+                                    <div class="step-number">4</div>
+                                    <h5>Installation</h5>
+                                    <p>Our team handles complete setup—QR codes, signage, technical integration—so you can start engaging immediately.</p>
+                                </div>
+                                <div class="process-step">
+                                    <div class="step-number">5</div>
+                                    <h5>Training</h5>
+                                    <p>We provide comprehensive training for your staff to maximize the impact of your AR solution.</p>
+                                </div>
+                                <div class="process-step">
+                                    <div class="step-number">6</div>
+                                    <h5>Support</h5>
+                                    <p>Ongoing technical support, content updates, and optimization ensure continued success and ROI.</p>
+                                </div>
+                            </div>
+
+                            <h4 style="color: #333; margin-top: 3rem; margin-bottom: 1.5rem; font-size: 1.25rem;">Technical Capabilities</h4>
+                            <div class="value-grid">
+                                <div class="value-card">
+                                    <span class="value-icon">🎯</span>
+                                    <h4>Marker-Based Tracking</h4>
+                                    <p>Anchor AR content to specific images, logos, or QR codes for precise, reliable experiences</p>
+                                </div>
+                                <div class="value-card">
+                                    <span class="value-icon">🌍</span>
+                                    <h4>Location-Based AR</h4>
+                                    <p>Use GPS coordinates to trigger AR content at specific real-world locations</p>
+                                </div>
+                                <div class="value-card">
+                                    <span class="value-icon">✋</span>
+                                    <h4>Markerless AR</h4>
+                                    <p>Detect surfaces and environments to place virtual objects naturally in any space</p>
+                                </div>
+                                <div class="value-card">
+                                    <span class="value-icon">👥</span>
+                                    <h4>Multiplayer Experiences</h4>
+                                    <p>Create shared AR adventures where multiple users interact simultaneously</p>
+                                </div>
+                                <div class="value-card">
+                                    <span class="value-icon">📸</span>
+                                    <h4>Photo & Video Capture</h4>
+                                    <p>Enable users to save and share AR moments, driving organic social media promotion</p>
+                                </div>
+                                <div class="value-card">
+                                    <span class="value-icon">🔊</span>
+                                    <h4>Audio Integration</h4>
+                                    <p>Incorporate spatial audio, narration, and sound effects for immersive storytelling</p>
+                                </div>
+                            </div>
+
+                            <h4 style="color: #333; margin-top: 3rem; margin-bottom: 1.5rem; font-size: 1.25rem;">Success Metrics & ROI</h4>
+                            <p>
+                                We believe in measurable impact. Every AR solution includes analytics dashboards that track:
+                            </p>
+                            <ul class="benefit-list">
+                                <li><strong>User Engagement:</strong> Total scans, session durations, interaction rates, and completion percentages</li>
+                                <li><strong>Foot Traffic:</strong> Visitor counts at specific locations, peak usage times, and movement patterns</li>
+                                <li><strong>Conversion Metrics:</strong> Coupon redemptions, sales attributed to AR experiences, and repeat visit rates</li>
+                                <li><strong>Social Impact:</strong> Photo shares, social media mentions, and organic reach generated by AR content</li>
+                                <li><strong>Customer Insights:</strong> Demographics, preferences, feedback, and behavior patterns to inform future decisions</li>
+                            </ul>
+
+                            <div class="why-box">
+                                <strong>Partnership Approach</strong>
+                                <p>
+                                    We're not just technology providers—we're strategic partners invested in your success. Our team brings 
+                                    expertise in AR development, storytelling, user experience design, and data analytics. We work collaboratively 
+                                    with municipalities, businesses, cultural institutions, and community organizations to create AR solutions 
+                                    that deliver lasting value. From initial concept to ongoing optimization, we're committed to ensuring your 
+                                    AR investment generates measurable returns and positions you as an innovator in your industry.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Economic Impact Section -->
+                <div class="timeline-section reveal">
+                    <div class="timeline-content">
+                        <h3>Economic Impact: AR as a Tourism and Business Growth Driver</h3>
+                        <p>
+                            Augmented Reality isn't just engaging technology—it's a proven economic development tool. Cities, businesses, 
+                            and cultural institutions that adopt AR solutions experience measurable increases in tourism revenue, customer 
+                            spending, visitor satisfaction, and competitive positioning.
+                        </p>
+
+                        <div class="impact-grid">
+                            <div class="impact-item">
+                                <span class="icon">📈</span>
+                                <h5>Tourism Revenue Growth</h5>
+                                <p>Destinations with AR experiences see 20-35% increases in visitor spending and extended stay durations</p>
+                            </div>
+                            <div class="impact-item">
+                                <span class="icon">🏪</span>
+                                <h5>Local Business Support</h5>
+                                <p>AR drives foot traffic to partner businesses, with participants 3x more likely to visit recommended locations</p>
+                            </div>
+                            <div class="impact-item">
+                                <span class="icon">⭐</span>
+                                <h5>Visitor Satisfaction</h5>
+                                <p>AR-enhanced experiences receive 40% higher satisfaction scores and generate positive word-of-mouth</p>
+                            </div>
+                            <div class="impact-item">
+                                <span class="icon">🎯</span>
+                                <h5>Competitive Positioning</h5>
+                                <p>Cities offering AR tourism experiences attract younger, tech-savvy demographics and differentiate from competitors</p>
+                            </div>
+                        </div>
+
+                        <h4 style="color: #333; margin-top: 2.5rem; margin-bottom: 1.5rem; font-size: 1.25rem;">Case for Government Investment</h4>
+                        <p>
+                            AR installations represent high-impact, cost-effective infrastructure that serves multiple stakeholder groups 
+                            simultaneously. Unlike traditional tourism marketing or physical infrastructure, AR experiences:
+                        </p>
+                        <ul class="benefit-list">
+                            <li><strong>Scale Efficiently:</strong> Once created, AR content serves unlimited users without incremental costs</li>
+                            <li><strong>Update Dynamically:</strong> Content refreshes remotely, keeping experiences current and seasonal without reinstallation</li>
+                            <li><strong>Generate Data:</strong> Provide valuable insights into visitor behavior, preferences, and economic impact for evidence-based planning</li>
+                            <li><strong>Support Equity:</strong> Accessible technology (smartphones) ensures broad participation across socioeconomic groups</li>
+                            <li><strong>Foster Innovation:</strong> Position municipalities as forward-thinking, attracting businesses and talent seeking innovative communities</li>
+                            <li><strong>Create Jobs:</strong> AR development, content creation, and ongoing management provide employment opportunities for local creative talent</li>
+                        </ul>
+
+                        <div class="why-box">
+                            <strong>Restaurant AR Initiative: A Strategic Investment</strong>
+                            <p>
+                                Supporting AR installations for restaurant owners specifically addresses multiple municipal goals: enhancing 
+                                the dining experience for residents and tourists, reducing barriers for international visitors through visual 
+                                menus and multilingual support, differentiating the city's culinary scene from competitors, supporting small 
+                                business resilience through technology adoption, and creating shareable moments that drive organic tourism 
+                                marketing. Restaurant AR installations serve as entry points for broader AR tourism ecosystems—visitors who 
+                                engage with AR menus are significantly more likely to participate in AR city tours, scavenger hunts, and 
+                                cultural experiences, creating a virtuous cycle of engagement and spending.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2030 Vision -->
+                <div class="timeline-section reveal">
+                    <div class="timeline-content">
+                        <h3>Our 2030 Vision: Making Canada a Global AR Tourism Leader</h3>
+                        <p>
+                            By 2030, NRIDL envisions Canadian cities recognized globally as pioneers in accessible, engaging AR tourism 
+                            and retail experiences. We're building toward a future where AR is seamlessly integrated into daily life—where 
+                            every street corner tells a story, every restaurant offers immersive experiences, and every visitor leaves with 
+                            memories they'll treasure and share.
+                        </p>
+
+                        <h4 style="color: #333; margin-top: 2rem; margin-bottom: 1.5rem; font-size: 1.25rem;">Our Commitments</h4>
+                        <ul class="benefit-list">
+                            <li><strong>Accessibility First:</strong> Ensure AR technology remains barrier-free, requiring no app downloads or expensive equipment</li>
+                            <li><strong>Community Partnership:</strong> Work collaboratively with municipalities, businesses, and cultural institutions to co-create experiences</li>
+                            <li><strong>Data Transparency:</strong> Provide comprehensive analytics and impact reports to demonstrate value and inform decisions</li>
+                            <li><strong>Continuous Innovation:</strong> Invest in R&D to bring cutting-edge AR capabilities to Canadian communities</li>
+                            <li><strong>Equity and Inclusion:</strong> Design experiences that reflect diverse communities and ensure broad participation</li>
+                            <li><strong>Economic Development:</strong> Prioritize solutions that generate measurable economic returns and support local businesses</li>
+                        </ul>
+
+                        <div class="timeline-footer">
+                            <p>
+                                Together with government partners, businesses, and communities, we're not just implementing technology—we're 
+                                transforming how people experience cities, connect with culture, and engage with commerce. Our AR solutions 
+                                create jobs, drive economic activity, enhance quality of life, and position Canadian municipalities as global 
+                                leaders in innovative tourism and retail technology.
+                            </p>
+                            <p><strong>Let's build the future of immersive experiences together.</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <div class="cta-section">
+        <div class="container">
+            <h3>Ready to Transform Your City or Business with AR?</h3>
+            <p>Let's discuss how our Augmented Reality solutions can drive engagement, boost tourism, and create unforgettable experiences.</p>
+            <a href="mailto:info@nridl.ca" class="cta-button">Get in Touch</a>
         </div>
     </div>
 
+    <!-- Footer will be injected by footer.js -->
+
+    <!-- Scripts -->
     <script src="js/navigation.js?v=1.6"></script>
     <script src="js/footer.js?v=1.6"></script>
+    <script src="js/common.js?v=1.6"></script>
+    <script src="js/sidebar-nav.js?v=1.0"></script>
+    <script>
+        // Tab functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.strategic-tab');
+            const cards = document.querySelectorAll('.strategic-content-card');
+            
+            tabs.forEach((tab, index) => {
+                tab.addEventListener('click', () => {
+                    // Remove active class from all tabs and cards
+                    tabs.forEach(t => t.classList.remove('active'));
+                    cards.forEach(c => c.classList.remove('active'));
+                    
+                    // Add active class to clicked tab and corresponding card
+                    tab.classList.add('active');
+                    cards[index].classList.add('active');
+                });
+            });
+        });
+    </script>
 </body>
 </html>
