@@ -299,6 +299,7 @@
     .footer-section-title {
         font-size: 0.8125rem;
         margin-bottom: 1rem;
+        display: inline-block;
     }
     
     .footer-links {
@@ -372,6 +373,7 @@
     
     .footer-section-title {
         font-size: 0.75rem;
+        display: inline-block;
     }
     
     .footer-links {
