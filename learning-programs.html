@@ -47,21 +47,12 @@
         }
         
         .hero-content h1 {
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-size: clamp(3rem, 7vw, 5rem);
             color: #ffffff;
-            margin-bottom: 1.5rem;
+            margin-bottom: 0;
             font-weight: 300;
-            letter-spacing: -0.02em;
-            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
-        }
-        
-        .hero-content p {
-            font-size: clamp(1.125rem, 2.5vw, 1.5rem);
-            color: #e0e0e0;
-            line-height: 1.8;
-            font-weight: 300;
-            margin-bottom: 2.5rem;
-            text-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
+            letter-spacing: -0.03em;
+            text-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
         }
         
         .hero-stats {
@@ -266,6 +257,7 @@
             font-size: 1.125rem;
             color: #7a8fb8;
             font-weight: 600;
+            text-align: center;
         }
         
         .bootcamp-body {
@@ -412,26 +404,80 @@
             to { opacity: 1; transform: translateY(0); }
         }
         
-        /* Session Cards */
+        /* Session Cards - Accordion Style */
         .sessions-grid {
             display: grid;
-            gap: 2.5rem;
+            gap: 0;
             margin-top: 2rem;
         }
         
         .session-card {
             background: #f8f9fa;
-            border-radius: 12px;
-            padding: 2.5rem;
+            border: 1px solid #e2e8f0;
+            border-bottom: none;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .session-card:first-child {
+            border-radius: 12px 12px 0 0;
+        }
+        
+        .session-card:last-child {
+            border-radius: 0 0 12px 12px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .session-header {
+            padding: 1.5rem 2rem;
+            background: #ffffff;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
             border-left: 4px solid #7a8fb8;
         }
         
-        .session-card h4 {
+        .session-header:hover {
+            background: #f8f9fa;
+        }
+        
+        .session-header.active {
+            background: #f8f9fa;
+            border-left-color: #9681b8;
+        }
+        
+        .session-toggle {
             font-size: 1.5rem;
+            color: #7a8fb8;
+            transition: transform 0.3s ease;
+            font-weight: 300;
+        }
+        
+        .session-header.active .session-toggle {
+            transform: rotate(180deg);
+        }
+        
+        .session-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+            padding: 0 2rem;
+        }
+        
+        .session-body.active {
+            max-height: 10000px;
+            padding: 2rem;
+        }
+        
+        .session-card h4 {
+            font-size: 1.25rem;
             color: #1a202c;
-            margin-bottom: 1.5rem;
+            margin-bottom: 0;
             font-weight: 500;
             line-height: 1.4;
+            flex: 1;
         }
         
         .session-subtitle {
@@ -574,22 +620,6 @@
         <canvas id="hero-canvas"></canvas>
         <div class="hero-content">
             <h1>Learning Programs</h1>
-            <p>From foundational digital skills to professional tech bootcamps — world-class education, free and accessible to all</p>
-            
-            <div class="hero-stats">
-                <div class="hero-stat">
-                    <span class="hero-stat-number">5+</span>
-                    <span class="hero-stat-label">Programs</span>
-                </div>
-                <div class="hero-stat">
-                    <span class="hero-stat-number">100+</span>
-                    <span class="hero-stat-label">Hours of Content</span>
-                </div>
-                <div class="hero-stat">
-                    <span class="hero-stat-number">Free</span>
-                    <span class="hero-stat-label">For Everyone</span>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -739,6 +769,11 @@
                             <div class="sessions-grid">
                                 <!-- Session 1 -->
                                 <div class="session-card">
+                                    <div class="session-header active" onclick="toggleSession(event, 0)">
+                                        <h4>Session 1: Orientation & Digital Creativity</h4>
+                                        <span class="session-toggle">−</span>
+                                    </div>
+                                    <div class="session-body active">
                                     <h4>Session 1: Orientation & Digital Creativity</h4>
                                     
                                     <div class="session-section">
@@ -810,10 +845,15 @@
                                         </ul>
                                     </div>
                                 </div>
+                                </div>
                                 
                                 <!-- Session 2 -->
                                 <div class="session-card">
-                                    <h4>Session 2: HTML, CSS & Interactive Game Elements</h4>
+                                    <div class="session-header" onclick="toggleSession(event, 1)">
+                                        <h4>Session 2: HTML, CSS & Interactive Game Elements</h4>
+                                        <span class="session-toggle">+</span>
+                                    </div>
+                                    <div class="session-body">
                                     
                                     <div class="session-section">
                                         <p class="session-subtitle">Basic HTML: Page Structure, Text, Images. Introduction to CSS for Styling and Layout</p>
@@ -881,10 +921,15 @@
                                         </ul>
                                     </div>
                                 </div>
+                                </div>
                                 
                                 <!-- Session 3 -->
                                 <div class="session-card">
-                                    <h4>Session 3: JavaScript Fundamentals & Playable Prototypes</h4>
+                                    <div class="session-header" onclick="toggleSession(event, 2)">
+                                        <h4>Session 3: JavaScript Fundamentals & Playable Prototypes</h4>
+                                        <span class="session-toggle">+</span>
+                                    </div>
+                                    <div class="session-body">
                                     
                                     <div class="session-section">
                                         <p class="session-subtitle">Introduction to JavaScript: Variables, Functions, Events</p>
@@ -948,6 +993,7 @@
                                             <li>Reflect on work and identify strengths and areas for improvement</li>
                                         </ul>
                                     </div>
+                                </div>
                                 </div>
                             </div>
                         </div>
@@ -1189,6 +1235,40 @@
             
             // Add active class to the clicked button
             event.target.classList.add('active');
+        }
+        
+        // Session accordion toggle function
+        function toggleSession(event, index) {
+            const sessionCard = event.target.closest('.session-card');
+            const header = sessionCard.querySelector('.session-header');
+            const body = sessionCard.querySelector('.session-body');
+            const toggle = sessionCard.querySelector('.session-toggle');
+            const allSessions = sessionCard.parentElement.querySelectorAll('.session-card');
+            
+            // Close all other sessions
+            allSessions.forEach((card, i) => {
+                if (i !== index) {
+                    const otherHeader = card.querySelector('.session-header');
+                    const otherBody = card.querySelector('.session-body');
+                    const otherToggle = card.querySelector('.session-toggle');
+                    
+                    otherHeader.classList.remove('active');
+                    otherBody.classList.remove('active');
+                    otherToggle.textContent = '+';
+                }
+            });
+            
+            // Toggle current session
+            const isActive = header.classList.contains('active');
+            if (isActive) {
+                header.classList.remove('active');
+                body.classList.remove('active');
+                toggle.textContent = '+';
+            } else {
+                header.classList.add('active');
+                body.classList.add('active');
+                toggle.textContent = '−';
+            }
         }
         
         // Three.js Hero Animation
