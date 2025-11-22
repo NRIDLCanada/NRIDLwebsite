@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Semiconductor Research - NRIDL">
+    <meta name="description" content="Semiconductor Research - Understanding the Foundation of Modern Computing, AI, and Robotics">
     <title>Semiconductor Research - NRIDL</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,44 +13,939 @@
     <link rel="stylesheet" href="css/main.css?v=1.4">
     <link rel="stylesheet" href="css/navigation.css?v=1.4">
     <link rel="stylesheet" href="css/footer.css?v=1.4">
+    <link rel="stylesheet" href="css/home.css?v=1.4">
+    <link rel="stylesheet" href="css/literacy.css">
     
     <style>
-        .construction-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 70vh;
+        /* Hero Section */
+        .hero-section {
+            height: 100vh !important;
+            min-height: 700px !important;
+            background-image: url('https://raw.githubusercontent.com/NRIDLCanada/NRIDLwebsite/main/image%20assets/semiconductor.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        .hero-overlay {
+            background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.7) 100%);
+        }
+        
+        .hero-content {
+            text-align: left !important;
+        }
+        
+        .hero-title {
+            font-size: clamp(1rem, 2.5vw, 2rem) !important;
+            text-align: left !important;
+        }
+        
+        .hero-subtitle {
+            font-size: clamp(0.8rem, 1.6vw, 1rem) !important;
+            text-align: left !important;
+            max-width: 800px;
+        }
+        
+        /* Mobile responsive adjustments */
+        @media (max-width: 768px) {
+            .hero-section {
+                min-height: 100vh !important;
+                align-items: center !important;
+                justify-content: center !important;
+                padding: 2rem 1.5rem !important;
+            }
+            
+            .hero-content {
+                text-align: center !important;
+                padding: 0 !important;
+                max-width: 100% !important;
+            }
+            
+            .hero-title {
+                font-size: clamp(1.5rem, 5vw, 2.5rem) !important;
+                margin-bottom: 1rem !important;
+                text-align: center !important;
+            }
+            
+            .hero-subtitle {
+                font-size: clamp(0.71rem, 2.63vw, 0.825rem) !important;
+                line-height: 1.6 !important;
+                margin: 0 auto 1rem !important;
+                text-align: center !important;
+            }
+            
+            .title-line {
+                display: block !important;
+            }
+        }
+
+        /* Semiconductor-specific styles */
+        .chip-icon {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        .manufacturer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .manufacturer-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-left: 3px solid #333333;
+        }
+
+        .manufacturer-card h5 {
+            color: #333333;
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-family: var(--font-accent);
+        }
+
+        .manufacturer-card .role {
+            color: #666666;
+            font-size: 0.875rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.75rem;
+        }
+
+        .manufacturer-card p {
+            color: #666666;
+            font-size: 0.9375rem;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .software-stack {
+            background: #f8f9fa;
             padding: 2rem;
+            margin: 2rem 0;
+            border-left: 3px solid #666666;
         }
-        
-        .construction-content {
-            text-align: center;
-            max-width: 600px;
-        }
-        
-        .construction-content h1 {
-            font-size: clamp(2rem, 5vw, 3rem);
+
+        .software-stack h5 {
+            color: #333333;
+            font-size: 1.125rem;
+            font-weight: 600;
             margin-bottom: 1rem;
-            color: var(--text-primary);
+            font-family: var(--font-accent);
         }
-        
-        .construction-content p {
-            font-size: clamp(1rem, 2vw, 1.25rem);
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
+
+        .stack-layer {
+            background: #ffffff;
+            padding: 1rem 1.5rem;
+            margin-bottom: 1rem;
+            border-left: 2px solid #cccccc;
+        }
+
+        .stack-layer:last-child {
+            margin-bottom: 0;
+        }
+
+        .stack-layer strong {
+            color: #333333;
+            font-size: 1rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .stack-layer p {
+            color: #666666;
+            font-size: 0.9375rem;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .use-case-list {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0;
+        }
+
+        .use-case-list li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 1rem;
+            color: #666666;
+            line-height: 1.8;
+        }
+
+        .use-case-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #333333;
+            font-weight: 600;
+        }
+
+        .comparison-table {
+            width: 100%;
+            margin: 2rem 0;
+            border-collapse: collapse;
+            background: #ffffff;
+        }
+
+        .comparison-table th {
+            background: #333333;
+            color: #ffffff;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+            font-family: var(--font-accent);
+            font-size: 0.9375rem;
+        }
+
+        .comparison-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #e0e0e0;
+            color: #666666;
+            font-size: 0.9375rem;
+            line-height: 1.7;
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .comparison-table tr:hover {
+            background: #f8f9fa;
+        }
+
+        @media (max-width: 768px) {
+            .manufacturer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .comparison-table {
+                font-size: 0.875rem;
+            }
+
+            .comparison-table th,
+            .comparison-table td {
+                padding: 0.75rem;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="construction-container">
-        <div class="construction-content">
-            <h1>Under Construction</h1>
-            <p>Coming Soon</p>
-            <a href="digital-futures.html" class="btn btn-outline">Back to Digital Futures</a>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="title-line">Semiconductor Research:</span>
+                <span class="title-line">The Foundation of the AI and Robotics Era</span>
+            </h1>
+            <p class="hero-subtitle">
+                Understanding the critical role of semiconductors, GPUs, and TPUs in powering artificial intelligence, 
+                robotics, and the digital transformation shaping our future.
+            </p>
         </div>
-    </div>
+    </section>
 
+    <!-- Main Content Section -->
+    <section class="what-we-do-section">
+        <div class="container">
+            <div class="strategic-content">
+                <div class="section-header reveal">
+                    <h2 class="section-title">Understanding Semiconductors</h2>
+                    <div class="title-divider"></div>
+                    <p class="section-intro">
+                        Semiconductors are the invisible engines powering our digital world. From smartphones to 
+                        supercomputers, from AI systems to autonomous vehicles, these tiny silicon chips are the 
+                        foundation of modern technology and the key to our digital future.
+                    </p>
+                </div>
+
+                <!-- Interactive Tabs -->
+                <div class="strategic-tabs reveal">
+                    <button class="strategic-tab active" data-tab="0">
+                        <span class="tab-number">01</span>
+                        <span class="tab-title">Fundamentals</span>
+                    </button>
+                    <button class="strategic-tab" data-tab="1">
+                        <span class="tab-number">02</span>
+                        <span class="tab-title">Software Stack</span>
+                    </button>
+                    <button class="strategic-tab" data-tab="2">
+                        <span class="tab-number">03</span>
+                        <span class="tab-title">AI Applications</span>
+                    </button>
+                    <button class="strategic-tab" data-tab="3">
+                        <span class="tab-number">04</span>
+                        <span class="tab-title">Robotics Applications</span>
+                    </button>
+                </div>
+
+                <!-- Content Cards -->
+                <div class="strategic-content-container reveal">
+                    
+                    <!-- Card 1: Fundamentals -->
+                    <div class="strategic-content-card active">
+                        <h3>Semiconductor Fundamentals: What They Are and Why They Matter</h3>
+                        <div class="card-content">
+                            <p>
+                                Semiconductors are materials with electrical conductivity between conductors and insulators. 
+                                Made primarily from silicon, these materials can be precisely controlled to create the billions 
+                                of transistors that form the processors, memory chips, and specialized accelerators powering 
+                                every digital device.
+                            </p>
+
+                            <div class="highlights-container">
+                                <div class="content-highlight">
+                                    <h4>What Are Semiconductors?</h4>
+                                    <p>
+                                        Semiconductors are crystalline materials, typically silicon, whose electrical properties 
+                                        can be precisely controlled through a process called "doping." By adding specific impurities, 
+                                        engineers create transistors—microscopic switches that can represent binary data (0s and 1s). 
+                                        Modern chips contain billions of these transistors, each smaller than a virus, working together 
+                                        to perform complex computations.
+                                    </p>
+                                </div>
+                                <div class="content-highlight">
+                                    <h4>Modern Usage in Society</h4>
+                                    <p>
+                                        Semiconductors are everywhere: smartphones process billions of operations per second; data centers 
+                                        power cloud computing and AI; automotive chips enable autonomous driving; medical devices monitor 
+                                        health; and communication infrastructure connects the world. Every digital interaction relies on 
+                                        semiconductor technology working invisibly in the background.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <h4 style="color: #333; margin-top: 2.5rem; margin-bottom: 1.5rem; font-size: 1.25rem;">Why Semiconductors Are Critical</h4>
+                            <ul class="use-case-list">
+                                <li><strong>Economic Importance:</strong> The global semiconductor industry exceeds $600 billion annually and enables trillions in downstream economic activity.</li>
+                                <li><strong>Technological Sovereignty:</strong> Nations with advanced chip manufacturing capabilities hold strategic advantages in defense, AI, and innovation.</li>
+                                <li><strong>AI Revolution:</strong> GPUs and specialized AI accelerators are essential for training and deploying artificial intelligence systems.</li>
+                                <li><strong>Automation & Robotics:</strong> Edge computing chips enable real-time decision-making in autonomous systems and industrial automation.</li>
+                                <li><strong>National Security:</strong> Modern defense systems, cybersecurity infrastructure, and critical communications depend on advanced semiconductors.</li>
+                            </ul>
+
+                            <h4 style="color: #333; margin-top: 2.5rem; margin-bottom: 1.5rem; font-size: 1.25rem;">Key Players and Their Roles</h4>
+                            
+                            <div class="manufacturer-grid">
+                                <div class="manufacturer-card">
+                                    <h5>NVIDIA</h5>
+                                    <div class="role">GPU Design Leader</div>
+                                    <p>
+                                        Dominates AI and high-performance computing with GPUs optimized for parallel processing. 
+                                        Their CUDA platform and Tensor Cores power most AI research and deployment.
+                                    </p>
+                                </div>
+                                
+                                <div class="manufacturer-card">
+                                    <h5>Google (TPU)</h5>
+                                    <div class="role">AI-Specific Hardware</div>
+                                    <p>
+                                        Tensor Processing Units (TPUs) designed exclusively for machine learning workloads, 
+                                        offering superior efficiency for training and inference in Google's AI ecosystem.
+                                    </p>
+                                </div>
+                                
+                                <div class="manufacturer-card">
+                                    <h5>AMD</h5>
+                                    <div class="role">GPU & CPU Innovation</div>
+                                    <p>
+                                        Competes with high-performance GPUs (Radeon Instinct) and CPUs (EPYC) for data centers, 
+                                        AI workloads, and gaming, offering strong price-performance alternatives.
+                                    </p>
+                                </div>
+                                
+                                <div class="manufacturer-card">
+                                    <h5>Intel</h5>
+                                    <div class="role">CPU & Foundry Services</div>
+                                    <p>
+                                        Traditional CPU leader expanding into AI accelerators, edge computing, and advanced 
+                                        manufacturing with investments in foundry services and neuromorphic computing.
+                                    </p>
+                                </div>
+                                
+                                <div class="manufacturer-card">
+                                    <h5>TSMC</h5>
+                                    <div class="role">Fabrication Leader</div>
+                                    <p>
+                                        Taiwan Semiconductor Manufacturing Company produces chips for most major tech companies, 
+                                        leading in advanced process nodes (3nm, 5nm) critical for high-performance computing.
+                                    </p>
+                                </div>
+                                
+                                <div class="manufacturer-card">
+                                    <h5>Apple</h5>
+                                    <div class="role">Custom Silicon Design</div>
+                                    <p>
+                                        Designs custom ARM-based chips (M-series, A-series) with integrated Neural Engines for 
+                                        on-device AI, demonstrating vertical integration advantages in performance and efficiency.
+                                    </p>
+                                </div>
+                                
+                                <div class="manufacturer-card">
+                                    <h5>Qualcomm</h5>
+                                    <div class="role">Mobile & Edge AI</div>
+                                    <p>
+                                        Snapdragon processors power billions of mobile devices with integrated AI accelerators, 
+                                        5G modems, and edge computing capabilities for smartphones and IoT devices.
+                                    </p>
+                                </div>
+                                
+                                <div class="manufacturer-card">
+                                    <h5>ARM Holdings</h5>
+                                    <div class="role">Architecture Licensing</div>
+                                    <p>
+                                        Licenses energy-efficient processor architectures used in 95% of smartphones and 
+                                        increasingly in servers, laptops, and AI edge devices worldwide.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="why-box">
+                                <strong>Why Understanding Semiconductors Matters</strong>
+                                <p>
+                                    As AI and robotics reshape society, semiconductor technology determines which nations, companies, 
+                                    and communities can participate in—and benefit from—this transformation. Understanding semiconductors 
+                                    empowers informed decisions about technology adoption, workforce development, policy-making, and 
+                                    strategic investments in our digital future. The semiconductor supply chain's concentration in East 
+                                    Asia presents both opportunities and vulnerabilities that affect global technological sovereignty.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Software Stack -->
+                    <div class="strategic-content-card">
+                        <h3>The Software Stack: Bridging Hardware and Applications</h3>
+                        <div class="card-content">
+                            <p>
+                                Semiconductors alone cannot power AI or robotics—they require sophisticated software stacks that 
+                                translate high-level programming into hardware-optimized instructions. Understanding this software 
+                                ecosystem is essential for leveraging semiconductor capabilities effectively.
+                            </p>
+
+                            <h4 style="color: #333; margin-top: 2rem; margin-bottom: 1.5rem; font-size: 1.25rem;">GPU Software Ecosystem</h4>
+                            
+                            <div class="software-stack">
+                                <h5>NVIDIA GPU Stack</h5>
+                                
+                                <div class="stack-layer">
+                                    <strong>CUDA (Compute Unified Device Architecture)</strong>
+                                    <p>
+                                        <strong>Functionality:</strong> Parallel computing platform enabling developers to write C/C++ 
+                                        code that executes on thousands of GPU cores simultaneously.<br>
+                                        <strong>Use Cases:</strong> Deep learning training, scientific simulations, cryptocurrency mining, 
+                                        video rendering, molecular dynamics, weather forecasting.
+                                    </p>
+                                </div>
+                                
+                                <div class="stack-layer">
+                                    <strong>cuDNN (CUDA Deep Neural Network Library)</strong>
+                                    <p>
+                                        <strong>Functionality:</strong> GPU-accelerated library providing highly optimized implementations 
+                                        of neural network operations (convolutions, pooling, activation functions).<br>
+                                        <strong>Use Cases:</strong> Training and deploying convolutional neural networks, recurrent networks, 
+                                        and transformer models for computer vision and natural language processing.
+                                    </p>
+                                </div>
+                                
+                                <div class="stack-layer">
+                                    <strong>TensorRT</strong>
+                                    <p>
+                                        <strong>Functionality:</strong> High-performance inference optimizer and runtime that maximizes 
+                                        throughput and minimizes latency for deployed AI models.<br>
+                                        <strong>Use Cases:</strong> Real-time video analytics, autonomous vehicle perception, conversational 
+                                        AI, medical image analysis, recommendation systems.
+                                    </p>
+                                </div>
+                                
+                                <div class="stack-layer">
+                                    <strong>RAPIDS</strong>
+                                    <p>
+                                        <strong>Functionality:</strong> Suite of open-source libraries for GPU-accelerated data science, 
+                                        providing pandas-like dataframe operations and machine learning algorithms.<br>
+                                        <strong>Use Cases:</strong> Large-scale data preprocessing, feature engineering, traditional ML 
+                                        (random forests, gradient boosting), graph analytics, time series analysis.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="software-stack">
+                                <h5>AMD GPU Stack (ROCm)</h5>
+                                
+                                <div class="stack-layer">
+                                    <strong>ROCm (Radeon Open Compute)</strong>
+                                    <p>
+                                        <strong>Functionality:</strong> Open-source platform for GPU computing, providing HIP (C++ dialect 
+                                        similar to CUDA) and support for major AI frameworks.<br>
+                                        <strong>Use Cases:</strong> Deep learning research, high-performance computing, molecular modeling, 
+                                        financial analytics, offering cost-effective alternatives to NVIDIA.
+                                    </p>
+                                </div>
+                                
+                                <div class="stack-layer">
+                                    <strong>MIOpen</strong>
+                                    <p>
+                                        <strong>Functionality:</strong> AMD's machine learning primitives library, optimized for Radeon 
+                                        Instinct accelerators.<br>
+                                        <strong>Use Cases:</strong> Training deep neural networks with frameworks like PyTorch and TensorFlow 
+                                        on AMD hardware.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <h4 style="color: #333; margin-top: 2.5rem; margin-bottom: 1.5rem; font-size: 1.25rem;">TPU Software Ecosystem</h4>
+                            
+                            <div class="software-stack">
+                                <h5>Google TPU Stack</h5>
+                                
+                                <div class="stack-layer">
+                                    <strong>XLA (Accelerated Linear Algebra)</strong>
+                                    <p>
+                                        <strong>Functionality:</strong> Domain-specific compiler that optimizes TensorFlow computations 
+                                        for TPUs, fusing operations and minimizing memory transfers.<br>
+                                        <strong>Use Cases:</strong> Training massive language models (BERT, T5, PaLM), large-scale image 
+                                        recognition, recommendation systems at Google scale.
+                                    </p>
+                                </div>
+                                
+                                <div class="stack-layer">
+                                    <strong>TPU Estimator API</strong>
+                                    <p>
+                                        <strong>Functionality:</strong> High-level TensorFlow API for distributed training across TPU pods 
+                                        (clusters of hundreds of TPU chips).<br>
+                                        <strong>Use Cases:</strong> Training models too large for single GPUs, hyperparameter tuning at scale, 
+                                        production ML pipelines on Google Cloud Platform.
+                                    </p>
+                                </div>
+                                
+                                <div class="stack-layer">
+                                    <strong>JAX</strong>
+                                    <p>
+                                        <strong>Functionality:</strong> Python library for composable function transformations (automatic 
+                                        differentiation, vectorization, parallelization) optimized for TPUs.<br>
+                                        <strong>Use Cases:</strong> Research on novel neural architectures, differentiable physics simulations, 
+                                        scientific computing requiring automatic differentiation.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <h4 style="color: #333; margin-top: 2.5rem; margin-bottom: 1.5rem; font-size: 1.25rem;">Framework Integration</h4>
+                            <p>
+                                Modern AI frameworks like <strong>PyTorch, TensorFlow, and JAX</strong> provide hardware-agnostic 
+                                interfaces while leveraging these specialized libraries underneath. Developers write model code once 
+                                and deploy on GPUs, TPUs, or other accelerators with minimal changes, abstracting hardware complexity 
+                                while maintaining performance.
+                            </p>
+
+                            <div class="why-box">
+                                <strong>Why Software Stacks Matter</strong>
+                                <p>
+                                    Hardware capabilities are meaningless without software to harness them. The software stack determines 
+                                    ease of development, performance optimization, and ecosystem maturity. NVIDIA's decade-long investment 
+                                    in CUDA created a moat that competitors struggle to overcome—demonstrating that software ecosystems 
+                                    are as strategically important as the chips themselves. Understanding these stacks helps organizations 
+                                    choose the right hardware for their AI workloads and avoid vendor lock-in.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: AI Applications -->
+                    <div class="strategic-content-card">
+                        <h3>Semiconductors in AI: Powering the Intelligence Revolution</h3>
+                        <div class="card-content">
+                            <p>
+                                Artificial Intelligence's explosive growth is fundamentally enabled by specialized semiconductors. 
+                                GPUs and TPUs provide the massive parallel processing power required to train neural networks with 
+                                billions of parameters and deploy AI systems that process information in real-time.
+                            </p>
+
+                            <h4 style="color: #333; margin-top: 2rem; margin-bottom: 1.5rem; font-size: 1.25rem;">Why GPUs/TPUs Are Essential for AI</h4>
+                            
+                            <div class="highlights-container">
+                                <div class="content-highlight">
+                                    <h4>Parallel Processing Power</h4>
+                                    <p>
+                                        AI training involves matrix multiplications on massive datasets—operations that GPUs excel at 
+                                        with thousands of cores working simultaneously. A modern GPU can perform 100+ trillion operations 
+                                        per second (TFLOPS), reducing model training from months to days or hours.
+                                    </p>
+                                </div>
+                                <div class="content-highlight">
+                                    <h4>Specialized Architecture</h4>
+                                    <p>
+                                        TPUs and modern GPUs include Tensor Cores—specialized circuits designed specifically for the 
+                                        matrix operations that dominate deep learning. These provide 10-20x speedups over traditional 
+                                        computing cores for AI workloads.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <h4 style="color: #333; margin-top: 2.5rem; margin-bottom: 1.5rem; font-size: 1.25rem;">AI Training Applications</h4>
+                            
+                            <ul class="use-case-list">
+                                <li><strong>Large Language Models (LLMs):</strong> GPT-4, Claude, and similar models require thousands of 
+                                GPUs training for weeks on massive text corpora, consuming megawatts of power to learn language understanding.</li>
+                                
+                                <li><strong>Computer Vision Systems:</strong> ImageNet models, facial recognition, medical image analysis, 
+                                and autonomous driving perception networks train on millions of images using GPU clusters.</li>
+                                
+                                <li><strong>Recommendation Systems:</strong> Netflix, YouTube, and Amazon train deep learning models on 
+                                billions of user interactions to personalize content, requiring specialized hardware for real-time updates.</li>
+                                
+                                <li><strong>Scientific Discovery:</strong> AlphaFold's protein structure prediction, drug discovery models, 
+                                and materials science simulations leverage GPUs to accelerate research by orders of magnitude.</li>
+                                
+                                <li><strong>Generative AI:</strong> Stable Diffusion, DALL-E, and Midjourney train on millions of images 
+                                to generate art, requiring weeks of GPU time for model training and fine-tuning.</li>
+                            </ul>
+
+                            <h4 style="color: #333; margin-top: 2.5rem; margin-bottom: 1.5rem; font-size: 1.25rem;">AI Inference Applications</h4>
+                            
+                            <table class="comparison-table">
+                                <thead>
+                                    <tr>
+                                        <th>Application Domain</th>
+                                        <th>Semiconductor Role</th>
+                                        <th>Real-World Impact</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Voice Assistants</strong></td>
+                                        <td>Edge AI chips in smartphones and smart speakers process voice commands locally</td>
+                                        <td>Siri, Alexa, Google Assistant respond instantly without cloud latency</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Real-Time Translation</strong></td>
+                                        <td>Neural engines in mobile chips enable on-device translation</td>
+                                        <td>Instant camera-based text translation, breaking language barriers globally</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Content Moderation</strong></td>
+                                        <td>Data center GPUs analyze millions of images/videos per day</td>
+                                        <td>Social platforms automatically detect harmful content at scale</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Fraud Detection</strong></td>
+                                        <td>Inference accelerators evaluate transactions in milliseconds</td>
+                                        <td>Banks prevent billions in fraud with real-time AI risk assessment</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Search Engines</strong></td>
+                                        <td>TPUs power Google's BERT models for understanding search queries</td>
+                                        <td>More accurate search results understanding context and intent</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Medical Diagnostics</strong></td>
+                                        <td>GPUs analyze X-rays, MRIs, and pathology slides for disease markers</td>
+                                        <td>Faster, more accurate diagnosis of cancer, pneumonia, and other conditions</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <h4 style="color: #333; margin-top: 2.5rem; margin-bottom: 1.5rem; font-size: 1.25rem;">Edge AI: Bringing Intelligence Everywhere</h4>
+                            <p>
+                                Modern smartphones, cameras, and IoT devices include dedicated AI accelerators (Apple Neural Engine, 
+                                Qualcomm AI Engine, Google Edge TPU) that enable:
+                            </p>
+                            <ul class="use-case-list">
+                                <li><strong>On-Device Privacy:</strong> Facial recognition and voice processing without sending data to cloud servers</li>
+                                <li><strong>Real-Time Performance:</strong> Instant photo enhancement, augmented reality, and computational photography</li>
+                                <li><strong>Offline Capability:</strong> AI features working without internet connectivity</li>
+                                <li><strong>Energy Efficiency:</strong> Battery-powered AI applications lasting all day</li>
+                            </ul>
+
+                            <div class="why-box">
+                                <strong>The AI-Semiconductor Symbiosis</strong>
+                                <p>
+                                    AI's capabilities are fundamentally limited by available compute power. GPT-3 required 3,640 petaflop-days 
+                                    of compute—impossible without modern GPUs. Future AI breakthroughs (AGI, multimodal understanding, 
+                                    scientific discovery) will demand even more powerful semiconductors. Conversely, AI is now designing 
+                                    better chips: Google uses machine learning to optimize TPU layouts, and NVIDIA employs AI for circuit 
+                                    design. This virtuous cycle—AI improving chips, better chips enabling more capable AI—will define the 
+                                    next decade of technological progress.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Robotics Applications -->
+                    <div class="strategic-content-card">
+                        <h3>Semiconductors in Robotics: Enabling Autonomous Intelligence</h3>
+                        <div class="card-content">
+                            <p>
+                                Robotics represents one of the most demanding applications of semiconductor technology, requiring 
+                                real-time processing, sensor fusion, simultaneous localization and mapping (SLAM), path planning, 
+                                and decision-making—all while operating under strict power and latency constraints.
+                            </p>
+
+                            <h4 style="color: #333; margin-top: 2rem; margin-bottom: 1.5rem; font-size: 1.25rem;">Semiconductor Requirements for Robotics</h4>
+                            
+                            <div class="highlights-container">
+                                <div class="content-highlight">
+                                    <h4>Real-Time Processing</h4>
+                                    <p>
+                                        Robots must process sensor data and make decisions within milliseconds to avoid obstacles, 
+                                        maintain balance, or execute precise movements. This demands low-latency edge computing chips 
+                                        that process data locally without cloud dependency.
+                                    </p>
+                                </div>
+                                <div class="content-highlight">
+                                    <h4>Sensor Fusion</h4>
+                                    <p>
+                                        Autonomous systems integrate data from cameras, LiDAR, radar, IMUs, and encoders simultaneously. 
+                                        Specialized chips with dedicated signal processing units and AI accelerators handle this 
+                                        multimodal data stream efficiently.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <h4 style="color: #333; margin-top: 2.5rem; margin-bottom: 1.5rem; font-size: 1.25rem;">Key Semiconductor Platforms for Robotics</h4>
+                            
+                            <div class="manufacturer-grid">
+                                <div class="manufacturer-card">
+                                    <h5>NVIDIA Jetson</h5>
+                                    <div class="role">Edge AI Platform</div>
+                                    <p>
+                                        System-on-Module (SoM) combining ARM CPU, NVIDIA GPU, and AI accelerators for autonomous machines. 
+                                        Powers drones, delivery robots, industrial automation, and agricultural robots with 5-30W power envelope.
+                                    </p>
+                                </div>
+                                
+                                <div class="manufacturer-card">
+                                    <h5>Intel Mobileye</h5>
+                                    <div class="role">Automotive Vision</div>
+                                    <p>
+                                        Specialized chips for autonomous driving perception, processing multiple camera feeds in real-time 
+                                        for lane detection, object recognition, and decision-making in vehicles.
+                                    </p>
+                                </div>
+                                
+                                <div class="manufacturer-card">
+                                    <h5>Qualcomm Robotics</h5>
+                                    <div class="role">Mobile Robotics SoC</div>
+                                    <p>
+                                        Low-power chips with integrated AI, computer vision, and connectivity (5G, Wi-Fi) for consumer robots, 
+                                        warehouse automation, and last-mile delivery vehicles.
+                                    </p>
+                                </div>
+                                
+                                <div class="manufacturer-card">
+                                    <h5>Tesla Dojo</h5>
+                                    <div class="role">Training Supercomputer</div>
+                                    <p>
+                                        Custom AI training chips designed specifically for autonomous driving neural networks, processing 
+                                        petabytes of fleet data to improve Full Self-Driving capabilities.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <h4 style="color: #333; margin-top: 2.5rem; margin-bottom: 1.5rem; font-size: 1.25rem;">Robotics Applications Enabled by Advanced Semiconductors</h4>
+                            
+                            <table class="comparison-table">
+                                <thead>
+                                    <tr>
+                                        <th>Application</th>
+                                        <th>Semiconductor Role</th>
+                                        <th>Impact</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Autonomous Vehicles</strong></td>
+                                        <td>Process 1TB+ of sensor data per hour from cameras, LiDAR, radar for real-time navigation</td>
+                                        <td>Waymo, Tesla, Cruise deploy self-driving cars in urban environments</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Warehouse Automation</strong></td>
+                                        <td>Vision systems identify and sort packages at speeds exceeding human capability</td>
+                                        <td>Amazon robots move 750 million packages annually, reducing fulfillment time</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Surgical Robots</strong></td>
+                                        <td>Sub-millimeter precision control with haptic feedback and 3D vision processing</td>
+                                        <td>Da Vinci robots perform millions of minimally invasive surgeries globally</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Agricultural Robots</strong></td>
+                                        <td>Computer vision identifies weeds, pests, and ripe crops for targeted intervention</td>
+                                        <td>Precision agriculture reduces herbicide use by 90% while increasing yields</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Drone Delivery</strong></td>
+                                        <td>Real-time obstacle avoidance and GPS-denied navigation in urban canyons</td>
+                                        <td>Zipline delivers medical supplies to remote areas, Amazon tests Prime Air</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Manufacturing Cobots</strong></td>
+                                        <td>Force sensors and vision enable safe human-robot collaboration on assembly lines</td>
+                                        <td>Flexible automation adapts to varying production runs without reprogramming</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Humanoid Robots</strong></td>
+                                        <td>Process visual, auditory, and tactile data for natural interaction and manipulation</td>
+                                        <td>Boston Dynamics Atlas, Tesla Optimus demonstrate bipedal locomotion and object handling</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <h4 style="color: #333; margin-top: 2.5rem; margin-bottom: 1.5rem; font-size: 1.25rem;">Critical Technologies in Robotic Semiconductors</h4>
+                            
+                            <div class="software-stack">
+                                <h5>Perception & Sensing</h5>
+                                
+                                <div class="stack-layer">
+                                    <strong>Vision Processing Units (VPUs)</strong>
+                                    <p>
+                                        Dedicated hardware for image signal processing, stereo depth estimation, and feature extraction. 
+                                        Intel Movidius, Google Edge TPU enable real-time object detection and tracking on battery power.
+                                    </p>
+                                </div>
+                                
+                                <div class="stack-layer">
+                                    <strong>LiDAR Processing</strong>
+                                    <p>
+                                        Specialized chips process millions of 3D points per second from spinning or solid-state LiDAR, 
+                                        creating detailed environmental maps for autonomous navigation.
+                                    </p>
+                                </div>
+                                
+                                <div class="stack-layer">
+                                    <strong>Sensor Fusion Accelerators</strong>
+                                    <p>
+                                        Combine data from cameras, radar, ultrasonic sensors, and IMUs with probabilistic algorithms 
+                                        (Kalman filters, particle filters) implemented in hardware for real-time localization.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="software-stack">
+                                <h5>Control & Actuation</h5>
+                                
+                                <div class="stack-layer">
+                                    <strong>Motor Control MCUs</strong>
+                                    <p>
+                                        Real-time microcontrollers with PWM generators, ADCs, and encoder interfaces control servo motors, 
+                                        stepper motors, and brushless DC motors with microsecond precision for robotic joints and wheels.
+                                    </p>
+                                </div>
+                                
+                                <div class="stack-layer">
+                                    <strong>FPGA-Based Control</strong>
+                                    <p>
+                                        Field-programmable gate arrays implement custom control algorithms with nanosecond latency for 
+                                        high-speed manufacturing robots and exoskeletons requiring instantaneous force feedback.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <h4 style="color: #333; margin-top: 2.5rem; margin-bottom: 1.5rem; font-size: 1.25rem;">The Future: Neuromorphic Computing for Robotics</h4>
+                            <p>
+                                Next-generation robotic chips inspired by biological brains (Intel Loihi, IBM TrueNorth) promise:
+                            </p>
+                            <ul class="use-case-list">
+                                <li><strong>1000x Energy Efficiency:</strong> Event-driven processing consuming milliwatts instead of watts</li>
+                                <li><strong>Real-Time Learning:</strong> Robots adapt to new environments without retraining</li>
+                                <li><strong>Biomimetic Control:</strong> Natural, fluid motion resembling animal locomotion</li>
+                                <li><strong>Scalability:</strong> Parallel architecture scaling from insect-level to human-level intelligence</li>
+                            </ul>
+
+                            <div class="why-box">
+                                <strong>Semiconductors: The Bottleneck and Breakthrough for Robotics</strong>
+                                <p>
+                                    The gap between lab demonstrations and real-world robotic deployment often comes down to semiconductors. 
+                                    Power-hungry chips drain batteries in minutes; high-latency processing causes dangerous delays; expensive 
+                                    hardware prevents economic viability. Advances in edge AI chips, neuromorphic computing, and specialized 
+                                    accelerators are removing these bottlenecks—enabling the transition from factory robots performing 
+                                    repetitive tasks to general-purpose autonomous systems operating in unstructured environments. The robotics 
+                                    revolution depends on semiconductor innovation as much as algorithm development, making chip technology 
+                                    a strategic imperative for nations and companies betting on an automated future.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Conclusion Section -->
+                <div class="timeline-section reveal">
+                    <div class="timeline-content">
+                        <h3>The Strategic Importance of Semiconductor Research</h3>
+                        <p>
+                            As we enter an era defined by artificial intelligence and robotics, semiconductor technology has become 
+                            the foundational infrastructure of economic competitiveness, national security, and technological sovereignty. 
+                            Understanding semiconductors is no longer optional—it's essential for anyone seeking to participate in shaping 
+                            our digital future.
+                        </p>
+                        <ul>
+                            <li><strong>Economic Imperative:</strong> The AI and robotics industries—projected to exceed $15 trillion 
+                            by 2030—are entirely dependent on advanced semiconductor capabilities. Nations and regions without access 
+                            to cutting-edge chips will be excluded from this wealth creation.</li>
+                            
+                            <li><strong>Workforce Preparation:</strong> The semiconductor industry faces critical talent shortages in 
+                            chip design, fabrication engineering, and systems integration. Education and training programs must prepare 
+                            the next generation for high-value careers in this strategic sector.</li>
+                            
+                            <li><strong>Supply Chain Resilience:</strong> The concentration of advanced chip manufacturing in Taiwan 
+                            and South Korea creates geopolitical vulnerabilities. Diversifying semiconductor supply chains is essential 
+                            for technological independence and national security.</li>
+                            
+                            <li><strong>Innovation Leadership:</strong> Breakthroughs in AI, quantum computing, and biotechnology all 
+                            depend on semiconductor advances. Nations leading in chip technology will lead in innovation across all 
+                            high-tech industries.</li>
+                        </ul>
+                        <div class="timeline-footer">
+                            <p>
+                                At NRIDL, our semiconductor research demystifies this complex technology for communities, educators, 
+                                policymakers, and businesses. We translate technical innovations into accessible knowledge, enabling 
+                                informed decisions about technology adoption, workforce development, and strategic investments.
+                            </p>
+                            <p>
+                                Through workshops, publications, and educational programs, we're building semiconductor literacy across 
+                                Canadian communities—ensuring that understanding of this critical technology extends beyond Silicon 
+                                Valley to include the diverse populations who will be most affected by AI and automation.
+                            </p>
+                            <p><strong>Together, we're ensuring that Canada and its communities participate in—not just consume—the 
+                            AI and robotics revolution.</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer will be injected by footer.js -->
+
+    <!-- Scripts -->
     <script src="js/navigation.js?v=1.6"></script>
     <script src="js/footer.js?v=1.6"></script>
+    <script src="js/common.js?v=1.6"></script>
+    <script>
+        // Tab functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.strategic-tab');
+            const cards = document.querySelectorAll('.strategic-content-card');
+            
+            tabs.forEach((tab, index) => {
+                tab.addEventListener('click', () => {
+                    // Remove active class from all tabs and cards
+                    tabs.forEach(t => t.classList.remove('active'));
+                    cards.forEach(c => c.classList.remove('active'));
+                    
+                    // Add active class to clicked tab and corresponding card
+                    tab.classList.add('active');
+                    cards[index].classList.add('active');
+                });
+            });
+        });
+    </script>
 </body>
 </html>
