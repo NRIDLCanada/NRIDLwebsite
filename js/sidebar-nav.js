@@ -44,7 +44,19 @@ class SidebarNav {
     getSections() {
         const sections = [];
         
-        // Try to get sections from tabs
+        // Get the main section title first
+        const mainTitle = document.querySelector('.section-title');
+        if (mainTitle) {
+            sections.push({
+                id: 'main-intro',
+                title: mainTitle.textContent.trim(),
+                number: '●',
+                element: mainTitle.closest('.section-header'),
+                type: 'intro'
+            });
+        }
+        
+        // Get sections from tabs
         const tabs = document.querySelectorAll('.strategic-tab');
         const cards = document.querySelectorAll(this.options.sectionSelector);
 
@@ -54,27 +66,49 @@ class SidebarNav {
                 const number = tab.querySelector('.tab-number')?.textContent || `0${index + 1}`;
                 
                 sections.push({
-                    id: `section-${index}`,
+                    id: `tab-section-${index}`,
                     title: title,
                     number: number,
                     element: cards[index],
-                    tabElement: tab
+                    tabElement: tab,
+                    type: 'tab'
                 });
             });
-        } else {
-            // Fallback: get from H3 headings
-            const headings = document.querySelectorAll('h3');
-            headings.forEach((heading, index) => {
-                if (heading.textContent.trim()) {
+        }
+        
+        // Get glossary section if it exists
+        const glossarySection = document.querySelector('.glossary-container');
+        if (glossarySection) {
+            const glossaryTitle = glossarySection.closest('.timeline-section')?.querySelector('h3');
+            if (glossaryTitle) {
+                sections.push({
+                    id: 'glossary-section',
+                    title: 'Glossary',
+                    number: '📖',
+                    element: glossarySection.closest('.timeline-section'),
+                    type: 'glossary'
+                });
+            }
+        }
+        
+        // Get conclusion section
+        const conclusionSections = document.querySelectorAll('.timeline-section');
+        conclusionSections.forEach((section, index) => {
+            const heading = section.querySelector('h3');
+            if (heading && !section.querySelector('.glossary-container')) {
+                const titleText = heading.textContent.trim();
+                // Skip if it's the glossary section
+                if (!titleText.toLowerCase().includes('glossary')) {
                     sections.push({
-                        id: `section-${index}`,
-                        title: heading.textContent.trim(),
-                        number: `0${index + 1}`,
-                        element: heading
+                        id: `conclusion-${index}`,
+                        title: titleText.length > 40 ? 'Conclusion' : titleText,
+                        number: '★',
+                        element: section,
+                        type: 'conclusion'
                     });
                 }
-            });
-        }
+            }
+        });
 
         return sections;
     }
@@ -146,17 +180,21 @@ class SidebarNav {
             });
         });
 
-        // Scroll detection
+        // Scroll detection for active section and sidebar visibility
         let ticking = false;
         window.addEventListener('scroll', () => {
             if (!ticking) {
                 window.requestAnimationFrame(() => {
                     this.updateActiveSection();
+                    this.updateSidebarVisibility();
                     ticking = false;
                 });
                 ticking = true;
             }
         });
+        
+        // Initial visibility check
+        this.updateSidebarVisibility();
 
         // Mobile toggle
         const toggleBtn = this.sidebar.querySelector('.sidebar-nav-toggle');
@@ -175,20 +213,38 @@ class SidebarNav {
             }
         });
     }
+    
+    updateSidebarVisibility() {
+        // Hide sidebar during hero section
+        const heroSection = document.querySelector('.hero-section');
+        if (heroSection) {
+            const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+            const scrollPos = window.pageYOffset;
+            
+            if (scrollPos < heroBottom - 100) {
+                this.sidebar.style.opacity = '0';
+                this.sidebar.style.pointerEvents = 'none';
+            } else {
+                this.sidebar.style.opacity = '1';
+                this.sidebar.style.pointerEvents = 'auto';
+            }
+        }
+    }
 
     navigateToSection(index) {
         const section = this.sections[index];
         if (!section) return;
 
-        // If there's a tab element, click it to switch tabs
-        if (section.tabElement) {
+        // Handle different section types
+        if (section.type === 'tab' && section.tabElement) {
+            // If there's a tab element, click it to switch tabs
             section.tabElement.click();
             
-            // Wait for tab animation, then scroll
+            // Wait for tab animation, then scroll to tabs
             setTimeout(() => {
-                const targetElement = section.element;
-                if (targetElement) {
-                    const offsetTop = targetElement.offsetTop - this.options.offset;
+                const tabsContainer = document.querySelector('.strategic-tabs');
+                if (tabsContainer) {
+                    const offsetTop = tabsContainer.offsetTop - 20;
                     window.scrollTo({
                         top: offsetTop,
                         behavior: 'smooth'
@@ -197,11 +253,14 @@ class SidebarNav {
             }, 100);
         } else {
             // Direct scroll to element
-            const offsetTop = section.element.offsetTop - this.options.offset;
-            window.scrollTo({
-                top: offsetTop,
-                behavior: 'smooth'
-            });
+            const targetElement = section.element;
+            if (targetElement) {
+                const offsetTop = targetElement.offsetTop - this.options.offset;
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            }
         }
 
         // Update active state
@@ -250,15 +309,18 @@ class SidebarNav {
         styles.textContent = `
             .sidebar-nav {
                 position: fixed;
-                top: 120px;
-                width: 240px;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 260px;
                 background: #ffffff;
                 border: 1px solid #e0e0e0;
                 box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
                 z-index: 900;
-                max-height: calc(100vh - 160px);
+                max-height: calc(100vh - 200px);
                 overflow-y: auto;
-                transition: transform 0.3s ease;
+                transition: opacity 0.3s ease, transform 0.3s ease;
+                border-radius: 8px;
+                opacity: 0;
             }
 
             .sidebar-nav-right {
@@ -275,9 +337,11 @@ class SidebarNav {
                 font-size: 0.875rem;
                 text-transform: uppercase;
                 letter-spacing: 0.05em;
-                color: #333333;
-                border-bottom: 1px solid #e0e0e0;
-                background: #f8f9fa;
+                color: #ffffff;
+                background: #333333;
+                position: sticky;
+                top: 0;
+                z-index: 10;
             }
 
             .sidebar-nav-list {
@@ -288,6 +352,11 @@ class SidebarNav {
 
             .sidebar-nav-item {
                 border-bottom: 1px solid #f0f0f0;
+            }
+            
+            .sidebar-nav-item.section-group-start {
+                margin-top: 0.5rem;
+                border-top: 2px solid #e0e0e0;
             }
 
             .sidebar-nav-item:last-child {
@@ -313,7 +382,8 @@ class SidebarNav {
             .sidebar-nav-link.active {
                 background: #333333;
                 color: #ffffff;
-                border-left: 3px solid #000000;
+                border-left: 4px solid #000000;
+                font-weight: 500;
             }
 
             .sidebar-nav-link.active .sidebar-nav-number {
@@ -321,10 +391,15 @@ class SidebarNav {
             }
 
             .sidebar-nav-number {
-                font-size: 0.75rem;
+                font-size: 0.8rem;
                 font-weight: 600;
                 color: #999999;
-                min-width: 24px;
+                min-width: 28px;
+                text-align: center;
+            }
+            
+            .sidebar-nav-link.active .sidebar-nav-number {
+                color: #ffffff;
             }
 
             .sidebar-nav-title {
