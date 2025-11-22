@@ -107,7 +107,7 @@ class SidebarNav {
             }
         }
         
-        // Get conclusion section
+        // Get 2030 Goals / conclusion section
         const conclusionSections = document.querySelectorAll('.timeline-section');
         conclusionSections.forEach((section, index) => {
             const heading = section.querySelector('h3');
@@ -117,7 +117,7 @@ class SidebarNav {
                 if (!titleText.toLowerCase().includes('glossary')) {
                     sections.push({
                         id: `conclusion-${index}`,
-                        title: titleText.length > 40 ? 'Conclusion' : titleText,
+                        title: titleText.length > 40 ? '2030 Goals' : titleText,
                         number: '★',
                         element: section,
                         type: 'conclusion'
@@ -347,7 +347,7 @@ class SidebarNav {
                 }, 800);
             }
         } else {
-            // Direct scroll to element (glossary, conclusion, etc.)
+            // Direct scroll to element (glossary, 2030 Goals, etc.)
             const targetElement = section.element;
             if (targetElement) {
                 const rect = targetElement.getBoundingClientRect();
