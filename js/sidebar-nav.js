@@ -269,24 +269,30 @@ class SidebarNav {
             // If there's a tab element, click it to switch tabs
             section.tabElement.click();
             
-            // Wait for tab animation, then scroll to tabs with proper offset
+            // Wait for tab animation, then scroll to the active card
             setTimeout(() => {
-                const tabsContainer = document.querySelector('.strategic-tabs');
-                if (tabsContainer) {
-                    const offsetTop = tabsContainer.offsetTop - 20;
+                const activeCard = document.querySelector('.strategic-content-card.active');
+                if (activeCard) {
+                    const rect = activeCard.getBoundingClientRect();
+                    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                    const targetPosition = rect.top + scrollTop - 120;
+                    
                     window.scrollTo({
-                        top: offsetTop,
+                        top: targetPosition,
                         behavior: 'smooth'
                     });
                 }
-            }, 150);
+            }, 200);
         } else if (section.type === 'intro') {
             // Scroll to the introduction section
             const targetElement = section.element;
             if (targetElement) {
-                const offsetTop = targetElement.offsetTop - 80;
+                const rect = targetElement.getBoundingClientRect();
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                const targetPosition = rect.top + scrollTop - 100;
+                
                 window.scrollTo({
-                    top: offsetTop,
+                    top: targetPosition,
                     behavior: 'smooth'
                 });
             }
@@ -294,9 +300,12 @@ class SidebarNav {
             // Direct scroll to element (glossary, conclusion, etc.)
             const targetElement = section.element;
             if (targetElement) {
-                const offsetTop = targetElement.offsetTop - 100;
+                const rect = targetElement.getBoundingClientRect();
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                const targetPosition = rect.top + scrollTop - 120;
+                
                 window.scrollTo({
-                    top: offsetTop,
+                    top: targetPosition,
                     behavior: 'smooth'
                 });
             }
@@ -312,14 +321,19 @@ class SidebarNav {
     }
 
     updateActiveSection() {
-        const scrollPos = window.pageYOffset + this.options.offset + 50;
+        const scrollPos = window.pageYOffset + 150;
         
         // Find which section is currently in view
         for (let i = this.sections.length - 1; i >= 0; i--) {
             const section = this.sections[i];
-            if (section.element && section.element.offsetTop <= scrollPos) {
-                this.setActiveSection(i);
-                break;
+            if (section.element) {
+                const rect = section.element.getBoundingClientRect();
+                const elementTop = rect.top + window.pageYOffset;
+                
+                if (elementTop <= scrollPos) {
+                    this.setActiveSection(i);
+                    break;
+                }
             }
         }
     }
