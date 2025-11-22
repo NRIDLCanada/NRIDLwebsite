@@ -17,6 +17,7 @@ class SidebarNav {
         this.sections = [];
         this.sidebar = null;
         this.activeSection = null;
+        this.isNavigating = false;
 
         this.init();
     }
@@ -264,6 +265,12 @@ class SidebarNav {
         const section = this.sections[index];
         if (!section) return;
 
+        // Set flag to prevent updateActiveSection from overriding during navigation
+        this.isNavigating = true;
+        
+        // Immediately update active state
+        this.setActiveSection(index);
+
         // Handle different section types
         if (section.type === 'tab' && section.tabElement) {
             // If there's a tab element, click it to switch tabs
@@ -282,6 +289,11 @@ class SidebarNav {
                         behavior: 'smooth'
                     });
                 }
+                
+                // Re-enable automatic updates after scroll completes
+                setTimeout(() => {
+                    this.isNavigating = false;
+                }, 800);
             }, 200);
         } else if (section.type === 'intro') {
             // Scroll to the introduction section
@@ -295,6 +307,11 @@ class SidebarNav {
                     top: targetPosition,
                     behavior: 'smooth'
                 });
+                
+                // Re-enable automatic updates after scroll completes
+                setTimeout(() => {
+                    this.isNavigating = false;
+                }, 800);
             }
         } else {
             // Direct scroll to element (glossary, conclusion, etc.)
@@ -308,11 +325,13 @@ class SidebarNav {
                     top: targetPosition,
                     behavior: 'smooth'
                 });
+                
+                // Re-enable automatic updates after scroll completes
+                setTimeout(() => {
+                    this.isNavigating = false;
+                }, 800);
             }
         }
-
-        // Update active state
-        this.setActiveSection(index);
 
         // Close mobile menu
         if (window.innerWidth <= 768) {
@@ -321,6 +340,9 @@ class SidebarNav {
     }
 
     updateActiveSection() {
+        // Don't update if we're currently navigating programmatically
+        if (this.isNavigating) return;
+        
         const scrollPos = window.pageYOffset + 150;
         
         // Find which section is currently in view
