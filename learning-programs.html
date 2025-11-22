@@ -352,6 +352,169 @@
             text-decoration: underline;
         }
         
+        /* Detailed Course View */
+        .course-tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #e2e8f0;
+            flex-wrap: wrap;
+        }
+        
+        .course-tab-btn {
+            padding: 1rem 1.5rem;
+            background: none;
+            border: none;
+            font-size: 1rem;
+            font-weight: 500;
+            color: #4a5568;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .course-tab-btn:hover {
+            color: #7a8fb8;
+        }
+        
+        .course-tab-btn.active {
+            color: #7a8fb8;
+        }
+        
+        .course-tab-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(135deg, #7a8fb8 0%, #9681b8 100%);
+        }
+        
+        .course-tab-content {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .course-tab-content.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Session Cards */
+        .sessions-grid {
+            display: grid;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .session-card {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 2rem;
+            border-left: 4px solid #7a8fb8;
+        }
+        
+        .session-card h4 {
+            font-size: 1.5rem;
+            color: #1a202c;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+        
+        .session-subtitle {
+            font-size: 1.125rem;
+            color: #7a8fb8;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+        
+        .session-description {
+            font-size: 1rem;
+            color: #4a5568;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        
+        .session-section {
+            margin-bottom: 2rem;
+        }
+        
+        .session-section h5 {
+            font-size: 1rem;
+            color: #2d3748;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .session-section ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .session-section li {
+            font-size: 0.9375rem;
+            color: #4a5568;
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            line-height: 1.7;
+        }
+        
+        .session-section li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #7a8fb8;
+            font-weight: 600;
+        }
+        
+        /* FAQ Section */
+        .faq-grid {
+            display: grid;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .faq-item {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+        
+        .faq-question {
+            font-size: 1.125rem;
+            color: #1a202c;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+        
+        .faq-answer {
+            font-size: 0.9375rem;
+            color: #4a5568;
+            line-height: 1.8;
+        }
+        
+        .faq-answer ul {
+            margin-top: 0.75rem;
+            padding-left: 1.5rem;
+        }
+        
+        .faq-answer li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .price-highlight {
+            color: #7a8fb8;
+            font-weight: 600;
+        }
+        
         @media (max-width: 768px) {
             .hero-stats {
                 gap: 2rem;
@@ -486,42 +649,394 @@
             </div>
             
             <div class="bootcamp-grid">
-                <!-- HTML Learning and Vibe Coding -->
-                <div class="bootcamp-card">
+                <!-- HTML Learning and Vibe Coding - DETAILED VERSION -->
+                <div class="bootcamp-card" style="grid-column: 1 / -1;">
                     <div class="bootcamp-header">
                         <h3 class="bootcamp-title">HTML Learning & Vibe Coding</h3>
-                        <p class="bootcamp-duration">20 Hours</p>
+                        <p class="bootcamp-duration">20 Hours • $199 CAD</p>
                     </div>
                     <div class="bootcamp-body">
                         <p class="bootcamp-description">
-                            Learn to build interactive web pages and browser-based games through creative "vibe coding." Master HTML, CSS, and JavaScript fundamentals while creating playable prototypes you can share with the world.
+                            Learn to build interactive web pages and browser-based games through creative "vibe coding." Master HTML, CSS, and JavaScript fundamentals while creating playable prototypes you can share with the world. Perfect for beginners with no prior coding experience.
                         </p>
                         
-                        <div class="bootcamp-highlights">
-                            <h4>What You'll Learn</h4>
-                            <ul>
-                                <li>HTML page structure, CSS styling & layout</li>
-                                <li>JavaScript fundamentals (variables, functions, events)</li>
-                                <li>Interactive game development for browsers</li>
-                                <li>VS Code setup and GitHub portfolio publishing</li>
-                                <li>Creative tech careers and entrepreneurship</li>
-                            </ul>
+                        <!-- Course Navigation Tabs -->
+                        <div class="course-tabs">
+                            <button class="course-tab-btn active" onclick="switchCourseTab(event, 'vibe-overview')">Overview</button>
+                            <button class="course-tab-btn" onclick="switchCourseTab(event, 'vibe-sessions')">Sessions</button>
+                            <button class="course-tab-btn" onclick="switchCourseTab(event, 'vibe-faq')">FAQ</button>
+                            <button class="course-tab-btn" onclick="switchCourseTab(event, 'vibe-resources')">Resources</button>
                         </div>
                         
-                        <div class="bootcamp-highlights">
-                            <h4>Sessions</h4>
-                            <ul>
-                                <li>Orientation & Digital Creativity</li>
-                                <li>HTML, CSS & Interactive Game Elements</li>
-                                <li>JavaScript Fundamentals & Playable Prototypes</li>
-                            </ul>
+                        <!-- Overview Tab -->
+                        <div id="vibe-overview" class="course-tab-content active">
+                            <div class="bootcamp-highlights">
+                                <h4>What You'll Learn</h4>
+                                <ul>
+                                    <li>HTML page structure, CSS styling & layout fundamentals</li>
+                                    <li>JavaScript basics: variables, functions, events & interactivity</li>
+                                    <li>Interactive game development for browsers</li>
+                                    <li>Game design theory: mechanics, dynamics, aesthetics</li>
+                                    <li>VS Code setup and professional coding workflows</li>
+                                    <li>Digital asset integration (images, sounds) and user input</li>
+                                    <li>GitHub project publishing and digital portfolio creation</li>
+                                    <li>Creative tech careers and entrepreneurship opportunities</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bootcamp-highlights">
+                                <h4>Learning Outcomes</h4>
+                                <ul>
+                                    <li>Create interactive webpages and playable browser games</li>
+                                    <li>Apply basic game design theory to make engaging experiences</li>
+                                    <li>Integrate digital assets and capture user input effectively</li>
+                                    <li>Share projects online via GitHub with starter digital portfolio</li>
+                                    <li>Give and receive constructive feedback through peer critique</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- Sessions Tab -->
+                        <div id="vibe-sessions" class="course-tab-content">
+                            <div class="sessions-grid">
+                                <!-- Session 1 -->
+                                <div class="session-card">
+                                    <h4>Session 1: Orientation & Digital Creativity</h4>
+                                    
+                                    <div class="session-section">
+                                        <p class="session-subtitle">Program Overview, Introductions, and Community Building</p>
+                                        <p class="session-description">
+                                            The first session sets the foundation by welcoming participants, introducing the program's purpose, and building a sense of community. Students learn what to expect from the course, get to know one another through creative prompts, and collaborate on group agreements that foster an inclusive and supportive learning environment.
+                                        </p>
+                                        
+                                        <h5>Learning Objectives</h5>
+                                        <ul>
+                                            <li>Introduce the overall goals, phases, and expectations of the bootcamp</li>
+                                            <li>Create a welcoming and inclusive atmosphere where all participants feel comfortable</li>
+                                            <li>Encourage students to begin thinking about themselves as creators and collaborators</li>
+                                            <li>Establish group values and shared agreements for respectful teamwork</li>
+                                        </ul>
+                                        
+                                        <h5>Expanded Description</h5>
+                                        <p class="session-description">
+                                            This opening session begins with a clear overview of the bootcamp's purpose: to explore vibe coding, game design, and Unity development while helping youth grow into confident digital creators. Facilitators outline the program structure — Phase 1 focuses on web-based creative coding, Phase 2 introduces Unity for professional game development, and Phase 3 concludes with a public showcase and portfolio preparation.
+                                        </p>
+                                        <p class="session-description">
+                                            Introductions follow using prompts such as "What's your favorite game?" or "If you could design one, what would it be about?" These spark creativity and help participants connect in a fun, low-pressure way. Finally, the group co-creates community agreements — simple guidelines such as "encourage each other," "celebrate effort," and "respect all voices."
+                                        </p>
+                                    </div>
+                                    
+                                    <div class="session-section">
+                                        <p class="session-subtitle">Introduction to Creative Tech Careers and Entrepreneurship</p>
+                                        <p class="session-description">
+                                            This part introduces students to the world of creative technology and entrepreneurial opportunities. Through real-life examples, participants learn how coding, game design, and digital creativity connect to careers such as app development, game design, digital art, and content creation.
+                                        </p>
+                                        
+                                        <h5>Key Topics</h5>
+                                        <ul>
+                                            <li>Range of careers in creative technology (game developer, web designer, digital artist)</li>
+                                            <li>Entrepreneurship and self-directed projects</li>
+                                            <li>Building personal digital portfolios to showcase skills</li>
+                                            <li>Connecting personal interests to possible future pathways</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="session-section">
+                                        <p class="session-subtitle">Game Design Theory</p>
+                                        <p class="session-description">
+                                            Students explore the principles of game design and understand what makes a game fun, engaging, and meaningful. They learn about the building blocks of games — rules, goals, mechanics, and player experience through the MDA framework (Mechanics, Dynamics, Aesthetics).
+                                        </p>
+                                        
+                                        <h5>Activities</h5>
+                                        <ul>
+                                            <li>Examine familiar games to understand what makes them engaging</li>
+                                            <li>Paper prototyping exercises to design simple games</li>
+                                            <li>Playtest each other's designs and practice constructive feedback</li>
+                                            <li>Connect design theory to coding projects</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="session-section">
+                                        <p class="session-subtitle">Setting up VS Code and Browser-Based Coding Environments</p>
+                                        <p class="session-description">
+                                            Students learn to install, configure, and navigate Visual Studio Code (VS Code) — one of the most widely used code editors — as well as explore browser-based environments (CodePen, Replit, Glitch) for accessible coding without heavy setup.
+                                        </p>
+                                        
+                                        <h5>Technical Skills</h5>
+                                        <ul>
+                                            <li>Install and configure VS Code with essential extensions</li>
+                                            <li>Create and manage project files and folders</li>
+                                            <li>Use Live Server for previewing web projects</li>
+                                            <li>Navigate browser-based coding platforms</li>
+                                            <li>Begin building digital portfolios</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <!-- Session 2 -->
+                                <div class="session-card">
+                                    <h4>Session 2: HTML, CSS & Interactive Game Elements</h4>
+                                    
+                                    <div class="session-section">
+                                        <p class="session-subtitle">Basic HTML: Page Structure, Text, Images. Introduction to CSS for Styling and Layout</p>
+                                        <p class="session-description">
+                                            Students learn the foundations of web development: HTML for structure and CSS for design. They build the skeleton of a webpage using HTML and bring it to life with color, fonts, and layout through CSS.
+                                        </p>
+                                        
+                                        <h5>HTML Fundamentals</h5>
+                                        <ul>
+                                            <li>HTML tags for structure: headings, paragraphs, links, images</li>
+                                            <li>Semantic HTML and accessibility best practices</li>
+                                            <li>Building a personalized introduction webpage</li>
+                                        </ul>
+                                        
+                                        <h5>CSS Styling</h5>
+                                        <ul>
+                                            <li>How CSS controls visual presentation</li>
+                                            <li>Customizing fonts, colors, backgrounds, and layouts</li>
+                                            <li>Understanding the difference between content (HTML) and style (CSS)</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="session-section">
+                                        <p class="session-subtitle">Building an Interactive Web Page or Simple Game Interface</p>
+                                        <p class="session-description">
+                                            Students transition from static coding into interactive design. Using HTML, CSS, and JavaScript, they create webpages or simple game interfaces that respond to user actions such as clicks, key presses, or mouse movement.
+                                        </p>
+                                        
+                                        <h5>Interactive Elements</h5>
+                                        <ul>
+                                            <li>Linking JavaScript with HTML and CSS</li>
+                                            <li>Creating clickable buttons and interactive elements</li>
+                                            <li>Implementing score counters or moving objects</li>
+                                            <li>Building basic game interfaces (click games, matching games, scoreboards)</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="session-section">
+                                        <p class="session-subtitle">Digital Asset Integration (Art, Sounds), User Input</p>
+                                        <p class="session-description">
+                                            Students learn to incorporate digital assets — images, sounds, and custom artwork — into their projects. They also capture user input, allowing games to respond to clicks, key presses, or other interactions.
+                                        </p>
+                                        
+                                        <h5>Skills Covered</h5>
+                                        <ul>
+                                            <li>Importing and displaying images, graphics, and sounds</li>
+                                            <li>Writing code to play sounds and animate objects</li>
+                                            <li>Capturing user input (mouse clicks, keyboard events)</li>
+                                            <li>File management and asset organization</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="session-section">
+                                        <p class="session-subtitle">Team "Vibe Coding" Exercise and Real-Time Feedback</p>
+                                        <p class="session-description">
+                                            Students engage in a group "vibe coding" activity, coding together in teams to build small interactive projects. The focus is on experimentation, improvisation, and learning from each other with immediate feedback.
+                                        </p>
+                                        
+                                        <h5>Collaborative Experience</h5>
+                                        <ul>
+                                            <li>Work in teams to build interactive demos or mini-games</li>
+                                            <li>Share roles: designer, coder, tester, presenter</li>
+                                            <li>Apply real-time feedback from peers and facilitators</li>
+                                            <li>Learn iterative design through testing and improvement</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <!-- Session 3 -->
+                                <div class="session-card">
+                                    <h4>Session 3: JavaScript Fundamentals & Playable Prototypes</h4>
+                                    
+                                    <div class="session-section">
+                                        <p class="session-subtitle">Introduction to JavaScript: Variables, Functions, Events</p>
+                                        <p class="session-description">
+                                            Students learn how variables store information, how functions organize and reuse code, and how events allow webpages and games to respond to user actions. These core concepts provide the foundation to create interactive experiences.
+                                        </p>
+                                        
+                                        <h5>JavaScript Fundamentals</h5>
+                                        <ul>
+                                            <li>Variables as "containers" for storing data (scores, names, states)</li>
+                                            <li>Functions as reusable code blocks for tasks</li>
+                                            <li>Event listeners to detect clicks, key presses, and interactions</li>
+                                            <li>Building small interactive demos that respond dynamically</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="session-section">
+                                        <p class="session-subtitle">Adding Interactivity to Games (Controls, Scoring, Feedback)</p>
+                                        <p class="session-description">
+                                            Students make their projects behave like real games by adding player controls, tracking scores, and providing feedback. These elements transform simple webpages into dynamic and engaging games.
+                                        </p>
+                                        
+                                        <h5>Game Mechanics</h5>
+                                        <ul>
+                                            <li>Implementing player controls (arrow keys, spacebar, mouse clicks)</li>
+                                            <li>Creating scoring systems that update in real time</li>
+                                            <li>Providing visual feedback (color changes, animations)</li>
+                                            <li>Adding audio feedback (success sounds, error cues)</li>
+                                            <li>Designing interactive game loops where input leads to changes</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="session-section">
+                                        <p class="session-subtitle">Bringing It Together: Each Participant Completes a Playable Browser Game</p>
+                                        <p class="session-description">
+                                            The culmination of Phase 1 where students integrate everything they've learned into a complete project. Each participant builds a small, fully functional browser game demonstrating their creativity, problem-solving, and coding skills.
+                                        </p>
+                                        
+                                        <h5>Final Project</h5>
+                                        <ul>
+                                            <li>Combine HTML, CSS, and JavaScript into one coherent project</li>
+                                            <li>Apply game design principles (rules, goals, scoring, feedback)</li>
+                                            <li>Personalize games with unique themes, assets, and mechanics</li>
+                                            <li>Learn basic debugging and problem-solving</li>
+                                            <li>Share finished, playable projects with peers for testing</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="session-section">
+                                        <p class="session-subtitle">Project Sharing on GitHub, Digital Portfolios, and Peer Critique</p>
+                                        <p class="session-description">
+                                            Students learn to use GitHub to publish and store their projects, build a simple digital portfolio to showcase their creations, and participate in peer critiques to develop constructive feedback skills.
+                                        </p>
+                                        
+                                        <h5>Professional Skills</h5>
+                                        <ul>
+                                            <li>Upload and share completed games on GitHub</li>
+                                            <li>Introduction to version control basics</li>
+                                            <li>Create and organize digital portfolios</li>
+                                            <li>Participate in structured peer critique sessions</li>
+                                            <li>Reflect on work and identify strengths and areas for improvement</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ Tab -->
+                        <div id="vibe-faq" class="course-tab-content">
+                            <div class="faq-grid">
+                                <div class="faq-item">
+                                    <div class="faq-question">1. What is this course about?</div>
+                                    <div class="faq-answer">
+                                        This 20-hour bootcamp introduces students to creative coding and interactive game design using HTML, CSS, and JavaScript. It is designed as the perfect entry point into coding for beginners, focusing on building simple, playable browser games while learning the foundations of digital creativity.
+                                    </div>
+                                </div>
+                                
+                                <div class="faq-item">
+                                    <div class="faq-question">2. How much does it cost?</div>
+                                    <div class="faq-answer">
+                                        The course fee is <span class="price-highlight">$199 CAD</span> for the full 20-hour program.
+                                    </div>
+                                </div>
+                                
+                                <div class="faq-item">
+                                    <div class="faq-question">3. What will students learn?</div>
+                                    <div class="faq-answer">
+                                        <strong>Session 1: Orientation & Digital Creativity Kickoff</strong>
+                                        <ul>
+                                            <li>Program overview, introductions, and community building</li>
+                                            <li>Introduction to creative tech careers and entrepreneurship</li>
+                                            <li>Game Design Theory (mechanics, dynamics, aesthetics)</li>
+                                            <li>Setting up VS Code and browser-based coding environments</li>
+                                        </ul>
+                                        
+                                        <strong>Session 2: HTML, CSS & Interactive Game Elements</strong>
+                                        <ul>
+                                            <li>Basic HTML structure (text, images, links) and CSS for styling and layout</li>
+                                            <li>Building interactive webpages or simple game interfaces</li>
+                                            <li>Integrating digital assets (art, sounds) with user input</li>
+                                            <li>Team "vibe coding" collaborative exercise with real-time feedback</li>
+                                        </ul>
+                                        
+                                        <strong>Session 3: JavaScript Fundamentals & Playable Prototypes</strong>
+                                        <ul>
+                                            <li>JavaScript basics: variables, functions, and events</li>
+                                            <li>Adding interactivity to games (controls, scoring, feedback loops)</li>
+                                            <li>Completing a simple playable browser game project</li>
+                                            <li>Sharing projects on GitHub, creating digital portfolios, and peer critique</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="faq-item">
+                                    <div class="faq-question">4. What are the learning outcomes?</div>
+                                    <div class="faq-answer">
+                                        By the end of the course, students will be able to:
+                                        <ul>
+                                            <li>Understand the foundations of coding with HTML, CSS, and JavaScript</li>
+                                            <li>Create interactive webpages and playable browser games</li>
+                                            <li>Apply basic game design theory to make games engaging and fun</li>
+                                            <li>Integrate digital assets (images, sounds) and capture user input</li>
+                                            <li>Share projects online via GitHub and build a starter digital portfolio</li>
+                                            <li>Give and receive constructive feedback through peer critique</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="faq-item">
+                                    <div class="faq-question">5. Who is this course for?</div>
+                                    <div class="faq-answer">
+                                        This course is ideal for youth and beginners with little or no prior coding experience. It's a great starting point for those interested in creative technology, game design, or digital storytelling.
+                                    </div>
+                                </div>
+                                
+                                <div class="faq-item">
+                                    <div class="faq-question">6. What support is included?</div>
+                                    <div class="faq-answer">
+                                        <ul>
+                                            <li>Access to coding environments (VS Code setup guidance and browser-based tools)</li>
+                                            <li>Hands-on mentorship from facilitators</li>
+                                            <li>Peer collaboration and teamwork exercises</li>
+                                            <li>Extra help through office hours and shared digital resources</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="faq-item">
+                                    <div class="faq-question">7. What do students need to bring?</div>
+                                    <div class="faq-answer">
+                                        <ul>
+                                            <li>A laptop capable of running VS Code or a browser-based coding platform</li>
+                                            <li>An open mind, creativity, and willingness to collaborate with peers</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="faq-item">
+                                    <div class="faq-question">8. What happens after the course?</div>
+                                    <div class="faq-answer">
+                                        Students can:
+                                        <ul>
+                                            <li>Continue developing their skills by building more games and interactive projects</li>
+                                            <li>Expand their digital portfolios for school or career opportunities</li>
+                                            <li>Progress to the Unity Game Development Course, where they'll advance into 2D/3D game creation with professional industry tools</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Resources Tab -->
+                        <div id="vibe-resources" class="course-tab-content">
+                            <div class="bootcamp-highlights">
+                                <h4>Learning Resources</h4>
+                                <ul>
+                                    <li><a href="https://cloud.google.com/discover/what-is-vibe-coding?hl=en" target="_blank">What is Vibe Coding? by Google Cloud</a></li>
+                                    <li><a href="https://learn.microsoft.com/en-us/training/modules/introduction-vibe-coding/" target="_blank">Introduction to Vibe Coding by Microsoft Learn / VS Code</a></li>
+                                    <li><a href="https://resources.github.com/learn/pathways/" target="_blank">GitHub Learning Pathways</a></li>
+                                    <li><a href="https://www.w3schools.com/graphics/game_intro.asp" target="_blank">HTML Game Example by W3 Schools</a></li>
+                                    <li><a href="https://www.nuclino.com/articles/game-development" target="_blank">The Ultimate Guide to Game Development by Nuclino</a></li>
+                                    <li><a href="https://docs.github.com/en/pages/quickstart" target="_blank">Quickstart for GitHub Pages</a></li>
+                                    <li><a href="https://docs.github.com/en/pages" target="_blank">GitHub Pages Documentation</a></li>
+                                    <li><a href="https://www.dzombak.com/blog/2025/08/getting-good-results-from-claude-code/" target="_blank">Getting Good Results from Claude Code by Chris Dzombak</a></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                     <div class="bootcamp-footer">
-                        <a href="#" class="bootcamp-btn">Enroll Now</a>
-                        <div class="bootcamp-resources">
-                            <a href="https://cloud.google.com/discover/what-is-vibe-coding?hl=en" target="_blank">Learning Resources →</a>
-                        </div>
+                        <a href="#" class="bootcamp-btn">Enroll Now - $199 CAD</a>
                     </div>
                 </div>
                 
@@ -617,6 +1132,30 @@
 
     <!-- Scripts -->
     <script>
+        // Tab switching function for course details
+        function switchCourseTab(event, tabId) {
+            // Get the parent bootcamp card
+            const card = event.target.closest('.bootcamp-card');
+            
+            // Hide all tab contents in this card
+            const tabContents = card.querySelectorAll('.course-tab-content');
+            tabContents.forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Remove active class from all tab buttons in this card
+            const tabButtons = card.querySelectorAll('.course-tab-btn');
+            tabButtons.forEach(button => {
+                button.classList.remove('active');
+            });
+            
+            // Show the selected tab content
+            document.getElementById(tabId).classList.add('active');
+            
+            // Add active class to the clicked button
+            event.target.classList.add('active');
+        }
+        
         // Three.js Hero Animation
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
