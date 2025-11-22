@@ -302,6 +302,11 @@
         display: inline-block;
     }
     
+    .footer-section-title::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
     .footer-links {
         gap: 0.75rem;
         align-items: center;
@@ -374,6 +379,11 @@
     .footer-section-title {
         font-size: 0.75rem;
         display: inline-block;
+    }
+    
+    .footer-section-title::after {
+        left: 50%;
+        transform: translateX(-50%);
     }
     
     .footer-links {
