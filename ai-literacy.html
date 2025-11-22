@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AI Literacy Education - NRIDL">
+    <meta name="description" content="AI Literacy Education - Understanding Artificial Intelligence and Its Impact on Society">
     <title>AI Literacy - NRIDL</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,44 +13,913 @@
     <link rel="stylesheet" href="css/main.css?v=1.4">
     <link rel="stylesheet" href="css/navigation.css?v=1.4">
     <link rel="stylesheet" href="css/footer.css?v=1.4">
+    <link rel="stylesheet" href="css/home.css?v=1.4">
+    <link rel="stylesheet" href="css/literacy.css">
     
     <style>
-        .construction-container {
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('image assets/AI literacy hero.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 60vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            min-height: 70vh;
-            padding: 2rem;
-        }
-        
-        .construction-content {
             text-align: center;
-            max-width: 600px;
+            padding: clamp(4rem, 10vw, 8rem) 2rem;
         }
         
-        .construction-content h1 {
-            font-size: clamp(2rem, 5vw, 3rem);
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .hero-content h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            color: #ffffff;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+            letter-spacing: -0.02em;
+        }
+        
+        .hero-content p {
+            font-size: clamp(1.125rem, 2vw, 1.375rem);
+            color: #e0e0e0;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+        
+        .what-is-ai-section {
+            background: #ffffff;
+            padding: clamp(4rem, 10vw, 8rem) 0;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .section-header h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: #1a1a1a;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+            letter-spacing: -0.02em;
+        }
+        
+        .section-header .title-divider {
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #1a1a2e, transparent);
+            margin: 1.5rem auto;
+        }
+        
+        .intro-content {
+            max-width: 900px;
+            margin: 0 auto 4rem;
+        }
+        
+        .intro-content p {
+            font-size: 1.125rem;
+            color: #666666;
+            line-height: 1.9;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
+        
+        .intro-content p strong {
+            color: #1a1a1a;
+            font-weight: 500;
+        }
+        
+        .timeline-section {
+            background: #f8f9fa;
+            padding: 3rem 0;
+            border-radius: 8px;
+            margin: 4rem 0;
+        }
+        
+        .timeline-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .timeline-header h3 {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            color: #1a1a1a;
             margin-bottom: 1rem;
-            color: var(--text-primary);
+            font-weight: 400;
         }
         
-        .construction-content p {
-            font-size: clamp(1rem, 2vw, 1.25rem);
-            color: var(--text-secondary);
+        .timeline-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            padding: 0 2rem;
+        }
+        
+        .timeline-card {
+            background: #ffffff;
+            padding: 2rem;
+            border-left: 4px solid #1a1a2e;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .timeline-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+        
+        .timeline-year {
+            font-size: 1.75rem;
+            color: #1a1a2e;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            font-family: var(--font-primary);
+        }
+        
+        .timeline-title {
+            font-size: 1.125rem;
+            color: #1a1a1a;
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+            font-family: var(--font-accent);
+        }
+        
+        .timeline-description {
+            font-size: 0.9375rem;
+            color: #666666;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+        
+        .ai-categories-section {
+            background: #ffffff;
+            padding: clamp(4rem, 10vw, 8rem) 0;
+        }
+        
+        .categories-intro {
+            max-width: 900px;
+            margin: 0 auto 4rem;
+            text-align: center;
+        }
+        
+        .categories-intro p {
+            font-size: 1.125rem;
+            color: #666666;
+            line-height: 1.9;
+            font-weight: 300;
+        }
+        
+        .category-card {
+            background: #f8f9fa;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            border-radius: 8px;
+            border-left: 6px solid #1a1a2e;
+            transition: all 0.3s ease;
+        }
+        
+        .category-card:hover {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+            transform: translateX(4px);
+        }
+        
+        .category-header {
+            display: flex;
+            align-items: center;
             margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .category-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-size: 1.5rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        
+        .category-title-group {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .category-name {
+            font-size: 1.75rem;
+            color: #1a1a1a;
+            margin-bottom: 0.25rem;
+            font-weight: 400;
+            font-family: var(--font-primary);
+        }
+        
+        .category-nickname {
+            font-size: 1.125rem;
+            color: #1a1a2e;
+            font-weight: 500;
+            font-style: italic;
+        }
+        
+        .category-description {
+            font-size: 1rem;
+            color: #666666;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+        
+        .category-examples {
+            margin-top: 2rem;
+        }
+        
+        .category-examples h4 {
+            font-size: 1.125rem;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+            font-weight: 500;
+            font-family: var(--font-accent);
+        }
+        
+        .examples-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        
+        .example-item {
+            background: #ffffff;
+            padding: 1rem 1.5rem;
+            border-radius: 4px;
+            border-left: 3px solid #e0e0e0;
+        }
+        
+        .example-title {
+            font-size: 0.9375rem;
+            color: #1a1a1a;
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+        }
+        
+        .example-description {
+            font-size: 0.875rem;
+            color: #666666;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+        
+        .summary-section {
+            background: #f8f9fa;
+            padding: clamp(4rem, 10vw, 8rem) 0;
+        }
+        
+        .summary-table-container {
+            max-width: 1200px;
+            margin: 3rem auto;
+            overflow-x: auto;
+        }
+        
+        .summary-table {
+            width: 100%;
+            background: #ffffff;
+            border-collapse: collapse;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+        }
+        
+        .summary-table thead {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        }
+        
+        .summary-table th {
+            padding: 1.5rem 1.25rem;
+            text-align: left;
+            font-size: 1rem;
+            color: #ffffff;
+            font-weight: 600;
+            font-family: var(--font-accent);
+        }
+        
+        .summary-table td {
+            padding: 1.25rem;
+            border-bottom: 1px solid #e0e0e0;
+            font-size: 0.9375rem;
+            color: #666666;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+        
+        .summary-table tbody tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .summary-table td:first-child {
+            font-weight: 500;
+            color: #1a1a1a;
+        }
+        
+        .convergence-section {
+            background: #ffffff;
+            padding: clamp(4rem, 10vw, 8rem) 0;
+        }
+        
+        .convergence-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .convergence-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .convergence-header h2 {
+            font-size: clamp(1.75rem, 3vw, 2.5rem);
+            color: #1a1a1a;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+            letter-spacing: -0.02em;
+        }
+        
+        .convergence-text {
+            font-size: 1.125rem;
+            color: #666666;
+            line-height: 1.9;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+        
+        .convergence-examples {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .convergence-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 8px;
+            border-top: 4px solid #1a1a2e;
+        }
+        
+        .convergence-card h4 {
+            font-size: 1.25rem;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+            font-weight: 500;
+            font-family: var(--font-accent);
+        }
+        
+        .convergence-card p {
+            font-size: 0.9375rem;
+            color: #666666;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+        
+        @media (max-width: 768px) {
+            .category-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .examples-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .summary-table-container {
+                overflow-x: scroll;
+            }
+            
+            .summary-table {
+                min-width: 600px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="construction-container">
-        <div class="construction-content">
-            <h1>Under Construction</h1>
-            <p>Coming Soon</p>
-            <a href="literacy.html" class="btn btn-outline">Back to Literacy Programs</a>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>AI Literacy: Understanding Artificial Intelligence</h1>
+            <p>Demystifying AI technology and exploring its transformative impact on society, work, and daily life</p>
         </div>
-    </div>
+    </section>
 
+    <!-- What is AI Section -->
+    <section class="what-is-ai-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>What is Artificial Intelligence?</h2>
+                <div class="title-divider"></div>
+            </div>
+            
+            <div class="intro-content">
+                <p>
+                    <strong>Artificial Intelligence (AI)</strong> is the simulation of human intelligence processes by machines, 
+                    particularly computer systems. These processes include learning (acquiring information and rules for using it), 
+                    reasoning (using rules to reach approximate or definite conclusions), and self-correction. AI systems are designed 
+                    to perform tasks that typically require human intelligence, such as visual perception, speech recognition, 
+                    decision-making, and language translation.
+                </p>
+                
+                <p>
+                    The term "Artificial Intelligence" was coined in <strong>1956</strong> by computer scientist 
+                    <strong>John McCarthy</strong> at the Dartmouth Conference, marking the formal birth of AI as an academic discipline. 
+                    However, the conceptual foundations of AI can be traced back further—to Alan Turing's groundbreaking 1950 paper 
+                    "Computing Machinery and Intelligence," which posed the fundamental question: "Can machines think?"
+                </p>
+                
+                <p>
+                    Over the past seven decades, AI has evolved from theoretical computer science concepts to practical applications 
+                    that touch nearly every aspect of modern life. What began as rule-based systems and simple algorithms has transformed 
+                    into sophisticated neural networks capable of learning from vast amounts of data, recognizing complex patterns, 
+                    and making autonomous decisions.
+                </p>
+            </div>
+            
+            <div class="timeline-section">
+                <div class="timeline-header">
+                    <h3>Key Milestones in AI Development</h3>
+                </div>
+                
+                <div class="timeline-grid">
+                    <div class="timeline-card">
+                        <div class="timeline-year">1950</div>
+                        <div class="timeline-title">The Turing Test</div>
+                        <p class="timeline-description">
+                            Alan Turing publishes "Computing Machinery and Intelligence," proposing the Turing Test 
+                            as a measure of machine intelligence.
+                        </p>
+                    </div>
+                    
+                    <div class="timeline-card">
+                        <div class="timeline-year">1956</div>
+                        <div class="timeline-title">Birth of AI</div>
+                        <p class="timeline-description">
+                            John McCarthy coins the term "Artificial Intelligence" at the Dartmouth Conference, 
+                            establishing AI as an academic field.
+                        </p>
+                    </div>
+                    
+                    <div class="timeline-card">
+                        <div class="timeline-year">1997</div>
+                        <div class="timeline-title">Deep Blue Defeats Kasparov</div>
+                        <p class="timeline-description">
+                            IBM's Deep Blue becomes the first computer to defeat a reigning world chess champion, 
+                            Garry Kasparov, in a match under standard tournament time controls.
+                        </p>
+                    </div>
+                    
+                    <div class="timeline-card">
+                        <div class="timeline-year">2011</div>
+                        <div class="timeline-title">IBM Watson Wins Jeopardy!</div>
+                        <p class="timeline-description">
+                            IBM Watson defeats human champions on the quiz show Jeopardy!, demonstrating advanced 
+                            natural language processing capabilities.
+                        </p>
+                    </div>
+                    
+                    <div class="timeline-card">
+                        <div class="timeline-year">2012</div>
+                        <div class="timeline-title">Deep Learning Breakthrough</div>
+                        <p class="timeline-description">
+                            AlexNet wins ImageNet competition, marking the beginning of the deep learning revolution 
+                            and modern AI renaissance.
+                        </p>
+                    </div>
+                    
+                    <div class="timeline-card">
+                        <div class="timeline-year">2016</div>
+                        <div class="timeline-title">AlphaGo Defeats Lee Sedol</div>
+                        <p class="timeline-description">
+                            Google DeepMind's AlphaGo defeats world champion Lee Sedol in Go, a game considered 
+                            far more complex than chess.
+                        </p>
+                    </div>
+                    
+                    <div class="timeline-card">
+                        <div class="timeline-year">2018</div>
+                        <div class="timeline-title">GPT Models Emerge</div>
+                        <p class="timeline-description">
+                            OpenAI introduces GPT (Generative Pre-trained Transformer), revolutionizing natural 
+                            language processing and generation.
+                        </p>
+                    </div>
+                    
+                    <div class="timeline-card">
+                        <div class="timeline-year">2022</div>
+                        <div class="timeline-title">ChatGPT Goes Mainstream</div>
+                        <p class="timeline-description">
+                            ChatGPT launches publicly, reaching 100 million users in 2 months and bringing 
+                            generative AI to mainstream awareness.
+                        </p>
+                    </div>
+                    
+                    <div class="timeline-card">
+                        <div class="timeline-year">2023-2025</div>
+                        <div class="timeline-title">AI Convergence Era</div>
+                        <p class="timeline-description">
+                            Multimodal AI systems emerge, combining text, image, audio, and video capabilities. 
+                            AI integration accelerates across all industries.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Categories Section -->
+    <section class="ai-categories-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Understanding AI Through Usage Categories</h2>
+                <div class="title-divider"></div>
+            </div>
+            
+            <div class="categories-intro">
+                <p>
+                    Our framework categorizes AI into five main distinct usage categories based on their primary functions 
+                    and real-world applications. Understanding these categories helps demystify AI and clarifies how different 
+                    AI systems serve different purposes in our daily lives and across industries.
+                </p>
+            </div>
+            
+            <!-- Category 1: Generative AI -->
+            <div class="category-card">
+                <div class="category-header">
+                    <div class="category-number">01</div>
+                    <div class="category-title-group">
+                        <h3 class="category-name">Generative AI (AIGC)</h3>
+                        <div class="category-nickname">"The Creator"</div>
+                    </div>
+                </div>
+                
+                <p class="category-description">
+                    This category focuses on creating new data that didn't exist before. Generative AI takes a prompt—whether 
+                    text, image, or other input—and generates entirely new content as output. It's the most visible and talked-about 
+                    category of AI in recent years, revolutionizing creative work, content production, and software development.
+                </p>
+                
+                <div class="category-examples">
+                    <h4>Common Use Cases & Applications</h4>
+                    <div class="examples-list">
+                        <div class="example-item">
+                            <div class="example-title">Text Generation</div>
+                            <p class="example-description">
+                                Marketing copy, coding assistance (GitHub Copilot), creative writing, content summarization 
+                                (ChatGPT, Claude, Gemini).
+                            </p>
+                        </div>
+                        <div class="example-item">
+                            <div class="example-title">Image & Design</div>
+                            <p class="example-description">
+                                Art creation, photo editing, logo design, visual concept generation (Midjourney, DALL-E, 
+                                Stable Diffusion).
+                            </p>
+                        </div>
+                        <div class="example-item">
+                            <div class="example-title">Audio & Video</div>
+                            <p class="example-description">
+                                Music composition, voice cloning, podcast generation, AI video creation (Sora, Suno, ElevenLabs).
+                            </p>
+                        </div>
+                        <div class="example-item">
+                            <div class="example-title">3D & Virtual Worlds</div>
+                            <p class="example-description">
+                                Generating 3D assets for gaming, architectural visualization, metaverse environments, 
+                                and virtual reality experiences.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Category 2: Predictive & Analytical AI -->
+            <div class="category-card">
+                <div class="category-header">
+                    <div class="category-number">02</div>
+                    <div class="category-title-group">
+                        <h3 class="category-name">Predictive & Analytical AI</h3>
+                        <div class="category-nickname">"The Forecaster"</div>
+                    </div>
+                </div>
+                
+                <p class="category-description">
+                    Before generative AI became famous, this was the dominant form of AI. It doesn't create new content; 
+                    instead, it analyzes existing historical data to predict what will happen next or to identify patterns 
+                    and insights. This category powers much of the AI you interact with daily, often invisibly.
+                </p>
+                
+                <div class="category-examples">
+                    <h4>Common Use Cases & Applications</h4>
+                    <div class="examples-list">
+                        <div class="example-item">
+                            <div class="example-title">Recommendation Engines</div>
+                            <p class="example-description">
+                                "Because you watched X, you might like Y" algorithms powering Netflix, YouTube, TikTok, 
+                                Spotify, and e-commerce platforms.
+                            </p>
+                        </div>
+                        <div class="example-item">
+                            <div class="example-title">Forecasting</div>
+                            <p class="example-description">
+                                Predicting stock market trends, weather patterns, supply chain demand, sales forecasts, 
+                                and energy consumption.
+                            </p>
+                        </div>
+                        <div class="example-item">
+                            <div class="example-title">Risk Assessment</div>
+                            <p class="example-description">
+                                Credit scoring for loan applications, fraud detection in banking by spotting unusual 
+                                transaction patterns, insurance underwriting.
+                            </p>
+                        </div>
+                        <div class="example-item">
+                            <div class="example-title">Medical Diagnosis</div>
+                            <p class="example-description">
+                                Analyzing patient medical history, lab results, and symptoms to predict likelihood of 
+                                diseases or recommend treatment options.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Category 3: Computer Vision -->
+            <div class="category-card">
+                <div class="category-header">
+                    <div class="category-number">03</div>
+                    <div class="category-title-group">
+                        <h3 class="category-name">Computer Vision (Perceptive AI)</h3>
+                        <div class="category-nickname">"The Watcher"</div>
+                    </div>
+                </div>
+                
+                <p class="category-description">
+                    This category gives machines the ability to "see" and interpret visual information from the real world. 
+                    It is distinct from generating images; it's about understanding them. Computer Vision enables machines 
+                    to extract meaning from digital images, videos, and other visual inputs.
+                </p>
+                
+                <div class="category-examples">
+                    <h4>Common Use Cases & Applications</h4>
+                    <div class="examples-list">
+                        <div class="example-item">
+                            <div class="example-title">Facial Recognition</div>
+                            <p class="example-description">
+                                Unlocking smartphones, airport security checkpoints, attendance systems, photo organization, 
+                                and social media tagging.
+                            </p>
+                        </div>
+                        <div class="example-item">
+                            <div class="example-title">Object Detection</div>
+                            <p class="example-description">
+                                Quality control in manufacturing (spotting defects on conveyor belts), inventory management, 
+                                surveillance systems.
+                            </p>
+                        </div>
+                        <div class="example-item">
+                            <div class="example-title">Medical Imaging Analysis</div>
+                            <p class="example-description">
+                                Reading X-rays, MRIs, and CT scans to identify tumors, fractures, or abnormalities faster 
+                                and sometimes more accurately than human doctors.
+                            </p>
+                        </div>
+                        <div class="example-item">
+                            <div class="example-title">Retail Analytics</div>
+                            <p class="example-description">
+                                Tracking customer movement through physical stores (heatmaps), analyzing shelf inventory, 
+                                cashier-less checkout systems (Amazon Go).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Category 4: Autonomous Systems & Robotics -->
+            <div class="category-card">
+                <div class="category-header">
+                    <div class="category-number">04</div>
+                    <div class="category-title-group">
+                        <h3 class="category-name">Autonomous Systems & Robotics</h3>
+                        <div class="category-nickname">"The Mover"</div>
+                    </div>
+                </div>
+                
+                <p class="category-description">
+                    This category combines AI with hardware to allow machines to act independently in the physical world. 
+                    Autonomous systems often use a combination of Computer Vision and Predictive AI to navigate environments, 
+                    make decisions, and perform physical tasks without human intervention.
+                </p>
+                
+                <div class="category-examples">
+                    <h4>Common Use Cases & Applications</h4>
+                    <div class="examples-list">
+                        <div class="example-item">
+                            <div class="example-title">Autonomous Vehicles</div>
+                            <p class="example-description">
+                                Self-driving cars (Waymo, Tesla Full Self-Driving), delivery drones, autonomous trucks, 
+                                and aerial vehicles for surveillance or mapping.
+                            </p>
+                        </div>
+                        <div class="example-item">
+                            <div class="example-title">Warehouse Robotics</div>
+                            <p class="example-description">
+                                Amazon Kiva robots that autonomously navigate warehouses to sort and move packages, 
+                                optimizing fulfillment operations.
+                            </p>
+                        </div>
+                        <div class="example-item">
+                            <div class="example-title">Manufacturing Robotics</div>
+                            <p class="example-description">
+                                Robotic arms that adapt to different objects and tasks rather than repeating one motion, 
+                                enabling flexible manufacturing lines.
+                            </p>
+                        </div>
+                        <div class="example-item">
+                            <div class="example-title">Agricultural Automation</div>
+                            <p class="example-description">
+                                Autonomous tractors, harvesting robots, and drones for crop monitoring, precision agriculture, 
+                                and pesticide application.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Category 5: Conversational AI / NLP -->
+            <div class="category-card">
+                <div class="category-header">
+                    <div class="category-number">05</div>
+                    <div class="category-title-group">
+                        <h3 class="category-name">Conversational AI / Natural Language Processing</h3>
+                        <div class="category-nickname">"The Communicator"</div>
+                    </div>
+                </div>
+                
+                <p class="category-description">
+                    While there's significant overlap with Generative AI, this category's use case is fundamentally different. 
+                    Conversational AI focuses on interaction, translation, and understanding human intent rather than just content 
+                    creation. It enables machines to comprehend, interpret, and respond to human language in meaningful ways.
+                </p>
+                
+                <div class="category-examples">
+                    <h4>Common Use Cases & Applications</h4>
+                    <div class="examples-list">
+                        <div class="example-item">
+                            <div class="example-title">Language Translation</div>
+                            <p class="example-description">
+                                Real-time translation services (Google Translate, DeepL), breaking down language barriers 
+                                for global communication and commerce.
+                            </p>
+                        </div>
+                        <div class="example-item">
+                            <div class="example-title">Sentiment Analysis</div>
+                            <p class="example-description">
+                                Analyzing thousands of social media posts, customer reviews, or survey responses to gauge 
+                                public sentiment about brands, products, or events.
+                            </p>
+                        </div>
+                        <div class="example-item">
+                            <div class="example-title">Virtual Assistants</div>
+                            <p class="example-description">
+                                Siri, Alexa, Google Assistant handling voice commands, setting reminders, controlling 
+                                smart home devices, and answering questions.
+                            </p>
+                        </div>
+                        <div class="example-item">
+                            <div class="example-title">Customer Support Chatbots</div>
+                            <p class="example-description">
+                                AI-powered chatbots that understand customer inquiries, classify issues (refund vs. 
+                                tech support), and provide appropriate responses or routing.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Summary Table Section -->
+    <section class="summary-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Quick Reference: AI Categories Summary</h2>
+                <div class="title-divider"></div>
+            </div>
+            
+            <div class="summary-table-container">
+                <table class="summary-table">
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Primary Function</th>
+                            <th>Common Use Cases</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>AIGC (Generative)</td>
+                            <td>Create</td>
+                            <td>Writing code, generating art, marketing text, video creation</td>
+                        </tr>
+                        <tr>
+                            <td>Predictive AI</td>
+                            <td>Anticipate</td>
+                            <td>Netflix recommendations, stock forecasting, fraud alerts, medical diagnosis</td>
+                        </tr>
+                        <tr>
+                            <td>Computer Vision</td>
+                            <td>See</td>
+                            <td>Facial recognition, medical scan analysis, self-driving car "eyes," quality control</td>
+                        </tr>
+                        <tr>
+                            <td>Autonomous AI</td>
+                            <td>Act</td>
+                            <td>Self-driving cars, warehouse robots, manufacturing automation, delivery drones</td>
+                        </tr>
+                        <tr>
+                            <td>Conversational AI</td>
+                            <td>Understand</td>
+                            <td>Language translation, sentiment analysis, voice assistants, customer support</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Convergence Section -->
+    <section class="convergence-section">
+        <div class="container">
+            <div class="convergence-content">
+                <div class="convergence-header">
+                    <h2>Where Are We Heading? The AI Convergence Era</h2>
+                </div>
+                
+                <p class="convergence-text">
+                    Currently, we are witnessing a fascinating convergence of AI technologies. Modern AI systems increasingly 
+                    combine multiple categories to create more sophisticated, versatile, and powerful applications. This integration 
+                    represents the next evolution of AI—moving from specialized, single-purpose systems to multimodal, general-purpose 
+                    intelligence that mirrors the way humans process information across different sensory and cognitive domains.
+                </p>
+                
+                <div class="convergence-examples">
+                    <div class="convergence-card">
+                        <h4>Self-Driving Cars</h4>
+                        <p>
+                            Modern autonomous vehicles combine <strong>Computer Vision</strong> to "see" the road, pedestrians, 
+                            and obstacles; <strong>Predictive AI</strong> to anticipate what pedestrians and other drivers will do; 
+                            and <strong>Autonomous Systems</strong> to navigate and control the vehicle safely.
+                        </p>
+                    </div>
+                    
+                    <div class="convergence-card">
+                        <h4>Advanced Chatbots</h4>
+                        <p>
+                            Today's sophisticated chatbots integrate <strong>Conversational AI</strong> to understand user intent 
+                            and context; <strong>Generative AI</strong> to create natural, contextually appropriate responses; 
+                            and <strong>Predictive AI</strong> to anticipate user needs and personalize interactions.
+                        </p>
+                    </div>
+                    
+                    <div class="convergence-card">
+                        <h4>Smart Healthcare Systems</h4>
+                        <p>
+                            Modern medical AI combines <strong>Computer Vision</strong> to analyze medical imaging; 
+                            <strong>Predictive AI</strong> to assess disease risk and treatment outcomes; and 
+                            <strong>Conversational AI</strong> to interact with patients and healthcare providers.
+                        </p>
+                    </div>
+                </div>
+                
+                <p class="convergence-text" style="margin-top: 3rem;">
+                    This convergence trend will only accelerate. As AI systems become more integrated and multimodal, the boundaries 
+                    between these categories will blur further. Understanding these fundamental categories, however, remains crucial 
+                    for comprehending how AI works, its capabilities and limitations, and how it will continue to shape our world 
+                    in the years ahead.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer will be injected by footer.js -->
+
+    <!-- Scripts -->
     <script src="js/navigation.js?v=1.6"></script>
     <script src="js/footer.js?v=1.6"></script>
+    <script src="js/common.js?v=1.6"></script>
 </body>
 </html>
