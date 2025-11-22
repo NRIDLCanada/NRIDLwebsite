@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Comprehensive Learning Programs - Financial Literacy, Digital Skills, and More">
+    <meta name="description" content="Comprehensive Learning Programs - From Digital Literacy to Advanced Tech Bootcamps">
     <title>Learning Programs - NRIDL</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,230 +15,719 @@
     <link rel="stylesheet" href="css/footer.css?v=1.4">
     <link rel="stylesheet" href="css/home.css?v=1.4">
     
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
     <style>
         .hero-section {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            min-height: 50vh;
+            position: relative;
+            min-height: 70vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            text-align: center;
-            padding: clamp(4rem, 10vw, 8rem) 2rem;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 100%);
+        }
+        
+        #hero-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
         }
         
         .hero-content {
-            max-width: 900px;
+            position: relative;
+            z-index: 2;
+            max-width: 1000px;
             margin: 0 auto;
+            padding: 4rem 2rem;
+            text-align: center;
         }
         
         .hero-content h1 {
-            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
             color: #ffffff;
             margin-bottom: 1.5rem;
             font-weight: 300;
             letter-spacing: -0.02em;
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
         }
         
         .hero-content p {
-            font-size: clamp(1.125rem, 2vw, 1.375rem);
+            font-size: clamp(1.125rem, 2.5vw, 1.5rem);
             color: #e0e0e0;
             line-height: 1.8;
             font-weight: 300;
+            margin-bottom: 2.5rem;
+            text-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
         }
         
-        .programs-overview-section {
+        .hero-stats {
+            display: flex;
+            gap: 3rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+        }
+        
+        .hero-stat {
+            text-align: center;
+        }
+        
+        .hero-stat-number {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 600;
+            background: linear-gradient(135deg, #8ba8da 0%, #b894d2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .hero-stat-label {
+            font-size: 0.875rem;
+            color: #b0b0b0;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        
+        /* Category Sections */
+        .category-section {
             background: #ffffff;
-            padding: clamp(4rem, 10vw, 8rem) 0;
+            padding: clamp(4rem, 8vw, 7rem) 0;
         }
         
-        .section-intro {
+        .category-section:nth-child(even) {
+            background: #f8f9fa;
+        }
+        
+        .category-header {
             text-align: center;
             max-width: 900px;
             margin: 0 auto 4rem;
         }
         
-        .section-intro h2 {
+        .category-badge {
+            display: inline-block;
+            font-size: 0.875rem;
+            color: #7a8fb8;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            padding: 0.5rem 1.5rem;
+            background: rgba(122, 143, 184, 0.1);
+            border-radius: 30px;
+        }
+        
+        .category-header h2 {
             font-size: clamp(2rem, 4vw, 3rem);
-            color: #1a1a1a;
+            color: #1a202c;
             margin-bottom: 1.5rem;
             font-weight: 300;
             letter-spacing: -0.02em;
         }
         
-        .section-intro p {
+        .category-header p {
             font-size: 1.125rem;
-            color: #666666;
-            line-height: 1.9;
+            color: #4a5568;
+            line-height: 1.8;
             font-weight: 300;
         }
         
-        .programs-categories {
+        /* Digital Literacy Courses Grid */
+        .literacy-courses-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            margin-bottom: 5rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
         }
         
-        .category-card {
-            background: #f8f9fa;
-            padding: 3rem 2.5rem;
-            border-top: 4px solid #1a1a2e;
+        .literacy-course-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .literacy-course-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .course-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+        }
+        
+        .course-content {
+            padding: 2rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .course-duration {
+            font-size: 0.875rem;
+            color: #7a8fb8;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+        
+        .course-content h3 {
+            font-size: 1.5rem;
+            color: #1a202c;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+        
+        .course-content p {
+            font-size: 0.9375rem;
+            color: #4a5568;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            flex: 1;
+        }
+        
+        .course-link {
+            display: inline-flex;
+            align-items: center;
+            color: #7a8fb8;
+            font-weight: 500;
+            font-size: 0.9375rem;
+            text-decoration: none;
             transition: all 0.3s ease;
         }
         
-        .category-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        .course-link:hover {
+            color: #5a6f98;
+            gap: 0.75rem;
         }
         
-        .category-icon {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 2rem;
+        .course-link::after {
+            content: '→';
+            margin-left: 0.5rem;
+            transition: margin-left 0.3s ease;
         }
         
-        .category-icon span {
-            font-size: 2rem;
-            color: #ffffff;
+        /* Bootcamp Cards */
+        .bootcamp-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
         }
         
-        .category-card h3 {
-            font-size: 1.75rem;
-            color: #1a1a1a;
-            margin-bottom: 1rem;
-            font-weight: 400;
-            font-family: var(--font-primary);
+        .bootcamp-card {
+            background: #ffffff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border-top: 4px solid #7a8fb8;
         }
         
-        .category-card p {
-            font-size: 1rem;
-            color: #666666;
-            line-height: 1.8;
-            margin-bottom: 2rem;
-            font-weight: 300;
+        .bootcamp-card:nth-child(2) {
+            border-top-color: #9681b8;
         }
         
-        .category-card .btn {
-            width: 100%;
+        .bootcamp-card:nth-child(3) {
+            border-top-color: #81b8a3;
         }
         
-        .coming-soon-section {
-            background: #f8f9fa;
-            padding: clamp(3rem, 6vw, 5rem) 0;
+        .bootcamp-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+        }
+        
+        .bootcamp-header {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e8ecf1 100%);
+            padding: 2.5rem 2rem;
             text-align: center;
         }
         
-        .coming-soon-section h2 {
-            font-size: clamp(1.75rem, 3vw, 2.5rem);
-            color: #1a1a1a;
-            margin-bottom: 1rem;
-            font-weight: 300;
+        .bootcamp-title {
+            font-size: 1.75rem;
+            color: #1a202c;
+            margin-bottom: 0.75rem;
+            font-weight: 500;
+            line-height: 1.3;
         }
         
-        .coming-soon-section p {
-            font-size: 1.125rem;
-            color: #666666;
-            max-width: 700px;
-            margin: 0 auto;
+        .bootcamp-duration {
+            font-size: 1rem;
+            color: #7a8fb8;
+            font-weight: 600;
+        }
+        
+        .bootcamp-body {
+            padding: 2.5rem 2rem;
+        }
+        
+        .bootcamp-description {
+            font-size: 1rem;
+            color: #4a5568;
             line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+        
+        .bootcamp-highlights {
+            margin-bottom: 2rem;
+        }
+        
+        .bootcamp-highlights h4 {
+            font-size: 0.875rem;
+            color: #2d3748;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .bootcamp-highlights ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .bootcamp-highlights li {
+            font-size: 0.9375rem;
+            color: #4a5568;
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .bootcamp-highlights li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #7a8fb8;
+            font-weight: 600;
+        }
+        
+        .bootcamp-footer {
+            padding: 0 2rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .bootcamp-btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #7a8fb8 0%, #9681b8 100%);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .bootcamp-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(122, 143, 184, 0.3);
+        }
+        
+        .bootcamp-resources {
+            text-align: center;
+        }
+        
+        .bootcamp-resources a {
+            color: #7a8fb8;
+            text-decoration: none;
+            font-size: 0.9375rem;
+            font-weight: 500;
+        }
+        
+        .bootcamp-resources a:hover {
+            text-decoration: underline;
         }
         
         @media (max-width: 768px) {
-            .programs-categories {
+            .hero-stats {
+                gap: 2rem;
+            }
+            
+            .bootcamp-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .literacy-courses-grid {
                 grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Hero Section -->
+    <!-- Hero Section with Three.js -->
     <section class="hero-section">
+        <canvas id="hero-canvas"></canvas>
         <div class="hero-content">
             <h1>Learning Programs</h1>
-            <p>Empowering individuals and communities through accessible, world-class education</p>
+            <p>From foundational digital skills to professional tech bootcamps — world-class education, free and accessible to all</p>
+            
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <span class="hero-stat-number">5+</span>
+                    <span class="hero-stat-label">Programs</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="hero-stat-number">100+</span>
+                    <span class="hero-stat-label">Hours of Content</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="hero-stat-number">Free</span>
+                    <span class="hero-stat-label">For Everyone</span>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Programs Overview Section -->
-    <section class="programs-overview-section">
+    <!-- Digital Literacy Courses Section -->
+    <section class="category-section">
         <div class="container">
-            <div class="section-intro">
-                <h2>Explore Our Learning Pathways</h2>
+            <div class="category-header">
+                <span class="category-badge">For All Ages</span>
+                <h2>Digital Literacy Courses</h2>
                 <p>
-                    From early childhood literacy to advanced digital skills, our comprehensive learning programs are designed to meet learners where they are and guide them toward their goals. All programs are free and accessible to everyone.
+                    Essential digital skills for navigating the modern world. Our free courses cover everything from basic device usage to online safety, designed to be accessible and engaging for learners of all backgrounds.
                 </p>
             </div>
             
-            <div class="programs-categories">
-                <!-- StoryBee Library -->
-                <div class="category-card">
-                    <div class="category-icon">
-                        <span>📚</span>
+            <div class="literacy-courses-grid">
+            <div class="literacy-courses-grid">
+                <!-- Get Started - Apple Watch -->
+                <div class="literacy-course-card">
+                    <img src="image assets/digital-literacy/apple-watch.jpg" alt="Apple Watch" class="course-image" onerror="this.style.background='linear-gradient(135deg, #7a8fb8 0%, #9681b8 100%)'">
+                    <div class="course-content">
+                        <p class="course-duration">Duration: 30 minutes</p>
+                        <h3>Get Started - Apple Watch</h3>
+                        <p>Discover what Apple Watch can do in a 30-minute session. Take a tour of the hardware, learn to customize your watch face, and master the basic tools.</p>
+                        <a href="#" class="course-link">Start Learning</a>
                     </div>
-                    <h3>StoryBee Library</h3>
-                    <p>
-                        Free digital picture books for children ages 3-12. Curriculum-aligned stories that make learning engaging, accessible, and fun. Over 1,000,000 pages read worldwide.
-                    </p>
-                    <a href="https://www.storybee.space" target="_blank" class="btn btn-outline">Visit StoryBee</a>
                 </div>
                 
-                <!-- Financial Literacy -->
-                <div class="category-card">
-                    <div class="category-icon">
-                        <span>💰</span>
+                <!-- Get Started - iPad -->
+                <div class="literacy-course-card">
+                    <img src="image assets/digital-literacy/ipad.jpg" alt="iPad" class="course-image" onerror="this.style.background='linear-gradient(135deg, #9681b8 0%, #81b8a3 100%)'">
+                    <div class="course-content">
+                        <p class="course-duration">Duration: 60 minutes</p>
+                        <h3>Get Started - iPad</h3>
+                        <p>Discover powerful ways to do more with your iPad in this 60-minute session. Take a tour of the latest features and learn how to navigate your device.</p>
+                        <a href="#" class="course-link">Start Learning</a>
                     </div>
-                    <h3>Financial Literacy</h3>
-                    <p>
-                        Learn essential money management skills, from budgeting and saving to investing and entrepreneurship. Programs for teens, young adults, and business owners.
-                    </p>
-                    <a href="financial-literacy.html" class="btn btn-outline">Start Learning</a>
                 </div>
                 
-                <!-- Digital Literacy -->
-                <div class="category-card">
-                    <div class="category-icon">
-                        <span>💻</span>
+                <!-- Get Started - iPhone -->
+                <div class="literacy-course-card">
+                    <img src="image assets/digital-literacy/iphone.jpg" alt="iPhone" class="course-image" onerror="this.style.background='linear-gradient(135deg, #81b8a3 0%, #b8a381 100%)'">
+                    <div class="course-content">
+                        <p class="course-duration">Duration: 60 minutes</p>
+                        <h3>Get Started - iPhone</h3>
+                        <p>Navigate your iPhone with ease. Learn the latest features, explore apps, and discover tips to stay connected with what matters most.</p>
+                        <a href="#" class="course-link">Start Learning</a>
                     </div>
-                    <h3>Digital Literacy</h3>
-                    <p>
-                        Master essential digital skills for the modern world. From basic computer literacy to advanced online collaboration, cybersecurity, and digital citizenship.
-                    </p>
-                    <a href="digital-literacy.html" class="btn btn-outline">Access Courses</a>
                 </div>
                 
-                <!-- AI Literacy -->
-                <div class="category-card">
-                    <div class="category-icon">
-                        <span>🤖</span>
+                <!-- Photography on iPhone -->
+                <div class="literacy-course-card">
+                    <img src="image assets/digital-literacy/photography.jpg" alt="iPhone Photography" class="course-image" onerror="this.style.background='linear-gradient(135deg, #b8a381 0%, #7a8fb8 100%)'">
+                    <div class="course-content">
+                        <p class="course-duration">Duration: 60 minutes</p>
+                        <h3>Photography on iPhone</h3>
+                        <p>Turn your best moments into stunning photos on iPhone. Learn about the lenses, practice using different features, and explore ways to share your photos.</p>
+                        <a href="#" class="course-link">Start Learning</a>
                     </div>
-                    <h3>AI Literacy</h3>
-                    <p>
-                        Understand artificial intelligence and its impact on society. Learn how AI works, how to use AI tools responsibly, and how to think critically about AI ethics.
-                    </p>
-                    <a href="ai-literacy.html" class="btn btn-outline">Explore AI</a>
+                </div>
+                
+                <!-- Recording Video on iPhone -->
+                <div class="literacy-course-card">
+                    <img src="image assets/digital-literacy/video-recording.jpg" alt="Recording Video" class="course-image" onerror="this.style.background='linear-gradient(135deg, #7a8fb8 0%, #9681b8 100%)'">
+                    <div class="course-content">
+                        <p class="course-duration">Duration: 30 minutes</p>
+                        <h3>Recording Video on iPhone</h3>
+                        <p>Capture your best video with iPhone. Get familiar with basic tools in the Camera app and set up your first shot with a few simple taps.</p>
+                        <a href="#" class="course-link">Start Learning</a>
+                    </div>
+                </div>
+                
+                <!-- Make Movies with iMovie -->
+                <div class="literacy-course-card">
+                    <img src="image assets/digital-literacy/imovie.jpg" alt="iMovie" class="course-image" onerror="this.style.background='linear-gradient(135deg, #9681b8 0%, #81b8a3 100%)'">
+                    <div class="course-content">
+                        <p class="course-duration">Duration: 30 minutes</p>
+                        <h3>Make Movies with iMovie</h3>
+                        <p>From recording videos to creating a visual story using iMovie for iPad. Capture video, get moving on with editing techniques, and learn how to edit audio.</p>
+                        <a href="#" class="course-link">Start Learning</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Coming Soon Section -->
-    <section class="coming-soon-section">
+    <!-- Advanced Tech Bootcamps Section -->
+    <section class="category-section">
         <div class="container">
-            <h2>More Programs Coming Soon</h2>
-            <p>
-                We're constantly developing new learning programs to meet the evolving needs of our communities. Stay tuned for courses on entrepreneurship, creative skills, environmental literacy, and more.
-            </p>
+            <div class="category-header">
+                <span class="category-badge">For Teens & Adults</span>
+                <h2>Advanced Tech Bootcamps</h2>
+                <p>
+                    Professional-grade bootcamps designed to launch careers in technology. Learn industry-standard tools from experienced practitioners and build portfolio-worthy projects.
+                </p>
+            </div>
+            
+            <div class="bootcamp-grid">
+                <!-- HTML Learning and Vibe Coding -->
+                <div class="bootcamp-card">
+                    <div class="bootcamp-header">
+                        <h3 class="bootcamp-title">HTML Learning & Vibe Coding</h3>
+                        <p class="bootcamp-duration">20 Hours</p>
+                    </div>
+                    <div class="bootcamp-body">
+                        <p class="bootcamp-description">
+                            Learn to build interactive web pages and browser-based games through creative "vibe coding." Master HTML, CSS, and JavaScript fundamentals while creating playable prototypes you can share with the world.
+                        </p>
+                        
+                        <div class="bootcamp-highlights">
+                            <h4>What You'll Learn</h4>
+                            <ul>
+                                <li>HTML page structure, CSS styling & layout</li>
+                                <li>JavaScript fundamentals (variables, functions, events)</li>
+                                <li>Interactive game development for browsers</li>
+                                <li>VS Code setup and GitHub portfolio publishing</li>
+                                <li>Creative tech careers and entrepreneurship</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bootcamp-highlights">
+                            <h4>Sessions</h4>
+                            <ul>
+                                <li>Orientation & Digital Creativity</li>
+                                <li>HTML, CSS & Interactive Game Elements</li>
+                                <li>JavaScript Fundamentals & Playable Prototypes</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="bootcamp-footer">
+                        <a href="#" class="bootcamp-btn">Enroll Now</a>
+                        <div class="bootcamp-resources">
+                            <a href="https://cloud.google.com/discover/what-is-vibe-coding?hl=en" target="_blank">Learning Resources →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- NRIDL X Unity Bootcamp -->
+                <div class="bootcamp-card">
+                    <div class="bootcamp-header">
+                        <h3 class="bootcamp-title">NRIDL X Unity<br>Game Development Bootcamp</h3>
+                        <p class="bootcamp-duration">40 Hours</p>
+                    </div>
+                    <div class="bootcamp-body">
+                        <p class="bootcamp-description">
+                            Transition from browser-based coding to professional game development with Unity. Learn C# scripting, 2D/3D game mechanics, and build a complete portfolio-worthy game from concept to deployment.
+                        </p>
+                        
+                        <div class="bootcamp-highlights">
+                            <h4>What You'll Learn</h4>
+                            <ul>
+                                <li>Unity Hub & Editor setup and navigation</li>
+                                <li>C# scripting for game behaviors and interactions</li>
+                                <li>2D/3D game mechanics, physics, and animations</li>
+                                <li>Asset management and game polish techniques</li>
+                                <li>Portfolio preparation and monetization basics</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bootcamp-highlights">
+                            <h4>Sessions</h4>
+                            <ul>
+                                <li>Setting Up Unity Hub & Exploring the Editor</li>
+                                <li>Game Mechanics & Scripting in Unity</li>
+                                <li>Polishing & Playtesting</li>
+                                <li>Portfolio Prep & Monetization Basics</li>
+                                <li>Demo Day & Creative Futures</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="bootcamp-footer">
+                        <a href="#" class="bootcamp-btn">Enroll Now</a>
+                        <div class="bootcamp-resources">
+                            <a href="https://learn.unity.com/pathway/unity-essentials" target="_blank">Learning Resources →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- NRIDL X Figma Bootcamp -->
+                <div class="bootcamp-card">
+                    <div class="bootcamp-header">
+                        <h3 class="bootcamp-title">NRIDL X Figma<br>UI/UX Design Bootcamp</h3>
+                        <p class="bootcamp-duration">40 - 80 Hours</p>
+                    </div>
+                    <div class="bootcamp-body">
+                        <p class="bootcamp-description">
+                            Master Figma and the complete UI/UX design process. Two tracks available: <strong>Figma Foundations</strong> (40 hours, $199) for beginners, or <strong>UI/UX Career-Starter</strong> (80 hours, $399) for comprehensive training.
+                        </p>
+                        
+                        <div class="bootcamp-highlights">
+                            <h4>What You'll Learn</h4>
+                            <ul>
+                                <li>Figma interface and essential design tools</li>
+                                <li>User research and problem definition</li>
+                                <li>Wireframing, prototyping, and user testing</li>
+                                <li>UI principles (typography, color, layout, spacing)</li>
+                                <li>Design systems and component libraries</li>
+                                <li>Portfolio-ready capstone project</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bootcamp-highlights">
+                            <h4>Two Tracks Available</h4>
+                            <ul>
+                                <li><strong>Foundations:</strong> 40 hours, tool mastery - $199</li>
+                                <li><strong>Career-Starter:</strong> 80 hours, full UI/UX process - $399</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="bootcamp-footer">
+                        <a href="#" class="bootcamp-btn">View Programs</a>
+                        <div class="bootcamp-resources">
+                            <a href="https://www.figma.com/resources/learn-design/" target="_blank">Learning Resources →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Footer will be injected by footer.js -->
 
     <!-- Scripts -->
+    <script>
+        // Three.js Hero Animation
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ 
+            canvas: document.getElementById('hero-canvas'),
+            alpha: true,
+            antialias: true 
+        });
+        
+        renderer.setSize(window.innerWidth, window.innerHeight * 0.7);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        
+        camera.position.z = 5;
+        
+        // Create floating particles
+        const particlesGeometry = new THREE.BufferGeometry();
+        const particlesCount = 150;
+        const posArray = new Float32Array(particlesCount * 3);
+        
+        for(let i = 0; i < particlesCount * 3; i++) {
+            posArray[i] = (Math.random() - 0.5) * 15;
+        }
+        
+        particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+        
+        const particlesMaterial = new THREE.PointsMaterial({
+            size: 0.03,
+            color: 0x8ba8da,
+            transparent: true,
+            opacity: 0.6,
+            blending: THREE.AdditiveBlending
+        });
+        
+        const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
+        scene.add(particlesMesh);
+        
+        // Create geometric shapes
+        const geometries = [
+            new THREE.TorusGeometry(0.5, 0.2, 16, 100),
+            new THREE.OctahedronGeometry(0.6),
+            new THREE.IcosahedronGeometry(0.5)
+        ];
+        
+        const materials = [
+            new THREE.MeshBasicMaterial({ 
+                color: 0x8ba8da, 
+                wireframe: true, 
+                transparent: true, 
+                opacity: 0.3 
+            }),
+            new THREE.MeshBasicMaterial({ 
+                color: 0xb894d2, 
+                wireframe: true, 
+                transparent: true, 
+                opacity: 0.3 
+            }),
+            new THREE.MeshBasicMaterial({ 
+                color: 0x7a8fb8, 
+                wireframe: true, 
+                transparent: true, 
+                opacity: 0.3 
+            })
+        ];
+        
+        const shapes = [];
+        for(let i = 0; i < 3; i++) {
+            const mesh = new THREE.Mesh(geometries[i], materials[i]);
+            mesh.position.set(
+                (Math.random() - 0.5) * 8,
+                (Math.random() - 0.5) * 4,
+                (Math.random() - 0.5) * 3
+            );
+            shapes.push(mesh);
+            scene.add(mesh);
+        }
+        
+        // Mouse interaction
+        let mouseX = 0;
+        let mouseY = 0;
+        
+        document.addEventListener('mousemove', (event) => {
+            mouseX = (event.clientX / window.innerWidth) * 2 - 1;
+            mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
+        });
+        
+        // Animation loop
+        function animate() {
+            requestAnimationFrame(animate);
+            
+            // Rotate particles
+            particlesMesh.rotation.y += 0.001;
+            particlesMesh.rotation.x += 0.0005;
+            
+            // Rotate and move shapes
+            shapes.forEach((shape, index) => {
+                shape.rotation.x += 0.003 + (index * 0.001);
+                shape.rotation.y += 0.002 + (index * 0.001);
+                
+                // Mouse interaction
+                shape.position.x += (mouseX * 0.5 - shape.position.x) * 0.02;
+                shape.position.y += (mouseY * 0.5 - shape.position.y) * 0.02;
+            });
+            
+            renderer.render(scene, camera);
+        }
+        
+        animate();
+        
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight * 0.7);
+        });
+    </script>
+    
     <script src="js/navigation.js?v=1.6"></script>
     <script src="js/footer.js?v=1.6"></script>
     <script src="js/common.js?v=1.6"></script>
