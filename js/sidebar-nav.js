@@ -123,7 +123,17 @@ class SidebarNav {
         // Create sidebar header
         const header = document.createElement('div');
         header.className = 'sidebar-nav-header';
-        header.textContent = 'Navigation';
+        
+        const headerText = document.createElement('span');
+        headerText.textContent = 'Navigation';
+        header.appendChild(headerText);
+        
+        const minimizeBtn = document.createElement('button');
+        minimizeBtn.className = 'sidebar-nav-minimize';
+        minimizeBtn.setAttribute('aria-label', 'Minimize sidebar');
+        minimizeBtn.innerHTML = '−';
+        header.appendChild(minimizeBtn);
+        
         this.sidebar.appendChild(header);
 
         // Create navigation list
@@ -195,6 +205,25 @@ class SidebarNav {
         
         // Initial visibility check
         this.updateSidebarVisibility();
+
+        // Desktop minimize button
+        const minimizeBtn = this.sidebar.querySelector('.sidebar-nav-minimize');
+        if (minimizeBtn) {
+            minimizeBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                this.sidebar.classList.toggle('sidebar-nav-minimized');
+                minimizeBtn.innerHTML = this.sidebar.classList.contains('sidebar-nav-minimized') ? '+' : '−';
+            });
+        }
+        
+        // Click on minimized sidebar to restore
+        this.sidebar.addEventListener('click', (e) => {
+            if (this.sidebar.classList.contains('sidebar-nav-minimized') && 
+                !e.target.classList.contains('sidebar-nav-minimize')) {
+                this.sidebar.classList.remove('sidebar-nav-minimized');
+                if (minimizeBtn) minimizeBtn.innerHTML = '−';
+            }
+        });
 
         // Mobile toggle
         const toggleBtn = this.sidebar.querySelector('.sidebar-nav-toggle');
@@ -342,6 +371,49 @@ class SidebarNav {
                 position: sticky;
                 top: 0;
                 z-index: 10;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            
+            .sidebar-nav-minimize {
+                width: 28px;
+                height: 28px;
+                background: rgba(255, 255, 255, 0.1);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                color: #ffffff;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 1.25rem;
+                line-height: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.2s ease;
+                padding: 0;
+                font-weight: 300;
+            }
+            
+            .sidebar-nav-minimize:hover {
+                background: rgba(255, 255, 255, 0.2);
+                transform: scale(1.05);
+            }
+            
+            .sidebar-nav-minimized {
+                width: 48px !important;
+                cursor: pointer;
+            }
+            
+            .sidebar-nav-minimized .sidebar-nav-header span {
+                display: none;
+            }
+            
+            .sidebar-nav-minimized .sidebar-nav-list {
+                display: none;
+            }
+            
+            .sidebar-nav-minimized .sidebar-nav-minimize {
+                margin: 0 auto;
             }
 
             .sidebar-nav-list {
@@ -437,6 +509,10 @@ class SidebarNav {
             }
 
             @media (max-width: 768px) {
+                .sidebar-nav-minimize {
+                    display: none;
+                }
+                
                 .sidebar-nav {
                     position: fixed;
                     top: auto;
@@ -449,6 +525,7 @@ class SidebarNav {
                     max-height: none;
                     overflow: hidden;
                     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                    transform: none;
                 }
 
                 .sidebar-nav-open {
