@@ -1055,46 +1055,399 @@
                     </div>
                 </div>
                 
-                <!-- NRIDL X Figma Bootcamp -->
-                <div class="bootcamp-card">
+                <!-- NRIDL X Figma Bootcamp - DETAILED VERSION -->
+                <div class="bootcamp-card" style="grid-column: 1 / -1;">
                     <div class="bootcamp-header">
-                        <h3 class="bootcamp-title">NRIDL X Figma<br>UI/UX Design Bootcamp</h3>
-                        <p class="bootcamp-duration">40 - 80 Hours</p>
+                        <h3 class="bootcamp-title">NRIDL X Figma UI/UX Design Bootcamp</h3>
+                        <p class="bootcamp-duration">40 Hours ($199) or 80 Hours ($399)</p>
                     </div>
                     <div class="bootcamp-body">
                         <p class="bootcamp-description">
-                            Master Figma and the complete UI/UX design process. Two tracks available: <strong>Figma Foundations</strong> (40 hours, $199) for beginners, or <strong>UI/UX Career-Starter</strong> (80 hours, $399) for comprehensive training.
+                            Master Figma and launch your design career with two comprehensive tracks. Choose <strong>Figma Foundations</strong> (40 hours, $199) to master the tools from zero to your first app, or <strong>UI/UX Career-Starter</strong> (80 hours, $399) for the complete end-to-end design process with a portfolio-worthy capstone project.
                         </p>
                         
-                        <div class="bootcamp-highlights">
-                            <h4>What You'll Learn</h4>
-                            <ul>
-                                <li>Figma interface and essential design tools</li>
-                                <li>User research and problem definition</li>
-                                <li>Wireframing, prototyping, and user testing</li>
-                                <li>UI principles (typography, color, layout, spacing)</li>
-                                <li>Design systems and component libraries</li>
-                                <li>Portfolio-ready capstone project</li>
-                            </ul>
+                        <!-- Course Navigation Tabs -->
+                        <div class="course-tabs">
+                            <button class="course-tab-btn active" onclick="switchCourseTab(event, 'figma-overview')">Overview</button>
+                            <button class="course-tab-btn" onclick="switchCourseTab(event, 'figma-sessions')">Sessions</button>
+                            <button class="course-tab-btn" onclick="switchCourseTab(event, 'figma-faq')">FAQ</button>
+                            <button class="course-tab-btn" onclick="switchCourseTab(event, 'figma-resources')">Resources</button>
                         </div>
                         
-                        <div class="bootcamp-highlights">
-                            <h4>Two Tracks Available</h4>
-                            <ul>
-                                <li><strong>Foundations:</strong> 40 hours, tool mastery - $199</li>
-                                <li><strong>Career-Starter:</strong> 80 hours, full UI/UX process - $399</li>
-                            </ul>
+                        <!-- Overview Tab -->
+                        <div id="figma-overview" class="course-tab-content active">
+                            <div class="bootcamp-highlights">
+                                <h4>Two Tracks Available</h4>
+                                <ul>
+                                    <li><strong>Figma Foundations (40 Hours - $199):</strong> From zero to first app. Master fundamental tools and features through hands-on exercises, progressing from basic shapes to designing and prototyping a multi-screen mobile application.</li>
+                                    <li><strong>UI/UX Career-Starter (80 Hours - $399):</strong> Complete end-to-end design process. Learn user research, problem definition, wireframing, UI principles, prototyping, and usability testing while building a portfolio-worthy capstone project.</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bootcamp-highlights">
+                                <h4>What You'll Learn</h4>
+                                <ul>
+                                    <li>Figma interface navigation and essential design tools</li>
+                                    <li>User-centered design methodologies and research fundamentals</li>
+                                    <li>Wireframing, prototyping, and user testing techniques</li>
+                                    <li>UI principles: typography, color theory, layout, and spacing</li>
+                                    <li>Design systems development and component libraries</li>
+                                    <li>Mobile and responsive design best practices</li>
+                                    <li>Interaction design and micro-animations</li>
+                                    <li>Agile and Design Thinking methodologies</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bootcamp-highlights">
+                                <h4>Learning Outcomes</h4>
+                                <ul>
+                                    <li>Proficiency in Figma's interface and core features</li>
+                                    <li>Ability to translate ideas into static designs and interactive prototypes</li>
+                                    <li>Understanding of complete UI/UX design workflow from research to testing</li>
+                                    <li>Portfolio-ready project demonstrating problem-solving abilities</li>
+                                    <li>Process-driven mindset of a professional product designer</li>
+                                    <li>Confidence to bring your own digital ideas to life</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bootcamp-highlights">
+                                <h4>Teaching Philosophy</h4>
+                                <ul>
+                                    <li>Practical, industry-focused approach combining theory with real-world applications</li>
+                                    <li>Hands-on learning with ample time for practice and instructor feedback</li>
+                                    <li>Portfolio development ensuring graduates have both knowledge and practical skills</li>
+                                    <li>Small class sizes (12-16 students) for personalized attention</li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                    <div class="bootcamp-footer">
-                        <a href="#" class="bootcamp-btn">View Programs</a>
-                        <div class="bootcamp-resources">
-                            <a href="https://help.figma.com/hc/en-us" target="_blank">Figma Learn</a> • 
-                            <a href="https://www.figma.com/@learn" target="_blank">Product Education</a> • 
-                            <a href="https://www.figma.com/resource-library/design-basics/" target="_blank">Design Basics</a> • 
-                            <a href="https://designlab.com/figma-101-course/introduction-to-figma" target="_blank">Figma 101</a> • 
-                            <a href="https://help.figma.com/hc/en-us/articles/360040451373-Guide-to-auto-layout" target="_blank">Auto Layout Guide</a> • 
-                            <a href="https://www.youtube.com/@Figma" target="_blank">YouTube</a>
+                        
+                        <!-- Sessions Tab -->
+                        <div id="figma-sessions" class="course-tab-content">
+                            <div class="bootcamp-highlights" style="margin-bottom: 3rem;">
+                                <h4>Course Tracks</h4>
+                                <p style="font-size: 0.9375rem; color: #4a5568; line-height: 1.7; margin-bottom: 2rem;">
+                                    Both tracks follow a progressive learning path, with the Career-Starter track offering deeper dives into each topic and additional modules on user research, design thinking, and professional workflows.
+                                </p>
+                            </div>
+                            
+                            <div class="sessions-grid">
+                                <!-- Track 1: Figma Foundations -->
+                                <div class="session-card">
+                                    <div class="session-header active" onclick="toggleSession(event, 0)">
+                                        <h4>Track 1: Figma Foundations - From Zero to First App (40 Hours - $199)</h4>
+                                        <span class="session-toggle">−</span>
+                                    </div>
+                                    <div class="session-body active">
+                                    
+                                    <div class="session-section">
+                                        <p class="session-subtitle">Week 1-2: Getting Started & Core Tools</p>
+                                        <p class="session-description">
+                                            Introduction to Figma's interface, workspace navigation, and fundamental design tools. Students learn to create and manipulate basic shapes, work with layers, and understand the frame-based structure that makes Figma unique.
+                                        </p>
+                                        
+                                        <h5>Key Topics</h5>
+                                        <ul>
+                                            <li>Figma interface overview and workspace navigation</li>
+                                            <li>Creating and manipulating shapes (rectangles, circles, polygons)</li>
+                                            <li>Understanding frames, groups, and layers</li>
+                                            <li>Basic transformations: moving, resizing, rotating</li>
+                                            <li>Introduction to constraints and responsive design</li>
+                                            <li>Working with colors, gradients, and effects</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="session-section">
+                                        <p class="session-subtitle">Week 3-4: Typography, Assets & Components</p>
+                                        <p class="session-description">
+                                            Deep dive into typography principles, working with images and icons, and creating reusable components. Students learn how to build a basic design system with consistent styles and components.
+                                        </p>
+                                        
+                                        <h5>Skills Covered</h5>
+                                        <ul>
+                                            <li>Typography fundamentals: font pairing, hierarchy, readability</li>
+                                            <li>Working with images, icons, and vector graphics</li>
+                                            <li>Creating and using components (buttons, cards, inputs)</li>
+                                            <li>Text and color styles for consistency</li>
+                                            <li>Auto Layout basics for responsive components</li>
+                                            <li>Organizing files and pages efficiently</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="session-section">
+                                        <p class="session-subtitle">Week 5-6: Designing Your First Mobile App</p>
+                                        <p class="session-description">
+                                            Students apply everything learned to design a multi-screen mobile application. Focus on layout principles, information hierarchy, and creating cohesive user interfaces across multiple screens.
+                                        </p>
+                                        
+                                        <h5>Project Work</h5>
+                                        <ul>
+                                            <li>Planning app structure and screen flow</li>
+                                            <li>Designing individual screens (home, details, profile, settings)</li>
+                                            <li>Applying layout principles and visual hierarchy</li>
+                                            <li>Creating consistent navigation patterns</li>
+                                            <li>Using grids and spacing systems</li>
+                                            <li>Mobile design best practices (touch targets, gestures)</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="session-section">
+                                        <p class="session-subtitle">Week 7-8: Prototyping & Final Polish</p>
+                                        <p class="session-description">
+                                            Introduction to interactive prototyping, creating click-through demos, and adding micro-interactions. Students complete their capstone project with polished designs and working prototypes ready for portfolio presentation.
+                                        </p>
+                                        
+                                        <h5>Final Deliverables</h5>
+                                        <ul>
+                                            <li>Creating interactive prototypes with connections and overlays</li>
+                                            <li>Adding transitions and basic animations</li>
+                                            <li>Testing prototypes and gathering feedback</li>
+                                            <li>Preparing presentation-ready design files</li>
+                                            <li>Exporting assets and sharing prototypes</li>
+                                            <li>Portfolio documentation and case study basics</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                </div>
+                                
+                                <!-- Track 2: UI/UX Career-Starter -->
+                                <div class="session-card">
+                                    <div class="session-header" onclick="toggleSession(event, 1)">
+                                        <h4>Track 2: UI/UX Career-Starter (80 Hours - $399)</h4>
+                                        <span class="session-toggle">+</span>
+                                    </div>
+                                    <div class="session-body">
+                                    
+                                    <div class="session-section">
+                                        <p class="session-subtitle">Phase 1: Foundation & Design Thinking (Weeks 1-3)</p>
+                                        <p class="session-description">
+                                            Introduction to user-centered design, design thinking methodology, and Figma fundamentals. Students learn to approach design problems systematically, starting with user research and problem definition before jumping into visual design.
+                                        </p>
+                                        
+                                        <h5>Core Concepts</h5>
+                                        <ul>
+                                            <li>Introduction to UX design principles and methodologies</li>
+                                            <li>Design Thinking framework (Empathize, Define, Ideate, Prototype, Test)</li>
+                                            <li>User research fundamentals: interviews, surveys, personas</li>
+                                            <li>Problem definition and user needs analysis</li>
+                                            <li>Figma workspace setup and core tools mastery</li>
+                                            <li>Information architecture and user flows</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="session-section">
+                                        <p class="session-subtitle">Phase 2: Wireframing & UI Foundations (Weeks 4-6)</p>
+                                        <p class="session-description">
+                                            Focus on low-fidelity wireframing, UI design principles, and establishing design systems. Students learn to translate user needs into wireframes and apply professional UI principles including typography, color theory, and layout design.
+                                        </p>
+                                        
+                                        <h5>Design Skills</h5>
+                                        <ul>
+                                            <li>Low-fidelity and high-fidelity wireframing techniques</li>
+                                            <li>Typography deep dive: hierarchy, pairing, accessibility</li>
+                                            <li>Color theory and accessible color systems</li>
+                                            <li>Layout principles: grids, spacing, alignment, visual hierarchy</li>
+                                            <li>Creating and managing design systems</li>
+                                            <li>Component architecture and Auto Layout mastery</li>
+                                            <li>Responsive and adaptive design principles</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="session-section">
+                                        <p class="session-subtitle">Phase 3: Interactive Prototyping & Testing (Weeks 7-10)</p>
+                                        <p class="session-description">
+                                            Advanced prototyping techniques, interaction design, and usability testing. Students create high-fidelity, interactive prototypes with animations and conduct real user testing sessions to validate their design decisions.
+                                        </p>
+                                        
+                                        <h5>Advanced Techniques</h5>
+                                        <ul>
+                                            <li>Advanced prototyping: smart animate, variables, conditional logic</li>
+                                            <li>Interaction design patterns and micro-interactions</li>
+                                            <li>Animation principles and motion design</li>
+                                            <li>Usability testing methods and protocols</li>
+                                            <li>Analyzing feedback and iterating on designs</li>
+                                            <li>Mobile and responsive design patterns</li>
+                                            <li>Accessibility standards (WCAG) and inclusive design</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="session-section">
+                                        <p class="session-subtitle">Phase 4: Capstone Project & Portfolio (Weeks 11-16)</p>
+                                        <p class="session-description">
+                                            Students work on a comprehensive capstone project that demonstrates the entire design process from research to final prototype. Focus on creating portfolio-ready case studies, professional presentation skills, and understanding team collaboration in design.
+                                        </p>
+                                        
+                                        <h5>Professional Development</h5>
+                                        <ul>
+                                            <li>End-to-end capstone project (research through final design)</li>
+                                            <li>Creating compelling case studies for portfolios</li>
+                                            <li>Design presentation and storytelling skills</li>
+                                            <li>Collaboration tools: FigJam, comments, version history</li>
+                                            <li>Working with developers: handoff, specs, design tokens</li>
+                                            <li>Agile design workflows and design sprints</li>
+                                            <li>Building and presenting your design portfolio</li>
+                                            <li>Career paths in UI/UX and product design</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ Tab -->
+                        <div id="figma-faq" class="course-tab-content">
+                            <div class="faq-grid">
+                                <div class="faq-item">
+                                    <div class="faq-question">1. Which track should I choose?</div>
+                                    <div class="faq-answer">
+                                        <strong>Choose Figma Foundations (40 hours, $199) if:</strong>
+                                        <ul>
+                                            <li>You're an absolute beginner with no prior design or Figma experience</li>
+                                            <li>You want to master the fundamental tools and create your first app prototype</li>
+                                            <li>You're looking for a tool-centric, hands-on introduction to digital design</li>
+                                        </ul>
+                                        
+                                        <strong>Choose UI/UX Career-Starter (80 hours, $399) if:</strong>
+                                        <ul>
+                                            <li>You're a career-switcher or aspiring product designer</li>
+                                            <li>You want to learn the complete end-to-end design process beyond just tools</li>
+                                            <li>You need a portfolio-worthy capstone project for job applications</li>
+                                            <li>You want to understand user research, design thinking, and professional workflows</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="faq-item">
+                                    <div class="faq-question">2. Do I need any prior experience?</div>
+                                    <div class="faq-answer">
+                                        No prior design or Figma experience is required for either track. We start from the absolute basics and build skills progressively. The Foundations track is specifically designed for complete beginners, while the Career-Starter track welcomes both beginners and those with minimal design background.
+                                    </div>
+                                </div>
+                                
+                                <div class="faq-item">
+                                    <div class="faq-question">3. What will I be able to create by the end?</div>
+                                    <div class="faq-answer">
+                                        <strong>Figma Foundations graduates will have:</strong>
+                                        <ul>
+                                            <li>A complete multi-screen mobile app design with interactive prototype</li>
+                                            <li>Proficiency in Figma's essential tools and features</li>
+                                            <li>Confidence to translate basic ideas into polished designs</li>
+                                        </ul>
+                                        
+                                        <strong>UI/UX Career-Starter graduates will have:</strong>
+                                        <ul>
+                                            <li>A portfolio-worthy capstone project with complete case study</li>
+                                            <li>Deep understanding of the entire UX design process</li>
+                                            <li>High-fidelity interactive prototypes with user testing documentation</li>
+                                            <li>Professional design portfolio ready for job applications</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="faq-item">
+                                    <div class="faq-question">4. What is the class size and format?</div>
+                                    <div class="faq-answer">
+                                        Classes are limited to 12-16 students to ensure personalized attention and ample instructor feedback. The format emphasizes hands-on practice with a practical, industry-focused approach that combines theoretical foundations with real-world applications.
+                                    </div>
+                                </div>
+                                
+                                <div class="faq-item">
+                                    <div class="faq-question">5. What are the costs?</div>
+                                    <div class="faq-answer">
+                                        <span class="price-highlight">Figma Foundations (40 hours): $199 CAD</span><br>
+                                        <span class="price-highlight">UI/UX Career-Starter (80 hours): $399 CAD</span><br><br>
+                                        Both tracks include all learning materials, access to Figma resources, and ongoing instructor support throughout the course.
+                                    </div>
+                                </div>
+                                
+                                <div class="faq-item">
+                                    <div class="faq-question">6. What software do I need?</div>
+                                    <div class="faq-answer">
+                                        <ul>
+                                            <li>A computer (Mac or PC) with internet connection</li>
+                                            <li>Free Figma account (we'll help you set this up in the first session)</li>
+                                            <li>Figma works entirely in the browser, so no heavy software installation required</li>
+                                            <li>Optional: Figma desktop app for offline work</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="faq-item">
+                                    <div class="faq-question">7. What makes this bootcamp different?</div>
+                                    <div class="faq-answer">
+                                        Our teaching philosophy combines practical, industry-focused learning with personalized attention:
+                                        <ul>
+                                            <li>Small class sizes (12-16 students) for individualized feedback</li>
+                                            <li>Portfolio development integrated throughout the course</li>
+                                            <li>Real-world projects that mirror professional design workflows</li>
+                                            <li>Instructors with design team leadership experience</li>
+                                            <li>Focus on both technical skills and design thinking</li>
+                                            <li>Career guidance and industry best practices</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="faq-item">
+                                    <div class="faq-question">8. What happens after the course?</div>
+                                    <div class="faq-answer">
+                                        <strong>After Figma Foundations:</strong>
+                                        <ul>
+                                            <li>Continue practicing with your own design projects</li>
+                                            <li>Option to upgrade to UI/UX Career-Starter track</li>
+                                            <li>Access to our design community and resources</li>
+                                        </ul>
+                                        
+                                        <strong>After UI/UX Career-Starter:</strong>
+                                        <ul>
+                                            <li>Ready to apply for junior UI/UX designer positions</li>
+                                            <li>Complete portfolio to showcase to employers</li>
+                                            <li>Understanding of professional design workflows and team collaboration</li>
+                                            <li>Ongoing access to course materials and community</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Resources Tab -->
+                        <div id="figma-resources" class="course-tab-content">
+                            <div class="bootcamp-highlights">
+                                <h4>Official Figma Resources</h4>
+                                <ul>
+                                    <li><a href="https://help.figma.com/hc/en-us" target="_blank">Figma Learn - Official Help Center</a></li>
+                                    <li><a href="https://www.figma.com/@learn" target="_blank">Figma Product Education</a></li>
+                                    <li><a href="https://www.figma.com/resource-library/design-basics/" target="_blank">Design Basics Resource Library</a></li>
+                                    <li><a href="https://help.figma.com/hc/en-us/articles/360040451373-Guide-to-auto-layout" target="_blank">Complete Guide to Auto Layout</a></li>
+                                    <li><a href="https://www.youtube.com/@Figma" target="_blank">Figma YouTube Channel</a></li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bootcamp-highlights">
+                                <h4>Learning Platforms</h4>
+                                <ul>
+                                    <li><a href="https://designlab.com/figma-101-course/introduction-to-figma" target="_blank">Designlab: Figma 101 Course</a></li>
+                                    <li><a href="https://www.coursera.org/learn/ui-ux-design" target="_blank">Google UX Design Professional Certificate (Coursera)</a></li>
+                                    <li><a href="https://www.interaction-design.org/courses" target="_blank">Interaction Design Foundation Courses</a></li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bootcamp-highlights">
+                                <h4>Design Systems & Inspiration</h4>
+                                <ul>
+                                    <li><a href="https://www.figma.com/community" target="_blank">Figma Community - Free Templates & Resources</a></li>
+                                    <li><a href="https://www.designsystems.com/" target="_blank">Design Systems Repository</a></li>
+                                    <li><a href="https://dribbble.com/" target="_blank">Dribbble - Design Inspiration</a></li>
+                                    <li><a href="https://www.behance.net/" target="_blank">Behance - Portfolio Showcase</a></li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bootcamp-highlights">
+                                <h4>UX Research & Testing</h4>
+                                <ul>
+                                    <li><a href="https://www.nngroup.com/articles/" target="_blank">Nielsen Norman Group - UX Research Articles</a></li>
+                                    <li><a href="https://www.usertesting.com/resources" target="_blank">UserTesting Resources & Blog</a></li>
+                                    <li><a href="https://maze.co/guides/" target="_blank">Maze User Testing Guides</a></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
