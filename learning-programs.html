@@ -1014,43 +1014,735 @@
                     </div>
                 </div>
                 
-                <!-- NRIDL X Unity Bootcamp -->
-                <div class="bootcamp-card">
+                <!-- NRIDL X Unity Bootcamp - DETAILED VERSION -->
+                <div class="bootcamp-card" style="grid-column: 1 / -1;">
                     <div class="bootcamp-header">
-                        <h3 class="bootcamp-title">NRIDL X Unity<br>Game Development Bootcamp</h3>
+                        <h3 class="bootcamp-title">NRIDL X Unity Game Development Bootcamp</h3>
                         <p class="bootcamp-duration">40 Hours</p>
                     </div>
                     <div class="bootcamp-body">
                         <p class="bootcamp-description">
-                            Transition from browser-based coding to professional game development with Unity. Learn C# scripting, 2D/3D game mechanics, and build a complete portfolio-worthy game from concept to deployment.
+                            Transition from browser-based coding to professional game development with Unity. Learn C# scripting, 2D/3D game mechanics, physics, and build a complete portfolio-worthy game from concept to deployment. Master one of the most widely used platforms in the gaming industry.
                         </p>
                         
-                        <div class="bootcamp-highlights">
-                            <h4>What You'll Learn</h4>
-                            <ul>
-                                <li>Unity Hub & Editor setup and navigation</li>
-                                <li>C# scripting for game behaviors and interactions</li>
-                                <li>2D/3D game mechanics, physics, and animations</li>
-                                <li>Asset management and game polish techniques</li>
-                                <li>Portfolio preparation and monetization basics</li>
-                            </ul>
+                        <!-- Course Navigation Tabs -->
+                        <div class="course-tabs">
+                            <button class="course-tab-btn active" onclick="switchCourseTab(event, 'unity-overview')">Overview</button>
+                            <button class="course-tab-btn" onclick="switchCourseTab(event, 'unity-sessions')">Sessions</button>
+                            <button class="course-tab-btn" onclick="switchCourseTab(event, 'unity-faq')">FAQ</button>
+                            <button class="course-tab-btn" onclick="switchCourseTab(event, 'unity-resources')">Resources</button>
                         </div>
                         
-                        <div class="bootcamp-highlights">
-                            <h4>Sessions</h4>
-                            <ul>
-                                <li>Setting Up Unity Hub & Exploring the Editor</li>
-                                <li>Game Mechanics & Scripting in Unity</li>
-                                <li>Polishing & Playtesting</li>
-                                <li>Portfolio Prep & Monetization Basics</li>
-                                <li>Demo Day & Creative Futures</li>
-                            </ul>
+                        <!-- Overview Tab -->
+                        <div id="unity-overview" class="course-tab-content active">
+                            <div class="bootcamp-highlights">
+                                <h4>Why Learn Unity?</h4>
+                                <ul>
+                                    <li><strong>Accessibility:</strong> User-friendly interface with vast online resources, tutorials, and community forums - perfect for beginners</li>
+                                    <li><strong>Versatility:</strong> Create 2D and 3D games for mobile, desktop, consoles, VR/AR, and web platforms</li>
+                                    <li><strong>Industry Relevance:</strong> Widely used in the gaming industry, especially among indie studios and mobile game development</li>
+                                    <li><strong>Career Opportunities:</strong> Proficiency in Unity opens doors to game development jobs and related creative tech fields</li>
+                                    <li><strong>Solid Foundation:</strong> Learn transferable game development concepts including coding, engine functionality, and design best practices</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bootcamp-highlights">
+                                <h4>What You'll Learn</h4>
+                                <ul>
+                                    <li>Unity Hub & Editor setup, navigation, and project management</li>
+                                    <li>C# scripting fundamentals for game behaviors and interactions</li>
+                                    <li>Building interactive game scenes with objects, physics, and collisions</li>
+                                    <li>Player controls, movement systems, and game state management</li>
+                                    <li>UI design, sound integration, and visual polish techniques</li>
+                                    <li>Debugging strategies and troubleshooting common Unity issues</li>
+                                    <li>Playtesting, iteration, and game balancing</li>
+                                    <li>Exporting projects for WebGL and desktop platforms</li>
+                                    <li>Digital portfolio creation and professional documentation</li>
+                                    <li>Monetization basics and game publishing fundamentals</li>
+                                    <li>Team collaboration and version control basics</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bootcamp-highlights">
+                                <h4>Learning Outcomes</h4>
+                                <ul>
+                                    <li>Install, configure, and navigate Unity to create 2D/3D projects</li>
+                                    <li>Write and apply C# scripts for movement, interactivity, and game states</li>
+                                    <li>Build complete game scenes with physics, collisions, and player controls</li>
+                                    <li>Debug, polish, and test games for improved player experience</li>
+                                    <li>Export shareable projects for web and desktop platforms</li>
+                                    <li>Create professional digital portfolios showcasing your work</li>
+                                    <li>Understand monetization pathways and entrepreneurship in gaming</li>
+                                    <li>Present finished games confidently in public showcases</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bootcamp-highlights">
+                                <h4>Course Structure</h4>
+                                <ul>
+                                    <li><strong>Duration:</strong> 40 hours across 5 weeks</li>
+                                    <li><strong>Phase 1 (4 weeks):</strong> Unity Studio Foundations - hands-on learning and project development</li>
+                                    <li><strong>Phase 2 (1 week):</strong> Demo Day showcase with industry feedback and celebration</li>
+                                    <li><strong>Class Size:</strong> Small groups for personalized mentorship and support</li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                    <div class="bootcamp-footer">
-                        <a href="#" class="bootcamp-btn">Enroll Now</a>
-                        <div class="bootcamp-resources">
-                            <a href="https://learn.unity.com/pathway/unity-essentials" target="_blank">Learning Resources →</a>
+                        
+                        <!-- Sessions Tab -->
+                        <div id="unity-sessions" class="course-tab-content">
+                            <div class="sessions-grid">
+                                <!-- Session 1 -->
+                                <div class="session-card">
+                                    <div class="session-header active" onclick="toggleSession(event, 0)">
+                                        <h4>Session 1: Setting Up Unity Hub & Exploring the Editor</h4>
+                                        <span class="session-toggle">−</span>
+                                    </div>
+                                    <div class="session-body active">
+                                    
+                                    <div class="session-section">
+                                        <p class="session-subtitle">Installation & Configuration</p>
+                                        <p class="session-description">
+                                            This session marks the beginning of Phase 2, where students transition from browser-based vibe coding into professional game development with Unity. They learn to install and configure Unity Hub, explore the Unity interface, write their first lines of C# code, and practice importing and managing digital assets.
+                                        </p>
+                                        
+                                        <h5>Learning Objectives</h5>
+                                        <ul>
+                                            <li>Guide students through installation and setup of Unity Hub and Unity Editor</li>
+                                            <li>Introduce the Unity interface: scenes, hierarchy, game objects, and assets</li>
+                                            <li>Teach basics of C# scripting for simple actions and behaviors</li>
+                                            <li>Demonstrate how to import, organize, and manage assets for Unity projects</li>
+                                        </ul>
+                                        
+                                        <h5>Unity Hub Setup</h5>
+                                        <ul>
+                                            <li>Download and install Unity Hub - the gateway to Unity projects</li>
+                                            <li>Install correct Unity Editor version with 2D, 3D, and WebGL modules</li>
+                                            <li>Create first Unity project with organized folder structure</li>
+                                            <li>Establish clean project management habits from day one</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="session-section">
+                                        <p class="session-subtitle">Navigating the Unity Interface</p>
+                                        <p class="session-description">
+                                            Students are introduced to Unity's workspace and learn the purpose of each major panel. Understanding the interface is crucial for efficient game development.
+                                        </p>
+                                        
+                                        <h5>Core Interface Components</h5>
+                                        <ul>
+                                            <li><strong>Scene View:</strong> Where objects are placed and the game world is built</li>
+                                            <li><strong>Hierarchy:</strong> Lists all game objects currently in a scene</li>
+                                            <li><strong>Inspector:</strong> Adjust properties of selected objects</li>
+                                            <li><strong>Project/Assets Folder:</strong> Stores and organizes all game resources</li>
+                                            <li>Practice navigating between panels and manipulating simple shapes</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="session-section">
+                                        <p class="session-subtitle">First C# Script</p>
+                                        <p class="session-description">
+                                            Introduction to C# as Unity's programming language. Students write their first script to control game object behavior, just as JavaScript controlled interactivity in Phase 1.
+                                        </p>
+                                        
+                                        <h5>Coding Fundamentals</h5>
+                                        <ul>
+                                            <li>Understanding C# as the language that controls Unity behaviors</li>
+                                            <li>Writing first script - moving an object with key presses</li>
+                                            <li>Attaching scripts to game objects in the scene</li>
+                                            <li>Demystifying scripting through practical, small examples</li>
+                                            <li>Seeing how code brings projects to life</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="session-section">
+                                        <p class="session-subtitle">Asset Management</p>
+                                        <p class="session-description">
+                                            Students practice importing and organizing assets including images, audio, and 3D models. Clean asset management keeps projects efficient and professional.
+                                        </p>
+                                        
+                                        <h5>Organization Best Practices</h5>
+                                        <ul>
+                                            <li>Importing images, audio files, and 3D models into Unity</li>
+                                            <li>Creating organized folder structure (Sprites, Sounds, Models, Scripts)</li>
+                                            <li>Understanding asset types and their uses in Unity projects</li>
+                                            <li>Establishing professional project organization habits</li>
+                                        </ul>
+                                        
+                                        <h5>Session Outcomes</h5>
+                                        <ul>
+                                            <li>Functional Unity workspace ready for development</li>
+                                            <li>Understanding of Unity interface and navigation</li>
+                                            <li>First working C# script attached to game object</li>
+                                            <li>Clean, organized project with imported assets</li>
+                                            <li>Confidence to move forward into complex mechanics</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                </div>
+                                
+                                <!-- Session 2 -->
+                                <div class="session-card">
+                                    <div class="session-header" onclick="toggleSession(event, 1)">
+                                        <h4>Session 2: Game Mechanics & Scripting in Unity</h4>
+                                        <span class="session-toggle">+</span>
+                                    </div>
+                                    <div class="session-body">
+                                    
+                                    <div class="session-section">
+                                        <p class="session-subtitle">Building Interactive Scenes</p>
+                                        <p class="session-description">
+                                            This session focuses on bringing Unity projects to life by designing game mechanics and using C# scripting to control them. Students build scenes by adding objects, applying physics, and making them interactive through code.
+                                        </p>
+                                        
+                                        <h5>Scene Construction</h5>
+                                        <ul>
+                                            <li>Creating functional Unity scenes with 2D/3D objects</li>
+                                            <li>Adding platforms, characters, obstacles, and environmental elements</li>
+                                            <li>Applying physics properties: gravity, collisions, rigid bodies</li>
+                                            <li>Observing how objects interact realistically</li>
+                                            <li>Understanding foundations of game mechanics and rules</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="session-section">
+                                        <p class="session-subtitle">Advanced C# Scripting</p>
+                                        <p class="session-description">
+                                            Students take a deeper dive into C# to program player movement, user controls, and game states. They learn how code structures the player's experience from start to finish.
+                                        </p>
+                                        
+                                        <h5>Core Programming Concepts</h5>
+                                        <ul>
+                                            <li>Character movement: left/right with arrow keys, jumping with spacebar</li>
+                                            <li>User input detection and response systems</li>
+                                            <li>Game states: start screens, play mode, game over</li>
+                                            <li>Resetting gameplay when hitting obstacles or losing</li>
+                                            <li>Structuring code for clear gameplay flow</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="session-section">
+                                        <p class="session-subtitle">Collision & Scoring Systems</p>
+                                        <p class="session-description">
+                                            Understanding how to implement core game mechanics like collision detection, scoring systems, and win/loss conditions that drive engaging gameplay.
+                                        </p>
+                                        
+                                        <h5>Gameplay Mechanics</h5>
+                                        <ul>
+                                            <li>Detecting collisions between game objects</li>
+                                            <li>Implementing scoring and point systems</li>
+                                            <li>Creating win and loss conditions</li>
+                                            <li>Triggering events based on player actions</li>
+                                            <li>Balancing difficulty and challenge</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="session-section">
+                                        <p class="session-subtitle">Team Collaboration & Version Control</p>
+                                        <p class="session-description">
+                                            Students work in small teams to extend their projects, learning collaborative development practices that mirror professional game studios.
+                                        </p>
+                                        
+                                        <h5>Collaborative Skills</h5>
+                                        <ul>
+                                            <li>Working in teams with assigned roles: coder, designer, tester</li>
+                                            <li>Introduction to version control basics and why developers use it</li>
+                                            <li>Learning to track changes and collaborate without conflicts</li>
+                                            <li>Saving, committing, and sharing project files effectively</li>
+                                            <li>Understanding real-world professional workflows</li>
+                                        </ul>
+                                        
+                                        <h5>Session Outcomes</h5>
+                                        <ul>
+                                            <li>Functional Unity game with interactive mechanics</li>
+                                            <li>Working physics system with realistic object interactions</li>
+                                            <li>Scripts controlling movement, inputs, and game states</li>
+                                            <li>Experience with team development and collaboration</li>
+                                            <li>Understanding of version control principles</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                </div>
+                                
+                                <!-- Session 3 -->
+                                <div class="session-card">
+                                    <div class="session-header" onclick="toggleSession(event, 2)">
+                                        <h4>Session 3: Polishing & Playtesting</h4>
+                                        <span class="session-toggle">+</span>
+                                    </div>
+                                    <div class="session-body">
+                                    
+                                    <div class="session-section">
+                                        <p class="session-subtitle">Game Polish & User Interface</p>
+                                        <p class="session-description">
+                                            This session emphasizes refinement, testing, and iteration - essential skills for turning a working prototype into a polished, engaging game. Students enhance their projects with professional UI elements, sound, and visual effects.
+                                        </p>
+                                        
+                                        <h5>UI Enhancement</h5>
+                                        <ul>
+                                            <li>Creating start menus, pause screens, and game over displays</li>
+                                            <li>Adding score counters, health bars, and progress indicators</li>
+                                            <li>Designing buttons and interactive UI elements</li>
+                                            <li>Understanding UI/UX principles for games</li>
+                                            <li>Making games accessible and easy to understand</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="session-section">
+                                        <p class="session-subtitle">Sound & Visual Effects</p>
+                                        <p class="session-description">
+                                            Integration of audio and visual elements that enhance player experience and make games feel professional and complete.
+                                        </p>
+                                        
+                                        <h5>Audio Integration</h5>
+                                        <ul>
+                                            <li>Adding sound effects for jumps, collisions, and interactions</li>
+                                            <li>Implementing background music and ambient sounds</li>
+                                            <li>Understanding audio timing and triggers</li>
+                                        </ul>
+                                        
+                                        <h5>Visual Polish</h5>
+                                        <ul>
+                                            <li>Adjusting lighting for mood and atmosphere</li>
+                                            <li>Applying textures and materials to objects</li>
+                                            <li>Adding particle effects for impacts and special events</li>
+                                            <li>Creating visual feedback for player actions</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="session-section">
+                                        <p class="session-subtitle">Debugging & Troubleshooting</p>
+                                        <p class="session-description">
+                                            Developing problem-solving skills through systematic debugging. Students learn to view troubleshooting as an essential creative process rather than frustration.
+                                        </p>
+                                        
+                                        <h5>Debugging Strategies</h5>
+                                        <ul>
+                                            <li>Using Unity Console window to track errors</li>
+                                            <li>Reading and understanding debugging logs</li>
+                                            <li>Fixing common issues: broken scripts, misplaced assets, physics bugs</li>
+                                            <li>Systematic approach to identifying problems</li>
+                                            <li>Testing and validating fixes</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="session-section">
+                                        <p class="session-subtitle">Peer Playtesting & Iteration</p>
+                                        <p class="session-description">
+                                            Students share their games with classmates and mentors, learning the principle of iteration: games become better through cycles of feedback and refinement.
+                                        </p>
+                                        
+                                        <h5>Testing Process</h5>
+                                        <ul>
+                                            <li>Facilitating peer playtesting sessions</li>
+                                            <li>Giving and receiving constructive feedback</li>
+                                            <li>Focusing on gameplay, mechanics, and enjoyment</li>
+                                            <li>Professional mentor insights and guidance</li>
+                                        </ul>
+                                        
+                                        <h5>Iterative Improvement</h5>
+                                        <ul>
+                                            <li>Understanding iteration as ongoing creative process</li>
+                                            <li>Making quick improvements based on testing</li>
+                                            <li>Balancing difficulty and adjusting controls</li>
+                                            <li>Enhancing clarity and player understanding</li>
+                                            <li>Refining mechanics for better experience</li>
+                                        </ul>
+                                        
+                                        <h5>Session Outcomes</h5>
+                                        <ul>
+                                            <li>Polished games with professional UI elements</li>
+                                            <li>Integrated sound effects and visual polish</li>
+                                            <li>Experience with systematic debugging</li>
+                                            <li>Understanding of iterative design process</li>
+                                            <li>Games ready for public showcase</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                </div>
+                                
+                                <!-- Session 4 -->
+                                <div class="session-card">
+                                    <div class="session-header" onclick="toggleSession(event, 3)">
+                                        <h4>Session 4: Portfolio Prep & Monetization Basics</h4>
+                                        <span class="session-toggle">+</span>
+                                    </div>
+                                    <div class="session-body">
+                                    
+                                    <div class="session-section">
+                                        <p class="session-subtitle">Exporting & Publishing</p>
+                                        <p class="session-description">
+                                            This session equips students with skills to share their Unity creations beyond the classroom. They learn to export projects for different platforms and publish them for the world to experience.
+                                        </p>
+                                        
+                                        <h5>Platform Deployment</h5>
+                                        <ul>
+                                            <li>Building projects for WebGL (browser-based play)</li>
+                                            <li>Creating desktop applications for Windows/Mac</li>
+                                            <li>Testing builds on different devices</li>
+                                            <li>Understanding platform-specific requirements</li>
+                                            <li>Optimizing for performance and file size</li>
+                                            <li>Sharing games with friends, family, and wider audiences</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="session-section">
+                                        <p class="session-subtitle">Digital Portfolio Development</p>
+                                        <p class="session-description">
+                                            Students learn that portfolios are curated stories of growth and creativity, not just collections of files. They document their work professionally for future opportunities.
+                                        </p>
+                                        
+                                        <h5>Portfolio Components</h5>
+                                        <ul>
+                                            <li>Taking compelling screenshots and recording gameplay clips</li>
+                                            <li>Writing descriptions explaining design choices and coding contributions</li>
+                                            <li>Reflecting on learning journey: challenges faced and solutions found</li>
+                                            <li>Organizing work for presentation to teachers, employers, or collaborators</li>
+                                            <li>Creating case studies that showcase problem-solving abilities</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="session-section">
+                                        <p class="session-subtitle">Monetization & Entrepreneurship</p>
+                                        <p class="session-description">
+                                            Introduction to how games generate income and platforms where indie creators can publish and potentially earn from their work.
+                                        </p>
+                                        
+                                        <h5>Revenue Models</h5>
+                                        <ul>
+                                            <li>Paid downloads and pricing strategies</li>
+                                            <li>Advertising integration and ad networks</li>
+                                            <li>In-app purchases and microtransactions</li>
+                                            <li>Free-to-play vs. premium game models</li>
+                                        </ul>
+                                        
+                                        <h5>Publishing Platforms</h5>
+                                        <ul>
+                                            <li><strong>itch.io:</strong> Indie-friendly platform for experimental games</li>
+                                            <li><strong>Steam:</strong> Major PC gaming marketplace</li>
+                                            <li><strong>Mobile App Stores:</strong> iOS and Android distribution</li>
+                                            <li>Understanding submission requirements and processes</li>
+                                            <li>Real-world stories of successful indie developers</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="session-section">
+                                        <p class="session-subtitle">Creative Entrepreneurship</p>
+                                        <p class="session-description">
+                                            Framing opportunities within the broader idea of creative entrepreneurship. Students see themselves as innovators capable of building projects with real-world impact.
+                                        </p>
+                                        
+                                        <h5>Career Pathways</h5>
+                                        <ul>
+                                            <li>Independent game development and self-publishing</li>
+                                            <li>Freelancing opportunities in game development</li>
+                                            <li>Joining game studios as junior developers</li>
+                                            <li>Building indie teams and collaborating remotely</li>
+                                            <li>Understanding the game development industry landscape</li>
+                                        </ul>
+                                        
+                                        <h5>Session Outcomes</h5>
+                                        <ul>
+                                            <li>Exportable game builds ready to share</li>
+                                            <li>Professional digital portfolio with documentation</li>
+                                            <li>Understanding of monetization and publishing options</li>
+                                            <li>Awareness of entrepreneurial pathways in gaming</li>
+                                            <li>Confidence in technical and business fundamentals</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                </div>
+                                
+                                <!-- Session 5 -->
+                                <div class="session-card">
+                                    <div class="session-header" onclick="toggleSession(event, 4)">
+                                        <h4>Session 5: Demo Day & Creative Futures</h4>
+                                        <span class="session-toggle">+</span>
+                                    </div>
+                                    <div class="session-body">
+                                    
+                                    <div class="session-section">
+                                        <p class="session-subtitle">Public Showcase</p>
+                                        <p class="session-description">
+                                            The final session is a celebration of achievement and launchpad for future opportunities. Students present their browser-based and Unity games in a professional showcase attended by peers, families, and industry guests.
+                                        </p>
+                                        
+                                        <h5>Presentation Experience</h5>
+                                        <ul>
+                                            <li>Demonstrating browser games from Phase 1 and Unity projects from Phase 2</li>
+                                            <li>Explaining design choices, challenges, and successes</li>
+                                            <li>Building confidence in public speaking and presentation</li>
+                                            <li>Receiving applause and recognition from audience</li>
+                                            <li>Affirming the value and quality of student work</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="session-section">
+                                        <p class="session-subtitle">Professional Portfolio Review</p>
+                                        <p class="session-description">
+                                            Invited creative tech professionals provide personalized portfolio feedback, offering students insight into real-world industry standards while validating their progress.
+                                        </p>
+                                        
+                                        <h5>Mentorship & Feedback</h5>
+                                        <ul>
+                                            <li>Sharing digital portfolios with industry professionals</li>
+                                            <li>Receiving constructive feedback on gameplay clips and documentation</li>
+                                            <li>Professional insights on strengths and improvement areas</li>
+                                            <li>Understanding industry expectations and standards</li>
+                                            <li>Guidance on continuing portfolio development</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="session-section">
+                                        <p class="session-subtitle">Next Steps & Pathways</p>
+                                        <p class="session-description">
+                                            Facilitated discussion on future opportunities, helping students understand that the bootcamp is a springboard into continued growth in creative technology.
+                                        </p>
+                                        
+                                        <h5>Educational Pathways</h5>
+                                        <ul>
+                                            <li>High school courses in computer science and digital arts</li>
+                                            <li>Post-secondary programs in game design and development</li>
+                                            <li>Online learning resources and continued skill building</li>
+                                        </ul>
+                                        
+                                        <h5>Professional Opportunities</h5>
+                                        <ul>
+                                            <li>Internship opportunities with local studios</li>
+                                            <li>Volunteer positions in creative tech organizations</li>
+                                            <li>Self-publishing on platforms like itch.io and mobile stores</li>
+                                            <li>Participating in game jams and community events</li>
+                                            <li>Ongoing NRIDL mentorship and networking</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="session-section">
+                                        <p class="session-subtitle">Graduation & Celebration</p>
+                                        <p class="session-description">
+                                            Formal recognition of student achievements with certificates, celebration, and connection to ongoing support through NRIDL's creative community.
+                                        </p>
+                                        
+                                        <h5>Community Connection</h5>
+                                        <ul>
+                                            <li>Certificate of completion for each student</li>
+                                            <li>Recognition ceremony with family, peers, and mentors</li>
+                                            <li>Emphasis on belonging to larger creative ecosystem</li>
+                                            <li>Access to ongoing NRIDL supports and resources</li>
+                                            <li>Connection to mentorship networks and opportunities</li>
+                                        </ul>
+                                        
+                                        <h5>Session Outcomes</h5>
+                                        <ul>
+                                            <li>Public presentation of completed projects</li>
+                                            <li>Professional portfolio feedback incorporated</li>
+                                            <li>Clear understanding of next steps and pathways</li>
+                                            <li>Sense of community and ongoing support</li>
+                                            <li>Celebration of achievements and growth</li>
+                                            <li>Confidence to continue creative technology journey</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ Tab -->
+                        <div id="unity-faq" class="course-tab-content">
+                            <div class="faq-grid">
+                                <div class="faq-item">
+                                    <div class="faq-question">1. What is this course about?</div>
+                                    <div class="faq-answer">
+                                        This Unity course is designed to introduce youth to professional game development using Unity, one of the most widely used platforms in the gaming industry. Over 40 hours of hands-on learning, students will explore how to design, script, polish, and publish their own games, while building a digital portfolio to showcase their work.
+                                    </div>
+                                </div>
+                                
+                                <div class="faq-item">
+                                    <div class="faq-question">2. Why should I learn Unity?</div>
+                                    <div class="faq-answer">
+                                        <strong>Accessibility and Ease of Learning:</strong>
+                                        <ul>
+                                            <li>User-friendly interface with vast online resources, tutorials, and community forums</li>
+                                            <li>Start with visual scripting or learn C# for advanced functionality</li>
+                                            <li>Gentle learning curve perfect for beginners</li>
+                                        </ul>
+                                        
+                                        <strong>Versatility in Development:</strong>
+                                        <ul>
+                                            <li>Create both 2D and 3D games and interactive experiences</li>
+                                            <li>Develop for mobile, desktop, consoles, VR/AR, and web platforms</li>
+                                            <li>One skillset applicable across multiple platforms</li>
+                                        </ul>
+                                        
+                                        <strong>Industry Relevance and Job Opportunities:</strong>
+                                        <ul>
+                                            <li>Widely used in game development industry, especially indie and mobile games</li>
+                                            <li>Proficiency opens doors to various creative tech careers</li>
+                                            <li>Strong demand for Unity developers in job market</li>
+                                        </ul>
+                                        
+                                        <strong>Solid Foundation in Game Development:</strong>
+                                        <ul>
+                                            <li>Learn fundamental concepts: coding, engine functionality, design best practices</li>
+                                            <li>Skills transfer to other engines and platforms if needed</li>
+                                            <li>Understanding of complete game development workflow</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="faq-item">
+                                    <div class="faq-question">3. How long is the course?</div>
+                                    <div class="faq-answer">
+                                        The Unity program runs for <span class="price-highlight">40 hours</span>, spread across:
+                                        <ul>
+                                            <li><strong>Phase 1:</strong> 4 weeks of structured instruction (Unity Studio Foundations)</li>
+                                            <li><strong>Phase 2:</strong> 1 showcase week (Demo Day & Creative Futures)</li>
+                                        </ul>
+                                        Each week includes structured lessons, hands-on project work, and peer collaboration time.
+                                    </div>
+                                </div>
+                                
+                                <div class="faq-item">
+                                    <div class="faq-question">4. What will students learn?</div>
+                                    <div class="faq-answer">
+                                        <strong>Phase 1: Unity Studio Foundations</strong>
+                                        <ul>
+                                            <li><strong>Session 1:</strong> Installing Unity Hub, navigating interface, C# scripting basics, importing assets</li>
+                                            <li><strong>Session 2:</strong> Building game scenes, physics and interactivity, player controls, team collaboration, version control</li>
+                                            <li><strong>Session 3:</strong> Polishing with UI, sound, and visual design; debugging; playtesting with peers and mentors</li>
+                                            <li><strong>Session 4:</strong> Exporting for desktop and web, building digital portfolios, monetization and entrepreneurship basics</li>
+                                        </ul>
+                                        
+                                        <strong>Phase 2: Showcase & Industry Engagement</strong>
+                                        <ul>
+                                            <li><strong>Session 5:</strong> Demo Day - present projects to peers, families, and industry guests; professional portfolio feedback; explore future pathways (internships, education, self-publishing); celebrate with certificates of completion</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="faq-item">
+                                    <div class="faq-question">5. What are the learning outcomes?</div>
+                                    <div class="faq-answer">
+                                        By the end of the course, students will be able to:
+                                        <ul>
+                                            <li>Install and configure Unity to create 2D/3D projects</li>
+                                            <li>Build interactive game scenes with objects, physics, and controls</li>
+                                            <li>Write and apply C# scripts for movement, game states, and interactivity</li>
+                                            <li>Debug, polish, and test games for improved player experience</li>
+                                            <li>Export projects for WebGL and desktop, making them shareable</li>
+                                            <li>Document work in a professional digital portfolio</li>
+                                            <li>Understand pathways for monetization and entrepreneurship in gaming</li>
+                                            <li>Present finished games confidently in public showcases</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="faq-item">
+                                    <div class="faq-question">6. Who is this course for?</div>
+                                    <div class="faq-answer">
+                                        This course is ideal for youth with basic coding exposure or strong interest in game development who want to learn Unity in a structured, supportive environment. <strong>Beginners are welcome - no prior Unity experience is required.</strong> Perfect for students who have completed the HTML Learning & Vibe Coding bootcamp or have equivalent foundational coding knowledge.
+                                    </div>
+                                </div>
+                                
+                                <div class="faq-item">
+                                    <div class="faq-question">7. What support is included?</div>
+                                    <div class="faq-answer">
+                                        <ul>
+                                            <li>Access to Unity-ready workstations (if needed)</li>
+                                            <li>Loaner equipment available where needed</li>
+                                            <li>Office hours for extra help and questions</li>
+                                            <li>Guidance from experienced mentors throughout the program</li>
+                                            <li>Feedback from creative tech professionals during Demo Day</li>
+                                            <li>Transit support and snacks during in-person sessions</li>
+                                            <li>Ongoing connection to NRIDL community and resources</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="faq-item">
+                                    <div class="faq-question">8. What do students need to bring?</div>
+                                    <div class="faq-answer">
+                                        <ul>
+                                            <li>A laptop capable of running Unity (if available; workstations provided if needed)</li>
+                                            <li>Enthusiasm, creativity, and readiness to collaborate with peers</li>
+                                            <li>Open mindset for learning and experimentation</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="faq-item">
+                                    <div class="faq-question">9. What happens after the course?</div>
+                                    <div class="faq-answer">
+                                        Graduates are encouraged to continue building their portfolios and may explore pathways such as:
+                                        <ul>
+                                            <li>Applying for internships or volunteer opportunities in creative tech</li>
+                                            <li>Pursuing further education in coding, game design, or digital arts</li>
+                                            <li>Publishing their own games on platforms like itch.io or mobile app stores</li>
+                                            <li>Participating in game jams and community development events</li>
+                                            <li>Staying connected with NRIDL for ongoing mentorship and opportunities</li>
+                                            <li>Advancing to specialized Unity learning (AR, VR, or artistic development)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Resources Tab -->
+                        <div id="unity-resources" class="course-tab-content">
+                            <div class="bootcamp-highlights">
+                                <h4>Official Unity Learning Resources</h4>
+                                <ul>
+                                    <li><a href="https://learn.unity.com/pathway/unity-essentials" target="_blank">Unity Essentials Learning Pathway</a></li>
+                                    <li><a href="https://learn.unity.com/" target="_blank">Unity Learn - Official Tutorials Platform</a></li>
+                                    <li><a href="https://docs.unity3d.com/Manual/index.html" target="_blank">Unity Manual - Complete Documentation</a></li>
+                                    <li><a href="https://docs.unity3d.com/ScriptReference/" target="_blank">Unity Scripting API Reference</a></li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bootcamp-highlights">
+                                <h4>Unity Curricular Frameworks</h4>
+                                <ul>
+                                    <li><a href="https://create.unity.com/curricular-framework" target="_blank">Unity Curricular Framework for Game Design</a></li>
+                                    <li><a href="https://connect-prd-cdn.unity.com/educator-hub/AR_CurricularFramework_v5.pdf" target="_blank">Unity Curricular Framework for Augmented Reality (PDF)</a></li>
+                                    <li><a href="https://connect-prd-cdn.unity.com/educator-hub/Artist_CurricularFramework_v3.pdf" target="_blank">Unity Curricular Framework for Artists (PDF)</a></li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bootcamp-highlights">
+                                <h4>C# Programming Resources</h4>
+                                <ul>
+                                    <li><a href="https://learn.unity.com/tutorial/beginner-gameplay-scripting" target="_blank">Unity: Beginner Gameplay Scripting</a></li>
+                                    <li><a href="https://www.microsoft.com/en-us/learn/training-hub/c-sharp" target="_blank">Microsoft C# Learning Hub</a></li>
+                                    <li><a href="https://learn.microsoft.com/en-us/dotnet/csharp/" target="_blank">C# Documentation by Microsoft</a></li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bootcamp-highlights">
+                                <h4>Game Development Community</h4>
+                                <ul>
+                                    <li><a href="https://unity.com/community" target="_blank">Unity Community Forums</a></li>
+                                    <li><a href="https://assetstore.unity.com/" target="_blank">Unity Asset Store - Free & Paid Assets</a></li>
+                                    <li><a href="https://itch.io/" target="_blank">itch.io - Indie Game Publishing Platform</a></li>
+                                    <li><a href="https://globalgamejam.org/" target="_blank">Global Game Jam - Worldwide Game Development Events</a></li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bootcamp-highlights">
+                                <h4>YouTube Channels & Video Tutorials</h4>
+                                <ul>
+                                    <li><a href="https://www.youtube.com/@Unity" target="_blank">Unity Official YouTube Channel</a></li>
+                                    <li><a href="https://www.youtube.com/@Brackeys" target="_blank">Brackeys - Beginner-Friendly Unity Tutorials</a></li>
+                                    <li><a href="https://www.youtube.com/@CodeMonkeyUnity" target="_blank">Code Monkey - Unity Game Development</a></li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bootcamp-highlights">
+                                <h4>Publishing & Monetization</h4>
+                                <ul>
+                                    <li><a href="https://docs.unity.com/ads/en-us/manual/IntegratingUnityAds" target="_blank">Unity Ads Integration Guide</a></li>
+                                    <li><a href="https://partner.steamgames.com/" target="_blank">Steam Partner Program</a></li>
+                                    <li><a href="https://developer.apple.com/app-store/" target="_blank">Apple App Store Developer</a></li>
+                                    <li><a href="https://play.google.com/console/about/guides/releasewithconfidence/" target="_blank">Google Play Console Guide</a></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
