@@ -45,6 +45,23 @@ class SidebarNav {
     getSections() {
         const sections = [];
         
+        // Check for sections with data-nav-title attribute (learning-programs page)
+        const navSections = document.querySelectorAll('[data-nav-title]');
+        if (navSections.length > 0) {
+            navSections.forEach((section, index) => {
+                const title = section.getAttribute('data-nav-title');
+                const id = section.getAttribute('id') || `section-${index}`;
+                sections.push({
+                    id: id,
+                    title: title,
+                    number: `0${index + 1}`,
+                    element: section,
+                    type: 'nav-section'
+                });
+            });
+            return sections;
+        }
+        
         // Check for problems/challenges section (on index page)
         const problemsSection = document.querySelector('.problems-section');
         if (problemsSection) {
@@ -293,7 +310,25 @@ class SidebarNav {
         this.setActiveSection(index);
 
         // Handle different section types
-        if (section.type === 'tab' && section.tabElement) {
+        if (section.type === 'nav-section') {
+            // Simple scroll to nav section (learning-programs page)
+            const targetElement = section.element;
+            if (targetElement) {
+                const rect = targetElement.getBoundingClientRect();
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                const targetPosition = rect.top + scrollTop - 100;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+                
+                // Re-enable automatic updates after scroll completes
+                setTimeout(() => {
+                    this.isNavigating = false;
+                }, 800);
+            }
+        } else if (section.type === 'tab' && section.tabElement) {
             // If there's a tab element, click it to switch tabs
             section.tabElement.click();
             

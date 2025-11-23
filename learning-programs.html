@@ -28,7 +28,7 @@
         
         .category-header {
             text-align: center;
-            max-width: 900px;
+            max-width: 100%;
             margin: 0 auto 4rem;
         }
         
@@ -58,6 +58,7 @@
             color: #4a5568;
             line-height: 1.8;
             font-weight: 300;
+            max-width: 100%;
         }
         
         /* Digital Literacy Courses Grid */
@@ -522,6 +523,8 @@
             font-weight: 600;
         }
         
+        /* Sidebar Navigation - Uses standard sidebar-nav.js component */
+        
         @media (max-width: 968px) {
             .literacy-courses-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -541,10 +544,13 @@
     </style>
 </head>
 <body>
+    <!-- Sidebar Navigation -->
+    <!-- Automatically injected by sidebar-nav.js -->
+
     <!-- Digital Literacy Courses Section -->
-    <section class="category-section">
-        <div class="container">
-            <div class="category-header">
+    <section class="category-section" id="digital-literacy" data-sidebar-nav data-sidebar-position="left" data-nav-title="Digital Literacy">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div class="category-header" style="max-width: 100%;">
                 <span class="category-badge">For All Ages</span>
                 <h2>Digital Literacy Courses</h2>
                 <p>
@@ -599,9 +605,9 @@
     </section>
 
     <!-- StoryBee Foundational Learning Section -->
-    <section class="category-section">
-        <div class="container">
-            <div class="category-header">
+    <section class="category-section" id="storybee" data-nav-title="StoryBee">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div class="category-header" style="max-width: 100%;">
                 <span class="category-badge">For Grades 1-6</span>
                 <h2>StoryBee Foundational Learning</h2>
                 <p>
@@ -610,45 +616,101 @@
             </div>
             
             <!-- Knowledge Trees Video -->
-            <div style="max-width: 900px; margin: 0 auto 4rem; text-align: center;">
+            <div style="margin: 0 auto 4rem; text-align: center;">
                 <h3 style="font-size: 1.5rem; color: #1a202c; margin-bottom: 1.5rem; font-weight: 500;">
                     StoryBee Knowledge Trees: A Visual Learning Journey
                 </h3>
-                <p style="font-size: 1.0625rem; color: #4a5568; line-height: 1.8; margin-bottom: 2rem;">
+                <p style="font-size: 1.0625rem; color: #4a5568; line-height: 1.8; margin-bottom: 2rem; max-width: 100%;">
                     Watch how learning builds from curiosity to mastery—one knowledge skill at a time
                 </p>
                 <video 
                     controls 
                     poster="image assets/skill map cover.png"
-                    style="width: 100%; max-width: 800px; border-radius: 12px; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);">
+                    style="width: 100%; border-radius: 12px; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);">
                     <source src="video assets/StoryBee Skill Tree.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>
             
             <!-- Knowledge Trees Explanation -->
-            <div style="max-width: 900px; margin: 0 auto 4rem; background: #f8f9fa; padding: 3rem; border-radius: 16px; border-left: 4px solid #7a8fb8;">
-                <h3 style="font-size: 1.375rem; color: #1a202c; margin-bottom: 1.5rem; font-weight: 500;">
+            <div style="margin: 0 auto 4rem; background: #ffffff; padding: 3rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); border-top: 4px solid #7a8fb8;">
+                <h3 style="font-size: 1.5rem; color: #1a202c; margin-bottom: 1.5rem; font-weight: 500;">
                     How Knowledge Trees Work
                 </h3>
-                <p style="font-size: 1.0625rem; color: #4a5568; line-height: 1.8; margin-bottom: 1.5rem;">
-                    We organize books into <strong>Knowledge Trees</strong>—a structured framework that ensures progressive knowledge development. This approach mirrors how real academic mastery develops and prepares students for future success in advanced programs like AP, IB, and university-level studies.
+                <p style="font-size: 1.0625rem; color: #4a5568; line-height: 1.8; margin-bottom: 1.5rem; max-width: 100%;">
+                    We organize books into <strong>Knowledge Trees</strong>, a structured framework that ensures progressive knowledge development. This approach mirrors how real academic mastery develops and prepares students for future success in advanced programs like AP, IB, and university level studies.
                 </p>
-                <p style="font-size: 1.0625rem; color: #4a5568; line-height: 1.8; margin-bottom: 1.5rem;">
-                    Each book hosts several different <strong>knowledge nodes</strong>—specific concepts, skills, or facts that connect to form comprehensive understanding. Rather than isolated learning, every book is linked to others, helping students build interconnected knowledge through structured progression.
+                <p style="font-size: 1.0625rem; color: #4a5568; line-height: 1.8; margin-bottom: 1.5rem; max-width: 100%;">
+                    Each book hosts several different <strong>knowledge nodes</strong>, specific concepts, skills, or facts that connect to form comprehensive understanding. Rather than isolated learning, every book is linked to others, helping students build interconnected knowledge through structured progression.
                 </p>
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
-                    <div style="background: white; padding: 1.5rem; border-radius: 10px;">
+                    <div style="background: #f8f9fa; padding: 2rem 1.5rem; border-radius: 10px; border: 1px solid #e2e8f0;">
                         <h4 style="font-size: 1.125rem; color: #7a8fb8; font-weight: 600; margin-bottom: 0.75rem;">Early Exposure</h4>
-                        <p style="font-size: 0.9375rem; color: #4a5568; line-height: 1.7; margin: 0;">Introduce advanced concepts early in age-appropriate, engaging ways that build foundation for future academic success.</p>
+                        <p style="font-size: 0.9375rem; color: #4a5568; line-height: 1.7; margin: 0; max-width: 100%;">Introduce advanced concepts early in age appropriate, engaging ways that build foundation for future academic success.</p>
                     </div>
-                    <div style="background: white; padding: 1.5rem; border-radius: 10px;">
+                    <div style="background: #f8f9fa; padding: 2rem 1.5rem; border-radius: 10px; border: 1px solid #e2e8f0;">
                         <h4 style="font-size: 1.125rem; color: #9681b8; font-weight: 600; margin-bottom: 0.75rem;">Fun Learning</h4>
-                        <p style="font-size: 0.9375rem; color: #4a5568; line-height: 1.7; margin: 0;">Engaging stories and interactive elements make complex topics accessible and enjoyable for young learners.</p>
+                        <p style="font-size: 0.9375rem; color: #4a5568; line-height: 1.7; margin: 0; max-width: 100%;">Engaging stories and interactive elements make complex topics accessible and enjoyable for young learners.</p>
                     </div>
-                    <div style="background: white; padding: 1.5rem; border-radius: 10px;">
+                    <div style="background: #f8f9fa; padding: 2rem 1.5rem; border-radius: 10px; border: 1px solid #e2e8f0;">
                         <h4 style="font-size: 1.125rem; color: #81b8a3; font-weight: 600; margin-bottom: 0.75rem;">Steady Growth</h4>
-                        <p style="font-size: 0.9375rem; color: #4a5568; line-height: 1.7; margin: 0;">Progressive structure ensures confidence and accomplishment at every level, never feeling overwhelmed or lost.</p>
+                        <p style="font-size: 0.9375rem; color: #4a5568; line-height: 1.7; margin: 0; max-width: 100%;">Progressive structure ensures confidence and accomplishment at every level, never feeling overwhelmed or lost.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Skill Tree Diagrams Gallery -->
+            <div style="margin: 0 auto 4rem;">
+                <h3 style="font-size: 1.875rem; color: #1a202c; margin-bottom: 1.5rem; font-weight: 500; text-align: center;">
+                    Explore Our Learning Pathways
+                </h3>
+                <p style="font-size: 1.0625rem; color: #4a5568; line-height: 1.8; text-align: center; margin-bottom: 3rem; max-width: 100%;">
+                    Click on any skill tree diagram to view the complete learning journey for each subject
+                </p>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                    <!-- Environmental Science -->
+                    <div style="text-align: center;">
+                        <h4 style="font-size: 1.25rem; color: #1a202c; font-weight: 500; margin-bottom: 1rem;">Environmental Science</h4>
+                        <div style="display: grid; gap: 1rem;">
+                            <div class="skill-tree-card" onclick="openLightbox('image assets/StoryBee Skill trees/Environmental Science Intro Page.jpg')" style="cursor: pointer; border: 2px solid #c8b6e2; border-radius: 10px; overflow: hidden; transition: all 0.3s ease;">
+                                <img src="image assets/StoryBee Skill trees/Environmental Science Intro Page.jpg" alt="Environmental Science Introduction" style="width: 100%; height: auto; display: block;">
+                                <p style="padding: 1rem; font-size: 0.9375rem; color: #4a5568; margin: 0; background: #ffffff;">Introduction</p>
+                            </div>
+                            <div class="skill-tree-card" onclick="openLightbox('image assets/StoryBee Skill trees/Environmental Science Checklist.jpg')" style="cursor: pointer; border: 2px solid #c8b6e2; border-radius: 10px; overflow: hidden; transition: all 0.3s ease;">
+                                <img src="image assets/StoryBee Skill trees/Environmental Science Checklist.jpg" alt="Environmental Science Checklist" style="width: 100%; height: auto; display: block;">
+                                <p style="padding: 1rem; font-size: 0.9375rem; color: #4a5568; margin: 0; background: #ffffff;">Skills Checklist</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Modern History -->
+                    <div style="text-align: center;">
+                        <h4 style="font-size: 1.25rem; color: #1a202c; font-weight: 500; margin-bottom: 1rem;">Modern History</h4>
+                        <div style="display: grid; gap: 1rem;">
+                            <div class="skill-tree-card" onclick="openLightbox('image assets/StoryBee Skill trees/Modern History Intro Edition.jpg')" style="cursor: pointer; border: 2px solid #d4e2b6; border-radius: 10px; overflow: hidden; transition: all 0.3s ease;">
+                                <img src="image assets/StoryBee Skill trees/Modern History Intro Edition.jpg" alt="Modern History Introduction" style="width: 100%; height: auto; display: block;">
+                                <p style="padding: 1rem; font-size: 0.9375rem; color: #4a5568; margin: 0; background: #ffffff;">Introduction</p>
+                            </div>
+                            <div class="skill-tree-card" onclick="openLightbox('image assets/StoryBee Skill trees/Modern History Checklist Edition.jpg')" style="cursor: pointer; border: 2px solid #d4e2b6; border-radius: 10px; overflow: hidden; transition: all 0.3s ease;">
+                                <img src="image assets/StoryBee Skill trees/Modern History Checklist Edition.jpg" alt="Modern History Checklist" style="width: 100%; height: auto; display: block;">
+                                <p style="padding: 1rem; font-size: 0.9375rem; color: #4a5568; margin: 0; background: #ffffff;">Skills Checklist</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Microeconomics -->
+                    <div style="text-align: center;">
+                        <h4 style="font-size: 1.25rem; color: #1a202c; font-weight: 500; margin-bottom: 1rem;">Microeconomics</h4>
+                        <div style="display: grid; gap: 1rem;">
+                            <div class="skill-tree-card" onclick="openLightbox('image assets/StoryBee Skill trees/Microeconomics Intro Edition.jpg')" style="cursor: pointer; border: 2px solid #b6d4e2; border-radius: 10px; overflow: hidden; transition: all 0.3s ease;">
+                                <img src="image assets/StoryBee Skill trees/Microeconomics Intro Edition.jpg" alt="Microeconomics Introduction" style="width: 100%; height: auto; display: block;">
+                                <p style="padding: 1rem; font-size: 0.9375rem; color: #4a5568; margin: 0; background: #ffffff;">Introduction</p>
+                            </div>
+                            <div class="skill-tree-card" onclick="openLightbox('image assets/StoryBee Skill trees/Microeconomics Brochure Edition.jpg')" style="cursor: pointer; border: 2px solid #b6d4e2; border-radius: 10px; overflow: hidden; transition: all 0.3s ease;">
+                                <img src="image assets/StoryBee Skill trees/Microeconomics Brochure Edition.jpg" alt="Microeconomics Brochure" style="width: 100%; height: auto; display: block;">
+                                <p style="padding: 1rem; font-size: 0.9375rem; color: #4a5568; margin: 0; background: #ffffff;">Skills Overview</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -660,7 +722,7 @@
                     <h3>G1-G3 Science</h3>
                     <p class="course-duration">Grades 1-3</p>
                     <p>The wonders of nature, simple experiments, and everyday science through engaging stories.</p>
-                    <a href="https://www.storybee.space/foundational-sneak-preview" target="_blank" style="display: inline-block; margin-top: 1rem; color: #7a8fb8; font-weight: 500; text-decoration: none;">Explore Program →</a>
+                    <p style="display: inline-block; margin-top: 1rem; color: #7a8fb8; font-weight: 500;">Sign Up Soon</p>
                 </div>
                 
                 <!-- G3-G6 Science -->
@@ -668,7 +730,7 @@
                     <h3>G3-G6 Science</h3>
                     <p class="course-duration">Grades 3-6</p>
                     <p>Deepens scientific understanding with critical thinking challenges, and connections to real-world phenomena.</p>
-                    <a href="https://www.storybee.space/foundational-sneak-preview" target="_blank" style="display: inline-block; margin-top: 1rem; color: #7a8fb8; font-weight: 500; text-decoration: none;">Explore Program →</a>
+                    <p style="display: inline-block; margin-top: 1rem; color: #7a8fb8; font-weight: 500;">Sign Up Soon</p>
                 </div>
                 
                 <!-- G4-G6 Financial Literacy -->
@@ -676,45 +738,39 @@
                     <h3>G4-G6 Financial Literacy</h3>
                     <p class="course-duration">Grades 4-6</p>
                     <p>Practical lessons on earning, saving, spending, and understanding the economy.</p>
-                    <a href="https://www.storybee.space/foundational-sneak-preview" target="_blank" style="display: inline-block; margin-top: 1rem; color: #7a8fb8; font-weight: 500; text-decoration: none;">Explore Program →</a>
+                    <p style="display: inline-block; margin-top: 1rem; color: #7a8fb8; font-weight: 500;">Sign Up Soon</p>
                 </div>
             </div>
             
             <!-- Why StoryBee Section -->
-            <div style="max-width: 1000px; margin: 4rem auto 0;">
+            <div style="margin: 4rem auto 0;">
                 <h3 style="font-size: 1.875rem; color: #1a202c; margin-bottom: 2rem; font-weight: 500; text-align: center;">
-                    Why Choose StoryBee?
+                    Why Choose StoryBee Foundational Series?
                 </h3>
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
-                    <div style="text-align: center; padding: 2rem;">
-                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">🌳</div>
-                        <h4 style="font-size: 1.25rem; color: #1a202c; font-weight: 600; margin-bottom: 1rem;">Knowledge Trees</h4>
-                        <p style="font-size: 0.9375rem; color: #4a5568; line-height: 1.7;">Structured progression ensures every concept builds on previous learning, creating strong foundations.</p>
+                    <div style="background: #f8f9fa; padding: 2rem; border-radius: 10px; border: 1px solid #e2e8f0;">
+                        <h4 style="font-size: 1.25rem; color: #7a8fb8; font-weight: 600; margin-bottom: 1rem;">Knowledge Trees</h4>
+                        <p style="font-size: 0.9375rem; color: #4a5568; line-height: 1.7; margin: 0;">Structured progression ensures every concept builds on previous learning, creating strong foundations.</p>
                     </div>
-                    <div style="text-align: center; padding: 2rem;">
-                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">📚</div>
-                        <h4 style="font-size: 1.25rem; color: #1a202c; font-weight: 600; margin-bottom: 1rem;">Interconnected Learning</h4>
-                        <p style="font-size: 0.9375rem; color: #4a5568; line-height: 1.7;">Books are linked together, helping students see connections between different knowledge areas.</p>
+                    <div style="background: #f8f9fa; padding: 2rem; border-radius: 10px; border: 1px solid #e2e8f0;">
+                        <h4 style="font-size: 1.25rem; color: #9681b8; font-weight: 600; margin-bottom: 1rem;">Interconnected Learning</h4>
+                        <p style="font-size: 0.9375rem; color: #4a5568; line-height: 1.7; margin: 0;">Books are linked together, helping students see connections between different knowledge areas.</p>
                     </div>
-                    <div style="text-align: center; padding: 2rem;">
-                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">🎯</div>
-                        <h4 style="font-size: 1.25rem; color: #1a202c; font-weight: 600; margin-bottom: 1rem;">AP & IB Ready</h4>
-                        <p style="font-size: 0.9375rem; color: #4a5568; line-height: 1.7;">Knowledge nodes align with advanced program requirements, giving students early advantage.</p>
+                    <div style="background: #f8f9fa; padding: 2rem; border-radius: 10px; border: 1px solid #e2e8f0;">
+                        <h4 style="font-size: 1.25rem; color: #81b8a3; font-weight: 600; margin-bottom: 1rem;">AP and IB Ready</h4>
+                        <p style="font-size: 0.9375rem; color: #4a5568; line-height: 1.7; margin: 0;">Knowledge nodes align with advanced program requirements, giving students early advantage.</p>
                     </div>
-                    <div style="text-align: center; padding: 2rem;">
-                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">✨</div>
-                        <h4 style="font-size: 1.25rem; color: #1a202c; font-weight: 600; margin-bottom: 1rem;">Engaging Stories</h4>
-                        <p style="font-size: 0.9375rem; color: #4a5568; line-height: 1.7;">Complex concepts delivered through captivating narratives that make learning fun and memorable.</p>
+                    <div style="background: #f8f9fa; padding: 2rem; border-radius: 10px; border: 1px solid #e2e8f0;">
+                        <h4 style="font-size: 1.25rem; color: #b8a381; font-weight: 600; margin-bottom: 1rem;">Engaging Stories</h4>
+                        <p style="font-size: 0.9375rem; color: #4a5568; line-height: 1.7; margin: 0;">Complex concepts delivered through captivating narratives that make learning fun and memorable.</p>
                     </div>
-                    <div style="text-align: center; padding: 2rem;">
-                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">📈</div>
-                        <h4 style="font-size: 1.25rem; color: #1a202c; font-weight: 600; margin-bottom: 1rem;">Confidence Building</h4>
-                        <p style="font-size: 0.9375rem; color: #4a5568; line-height: 1.7;">Progressive challenges ensure steady growth without overwhelming students at any level.</p>
+                    <div style="background: #f8f9fa; padding: 2rem; border-radius: 10px; border: 1px solid #e2e8f0;">
+                        <h4 style="font-size: 1.25rem; color: #7a8fb8; font-weight: 600; margin-bottom: 1rem;">Confidence Building</h4>
+                        <p style="font-size: 0.9375rem; color: #4a5568; line-height: 1.7; margin: 0;">Progressive challenges ensure steady growth without overwhelming students at any level.</p>
                     </div>
-                    <div style="text-align: center; padding: 2rem;">
-                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">🌍</div>
-                        <h4 style="font-size: 1.25rem; color: #1a202c; font-weight: 600; margin-bottom: 1rem;">Real-World Connections</h4>
-                        <p style="font-size: 0.9375rem; color: #4a5568; line-height: 1.7;">Learning linked to everyday experiences helps students understand practical applications.</p>
+                    <div style="background: #f8f9fa; padding: 2rem; border-radius: 10px; border: 1px solid #e2e8f0;">
+                        <h4 style="font-size: 1.25rem; color: #9681b8; font-weight: 600; margin-bottom: 1rem;">Real World Connections</h4>
+                        <p style="font-size: 0.9375rem; color: #4a5568; line-height: 1.7; margin: 0;">Learning linked to everyday experiences helps students understand practical applications.</p>
                     </div>
                 </div>
             </div>
@@ -722,9 +778,9 @@
     </section>
 
     <!-- Advanced Tech Bootcamps Section -->
-    <section class="category-section">
-        <div class="container">
-            <div class="category-header">
+    <section class="category-section" id="bootcamps" data-nav-title="Tech Bootcamps">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div class="category-header" style="max-width: 100%;">
                 <span class="category-badge">For Teens & Adults</span>
                 <h2>Advanced Tech Bootcamps</h2>
                 <p>
@@ -2271,6 +2327,16 @@
     </section>
 
     <!-- Footer will be injected by footer.js -->
+    
+    <!-- Lightbox Modal for Skill Trees -->
+    <div id="skillTreeLightbox" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.95); z-index: 10000; padding: 2rem; overflow: auto;">
+        <button onclick="closeLightbox()" style="position: fixed; top: 2rem; right: 2rem; background: #ffffff; border: none; width: 48px; height: 48px; border-radius: 50%; cursor: pointer; font-size: 1.5rem; color: #1a202c; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); z-index: 10001; transition: all 0.3s ease;" onmouseover="this.style.background='#f8f9fa'" onmouseout="this.style.background='#ffffff'">
+            ×
+        </button>
+        <div style="max-width: 1400px; margin: 0 auto; display: flex; align-items: center; justify-content: center; min-height: 100%;">
+            <img id="lightboxImage" src="" alt="Skill Tree Diagram" style="max-width: 100%; max-height: 90vh; object-fit: contain; border-radius: 8px; box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);">
+        </div>
+    </div>
 
     <!-- Scripts -->
     <script>
@@ -2331,8 +2397,46 @@
                 toggle.textContent = '−';
             }
         }
+        
+        // Lightbox functions for skill tree diagrams
+        function openLightbox(imageSrc) {
+            const lightbox = document.getElementById('skillTreeLightbox');
+            const lightboxImage = document.getElementById('lightboxImage');
+            lightboxImage.src = imageSrc;
+            lightbox.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeLightbox() {
+            const lightbox = document.getElementById('skillTreeLightbox');
+            lightbox.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Close lightbox on escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+        
+        // Add hover effects to skill tree cards
+        document.addEventListener('DOMContentLoaded', function() {
+            const skillCards = document.querySelectorAll('.skill-tree-card');
+            skillCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-4px)';
+                    this.style.boxShadow = '0 8px 24px rgba(0, 0, 0, 0.12)';
+                });
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                    this.style.boxShadow = 'none';
+                });
+            });
+        });
     </script>
     
+    <script src="js/sidebar-nav.js?v=1.0"></script>
     <script src="js/navigation.js?v=1.6"></script>
     <script src="js/footer.js?v=1.6"></script>
     <script src="js/common.js?v=1.6"></script>
