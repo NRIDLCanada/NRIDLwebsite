@@ -15,76 +15,7 @@
     <link rel="stylesheet" href="css/footer.css?v=1.4">
     <link rel="stylesheet" href="css/home.css?v=1.4">
     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    
     <style>
-        .hero-section {
-            position: relative;
-            min-height: 70vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 100%);
-        }
-        
-        #hero-canvas {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-        }
-        
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-            text-align: center;
-        }
-        
-        .hero-content h1 {
-            font-size: clamp(3rem, 7vw, 5rem);
-            color: #ffffff;
-            margin-bottom: 0;
-            font-weight: 300;
-            letter-spacing: -0.03em;
-            text-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
-        }
-        
-        .hero-stats {
-            display: flex;
-            gap: 3rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 3rem;
-        }
-        
-        .hero-stat {
-            text-align: center;
-        }
-        
-        .hero-stat-number {
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: 600;
-            background: linear-gradient(135deg, #8ba8da 0%, #b894d2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-        
-        .hero-stat-label {
-            font-size: 0.875rem;
-            color: #b0b0b0;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-        }
-        
         /* Category Sections */
         .category-section {
             background: #ffffff;
@@ -132,8 +63,8 @@
         /* Digital Literacy Courses Grid */
         .literacy-courses-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
             margin-top: 3rem;
         }
         
@@ -141,72 +72,37 @@
             background: #ffffff;
             border: 1px solid #e2e8f0;
             border-radius: 12px;
-            overflow: hidden;
+            padding: 2.5rem 2rem;
             transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
+            text-align: center;
         }
         
         .literacy-course-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            border-color: #7a8fb8;
         }
         
-        .course-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
-        }
-        
-        .course-content {
-            padding: 2rem;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
+        .literacy-course-card h3 {
+            font-size: 1.375rem;
+            color: #1a202c;
+            margin-bottom: 0.75rem;
+            font-weight: 500;
+            line-height: 1.4;
         }
         
         .course-duration {
-            font-size: 0.875rem;
+            font-size: 0.9375rem;
             color: #7a8fb8;
-            font-weight: 500;
-            margin-bottom: 1rem;
+            font-weight: 600;
+            margin-bottom: 1.25rem;
         }
         
-        .course-content h3 {
-            font-size: 1.5rem;
-            color: #1a202c;
-            margin-bottom: 1rem;
-            font-weight: 500;
-        }
-        
-        .course-content p {
+        .literacy-course-card p {
             font-size: 0.9375rem;
             color: #4a5568;
             line-height: 1.7;
-            margin-bottom: 1.5rem;
-            flex: 1;
-        }
-        
-        .course-link {
-            display: inline-flex;
-            align-items: center;
-            color: #7a8fb8;
-            font-weight: 500;
-            font-size: 0.9375rem;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        
-        .course-link:hover {
-            color: #5a6f98;
-            gap: 0.75rem;
-        }
-        
-        .course-link::after {
-            content: '→';
-            margin-left: 0.5rem;
-            transition: margin-left 0.3s ease;
+            margin: 0;
         }
         
         /* Bootcamp Cards */
@@ -599,11 +495,14 @@
             font-weight: 600;
         }
         
-        @media (max-width: 768px) {
-            .hero-stats {
+        @media (max-width: 968px) {
+            .literacy-courses-grid {
+                grid-template-columns: repeat(2, 1fr);
                 gap: 2rem;
             }
-            
+        }
+        
+        @media (max-width: 768px) {
             .bootcamp-grid {
                 grid-template-columns: 1fr;
             }
@@ -615,14 +514,6 @@
     </style>
 </head>
 <body>
-    <!-- Hero Section with Three.js -->
-    <section class="hero-section">
-        <canvas id="hero-canvas"></canvas>
-        <div class="hero-content">
-            <h1>Learning Programs</h1>
-        </div>
-    </section>
-
     <!-- Digital Literacy Courses Section -->
     <section class="category-section">
         <div class="container">
@@ -635,71 +526,46 @@
             </div>
             
             <div class="literacy-courses-grid">
-            <div class="literacy-courses-grid">
                 <!-- Get Started - Apple Watch -->
                 <div class="literacy-course-card">
-                    <img src="image assets/digital-literacy/apple-watch.jpg" alt="Apple Watch" class="course-image" onerror="this.style.background='linear-gradient(135deg, #7a8fb8 0%, #9681b8 100%)'">
-                    <div class="course-content">
-                        <p class="course-duration">Duration: 30 minutes</p>
-                        <h3>Get Started - Apple Watch</h3>
-                        <p>Discover what Apple Watch can do in a 30-minute session. Take a tour of the hardware, learn to customize your watch face, and master the basic tools.</p>
-                        <a href="#" class="course-link">Start Learning</a>
-                    </div>
+                    <h3>Get Started - Apple Watch</h3>
+                    <p class="course-duration">30 minutes</p>
+                    <p>Discover what Apple Watch can do in a 30-minute session. Take a tour of the hardware, learn to customize your watch face, and master the basic tools.</p>
                 </div>
                 
                 <!-- Get Started - iPad -->
                 <div class="literacy-course-card">
-                    <img src="image assets/digital-literacy/ipad.jpg" alt="iPad" class="course-image" onerror="this.style.background='linear-gradient(135deg, #9681b8 0%, #81b8a3 100%)'">
-                    <div class="course-content">
-                        <p class="course-duration">Duration: 60 minutes</p>
-                        <h3>Get Started - iPad</h3>
-                        <p>Discover powerful ways to do more with your iPad in this 60-minute session. Take a tour of the latest features and learn how to navigate your device.</p>
-                        <a href="#" class="course-link">Start Learning</a>
-                    </div>
+                    <h3>Get Started - iPad</h3>
+                    <p class="course-duration">60 minutes</p>
+                    <p>Discover powerful ways to do more with your iPad in this 60-minute session. Take a tour of the latest features and learn how to navigate your device.</p>
                 </div>
                 
                 <!-- Get Started - iPhone -->
                 <div class="literacy-course-card">
-                    <img src="image assets/digital-literacy/iphone.jpg" alt="iPhone" class="course-image" onerror="this.style.background='linear-gradient(135deg, #81b8a3 0%, #b8a381 100%)'">
-                    <div class="course-content">
-                        <p class="course-duration">Duration: 60 minutes</p>
-                        <h3>Get Started - iPhone</h3>
-                        <p>Navigate your iPhone with ease. Learn the latest features, explore apps, and discover tips to stay connected with what matters most.</p>
-                        <a href="#" class="course-link">Start Learning</a>
-                    </div>
+                    <h3>Get Started - iPhone</h3>
+                    <p class="course-duration">60 minutes</p>
+                    <p>Navigate your iPhone with ease. Learn the latest features, explore apps, and discover tips to stay connected with what matters most.</p>
                 </div>
                 
                 <!-- Photography on iPhone -->
                 <div class="literacy-course-card">
-                    <img src="image assets/digital-literacy/photography.jpg" alt="iPhone Photography" class="course-image" onerror="this.style.background='linear-gradient(135deg, #b8a381 0%, #7a8fb8 100%)'">
-                    <div class="course-content">
-                        <p class="course-duration">Duration: 60 minutes</p>
-                        <h3>Photography on iPhone</h3>
-                        <p>Turn your best moments into stunning photos on iPhone. Learn about the lenses, practice using different features, and explore ways to share your photos.</p>
-                        <a href="#" class="course-link">Start Learning</a>
-                    </div>
+                    <h3>Photography on iPhone</h3>
+                    <p class="course-duration">60 minutes</p>
+                    <p>Turn your best moments into stunning photos on iPhone. Learn about the lenses, practice using different features, and explore ways to share your photos.</p>
                 </div>
                 
                 <!-- Recording Video on iPhone -->
                 <div class="literacy-course-card">
-                    <img src="image assets/digital-literacy/video-recording.jpg" alt="Recording Video" class="course-image" onerror="this.style.background='linear-gradient(135deg, #7a8fb8 0%, #9681b8 100%)'">
-                    <div class="course-content">
-                        <p class="course-duration">Duration: 30 minutes</p>
-                        <h3>Recording Video on iPhone</h3>
-                        <p>Capture your best video with iPhone. Get familiar with basic tools in the Camera app and set up your first shot with a few simple taps.</p>
-                        <a href="#" class="course-link">Start Learning</a>
-                    </div>
+                    <h3>Recording Video on iPhone</h3>
+                    <p class="course-duration">30 minutes</p>
+                    <p>Capture your best video with iPhone. Get familiar with basic tools in the Camera app and set up your first shot with a few simple taps.</p>
                 </div>
                 
                 <!-- Make Movies with iMovie -->
                 <div class="literacy-course-card">
-                    <img src="image assets/digital-literacy/imovie.jpg" alt="iMovie" class="course-image" onerror="this.style.background='linear-gradient(135deg, #9681b8 0%, #81b8a3 100%)'">
-                    <div class="course-content">
-                        <p class="course-duration">Duration: 30 minutes</p>
-                        <h3>Make Movies with iMovie</h3>
-                        <p>From recording videos to creating a visual story using iMovie for iPad. Capture video, get moving on with editing techniques, and learn how to edit audio.</p>
-                        <a href="#" class="course-link">Start Learning</a>
-                    </div>
+                    <h3>Make Movies with iMovie</h3>
+                    <p class="course-duration">30 minutes</p>
+                    <p>From recording videos to creating a visual story using iMovie for iPad. Capture video, get moving on with editing techniques, and learn how to edit audio.</p>
                 </div>
             </div>
         </div>
@@ -1270,121 +1136,6 @@
                 toggle.textContent = '−';
             }
         }
-        
-        // Three.js Hero Animation
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer({ 
-            canvas: document.getElementById('hero-canvas'),
-            alpha: true,
-            antialias: true 
-        });
-        
-        renderer.setSize(window.innerWidth, window.innerHeight * 0.7);
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-        
-        camera.position.z = 5;
-        
-        // Create floating particles
-        const particlesGeometry = new THREE.BufferGeometry();
-        const particlesCount = 150;
-        const posArray = new Float32Array(particlesCount * 3);
-        
-        for(let i = 0; i < particlesCount * 3; i++) {
-            posArray[i] = (Math.random() - 0.5) * 15;
-        }
-        
-        particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
-        
-        const particlesMaterial = new THREE.PointsMaterial({
-            size: 0.03,
-            color: 0x8ba8da,
-            transparent: true,
-            opacity: 0.6,
-            blending: THREE.AdditiveBlending
-        });
-        
-        const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
-        scene.add(particlesMesh);
-        
-        // Create geometric shapes
-        const geometries = [
-            new THREE.TorusGeometry(0.5, 0.2, 16, 100),
-            new THREE.OctahedronGeometry(0.6),
-            new THREE.IcosahedronGeometry(0.5)
-        ];
-        
-        const materials = [
-            new THREE.MeshBasicMaterial({ 
-                color: 0x8ba8da, 
-                wireframe: true, 
-                transparent: true, 
-                opacity: 0.3 
-            }),
-            new THREE.MeshBasicMaterial({ 
-                color: 0xb894d2, 
-                wireframe: true, 
-                transparent: true, 
-                opacity: 0.3 
-            }),
-            new THREE.MeshBasicMaterial({ 
-                color: 0x7a8fb8, 
-                wireframe: true, 
-                transparent: true, 
-                opacity: 0.3 
-            })
-        ];
-        
-        const shapes = [];
-        for(let i = 0; i < 3; i++) {
-            const mesh = new THREE.Mesh(geometries[i], materials[i]);
-            mesh.position.set(
-                (Math.random() - 0.5) * 8,
-                (Math.random() - 0.5) * 4,
-                (Math.random() - 0.5) * 3
-            );
-            shapes.push(mesh);
-            scene.add(mesh);
-        }
-        
-        // Mouse interaction
-        let mouseX = 0;
-        let mouseY = 0;
-        
-        document.addEventListener('mousemove', (event) => {
-            mouseX = (event.clientX / window.innerWidth) * 2 - 1;
-            mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
-        });
-        
-        // Animation loop
-        function animate() {
-            requestAnimationFrame(animate);
-            
-            // Rotate particles
-            particlesMesh.rotation.y += 0.001;
-            particlesMesh.rotation.x += 0.0005;
-            
-            // Rotate and move shapes
-            shapes.forEach((shape, index) => {
-                shape.rotation.x += 0.003 + (index * 0.001);
-                shape.rotation.y += 0.002 + (index * 0.001);
-                
-                // Mouse interaction
-                shape.position.x += (mouseX * 0.5 - shape.position.x) * 0.02;
-                shape.position.y += (mouseY * 0.5 - shape.position.y) * 0.02;
-            });
-            
-            renderer.render(scene, camera);
-        }
-        
-        animate();
-        
-        // Handle window resize
-        window.addEventListener('resize', () => {
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight * 0.7);
-        });
     </script>
     
     <script src="js/navigation.js?v=1.6"></script>
