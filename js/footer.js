@@ -38,6 +38,7 @@ class Footer {
                             <li><a href="ar-research.html" class="footer-link">AR Technology</a></li>
                             <li><a href="learning-programs.html" class="footer-link">Learning Programs</a></li>
                             <li><a href="semiconductor-research.html" class="footer-link">Semiconductor Research</a></li>
+                            <li><a href="faq.html" class="footer-link">FAQ for Grant Officers & Partners</a></li>
                         </ul>
                     </div>
                     
