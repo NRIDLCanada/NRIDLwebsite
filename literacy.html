@@ -394,5 +394,26 @@
     <script src="js/common.js?v=1.6"></script>
     <script src="js/sidebar-nav.js?v=1.0"></script>
     <script type="module" src="js/literacy-tree.js?v=2.2"></script>
+    
+    <!-- Tab Switching Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabs = document.querySelectorAll('.strategic-tab');
+            
+            tabs.forEach((tab, index) => {
+                tab.addEventListener('click', () => {
+                    // Update active states on tabs
+                    document.querySelectorAll('.strategic-tab').forEach((t, i) => {
+                        t.classList.toggle('active', i === index);
+                    });
+                    
+                    // Update active states on content cards
+                    document.querySelectorAll('.strategic-content-card').forEach((card, i) => {
+                        card.classList.toggle('active', i === index);
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 </html>
