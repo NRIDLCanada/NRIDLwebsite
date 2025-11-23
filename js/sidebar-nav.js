@@ -296,6 +296,10 @@ class SidebarNav {
                 this.sidebar.style.opacity = '1';
                 this.sidebar.style.pointerEvents = 'auto';
             }
+        } else {
+            // No hero section - show sidebar immediately
+            this.sidebar.style.opacity = '1';
+            this.sidebar.style.pointerEvents = 'auto';
         }
     }
 
