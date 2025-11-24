@@ -1,0 +1,133 @@
+{
+  "mcpServers": {
+    "nridl-knowledge-base": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-everything"
+      ],
+      "metadata": {
+        "name": "NRIDL Knowledge Base Server",
+        "description": "Model Context Protocol server for The National Institute for Democratized Learning (NRIDL) - providing access to educational content, research, and program information",
+        "version": "1.0.0"
+      }
+    }
+  },
+  "organization": {
+    "name": "The National Institute for Democratized Learning",
+    "shortName": "NRIDL",
+    "description": "A non-profit organization dedicated to democratizing access to quality education through open-access content, technology research, and strategic partnerships",
+    "website": "https://www.nridl.org",
+    "contact": "support@nridl.org",
+    "location": "Toronto, Ontario, Canada",
+    "legalStatus": "Non-Profit Organization (NPO) incorporated under Ontario Not-for-Profit Corporations Act (ONCA)"
+  },
+  "content": {
+    "primaryFocus": [
+      "Literacy Education (StoryBee Platform)",
+      "Digital Literacy Programs",
+      "Financial Literacy Programs",
+      "AI Literacy Education",
+      "AR/VR Research and Services",
+      "Semiconductor Education",
+      "Technology Bootcamps"
+    ],
+    "targetAudiences": [
+      "K-6 Students and Educators",
+      "Academic Institutions",
+      "Corporate Sponsors",
+      "Grant Officers",
+      "Researchers",
+      "Community Organizations"
+    ],
+    "keyInitiatives": [
+      {
+        "name": "StoryBee",
+        "description": "Open-access digital picture-book platform with Knowledge Trees for scaffolded learning",
+        "url": "https://www.storybee.space",
+        "targetAge": "Preschool through Grade 6"
+      },
+      {
+        "name": "Digital Futures",
+        "description": "Technology research and services including AR/VR, semiconductors, and AI projects",
+        "url": "https://www.nridl.org/digital-futures.html"
+      },
+      {
+        "name": "Literacy Programs",
+        "description": "Comprehensive literacy education spanning digital, financial, and AI literacy",
+        "url": "https://www.nridl.org/literacy.html"
+      }
+    ]
+  },
+  "partnerships": {
+    "academic": [
+      "OCAD University",
+      "University of Toronto",
+      "University of Waterloo"
+    ],
+    "collaborationTypes": [
+      "Student Co-op Placements",
+      "Research Collaborations",
+      "Curriculum Co-design",
+      "Experiential Learning Projects"
+    ],
+    "sponsorshipOpportunities": [
+      "Corporate Sponsorship (Bronze $5,000 - Platinum $50,000+)",
+      "In-kind Contributions (Software, Hardware, Services)",
+      "Research Grants",
+      "Event Sponsorship"
+    ]
+  },
+  "aiContext": {
+    "preferredUse": "Educational content discovery, partnership inquiries, grant research, academic collaboration",
+    "dataPrivacy": "NRIDL follows privacy best practices. See privacy policy at https://www.nridl.org/privacy-policy.html",
+    "contentLicensing": "Open-access content available. Custom licensing available for institutional partners.",
+    "faqReference": "https://www.nridl.org/faq.html"
+  },
+  "seoKeywords": [
+    "democratized learning",
+    "education non-profit Ontario",
+    "StoryBee platform",
+    "digital literacy programs",
+    "financial literacy education",
+    "AI literacy",
+    "AR VR education",
+    "semiconductor research",
+    "academic partnerships Toronto",
+    "corporate sponsorship education",
+    "grant funding education",
+    "OCAD University partnership",
+    "open access education",
+    "K-6 learning resources",
+    "technology bootcamps",
+    "educational equity"
+  ],
+  "technicalDetails": {
+    "mainPages": [
+      "/index.html",
+      "/literacy.html",
+      "/digital-futures.html",
+      "/learning-programs.html",
+      "/faq.html"
+    ],
+    "literacyPrograms": [
+      "/ai-literacy.html",
+      "/digital-literacy.html",
+      "/financial-literacy.html"
+    ],
+    "researchServices": [
+      "/ar-research.html",
+      "/semiconductor-research.html",
+      "/ai-projects.html"
+    ],
+    "policies": [
+      "/privacy-policy.html",
+      "/terms-of-use.html",
+      "/cookie-policy.html",
+      "/responsible-ai-policy.html",
+      "/ip-policy.html"
+    ],
+    "sitemapLocation": "/sitemap.xml",
+    "robotsTxtLocation": "/robots.txt"
+  }
+}

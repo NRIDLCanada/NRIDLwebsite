@@ -1,0 +1,38 @@
+# robots.txt for NRIDL (National Institute for Democratized Learning)
+# https://www.nridl.org
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://www.nridl.org/sitemap.xml
+
+# Allow search engines to crawl all educational content
+Allow: /literacy.html
+Allow: /digital-futures.html
+Allow: /learning-programs.html
+Allow: /faq.html
+
+# Allow policy pages
+Allow: /privacy-policy.html
+Allow: /terms-of-use.html
+Allow: /cookie-policy.html
+Allow: /responsible-ai-policy.html
+Allow: /ip-policy.html
+
+# Allow research and program pages
+Allow: /ar-research.html
+Allow: /semiconductor-research.html
+Allow: /ai-literacy.html
+Allow: /ai-projects.html
+Allow: /digital-literacy.html
+Allow: /financial-literacy.html
+Allow: /heritage.html
+Allow: /sustainability.html
+
+# Disallow internal development files
+Disallow: /START-HERE.html
+Disallow: /DEPLOYMENT.md
+
+# Crawl-delay (be respectful to server resources)
+Crawl-delay: 1
