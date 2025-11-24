@@ -11,7 +11,7 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Organization",
+      "@type": "EducationalOrganization",
       "name": "The National Institute for Democratized Learning",
       "alternateName": "NRIDL",
       "url": "https://www.nridl.org",
@@ -24,8 +24,18 @@
         "addressCountry": "CA"
       },
       "email": "support@nridl.org",
+      "telephone": "+1-XXX-XXX-XXXX",
       "foundingDate": "2023",
-      "nonprofitStatus": "NonprofitType",
+      "nonprofitStatus": "Nonprofit501c3",
+      "areaServed": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": "43.6532",
+          "longitude": "-79.3832"
+        },
+        "geoRadius": "Global"
+      },
       "knowsAbout": [
         "Education",
         "Literacy Programs",
@@ -44,7 +54,68 @@
       },
       "sameAs": [
         "https://www.storybee.space"
-      ]
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "NRIDL Educational Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "StoryBee Platform",
+              "description": "Open-access digital picture-book platform with Knowledge Trees for K-6 learners",
+              "provider": {
+                "@type": "EducationalOrganization",
+                "name": "NRIDL"
+              },
+              "areaServed": "Global",
+              "availableChannel": {
+                "@type": "ServiceChannel",
+                "serviceUrl": "https://www.storybee.space"
+              }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Digital Literacy Programs",
+              "description": "Essential digital skills training for all ages",
+              "provider": {
+                "@type": "EducationalOrganization",
+                "name": "NRIDL"
+              },
+              "areaServed": "Toronto, Ontario, Canada"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "AR/VR Research & Services",
+              "description": "Augmented reality solutions for tourism, retail, and education",
+              "provider": {
+                "@type": "EducationalOrganization",
+                "name": "NRIDL"
+              },
+              "areaServed": "Canada"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Semiconductor Education",
+              "description": "Understanding the foundation of modern computing and AI",
+              "provider": {
+                "@type": "EducationalOrganization",
+                "name": "NRIDL"
+              }
+            }
+          }
+        ]
+      }
     }
     </script>
     

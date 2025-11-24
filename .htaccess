@@ -1,0 +1,187 @@
+# NRIDL Website - Apache Configuration for Performance & SEO
+# Enable compression, caching, security headers, and optimization
+
+# =====================================================
+# 1. GZIP COMPRESSION - Compress text-based files
+# =====================================================
+<IfModule mod_deflate.c>
+  # Compress HTML, CSS, JavaScript, Text, XML and fonts
+  AddOutputFilterByType DEFLATE application/javascript
+  AddOutputFilterByType DEFLATE application/rss+xml
+  AddOutputFilterByType DEFLATE application/vnd.ms-fontobject
+  AddOutputFilterByType DEFLATE application/x-font
+  AddOutputFilterByType DEFLATE application/x-font-opentype
+  AddOutputFilterByType DEFLATE application/x-font-otf
+  AddOutputFilterByType DEFLATE application/x-font-truetype
+  AddOutputFilterByType DEFLATE application/x-font-ttf
+  AddOutputFilterByType DEFLATE application/x-javascript
+  AddOutputFilterByType DEFLATE application/xhtml+xml
+  AddOutputFilterByType DEFLATE application/xml
+  AddOutputFilterByType DEFLATE font/opentype
+  AddOutputFilterByType DEFLATE font/otf
+  AddOutputFilterByType DEFLATE font/ttf
+  AddOutputFilterByType DEFLATE image/svg+xml
+  AddOutputFilterByType DEFLATE image/x-icon
+  AddOutputFilterByType DEFLATE text/css
+  AddOutputFilterByType DEFLATE text/html
+  AddOutputFilterByType DEFLATE text/javascript
+  AddOutputFilterByType DEFLATE text/plain
+  AddOutputFilterByType DEFLATE text/xml
+  AddOutputFilterByType DEFLATE application/json
+
+  # Remove browser bugs (only needed for really old browsers)
+  BrowserMatch ^Mozilla/4 gzip-only-text/html
+  BrowserMatch ^Mozilla/4\.0[678] no-gzip
+  BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+  Header append Vary User-Agent
+</IfModule>
+
+# =====================================================
+# 2. BROTLI COMPRESSION (if available)
+# =====================================================
+<IfModule mod_brotli.c>
+  AddOutputFilterByType BROTLI_COMPRESS text/html text/plain text/xml text/css text/javascript
+  AddOutputFilterByType BROTLI_COMPRESS application/javascript application/json application/xml
+  AddOutputFilterByType BROTLI_COMPRESS image/svg+xml
+</IfModule>
+
+# =====================================================
+# 3. BROWSER CACHING - Leverage browser caching
+# =====================================================
+<IfModule mod_expires.c>
+  ExpiresActive On
+  
+  # Images - Cache for 1 year
+  ExpiresByType image/jpg "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/x-icon "access plus 1 year"
+  
+  # Video - Cache for 1 year
+  ExpiresByType video/mp4 "access plus 1 year"
+  ExpiresByType video/webm "access plus 1 year"
+  
+  # Fonts - Cache for 1 year
+  ExpiresByType font/ttf "access plus 1 year"
+  ExpiresByType font/otf "access plus 1 year"
+  ExpiresByType font/woff "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType application/font-woff "access plus 1 year"
+  
+  # CSS and JavaScript - Cache for 1 month
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType text/javascript "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  
+  # HTML - Cache for 1 week
+  ExpiresByType text/html "access plus 1 week"
+  
+  # Data - Cache for 1 week
+  ExpiresByType application/json "access plus 1 week"
+  ExpiresByType application/xml "access plus 1 week"
+  ExpiresByType text/xml "access plus 1 week"
+  
+  # Default - Cache for 1 month
+  ExpiresDefault "access plus 1 month"
+</IfModule>
+
+# =====================================================
+# 4. CACHE-CONTROL HEADERS
+# =====================================================
+<IfModule mod_headers.c>
+  # Cache static assets for 1 year
+  <FilesMatch "\.(jpg|jpeg|png|gif|webp|svg|ico|pdf|mp4|webm)$">
+    Header set Cache-Control "max-age=31536000, public, immutable"
+  </FilesMatch>
+  
+  # Cache CSS and JS for 1 month
+  <FilesMatch "\.(css|js)$">
+    Header set Cache-Control "max-age=2592000, public"
+  </FilesMatch>
+  
+  # Cache fonts for 1 year
+  <FilesMatch "\.(ttf|otf|woff|woff2|eot)$">
+    Header set Cache-Control "max-age=31536000, public, immutable"
+  </FilesMatch>
+  
+  # Don't cache HTML (allow fresh content updates)
+  <FilesMatch "\.(html|htm)$">
+    Header set Cache-Control "max-age=604800, public, must-revalidate"
+  </FilesMatch>
+  
+  # Security Headers
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set X-XSS-Protection "1; mode=block"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+  
+  # Remove ETag (not needed with strong caching)
+  Header unset ETag
+</IfModule>
+
+FileETag None
+
+# =====================================================
+# 5. FORCE HTTPS (if SSL is configured)
+# =====================================================
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  
+  # Force HTTPS
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+  
+  # Redirect www to non-www (or vice versa - choose one)
+  RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+  RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+</IfModule>
+
+# =====================================================
+# 6. MIME TYPES
+# =====================================================
+<IfModule mod_mime.c>
+  # JavaScript
+  AddType application/javascript js
+  AddType application/json json
+  
+  # Fonts
+  AddType font/ttf ttf
+  AddType font/otf otf
+  AddType font/woff woff
+  AddType font/woff2 woff2
+  
+  # Images
+  AddType image/svg+xml svg
+  AddType image/webp webp
+  
+  # Video
+  AddType video/mp4 mp4
+  AddType video/webm webm
+</IfModule>
+
+# =====================================================
+# 7. PERFORMANCE OPTIMIZATIONS
+# =====================================================
+# Disable ETags
+FileETag None
+
+# Prevent directory listings
+Options -Indexes
+
+# Follow symbolic links
+Options +FollowSymLinks
+
+# =====================================================
+# 8. CHARACTER ENCODING
+# =====================================================
+AddDefaultCharset UTF-8
+AddCharset UTF-8 .html .css .js .xml .json .rss .atom
+
+# =====================================================
+# 9. CUSTOM ERROR PAGES (optional)
+# =====================================================
+# ErrorDocument 404 /404.html
+# ErrorDocument 500 /500.html
