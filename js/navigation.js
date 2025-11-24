@@ -11,7 +11,7 @@ class Navigation {
         nav.className = 'main-navigation';
         nav.innerHTML = `
             <div class="nav-container">
-                <a href="index.html" class="nav-logo">
+                <a href="/" class="nav-logo">
                     <div class="nav-logo-text">
                         <span class="nav-logo-main">NRIDL</span>
                         <span class="nav-logo-sub">The National Institute for Democratized Learning</span>
@@ -26,16 +26,16 @@ class Navigation {
                 
                 <ul class="nav-menu">
                     <li class="nav-item">
-                        <a href="index.html" class="nav-link" data-page="home">Home</a>
+                        <a href="/" class="nav-link" data-page="home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a href="literacy.html" class="nav-link" data-page="literacy">Literacy</a>
+                        <a href="/literacy" class="nav-link" data-page="literacy">Literacy</a>
                     </li>
                     <li class="nav-item">
-                        <a href="digital-futures.html" class="nav-link" data-page="digital-futures">Digital Futures</a>
+                        <a href="/digital-futures" class="nav-link" data-page="digital-futures">Digital Futures</a>
                     </li>
                     <li class="nav-item">
-                        <a href="heritage.html" class="nav-link" data-page="heritage">Heritage</a>
+                        <a href="/heritage" class="nav-link" data-page="heritage">Heritage</a>
                     </li>
                 </ul>
             </div>
@@ -93,12 +93,17 @@ class Navigation {
     }
 
     setActivePage() {
-        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        // Get current path without .html extension
+        let currentPage = window.location.pathname.replace('.html', '').split('/').pop();
+        if (currentPage === '' || currentPage === 'index') {
+            currentPage = 'home';
+        }
+        
         const navLinks = document.querySelectorAll('.nav-link');
         
         navLinks.forEach(link => {
-            const href = link.getAttribute('href');
-            if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+            const page = link.getAttribute('data-page');
+            if (page === currentPage) {
                 link.classList.add('active');
             }
         });

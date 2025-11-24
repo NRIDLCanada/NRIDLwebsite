@@ -125,7 +125,7 @@
 FileETag None
 
 # =====================================================
-# 5. FORCE HTTPS (if SSL is configured)
+# 5. URL REWRITING - Clean URLs & HTTPS
 # =====================================================
 <IfModule mod_rewrite.c>
   RewriteEngine On
@@ -137,6 +137,18 @@ FileETag None
   # Redirect www to non-www (or vice versa - choose one)
   RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
   RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+  
+  # Remove .html extension from URLs
+  # Redirect /page.html to /page
+  RewriteCond %{THE_REQUEST} ^GET\ /[^\ ]+\.html\ HTTP
+  RewriteCond %{REQUEST_URI} !^/index\.html$
+  RewriteRule ^(.*)\.html$ /$1 [R=301,L]
+  
+  # Internally rewrite /page to /page.html
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME}\.html -f
+  RewriteRule ^(.*)$ $1.html [L]
 </IfModule>
 
 # =====================================================
