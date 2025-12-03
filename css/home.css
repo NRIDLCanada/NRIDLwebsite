@@ -294,6 +294,12 @@
     position: relative;
     overflow: hidden;
     border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+}
+
+.problem-description {
+    flex-grow: 1;
 }
 
 .problem-card::before {
