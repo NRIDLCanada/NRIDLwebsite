@@ -37,6 +37,9 @@ class Navigation {
                     <li class="nav-item">
                         <a href="/heritage" class="nav-link" data-page="heritage">Heritage</a>
                     </li>
+                    <li class="nav-item">
+                        <a href="/learning-programs" class="nav-link" data-page="learning-programs">Programs</a>
+                    </li>
                 </ul>
             </div>
         `;
