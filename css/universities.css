@@ -278,6 +278,7 @@
     overflow: hidden;
     transition: all 0.3s ease;
     border: 1px solid var(--border-color);
+    padding: var(--spacing-sm);
 }
 
 .university-card:hover {
@@ -293,6 +294,7 @@
     background: linear-gradient(135deg, rgba(26, 26, 46, 0.02), rgba(15, 76, 117, 0.05));
     transition: background 0.3s ease;
     min-height: 88px;
+    border-radius: var(--radius-md);
 }
 
 .university-card-header:hover {
