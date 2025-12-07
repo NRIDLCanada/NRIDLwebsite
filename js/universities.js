@@ -9,6 +9,13 @@ const UniversitiesApp = (function() {
     let map = null;
     let markers = {};
     
+    // Active filters state
+    let activeFilters = {
+        search: '',
+        schoolType: 'all',
+        appType: 'all'
+    };
+    
     // Configuration
     const config = {
         dataUrl: 'data/universities.json',
@@ -18,6 +25,15 @@ const UniversitiesApp = (function() {
         mapCenter: [39.8283, -98.5795], // Center of US
         mapZoom: 4,
         markerSize: 28
+    };
+    
+    // Application type mapping from JSON earlyOption values to filter values
+    const appTypeMapping = {
+        'ed': ['ED (Early Decision)', 'ED I / ED II'],
+        'ed2': ['ED I / ED II'],
+        'ea': ['EA (Early Action)'],
+        'rea': ['REA (Restrictive Early Action)', 'SCEA (Single-Choice Early Action)'],
+        'rd': ['RD Only (No Early Option)']
     };
 
     /**
@@ -177,11 +193,24 @@ const UniversitiesApp = (function() {
     }
 
     /**
+     * Get the application type category from earlyOption value
+     */
+    function getAppTypeCategory(earlyOption) {
+        if (earlyOption.includes('ED I / ED II')) return 'ed2';
+        if (earlyOption.includes('ED (Early Decision)')) return 'ed';
+        if (earlyOption.includes('EA (Early Action)')) return 'ea';
+        if (earlyOption.includes('REA') || earlyOption.includes('SCEA')) return 'rea';
+        if (earlyOption.includes('RD Only')) return 'rd';
+        return 'other';
+    }
+
+    /**
      * Generate HTML for a university card
      */
     function createCardHTML(uni) {
+        const appTypeCategory = getAppTypeCategory(uni.admissions.earlyOption);
         return `
-            <div class="university-card" data-rank="${uni.rank}" data-type="${uni.details.type.toLowerCase()}" data-name="${uni.name.toLowerCase()}">
+            <div class="university-card" data-rank="${uni.rank}" data-type="${uni.details.type.toLowerCase()}" data-app-type="${appTypeCategory}" data-name="${uni.name.toLowerCase()}">
                 <div class="university-card-header" onclick="UniversitiesApp.toggleCard(this)">
                     <div class="university-card-rank">${uni.rank}</div>
                     <div class="university-card-info">
@@ -340,26 +369,62 @@ const UniversitiesApp = (function() {
         if (!searchInput) return;
 
         searchInput.addEventListener('input', (e) => {
-            const query = e.target.value.toLowerCase().trim();
-            filterCards(query);
+            activeFilters.search = e.target.value.toLowerCase().trim();
+            applyFilters();
         });
     }
 
     /**
-     * Filter cards based on search query
+     * Apply all active filters to cards
      */
-    function filterCards(query, type = 'all') {
+    function applyFilters() {
         const cards = document.querySelectorAll('.university-card');
+        let visibleCount = 0;
         
         cards.forEach(card => {
             const name = card.dataset.name;
             const cardType = card.dataset.type;
+            const cardAppType = card.dataset.appType;
             
-            const matchesSearch = !query || name.includes(query);
-            const matchesType = type === 'all' || cardType === type;
+            const matchesSearch = !activeFilters.search || name.includes(activeFilters.search);
+            const matchesSchoolType = activeFilters.schoolType === 'all' || cardType === activeFilters.schoolType;
+            const matchesAppType = activeFilters.appType === 'all' || cardAppType === activeFilters.appType;
             
-            card.style.display = (matchesSearch && matchesType) ? 'block' : 'none';
+            const isVisible = matchesSearch && matchesSchoolType && matchesAppType;
+            card.style.display = isVisible ? 'block' : 'none';
+            if (isVisible) visibleCount++;
         });
+        
+        // Update no results message
+        updateNoResultsMessage(visibleCount);
+    }
+    
+    /**
+     * Show/hide no results message
+     */
+    function updateNoResultsMessage(visibleCount) {
+        const container = document.getElementById(config.gridContainerId);
+        let noResultsEl = container.querySelector('.no-results-message');
+        
+        if (visibleCount === 0) {
+            if (!noResultsEl) {
+                noResultsEl = document.createElement('div');
+                noResultsEl.className = 'no-results-message';
+                noResultsEl.innerHTML = `
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 48px; height: 48px; margin-bottom: 1rem; opacity: 0.5;">
+                        <circle cx="11" cy="11" r="8"/>
+                        <path d="M21 21l-4.35-4.35"/>
+                    </svg>
+                    <p style="font-size: 1.1rem; color: #4a5568; margin: 0;">No universities match your current filters.</p>
+                    <p style="font-size: 0.9rem; color: #718096; margin-top: 0.5rem;">Try adjusting your search or filter criteria.</p>
+                `;
+                noResultsEl.style.cssText = 'text-align: center; padding: 3rem; grid-column: 1 / -1;';
+                container.appendChild(noResultsEl);
+            }
+            noResultsEl.style.display = 'block';
+        } else if (noResultsEl) {
+            noResultsEl.style.display = 'none';
+        }
     }
 
     /**
@@ -370,15 +435,23 @@ const UniversitiesApp = (function() {
         
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
-                // Update active state
-                filterBtns.forEach(b => b.classList.remove('active'));
+                const filterType = btn.dataset.filterType;
+                const filterValue = btn.dataset.filter;
+                
+                // Update active state only within the same filter group
+                const siblingBtns = document.querySelectorAll(`.universities-filter-btn[data-filter-type="${filterType}"]`);
+                siblingBtns.forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
                 
-                // Apply filter
-                const type = btn.dataset.filter;
-                const searchInput = document.getElementById(config.searchInputId);
-                const query = searchInput ? searchInput.value.toLowerCase().trim() : '';
-                filterCards(query, type);
+                // Update active filters
+                if (filterType === 'school') {
+                    activeFilters.schoolType = filterValue;
+                } else if (filterType === 'app') {
+                    activeFilters.appType = filterValue;
+                }
+                
+                // Apply all filters
+                applyFilters();
             });
         });
     }
