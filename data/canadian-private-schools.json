@@ -1,0 +1,3195 @@
+{
+  "metadata": {
+    "source": "Canadian Private School Rankings",
+    "year": 2025,
+    "lastUpdated": "2025-12-07",
+    "totalSchools": 69,
+    "cities": ["Toronto", "Vancouver", "Montreal", "Calgary", "Ottawa"]
+  },
+  "schools": {
+    "toronto": [
+      {
+        "rank": 1,
+        "name": "Upper Canada College",
+        "shortName": "UCC",
+        "city": "Toronto",
+        "region": "toronto",
+        "location": {
+          "address": "200 Lonsdale Road, Toronto, ON",
+          "lat": 43.6847,
+          "lng": -79.4097
+        },
+        "type": "All-Boys",
+        "boarding": true,
+        "founded": 1829,
+        "grades": "SK-12",
+        "students": "1,200+",
+        "tuition": {
+          "day": "$39,000 - $42,000",
+          "boarding": "$72,000 - $75,000"
+        },
+        "admissions": {
+          "openGrades": "SK, Grade 5, Grade 7, Grade 9",
+          "applicationDeadline": "December 1",
+          "assessmentRequired": true,
+          "interviewRequired": true,
+          "acceptanceRate": "~25%"
+        },
+        "academics": {
+          "curriculum": "Ontario Curriculum with IB Diploma Programme",
+          "avgClassSize": "18",
+          "studentTeacherRatio": "8:1",
+          "apCourses": false,
+          "ibProgram": true,
+          "frenchImmersion": true
+        },
+        "university": {
+          "ivyLeaguePlacement": "15-20%",
+          "topCanadianPlacement": "85%+",
+          "notableDestinations": ["Harvard", "Yale", "Princeton", "Stanford", "U of T", "McGill", "Queen's"]
+        },
+        "athletics": ["Hockey", "Football", "Rugby", "Soccer", "Tennis", "Swimming", "Track & Field"],
+        "specialPrograms": ["IB Diploma", "Global Leadership", "Entrepreneurship", "STEAM"],
+        "notable": "Canada's oldest independent school for boys, known for exceptional Ivy League and Oxbridge placements",
+        "vibe": "Traditional, prestigious, leadership-focused",
+        "website": "https://www.ucc.on.ca"
+      },
+      {
+        "rank": 2,
+        "name": "Branksome Hall",
+        "shortName": "Branksome",
+        "city": "Toronto",
+        "region": "toronto",
+        "location": {
+          "address": "10 Elm Avenue, Toronto, ON",
+          "lat": 43.6762,
+          "lng": -79.3891
+        },
+        "type": "All-Girls",
+        "boarding": true,
+        "founded": 1903,
+        "grades": "JK-12",
+        "students": "900+",
+        "tuition": {
+          "day": "$38,000 - $41,000",
+          "boarding": "$70,000 - $73,000"
+        },
+        "admissions": {
+          "openGrades": "JK, Grade 5, Grade 7, Grade 9",
+          "applicationDeadline": "December 1",
+          "assessmentRequired": true,
+          "interviewRequired": true,
+          "acceptanceRate": "~30%"
+        },
+        "academics": {
+          "curriculum": "IB World School (PYP, MYP, DP)",
+          "avgClassSize": "16",
+          "studentTeacherRatio": "9:1",
+          "apCourses": false,
+          "ibProgram": true,
+          "frenchImmersion": false
+        },
+        "university": {
+          "ivyLeaguePlacement": "12-15%",
+          "topCanadianPlacement": "90%+",
+          "notableDestinations": ["Harvard", "Yale", "Princeton", "MIT", "U of T", "McGill", "Cambridge"]
+        },
+        "athletics": ["Field Hockey", "Swimming", "Tennis", "Volleyball", "Basketball", "Soccer", "Rowing"],
+        "specialPrograms": ["Full IB Programme", "STEAM", "Global Citizenship", "Design Thinking"],
+        "notable": "Only all-IB girls' school in Canada, known for producing global leaders and innovators",
+        "vibe": "Empowering, globally-minded, innovative",
+        "website": "https://www.branksome.on.ca"
+      },
+      {
+        "rank": 3,
+        "name": "Havergal College",
+        "shortName": "Havergal",
+        "city": "Toronto",
+        "region": "toronto",
+        "location": {
+          "address": "1451 Avenue Road, Toronto, ON",
+          "lat": 43.7289,
+          "lng": -79.4186
+        },
+        "type": "All-Girls",
+        "boarding": true,
+        "founded": 1894,
+        "grades": "JK-12",
+        "students": "1,000+",
+        "tuition": {
+          "day": "$36,000 - $40,000",
+          "boarding": "$68,000 - $72,000"
+        },
+        "admissions": {
+          "openGrades": "JK, Grade 4, Grade 7, Grade 9",
+          "applicationDeadline": "November 30",
+          "assessmentRequired": true,
+          "interviewRequired": true,
+          "acceptanceRate": "~28%"
+        },
+        "academics": {
+          "curriculum": "Ontario Curriculum with AP Options",
+          "avgClassSize": "17",
+          "studentTeacherRatio": "9:1",
+          "apCourses": true,
+          "ibProgram": false,
+          "frenchImmersion": true
+        },
+        "university": {
+          "ivyLeaguePlacement": "10-15%",
+          "topCanadianPlacement": "88%+",
+          "notableDestinations": ["Harvard", "Stanford", "Columbia", "U of T", "McGill", "Queen's", "Western"]
+        },
+        "athletics": ["Field Hockey", "Ice Hockey", "Swimming", "Tennis", "Rowing", "Volleyball", "Track"],
+        "specialPrograms": ["AP Program", "STEM Initiative", "Global Learning", "Arts Intensive"],
+        "notable": "One of Canada's most prestigious all-girls schools with exceptional STEM programs",
+        "vibe": "Academically rigorous, supportive sisterhood",
+        "website": "https://www.havergal.on.ca"
+      },
+      {
+        "rank": 4,
+        "name": "The Bishop Strachan School",
+        "shortName": "BSS",
+        "city": "Toronto",
+        "region": "toronto",
+        "location": {
+          "address": "298 Lonsdale Road, Toronto, ON",
+          "lat": 43.6858,
+          "lng": -79.4132
+        },
+        "type": "All-Girls",
+        "boarding": true,
+        "founded": 1867,
+        "grades": "JK-12",
+        "students": "950+",
+        "tuition": {
+          "day": "$35,000 - $39,000",
+          "boarding": "$66,000 - $70,000"
+        },
+        "admissions": {
+          "openGrades": "JK, Grade 5, Grade 7, Grade 9",
+          "applicationDeadline": "December 1",
+          "assessmentRequired": true,
+          "interviewRequired": true,
+          "acceptanceRate": "~32%"
+        },
+        "academics": {
+          "curriculum": "Ontario Curriculum with AP Options",
+          "avgClassSize": "16",
+          "studentTeacherRatio": "8:1",
+          "apCourses": true,
+          "ibProgram": false,
+          "frenchImmersion": false
+        },
+        "university": {
+          "ivyLeaguePlacement": "8-12%",
+          "topCanadianPlacement": "85%+",
+          "notableDestinations": ["Harvard", "Yale", "Princeton", "U of T", "McGill", "Queen's"]
+        },
+        "athletics": ["Field Hockey", "Ice Hockey", "Swimming", "Tennis", "Volleyball", "Basketball", "Soccer"],
+        "specialPrograms": ["AP Program", "Leadership Development", "Arts & Culture", "STEAM"],
+        "notable": "Oldest girls' school in Ontario, Anglican tradition with modern academic excellence",
+        "vibe": "Traditional values, modern education",
+        "website": "https://www.bss.on.ca"
+      },
+      {
+        "rank": 5,
+        "name": "St. Andrew's College",
+        "shortName": "SAC",
+        "city": "Aurora",
+        "region": "toronto",
+        "location": {
+          "address": "15800 Yonge Street, Aurora, ON",
+          "lat": 43.9942,
+          "lng": -79.4619
+        },
+        "type": "All-Boys",
+        "boarding": true,
+        "founded": 1899,
+        "grades": "5-12",
+        "students": "650+",
+        "tuition": {
+          "day": "$36,000 - $40,000",
+          "boarding": "$68,000 - $72,000"
+        },
+        "admissions": {
+          "openGrades": "Grade 5, Grade 6, Grade 7, Grade 9",
+          "applicationDeadline": "January 15",
+          "assessmentRequired": true,
+          "interviewRequired": true,
+          "acceptanceRate": "~35%"
+        },
+        "academics": {
+          "curriculum": "Ontario Curriculum with AP Options",
+          "avgClassSize": "15",
+          "studentTeacherRatio": "7:1",
+          "apCourses": true,
+          "ibProgram": false,
+          "frenchImmersion": false
+        },
+        "university": {
+          "ivyLeaguePlacement": "10-12%",
+          "topCanadianPlacement": "82%+",
+          "notableDestinations": ["Harvard", "Yale", "Stanford", "U of T", "McGill", "Queen's", "Ivey"]
+        },
+        "athletics": ["Hockey", "Football", "Rugby", "Soccer", "Tennis", "Swimming", "Track & Field", "Lacrosse"],
+        "specialPrograms": ["AP Program", "Pipes & Drums", "Leadership", "Entrepreneurship"],
+        "notable": "Renowned boarding school for boys with strong athletic and leadership programs",
+        "vibe": "Brotherhood, athletic excellence, tradition",
+        "website": "https://www.sac.on.ca"
+      },
+      {
+        "rank": 6,
+        "name": "Crescent School",
+        "shortName": "Crescent",
+        "city": "Toronto",
+        "region": "toronto",
+        "location": {
+          "address": "2365 Bayview Avenue, Toronto, ON",
+          "lat": 43.7456,
+          "lng": -79.3856
+        },
+        "type": "All-Boys",
+        "boarding": false,
+        "founded": 1913,
+        "grades": "3-12",
+        "students": "800+",
+        "tuition": {
+          "day": "$35,000 - $38,000",
+          "boarding": "N/A"
+        },
+        "admissions": {
+          "openGrades": "Grade 3, Grade 5, Grade 7, Grade 9",
+          "applicationDeadline": "December 1",
+          "assessmentRequired": true,
+          "interviewRequired": true,
+          "acceptanceRate": "~30%"
+        },
+        "academics": {
+          "curriculum": "Ontario Curriculum",
+          "avgClassSize": "18",
+          "studentTeacherRatio": "9:1",
+          "apCourses": false,
+          "ibProgram": false,
+          "frenchImmersion": false
+        },
+        "university": {
+          "ivyLeaguePlacement": "8-10%",
+          "topCanadianPlacement": "80%+",
+          "notableDestinations": ["Harvard", "Stanford", "U of T", "McGill", "Queen's", "Western", "Ivey"]
+        },
+        "athletics": ["Hockey", "Football", "Basketball", "Soccer", "Tennis", "Swimming", "Track", "Volleyball"],
+        "specialPrograms": ["Character Development", "Men of Character Program", "Outdoor Education", "Arts"],
+        "notable": "Focus on developing 'Men of Good Character' through holistic education",
+        "vibe": "Character-driven, athletic, community-focused",
+        "website": "https://www.crescentschool.org"
+      },
+      {
+        "rank": 7,
+        "name": "University of Toronto Schools",
+        "shortName": "UTS",
+        "city": "Toronto",
+        "region": "toronto",
+        "location": {
+          "address": "371 Bloor Street West, Toronto, ON",
+          "lat": 43.6672,
+          "lng": -79.4024
+        },
+        "type": "Co-Ed",
+        "boarding": false,
+        "founded": 1910,
+        "grades": "7-12",
+        "students": "650+",
+        "tuition": {
+          "day": "$34,000 - $36,000",
+          "boarding": "N/A"
+        },
+        "admissions": {
+          "openGrades": "Grade 7, Grade 9",
+          "applicationDeadline": "November 15",
+          "assessmentRequired": true,
+          "interviewRequired": true,
+          "acceptanceRate": "~8%"
+        },
+        "academics": {
+          "curriculum": "Enhanced Ontario Curriculum",
+          "avgClassSize": "20",
+          "studentTeacherRatio": "10:1",
+          "apCourses": true,
+          "ibProgram": false,
+          "frenchImmersion": false
+        },
+        "university": {
+          "ivyLeaguePlacement": "20-25%",
+          "topCanadianPlacement": "95%+",
+          "notableDestinations": ["Harvard", "Yale", "Princeton", "MIT", "Stanford", "U of T", "McGill", "Waterloo"]
+        },
+        "athletics": ["Basketball", "Volleyball", "Soccer", "Track & Field", "Badminton", "Swimming"],
+        "specialPrograms": ["Advanced Academics", "Math & Science Focus", "Arts Program", "Leadership"],
+        "notable": "Affiliated with U of T, one of Canada's most academically selective schools",
+        "vibe": "Intellectually intense, academically elite",
+        "website": "https://www.utschools.ca"
+      },
+      {
+        "rank": 8,
+        "name": "Appleby College",
+        "shortName": "Appleby",
+        "city": "Oakville",
+        "region": "toronto",
+        "location": {
+          "address": "540 Lakeshore Road West, Oakville, ON",
+          "lat": 43.4328,
+          "lng": -79.6997
+        },
+        "type": "Co-Ed",
+        "boarding": true,
+        "founded": 1911,
+        "grades": "7-12",
+        "students": "800+",
+        "tuition": {
+          "day": "$38,000 - $42,000",
+          "boarding": "$72,000 - $76,000"
+        },
+        "admissions": {
+          "openGrades": "Grade 7, Grade 9, Grade 10",
+          "applicationDeadline": "January 15",
+          "assessmentRequired": true,
+          "interviewRequired": true,
+          "acceptanceRate": "~28%"
+        },
+        "academics": {
+          "curriculum": "Ontario Curriculum with AP Options",
+          "avgClassSize": "15",
+          "studentTeacherRatio": "8:1",
+          "apCourses": true,
+          "ibProgram": false,
+          "frenchImmersion": false
+        },
+        "university": {
+          "ivyLeaguePlacement": "12-15%",
+          "topCanadianPlacement": "85%+",
+          "notableDestinations": ["Harvard", "Yale", "Princeton", "Stanford", "U of T", "McGill", "Queen's"]
+        },
+        "athletics": ["Hockey", "Football", "Rugby", "Soccer", "Tennis", "Swimming", "Rowing", "Golf"],
+        "specialPrograms": ["AP Program", "Global Leadership", "Entrepreneurship", "STEAM", "Outdoor Education"],
+        "notable": "Beautiful lakefront campus with strong global focus and entrepreneurship programs",
+        "vibe": "Global, innovative, community-oriented",
+        "website": "https://www.appleby.on.ca"
+      },
+      {
+        "rank": 9,
+        "name": "TFS - Canada's International School",
+        "shortName": "TFS",
+        "city": "Toronto",
+        "region": "toronto",
+        "location": {
+          "address": "306 Lawrence Avenue East, Toronto, ON",
+          "lat": 43.7229,
+          "lng": -79.3872
+        },
+        "type": "Co-Ed",
+        "boarding": false,
+        "founded": 1962,
+        "grades": "PS-12",
+        "students": "1,450+",
+        "tuition": {
+          "day": "$32,000 - $36,000",
+          "boarding": "N/A"
+        },
+        "admissions": {
+          "openGrades": "PS, JK, Grade 5, Grade 7, Grade 9",
+          "applicationDeadline": "December 15",
+          "assessmentRequired": true,
+          "interviewRequired": true,
+          "acceptanceRate": "~35%"
+        },
+        "academics": {
+          "curriculum": "French National & IB Diploma",
+          "avgClassSize": "18",
+          "studentTeacherRatio": "10:1",
+          "apCourses": false,
+          "ibProgram": true,
+          "frenchImmersion": true
+        },
+        "university": {
+          "ivyLeaguePlacement": "10-12%",
+          "topCanadianPlacement": "88%+",
+          "notableDestinations": ["Harvard", "Columbia", "U of T", "McGill", "Sciences Po", "French Universities"]
+        },
+        "athletics": ["Soccer", "Basketball", "Volleyball", "Swimming", "Track & Field", "Cross Country"],
+        "specialPrograms": ["French Baccalaureate", "IB Diploma", "Bilingual Education", "Global Exchange"],
+        "notable": "Canada's premier bilingual (French-English) school with IB and French Baccalaureate options",
+        "vibe": "Bilingual, culturally rich, internationally-minded",
+        "website": "https://www.tfs.ca"
+      },
+      {
+        "rank": 10,
+        "name": "St. Clement's School",
+        "shortName": "St. Clement's",
+        "city": "Toronto",
+        "region": "toronto",
+        "location": {
+          "address": "21 St. Clements Avenue, Toronto, ON",
+          "lat": 43.6867,
+          "lng": -79.3956
+        },
+        "type": "All-Girls",
+        "boarding": false,
+        "founded": 1901,
+        "grades": "1-12",
+        "students": "470+",
+        "tuition": {
+          "day": "$33,000 - $36,000",
+          "boarding": "N/A"
+        },
+        "admissions": {
+          "openGrades": "Grade 1, Grade 5, Grade 7, Grade 9",
+          "applicationDeadline": "December 1",
+          "assessmentRequired": true,
+          "interviewRequired": true,
+          "acceptanceRate": "~35%"
+        },
+        "academics": {
+          "curriculum": "Ontario Curriculum with AP Options",
+          "avgClassSize": "16",
+          "studentTeacherRatio": "8:1",
+          "apCourses": true,
+          "ibProgram": false,
+          "frenchImmersion": false
+        },
+        "university": {
+          "ivyLeaguePlacement": "8-10%",
+          "topCanadianPlacement": "85%+",
+          "notableDestinations": ["Harvard", "Yale", "U of T", "McGill", "Queen's", "Western"]
+        },
+        "athletics": ["Field Hockey", "Ice Hockey", "Swimming", "Tennis", "Volleyball", "Basketball", "Soccer"],
+        "specialPrograms": ["AP Program", "STEM Focus", "Arts Integration", "Leadership"],
+        "notable": "Small, intimate all-girls school with exceptional university preparation",
+        "vibe": "Nurturing, academically focused, close-knit",
+        "website": "https://www.scs.on.ca"
+      },
+      {
+        "rank": 11,
+        "name": "St. Michael's College School",
+        "shortName": "SMCS",
+        "city": "Toronto",
+        "region": "toronto",
+        "location": {
+          "address": "1515 Bathurst Street, Toronto, ON",
+          "lat": 43.6847,
+          "lng": -79.4184
+        },
+        "type": "All-Boys",
+        "boarding": false,
+        "founded": 1852,
+        "grades": "7-12",
+        "students": "1,100+",
+        "tuition": {
+          "day": "$22,000 - $25,000",
+          "boarding": "N/A"
+        },
+        "admissions": {
+          "openGrades": "Grade 7, Grade 9",
+          "applicationDeadline": "November 30",
+          "assessmentRequired": true,
+          "interviewRequired": true,
+          "acceptanceRate": "~40%"
+        },
+        "academics": {
+          "curriculum": "Ontario Curriculum with AP Options",
+          "avgClassSize": "22",
+          "studentTeacherRatio": "12:1",
+          "apCourses": true,
+          "ibProgram": false,
+          "frenchImmersion": false
+        },
+        "university": {
+          "ivyLeaguePlacement": "5-8%",
+          "topCanadianPlacement": "75%+",
+          "notableDestinations": ["U of T", "McGill", "Queen's", "Western", "Ivey", "Schulich"]
+        },
+        "athletics": ["Hockey", "Football", "Basketball", "Soccer", "Rugby", "Track & Field", "Swimming"],
+        "specialPrograms": ["AP Program", "Catholic Education", "Leadership", "Community Service"],
+        "notable": "Catholic boys' school with strong athletics and faith-based education",
+        "vibe": "Faith-based, athletic excellence, brotherhood",
+        "website": "https://www.stmichaelscollegeschool.com"
+      },
+      {
+        "rank": 12,
+        "name": "Royal St. George's College",
+        "shortName": "RSGC",
+        "city": "Toronto",
+        "region": "toronto",
+        "location": {
+          "address": "120 Howland Avenue, Toronto, ON",
+          "lat": 43.6748,
+          "lng": -79.4134
+        },
+        "type": "All-Boys",
+        "boarding": false,
+        "founded": 1961,
+        "grades": "3-12",
+        "students": "475+",
+        "tuition": {
+          "day": "$33,000 - $36,000",
+          "boarding": "N/A"
+        },
+        "admissions": {
+          "openGrades": "Grade 3, Grade 5, Grade 7, Grade 9",
+          "applicationDeadline": "December 15",
+          "assessmentRequired": true,
+          "interviewRequired": true,
+          "acceptanceRate": "~38%"
+        },
+        "academics": {
+          "curriculum": "Ontario Curriculum",
+          "avgClassSize": "16",
+          "studentTeacherRatio": "9:1",
+          "apCourses": false,
+          "ibProgram": false,
+          "frenchImmersion": false
+        },
+        "university": {
+          "ivyLeaguePlacement": "5-8%",
+          "topCanadianPlacement": "78%+",
+          "notableDestinations": ["U of T", "McGill", "Queen's", "Western", "Ivey"]
+        },
+        "athletics": ["Hockey", "Basketball", "Soccer", "Tennis", "Track & Field", "Volleyball"],
+        "specialPrograms": ["Anglican Tradition", "Music Program", "Drama", "Leadership"],
+        "notable": "Small Anglican boys' school with excellent arts and music programs",
+        "vibe": "Traditional, musical, close community",
+        "website": "https://www.rsgc.on.ca"
+      },
+      {
+        "rank": 13,
+        "name": "The York School",
+        "shortName": "York School",
+        "city": "Toronto",
+        "region": "toronto",
+        "location": {
+          "address": "1320 Yonge Street, Toronto, ON",
+          "lat": 43.6879,
+          "lng": -79.3936
+        },
+        "type": "Co-Ed",
+        "boarding": false,
+        "founded": 1965,
+        "grades": "JK-12",
+        "students": "650+",
+        "tuition": {
+          "day": "$32,000 - $35,000",
+          "boarding": "N/A"
+        },
+        "admissions": {
+          "openGrades": "JK, Grade 5, Grade 7, Grade 9",
+          "applicationDeadline": "December 1",
+          "assessmentRequired": true,
+          "interviewRequired": true,
+          "acceptanceRate": "~40%"
+        },
+        "academics": {
+          "curriculum": "IB World School (PYP, MYP, DP)",
+          "avgClassSize": "18",
+          "studentTeacherRatio": "10:1",
+          "apCourses": false,
+          "ibProgram": true,
+          "frenchImmersion": false
+        },
+        "university": {
+          "ivyLeaguePlacement": "8-10%",
+          "topCanadianPlacement": "82%+",
+          "notableDestinations": ["Harvard", "Yale", "U of T", "McGill", "Queen's", "UBC"]
+        },
+        "athletics": ["Basketball", "Volleyball", "Soccer", "Swimming", "Track & Field", "Cross Country"],
+        "specialPrograms": ["Full IB Programme", "Design Thinking", "Global Citizenship", "Arts"],
+        "notable": "Progressive IB World School in the heart of Toronto with focus on inquiry-based learning",
+        "vibe": "Progressive, creative, inquiry-driven",
+        "website": "https://www.yorkschool.com"
+      },
+      {
+        "rank": 14,
+        "name": "Greenwood College School",
+        "shortName": "Greenwood",
+        "city": "Toronto",
+        "region": "toronto",
+        "location": {
+          "address": "443 Mount Pleasant Road, Toronto, ON",
+          "lat": 43.6989,
+          "lng": -79.3884
+        },
+        "type": "Co-Ed",
+        "boarding": false,
+        "founded": 2002,
+        "grades": "7-12",
+        "students": "400+",
+        "tuition": {
+          "day": "$33,000 - $36,000",
+          "boarding": "N/A"
+        },
+        "admissions": {
+          "openGrades": "Grade 7, Grade 9, Grade 10",
+          "applicationDeadline": "January 15",
+          "assessmentRequired": true,
+          "interviewRequired": true,
+          "acceptanceRate": "~35%"
+        },
+        "academics": {
+          "curriculum": "Ontario Curriculum",
+          "avgClassSize": "14",
+          "studentTeacherRatio": "7:1",
+          "apCourses": false,
+          "ibProgram": false,
+          "frenchImmersion": false
+        },
+        "university": {
+          "ivyLeaguePlacement": "8-10%",
+          "topCanadianPlacement": "85%+",
+          "notableDestinations": ["Harvard", "Stanford", "U of T", "McGill", "Queen's", "Waterloo"]
+        },
+        "athletics": ["Basketball", "Volleyball", "Soccer", "Ultimate Frisbee", "Badminton", "Cross Country"],
+        "specialPrograms": ["Personalized Learning", "Leadership", "Arts Integration", "Global Studies"],
+        "notable": "Innovative school focused on personalized education and small class sizes",
+        "vibe": "Innovative, personalized, student-centered",
+        "website": "https://www.greenwoodcollegeschool.org"
+      },
+      {
+        "rank": 15,
+        "name": "Bayview Glen",
+        "shortName": "BVG",
+        "city": "Toronto",
+        "region": "toronto",
+        "location": {
+          "address": "275 Duncan Mill Road, Toronto, ON",
+          "lat": 43.7594,
+          "lng": -79.3589
+        },
+        "type": "Co-Ed",
+        "boarding": false,
+        "founded": 1962,
+        "grades": "PS-12",
+        "students": "1,100+",
+        "tuition": {
+          "day": "$28,000 - $34,000",
+          "boarding": "N/A"
+        },
+        "admissions": {
+          "openGrades": "PS, JK, Grade 5, Grade 7, Grade 9",
+          "applicationDeadline": "Rolling",
+          "assessmentRequired": true,
+          "interviewRequired": true,
+          "acceptanceRate": "~45%"
+        },
+        "academics": {
+          "curriculum": "Ontario Curriculum with AP Options",
+          "avgClassSize": "18",
+          "studentTeacherRatio": "10:1",
+          "apCourses": true,
+          "ibProgram": false,
+          "frenchImmersion": false
+        },
+        "university": {
+          "ivyLeaguePlacement": "5-8%",
+          "topCanadianPlacement": "80%+",
+          "notableDestinations": ["U of T", "McGill", "Queen's", "Western", "Waterloo"]
+        },
+        "athletics": ["Basketball", "Volleyball", "Soccer", "Swimming", "Track & Field", "Tennis"],
+        "specialPrograms": ["AP Program", "STEAM", "Arts Program", "Leadership Development"],
+        "notable": "Two-campus school with strong community feel and comprehensive programs",
+        "vibe": "Welcoming, comprehensive, community-focused",
+        "website": "https://www.bayviewglen.ca"
+      },
+      {
+        "rank": 16,
+        "name": "De La Salle College Oaklands",
+        "shortName": "De La Salle",
+        "city": "Toronto",
+        "region": "toronto",
+        "location": {
+          "address": "131 Farnham Avenue, Toronto, ON",
+          "lat": 43.6832,
+          "lng": -79.3982
+        },
+        "type": "Co-Ed",
+        "boarding": false,
+        "founded": 1851,
+        "grades": "5-12",
+        "students": "750+",
+        "tuition": {
+          "day": "$20,000 - $24,000",
+          "boarding": "N/A"
+        },
+        "admissions": {
+          "openGrades": "Grade 5, Grade 7, Grade 9",
+          "applicationDeadline": "February 1",
+          "assessmentRequired": true,
+          "interviewRequired": true,
+          "acceptanceRate": "~50%"
+        },
+        "academics": {
+          "curriculum": "Ontario Curriculum",
+          "avgClassSize": "20",
+          "studentTeacherRatio": "12:1",
+          "apCourses": false,
+          "ibProgram": false,
+          "frenchImmersion": false
+        },
+        "university": {
+          "ivyLeaguePlacement": "3-5%",
+          "topCanadianPlacement": "72%+",
+          "notableDestinations": ["U of T", "McGill", "Queen's", "Western", "Ryerson"]
+        },
+        "athletics": ["Basketball", "Volleyball", "Soccer", "Swimming", "Track & Field", "Cross Country"],
+        "specialPrograms": ["Lasallian Tradition", "Arts Program", "Community Service", "Religious Studies"],
+        "notable": "Catholic co-ed school in Lasallian tradition with affordable private education",
+        "vibe": "Faith-based, diverse, community service",
+        "website": "https://www.delasalleoaklands.ca"
+      },
+      {
+        "rank": 17,
+        "name": "Pickering College",
+        "shortName": "Pickering",
+        "city": "Newmarket",
+        "region": "toronto",
+        "location": {
+          "address": "16945 Bayview Avenue, Newmarket, ON",
+          "lat": 44.0427,
+          "lng": -79.4647
+        },
+        "type": "Co-Ed",
+        "boarding": true,
+        "founded": 1842,
+        "grades": "JK-12",
+        "students": "400+",
+        "tuition": {
+          "day": "$28,000 - $34,000",
+          "boarding": "$58,000 - $64,000"
+        },
+        "admissions": {
+          "openGrades": "JK, Grade 5, Grade 7, Grade 9",
+          "applicationDeadline": "February 1",
+          "assessmentRequired": true,
+          "interviewRequired": true,
+          "acceptanceRate": "~55%"
+        },
+        "academics": {
+          "curriculum": "Ontario Curriculum",
+          "avgClassSize": "15",
+          "studentTeacherRatio": "8:1",
+          "apCourses": false,
+          "ibProgram": false,
+          "frenchImmersion": false
+        },
+        "university": {
+          "ivyLeaguePlacement": "3-5%",
+          "topCanadianPlacement": "75%+",
+          "notableDestinations": ["U of T", "McGill", "Queen's", "Western", "Guelph"]
+        },
+        "athletics": ["Hockey", "Soccer", "Basketball", "Volleyball", "Tennis", "Swimming", "Equestrian"],
+        "specialPrograms": ["Global Leadership", "Quaker Values", "Environmental Stewardship", "Outdoor Education"],
+        "notable": "Quaker-founded school with focus on global citizenship and environmental stewardship",
+        "vibe": "Values-driven, global perspective, nature-focused",
+        "website": "https://www.pickeringcollege.on.ca"
+      },
+      {
+        "rank": 18,
+        "name": "Holy Trinity School",
+        "shortName": "HTS",
+        "city": "Richmond Hill",
+        "region": "toronto",
+        "location": {
+          "address": "11300 Bayview Avenue, Richmond Hill, ON",
+          "lat": 43.8925,
+          "lng": -79.4428
+        },
+        "type": "Co-Ed",
+        "boarding": false,
+        "founded": 1981,
+        "grades": "JK-12",
+        "students": "750+",
+        "tuition": {
+          "day": "$25,000 - $30,000",
+          "boarding": "N/A"
+        },
+        "admissions": {
+          "openGrades": "JK, Grade 5, Grade 7, Grade 9",
+          "applicationDeadline": "January 31",
+          "assessmentRequired": true,
+          "interviewRequired": true,
+          "acceptanceRate": "~50%"
+        },
+        "academics": {
+          "curriculum": "Ontario Curriculum with AP Options",
+          "avgClassSize": "18",
+          "studentTeacherRatio": "10:1",
+          "apCourses": true,
+          "ibProgram": false,
+          "frenchImmersion": false
+        },
+        "university": {
+          "ivyLeaguePlacement": "5-7%",
+          "topCanadianPlacement": "78%+",
+          "notableDestinations": ["U of T", "McGill", "Queen's", "Waterloo", "Western"]
+        },
+        "athletics": ["Basketball", "Volleyball", "Soccer", "Swimming", "Track & Field", "Badminton"],
+        "specialPrograms": ["AP Program", "STEM Initiative", "Arts Program", "Leadership"],
+        "notable": "Strong academic school with excellent university preparation in York Region",
+        "vibe": "Academic excellence, balanced education",
+        "website": "https://www.hts.on.ca"
+      },
+      {
+        "rank": 19,
+        "name": "TMS School",
+        "shortName": "TMS",
+        "city": "Richmond Hill",
+        "region": "toronto",
+        "location": {
+          "address": "8569 Bayview Avenue, Richmond Hill, ON",
+          "lat": 43.8456,
+          "lng": -79.4367
+        },
+        "type": "Co-Ed",
+        "boarding": false,
+        "founded": 1961,
+        "grades": "18 months-12",
+        "students": "800+",
+        "tuition": {
+          "day": "$22,000 - $28,000",
+          "boarding": "N/A"
+        },
+        "admissions": {
+          "openGrades": "Toddler, JK, Grade 5, Grade 7, Grade 9",
+          "applicationDeadline": "Rolling",
+          "assessmentRequired": true,
+          "interviewRequired": true,
+          "acceptanceRate": "~55%"
+        },
+        "academics": {
+          "curriculum": "Montessori & Ontario Curriculum",
+          "avgClassSize": "18",
+          "studentTeacherRatio": "10:1",
+          "apCourses": false,
+          "ibProgram": false,
+          "frenchImmersion": false
+        },
+        "university": {
+          "ivyLeaguePlacement": "3-5%",
+          "topCanadianPlacement": "75%+",
+          "notableDestinations": ["U of T", "McGill", "Queen's", "Western", "Waterloo"]
+        },
+        "athletics": ["Basketball", "Volleyball", "Soccer", "Swimming", "Track & Field"],
+        "specialPrograms": ["Montessori Program", "STEM", "Arts Integration", "Outdoor Education"],
+        "notable": "Montessori-based education from toddler through high school",
+        "vibe": "Child-centered, Montessori philosophy, nurturing",
+        "website": "https://www.tmsschool.ca"
+      },
+      {
+        "rank": 20,
+        "name": "Crestwood Preparatory College",
+        "shortName": "Crestwood",
+        "city": "Toronto",
+        "region": "toronto",
+        "location": {
+          "address": "217 Brookbanks Drive, Toronto, ON",
+          "lat": 43.7742,
+          "lng": -79.3448
+        },
+        "type": "Co-Ed",
+        "boarding": false,
+        "founded": 2001,
+        "grades": "7-12",
+        "students": "550+",
+        "tuition": {
+          "day": "$22,000 - $26,000",
+          "boarding": "N/A"
+        },
+        "admissions": {
+          "openGrades": "Grade 7, Grade 9, Grade 10",
+          "applicationDeadline": "Rolling",
+          "assessmentRequired": true,
+          "interviewRequired": true,
+          "acceptanceRate": "~55%"
+        },
+        "academics": {
+          "curriculum": "Ontario Curriculum with AP Options",
+          "avgClassSize": "18",
+          "studentTeacherRatio": "10:1",
+          "apCourses": true,
+          "ibProgram": false,
+          "frenchImmersion": false
+        },
+        "university": {
+          "ivyLeaguePlacement": "3-5%",
+          "topCanadianPlacement": "72%+",
+          "notableDestinations": ["U of T", "McGill", "Queen's", "Western", "Waterloo"]
+        },
+        "athletics": ["Basketball", "Volleyball", "Soccer", "Hockey", "Tennis", "Golf"],
+        "specialPrograms": ["AP Program", "Hockey Academy", "Basketball Academy", "Arts"],
+        "notable": "Modern school with strong sports academies and university prep focus",
+        "vibe": "Athletic, modern, university-prep focused",
+        "website": "https://www.crestwood.on.ca"
+      },
+      {
+        "rank": 21,
+        "name": "MacLachlan College",
+        "shortName": "MacLachlan",
+        "city": "Oakville",
+        "region": "toronto",
+        "location": {
+          "address": "337 Trafalgar Road, Oakville, ON",
+          "lat": 43.4478,
+          "lng": -79.6847
+        },
+        "type": "Co-Ed",
+        "boarding": false,
+        "founded": 1978,
+        "grades": "PS-12",
+        "students": "500+",
+        "tuition": {
+          "day": "$20,000 - $26,000",
+          "boarding": "N/A"
+        },
+        "admissions": {
+          "openGrades": "PS, JK, Grade 5, Grade 7, Grade 9",
+          "applicationDeadline": "Rolling",
+          "assessmentRequired": true,
+          "interviewRequired": true,
+          "acceptanceRate": "~60%"
+        },
+        "academics": {
+          "curriculum": "IB World School (PYP, MYP, DP)",
+          "avgClassSize": "16",
+          "studentTeacherRatio": "9:1",
+          "apCourses": false,
+          "ibProgram": true,
+          "frenchImmersion": false
+        },
+        "university": {
+          "ivyLeaguePlacement": "3-5%",
+          "topCanadianPlacement": "75%+",
+          "notableDestinations": ["U of T", "McGill", "Queen's", "Western", "McMaster"]
+        },
+        "athletics": ["Basketball", "Volleyball", "Soccer", "Swimming", "Track & Field"],
+        "specialPrograms": ["Full IB Programme", "Arts Integration", "Global Citizenship"],
+        "notable": "IB World School in Oakville with strong community focus",
+        "vibe": "IB-focused, globally-minded, supportive",
+        "website": "https://www.maclachlan.ca"
+      },
+      {
+        "rank": 22,
+        "name": "Mentor College",
+        "shortName": "Mentor",
+        "city": "Mississauga",
+        "region": "toronto",
+        "location": {
+          "address": "40 Forest Avenue, Mississauga, ON",
+          "lat": 43.5789,
+          "lng": -79.6247
+        },
+        "type": "Co-Ed",
+        "boarding": false,
+        "founded": 1982,
+        "grades": "JK-12",
+        "students": "1,200+",
+        "tuition": {
+          "day": "$18,000 - $22,000",
+          "boarding": "N/A"
+        },
+        "admissions": {
+          "openGrades": "JK, Grade 5, Grade 7, Grade 9",
+          "applicationDeadline": "Rolling",
+          "assessmentRequired": true,
+          "interviewRequired": true,
+          "acceptanceRate": "~65%"
+        },
+        "academics": {
+          "curriculum": "Ontario Curriculum",
+          "avgClassSize": "20",
+          "studentTeacherRatio": "12:1",
+          "apCourses": false,
+          "ibProgram": false,
+          "frenchImmersion": false
+        },
+        "university": {
+          "ivyLeaguePlacement": "2-3%",
+          "topCanadianPlacement": "70%+",
+          "notableDestinations": ["U of T", "McMaster", "Waterloo", "Western", "Queen's"]
+        },
+        "athletics": ["Basketball", "Volleyball", "Soccer", "Swimming", "Track & Field", "Badminton"],
+        "specialPrograms": ["Academic Excellence", "Arts Program", "Athletics", "Leadership"],
+        "notable": "Large Mississauga school with strong academics at accessible tuition",
+        "vibe": "Academic, diverse, value-oriented",
+        "website": "https://www.mentorcollege.edu"
+      },
+      {
+        "rank": 23,
+        "name": "St. Mildred's-Lightbourn School",
+        "shortName": "SMLS",
+        "city": "Oakville",
+        "region": "toronto",
+        "location": {
+          "address": "1080 Linbrook Road, Oakville, ON",
+          "lat": 43.4645,
+          "lng": -79.6956
+        },
+        "type": "All-Girls",
+        "boarding": false,
+        "founded": 1891,
+        "grades": "JK-12",
+        "students": "550+",
+        "tuition": {
+          "day": "$26,000 - $32,000",
+          "boarding": "N/A"
+        },
+        "admissions": {
+          "openGrades": "JK, Grade 5, Grade 7, Grade 9",
+          "applicationDeadline": "January 15",
+          "assessmentRequired": true,
+          "interviewRequired": true,
+          "acceptanceRate": "~45%"
+        },
+        "academics": {
+          "curriculum": "Ontario Curriculum with AP Options",
+          "avgClassSize": "16",
+          "studentTeacherRatio": "9:1",
+          "apCourses": true,
+          "ibProgram": false,
+          "frenchImmersion": false
+        },
+        "university": {
+          "ivyLeaguePlacement": "5-7%",
+          "topCanadianPlacement": "80%+",
+          "notableDestinations": ["U of T", "McGill", "Queen's", "Western", "McMaster"]
+        },
+        "athletics": ["Field Hockey", "Basketball", "Volleyball", "Swimming", "Tennis", "Soccer"],
+        "specialPrograms": ["AP Program", "STEAM", "Leadership", "Arts Integration"],
+        "notable": "All-girls school in Oakville with excellent STEM and leadership programs",
+        "vibe": "Empowering, STEM-focused, community-oriented",
+        "website": "https://www.smls.on.ca"
+      },
+      {
+        "rank": 24,
+        "name": "Trafalgar Castle School",
+        "shortName": "Trafalgar",
+        "city": "Whitby",
+        "region": "toronto",
+        "location": {
+          "address": "401 Reynolds Street, Whitby, ON",
+          "lat": 43.8678,
+          "lng": -78.9423
+        },
+        "type": "All-Girls",
+        "boarding": true,
+        "founded": 1874,
+        "grades": "4-12",
+        "students": "200+",
+        "tuition": {
+          "day": "$26,000 - $30,000",
+          "boarding": "$54,000 - $58,000"
+        },
+        "admissions": {
+          "openGrades": "Grade 4, Grade 7, Grade 9",
+          "applicationDeadline": "February 1",
+          "assessmentRequired": true,
+          "interviewRequired": true,
+          "acceptanceRate": "~55%"
+        },
+        "academics": {
+          "curriculum": "Ontario Curriculum",
+          "avgClassSize": "12",
+          "studentTeacherRatio": "6:1",
+          "apCourses": false,
+          "ibProgram": false,
+          "frenchImmersion": false
+        },
+        "university": {
+          "ivyLeaguePlacement": "3-5%",
+          "topCanadianPlacement": "75%+",
+          "notableDestinations": ["U of T", "McGill", "Queen's", "Western", "McMaster"]
+        },
+        "athletics": ["Basketball", "Volleyball", "Soccer", "Swimming", "Tennis", "Equestrian"],
+        "specialPrograms": ["STEAM Focus", "Leadership Academy", "Arts Program", "Outdoor Education"],
+        "notable": "Historic castle campus with intimate all-girls boarding school experience",
+        "vibe": "Historic, intimate, empowering",
+        "website": "https://www.trafalgarcastle.ca"
+      },
+      {
+        "rank": 25,
+        "name": "Fieldstone Day School",
+        "shortName": "Fieldstone",
+        "city": "Toronto",
+        "region": "toronto",
+        "location": {
+          "address": "2999 Dufferin Street, Toronto, ON",
+          "lat": 43.7267,
+          "lng": -79.4547
+        },
+        "type": "Co-Ed",
+        "boarding": false,
+        "founded": 1997,
+        "grades": "PS-12",
+        "students": "400+",
+        "tuition": {
+          "day": "$18,000 - $22,000",
+          "boarding": "N/A"
+        },
+        "admissions": {
+          "openGrades": "PS, JK, Grade 5, Grade 7, Grade 9",
+          "applicationDeadline": "Rolling",
+          "assessmentRequired": true,
+          "interviewRequired": true,
+          "acceptanceRate": "~60%"
+        },
+        "academics": {
+          "curriculum": "Ontario Curriculum",
+          "avgClassSize": "16",
+          "studentTeacherRatio": "10:1",
+          "apCourses": false,
+          "ibProgram": false,
+          "frenchImmersion": false
+        },
+        "university": {
+          "ivyLeaguePlacement": "2-3%",
+          "topCanadianPlacement": "70%+",
+          "notableDestinations": ["U of T", "York", "Ryerson", "Western", "McMaster"]
+        },
+        "athletics": ["Basketball", "Volleyball", "Soccer", "Swimming", "Track & Field"],
+        "specialPrograms": ["Personalized Learning", "Arts Program", "ESL Support", "University Prep"],
+        "notable": "Diverse school with strong ESL support and personalized learning approach",
+        "vibe": "Diverse, supportive, personalized",
+        "website": "https://www.fieldstonedayschool.org"
+      }
+    ],
+    "vancouver": [
+      {
+        "rank": 1,
+        "name": "St. George's School",
+        "shortName": "St. George's",
+        "city": "Vancouver",
+        "region": "vancouver",
+        "location": {
+          "address": "4175 West 29th Avenue, Vancouver, BC",
+          "lat": 49.2393,
+          "lng": -123.1867
+        },
+        "type": "All-Boys",
+        "boarding": true,
+        "founded": 1930,
+        "grades": "1-12",
+        "students": "1,150+",
+        "tuition": {
+          "day": "$28,000 - $32,000",
+          "boarding": "$62,000 - $68,000"
+        },
+        "admissions": {
+          "openGrades": "Grade 1, Grade 4, Grade 8",
+          "applicationDeadline": "January 15",
+          "assessmentRequired": true,
+          "interviewRequired": true,
+          "acceptanceRate": "~25%"
+        },
+        "academics": {
+          "curriculum": "BC Curriculum with AP",
+          "avgClassSize": "18",
+          "studentTeacherRatio": "8:1",
+          "apCourses": true,
+          "ibProgram": false,
+          "frenchImmersion": false
+        },
+        "university": {
+          "ivyLeaguePlacement": "15-20%",
+          "topCanadianPlacement": "90%+",
+          "notableDestinations": ["Harvard", "Stanford", "Princeton", "Yale", "UBC", "U of T", "McGill"]
+        },
+        "athletics": ["Rugby", "Hockey", "Basketball", "Soccer", "Tennis", "Golf", "Rowing"],
+        "specialPrograms": ["AP Program", "Round Square", "Outdoor Education", "Leadership"],
+        "notable": "BC's premier boys' school with exceptional university placement and strong athletics tradition",
+        "vibe": "Traditional, athletic, brotherhood-focused",
+        "website": "https://www.stgeorges.bc.ca"
+      },
+      {
+        "rank": 2,
+        "name": "Crofton House School",
+        "shortName": "Crofton House",
+        "city": "Vancouver",
+        "region": "vancouver",
+        "location": {
+          "address": "3200 West 41st Avenue, Vancouver, BC",
+          "lat": 49.2361,
+          "lng": -123.1691
+        },
+        "type": "All-Girls",
+        "boarding": false,
+        "founded": 1898,
+        "grades": "JK-12",
+        "students": "900+",
+        "tuition": {
+          "day": "$26,000 - $30,000",
+          "boarding": null
+        },
+        "admissions": {
+          "openGrades": "JK, Grade 1, Grade 6, Grade 8",
+          "applicationDeadline": "January 15",
+          "assessmentRequired": true,
+          "interviewRequired": true,
+          "acceptanceRate": "~30%"
+        },
+        "academics": {
+          "curriculum": "BC Curriculum with AP",
+          "avgClassSize": "16",
+          "studentTeacherRatio": "9:1",
+          "apCourses": true,
+          "ibProgram": false,
+          "frenchImmersion": false
+        },
+        "university": {
+          "ivyLeaguePlacement": "10-15%",
+          "topCanadianPlacement": "95%+",
+          "notableDestinations": ["Stanford", "MIT", "Harvard", "UBC", "U of T", "McGill", "Queen's"]
+        },
+        "athletics": ["Field Hockey", "Volleyball", "Basketball", "Tennis", "Soccer", "Track & Field", "Swimming"],
+        "specialPrograms": ["AP Program", "STEM Initiative", "Global Studies", "Arts Excellence"],
+        "notable": "Vancouver's oldest girls' school with strong academics and empowering environment",
+        "vibe": "Empowering, academic, community-oriented",
+        "website": "https://www.croftonhouse.ca"
+      },
+      {
+        "rank": 3,
+        "name": "York House School",
+        "shortName": "York House",
+        "city": "Vancouver",
+        "region": "vancouver",
+        "location": {
+          "address": "4176 Alexandra Street, Vancouver, BC",
+          "lat": 49.2547,
+          "lng": -123.1608
+        },
+        "type": "All-Girls",
+        "boarding": false,
+        "founded": 1932,
+        "grades": "JK-12",
+        "students": "650+",
+        "tuition": {
+          "day": "$25,000 - $28,500",
+          "boarding": null
+        },
+        "admissions": {
+          "openGrades": "JK, Grade 1, Grade 6, Grade 8",
+          "applicationDeadline": "January 15",
+          "assessmentRequired": true,
+          "interviewRequired": true,
+          "acceptanceRate": "~35%"
+        },
+        "academics": {
+          "curriculum": "BC Curriculum with AP",
+          "avgClassSize": "16",
+          "studentTeacherRatio": "9:1",
+          "apCourses": true,
+          "ibProgram": false,
+          "frenchImmersion": false
+        },
+        "university": {
+          "ivyLeaguePlacement": "8-12%",
+          "topCanadianPlacement": "92%+",
+          "notableDestinations": ["Harvard", "Yale", "Princeton", "UBC", "U of T", "McGill", "Queen's"]
+        },
+        "athletics": ["Field Hockey", "Volleyball", "Basketball", "Badminton", "Tennis", "Cross Country", "Soccer"],
+        "specialPrograms": ["AP Program", "Design Thinking", "STEAM", "Global Citizenship"],
+        "notable": "Strong focus on developing confident, compassionate young women leaders",
+        "vibe": "Nurturing, innovative, sisterhood-focused",
+        "website": "https://www.yorkhouse.ca"
+      },
+      {
+        "rank": 4,
+        "name": "Collingwood School",
+        "shortName": "Collingwood",
+        "city": "West Vancouver",
+        "region": "vancouver",
+        "location": {
+          "address": "70 Morven Drive, West Vancouver, BC",
+          "lat": 49.3625,
+          "lng": -123.2298
+        },
+        "type": "Co-Ed",
+        "boarding": false,
+        "founded": 1984,
+        "grades": "JK-12",
+        "students": "1,200+",
+        "tuition": {
+          "day": "$26,000 - $30,000",
+          "boarding": null
+        },
+        "admissions": {
+          "openGrades": "JK, Grade 1, Grade 6, Grade 8",
+          "applicationDeadline": "January 15",
+          "assessmentRequired": true,
+          "interviewRequired": true,
+          "acceptanceRate": "~30%"
+        },
+        "academics": {
+          "curriculum": "BC Curriculum with IB Diploma",
+          "avgClassSize": "18",
+          "studentTeacherRatio": "9:1",
+          "apCourses": false,
+          "ibProgram": true,
+          "frenchImmersion": false
+        },
+        "university": {
+          "ivyLeaguePlacement": "10-15%",
+          "topCanadianPlacement": "95%+",
+          "notableDestinations": ["Harvard", "Stanford", "Yale", "UBC", "U of T", "McGill", "Princeton"]
+        },
+        "athletics": ["Soccer", "Basketball", "Volleyball", "Tennis", "Swimming", "Golf", "Cross Country"],
+        "specialPrograms": ["IB Diploma", "Design Lab", "Outdoor Education", "Global Programs"],
+        "notable": "Modern facilities with innovative approach to education and strong IB program",
+        "vibe": "Innovative, design-focused, globally-minded",
+        "website": "https://www.collingwood.org"
+      },
+      {
+        "rank": 5,
+        "name": "Mulgrave School",
+        "shortName": "Mulgrave",
+        "city": "West Vancouver",
+        "region": "vancouver",
+        "location": {
+          "address": "2330 Cypress Bowl Lane, West Vancouver, BC",
+          "lat": 49.3519,
+          "lng": -123.2017
+        },
+        "type": "Co-Ed",
+        "boarding": false,
+        "founded": 1993,
+        "grades": "PK-12",
+        "students": "950+",
+        "tuition": {
+          "day": "$26,000 - $31,000",
+          "boarding": null
+        },
+        "admissions": {
+          "openGrades": "PK, K, Grade 6, Grade 8",
+          "applicationDeadline": "January 15",
+          "assessmentRequired": true,
+          "interviewRequired": true,
+          "acceptanceRate": "~30%"
+        },
+        "academics": {
+          "curriculum": "IB World School (PYP, MYP, DP)",
+          "avgClassSize": "18",
+          "studentTeacherRatio": "8:1",
+          "apCourses": false,
+          "ibProgram": true,
+          "frenchImmersion": false
+        },
+        "university": {
+          "ivyLeaguePlacement": "8-12%",
+          "topCanadianPlacement": "95%+",
+          "notableDestinations": ["Stanford", "MIT", "Harvard", "UBC", "U of T", "McGill", "Oxford"]
+        },
+        "athletics": ["Soccer", "Basketball", "Volleyball", "Tennis", "Skiing", "Swimming", "Track & Field"],
+        "specialPrograms": ["Full IB Programme", "Outdoor Education", "Arts Excellence", "STEAM"],
+        "notable": "Full IB World School with spectacular mountain campus and innovative programs",
+        "vibe": "International, nature-connected, holistic",
+        "website": "https://www.mulgrave.com"
+      },
+      {
+        "rank": 6,
+        "name": "Shawnigan Lake School",
+        "shortName": "Shawnigan",
+        "city": "Shawnigan Lake",
+        "region": "vancouver",
+        "location": {
+          "address": "1975 Renfrew Road, Shawnigan Lake, BC",
+          "lat": 48.6353,
+          "lng": -123.6347
+        },
+        "type": "Co-Ed",
+        "boarding": true,
+        "founded": 1916,
+        "grades": "8-12",
+        "students": "525+",
+        "tuition": {
+          "day": "$38,000 - $42,000",
+          "boarding": "$68,000 - $74,000"
+        },
+        "admissions": {
+          "openGrades": "Grade 8, Grade 9, Grade 10",
+          "applicationDeadline": "January 31",
+          "assessmentRequired": true,
+          "interviewRequired": true,
+          "acceptanceRate": "~35%"
+        },
+        "academics": {
+          "curriculum": "BC Curriculum with AP",
+          "avgClassSize": "14",
+          "studentTeacherRatio": "7:1",
+          "apCourses": true,
+          "ibProgram": false,
+          "frenchImmersion": false
+        },
+        "university": {
+          "ivyLeaguePlacement": "12-18%",
+          "topCanadianPlacement": "90%+",
+          "notableDestinations": ["Harvard", "Stanford", "Princeton", "Yale", "UBC", "U of T", "McGill"]
+        },
+        "athletics": ["Rowing", "Rugby", "Soccer", "Basketball", "Tennis", "Swimming", "Cross Country"],
+        "specialPrograms": ["AP Program", "Rowing Excellence", "Outdoor Leadership", "Arts"],
+        "notable": "World-renowned rowing program and beautiful lakeside campus with strong boarding tradition",
+        "vibe": "Athletic, outdoors-focused, close-knit community",
+        "website": "https://www.shawnigan.ca"
+      },
+      {
+        "rank": 7,
+        "name": "Brentwood College School",
+        "shortName": "Brentwood",
+        "city": "Mill Bay",
+        "region": "vancouver",
+        "location": {
+          "address": "2735 Mount Baker Road, Mill Bay, BC",
+          "lat": 48.6469,
+          "lng": -123.5283
+        },
+        "type": "Co-Ed",
+        "boarding": true,
+        "founded": 1923,
+        "grades": "9-12",
+        "students": "530+",
+        "tuition": {
+          "day": "$35,000 - $38,000",
+          "boarding": "$65,000 - $72,000"
+        },
+        "admissions": {
+          "openGrades": "Grade 9, Grade 10, Grade 11",
+          "applicationDeadline": "January 31",
+          "assessmentRequired": true,
+          "interviewRequired": true,
+          "acceptanceRate": "~40%"
+        },
+        "academics": {
+          "curriculum": "BC Curriculum with AP",
+          "avgClassSize": "16",
+          "studentTeacherRatio": "8:1",
+          "apCourses": true,
+          "ibProgram": false,
+          "frenchImmersion": false
+        },
+        "university": {
+          "ivyLeaguePlacement": "10-15%",
+          "topCanadianPlacement": "92%+",
+          "notableDestinations": ["Harvard", "Yale", "Stanford", "UBC", "McGill", "U of T", "Queen's"]
+        },
+        "athletics": ["Rowing", "Rugby", "Soccer", "Basketball", "Tennis", "Swimming", "Triathlon"],
+        "specialPrograms": ["AP Program", "Marine Science", "Outdoor Education", "Leadership"],
+        "notable": "Beautiful oceanfront campus with strong rowing and triathlon programs",
+        "vibe": "Active, oceanside, adventurous",
+        "website": "https://www.brentwood.ca"
+      },
+      {
+        "rank": 8,
+        "name": "St. Michael's University School",
+        "shortName": "SMUS",
+        "city": "Victoria",
+        "region": "vancouver",
+        "location": {
+          "address": "3400 Richmond Road, Victoria, BC",
+          "lat": 48.4456,
+          "lng": -123.3386
+        },
+        "type": "Co-Ed",
+        "boarding": true,
+        "founded": 1906,
+        "grades": "K-12",
+        "students": "1,000+",
+        "tuition": {
+          "day": "$24,000 - $28,000",
+          "boarding": "$58,000 - $65,000"
+        },
+        "admissions": {
+          "openGrades": "K, Grade 6, Grade 8, Grade 9",
+          "applicationDeadline": "January 31",
+          "assessmentRequired": true,
+          "interviewRequired": true,
+          "acceptanceRate": "~35%"
+        },
+        "academics": {
+          "curriculum": "BC Curriculum with AP",
+          "avgClassSize": "17",
+          "studentTeacherRatio": "9:1",
+          "apCourses": true,
+          "ibProgram": false,
+          "frenchImmersion": false
+        },
+        "university": {
+          "ivyLeaguePlacement": "8-12%",
+          "topCanadianPlacement": "90%+",
+          "notableDestinations": ["Harvard", "Stanford", "MIT", "UBC", "U of T", "McGill", "Yale"]
+        },
+        "athletics": ["Rugby", "Rowing", "Soccer", "Basketball", "Tennis", "Swimming", "Hockey"],
+        "specialPrograms": ["AP Program", "Leadership", "Outdoor Education", "Arts Excellence"],
+        "notable": "Victoria's premier independent school with strong academics and athletics",
+        "vibe": "Well-rounded, traditional, community-focused",
+        "website": "https://www.smus.ca"
+      },
+      {
+        "rank": 9,
+        "name": "West Point Grey Academy",
+        "shortName": "WPGA",
+        "city": "Vancouver",
+        "region": "vancouver",
+        "location": {
+          "address": "4125 West 8th Avenue, Vancouver, BC",
+          "lat": 49.2666,
+          "lng": -123.2024
+        },
+        "type": "Co-Ed",
+        "boarding": false,
+        "founded": 1996,
+        "grades": "JK-12",
+        "students": "950+",
+        "tuition": {
+          "day": "$24,000 - $28,000",
+          "boarding": null
+        },
+        "admissions": {
+          "openGrades": "JK, K, Grade 6, Grade 8",
+          "applicationDeadline": "January 15",
+          "assessmentRequired": true,
+          "interviewRequired": true,
+          "acceptanceRate": "~35%"
+        },
+        "academics": {
+          "curriculum": "BC Curriculum with IB Diploma",
+          "avgClassSize": "18",
+          "studentTeacherRatio": "9:1",
+          "apCourses": false,
+          "ibProgram": true,
+          "frenchImmersion": false
+        },
+        "university": {
+          "ivyLeaguePlacement": "6-10%",
+          "topCanadianPlacement": "90%+",
+          "notableDestinations": ["Harvard", "Stanford", "UBC", "U of T", "McGill", "Queen's", "Yale"]
+        },
+        "athletics": ["Soccer", "Basketball", "Volleyball", "Tennis", "Swimming", "Cross Country", "Badminton"],
+        "specialPrograms": ["IB Diploma", "Arts Program", "Outdoor Education", "Leadership"],
+        "notable": "Growing IB school with strong community feel and focus on whole-child education",
+        "vibe": "Community-focused, balanced, supportive",
+        "website": "https://www.wpga.ca"
+      },
+      {
+        "rank": 10,
+        "name": "Vancouver College",
+        "shortName": "VC",
+        "city": "Vancouver",
+        "region": "vancouver",
+        "location": {
+          "address": "5400 Cartier Street, Vancouver, BC",
+          "lat": 49.2328,
+          "lng": -123.1287
+        },
+        "type": "All-Boys",
+        "boarding": false,
+        "founded": 1922,
+        "grades": "K-12",
+        "students": "1,000+",
+        "tuition": {
+          "day": "$18,000 - $22,000",
+          "boarding": null
+        },
+        "admissions": {
+          "openGrades": "K, Grade 1, Grade 8",
+          "applicationDeadline": "January 31",
+          "assessmentRequired": true,
+          "interviewRequired": true,
+          "acceptanceRate": "~45%"
+        },
+        "academics": {
+          "curriculum": "BC Curriculum",
+          "avgClassSize": "22",
+          "studentTeacherRatio": "12:1",
+          "apCourses": true,
+          "ibProgram": false,
+          "frenchImmersion": false
+        },
+        "university": {
+          "ivyLeaguePlacement": "3-5%",
+          "topCanadianPlacement": "85%+",
+          "notableDestinations": ["UBC", "U of T", "McGill", "SFU", "Queen's", "Western", "Stanford"]
+        },
+        "athletics": ["Football", "Basketball", "Rugby", "Soccer", "Track & Field", "Swimming", "Volleyball"],
+        "specialPrograms": ["AP Courses", "Christian Brothers Education", "Leadership", "Community Service"],
+        "notable": "Catholic boys' school with strong athletics and faith-based education",
+        "vibe": "Faith-based, athletic, brotherhood",
+        "website": "https://www.vc.bc.ca"
+      },
+      {
+        "rank": 11,
+        "name": "Little Flower Academy",
+        "shortName": "LFA",
+        "city": "Vancouver",
+        "region": "vancouver",
+        "location": {
+          "address": "4195 Alexandra Street, Vancouver, BC",
+          "lat": 49.2542,
+          "lng": -123.1616
+        },
+        "type": "All-Girls",
+        "boarding": false,
+        "founded": 1927,
+        "grades": "8-12",
+        "students": "500+",
+        "tuition": {
+          "day": "$16,000 - $18,500",
+          "boarding": null
+        },
+        "admissions": {
+          "openGrades": "Grade 8, Grade 9",
+          "applicationDeadline": "January 31",
+          "assessmentRequired": true,
+          "interviewRequired": true,
+          "acceptanceRate": "~50%"
+        },
+        "academics": {
+          "curriculum": "BC Curriculum with AP",
+          "avgClassSize": "22",
+          "studentTeacherRatio": "14:1",
+          "apCourses": true,
+          "ibProgram": false,
+          "frenchImmersion": false
+        },
+        "university": {
+          "ivyLeaguePlacement": "2-4%",
+          "topCanadianPlacement": "88%+",
+          "notableDestinations": ["UBC", "SFU", "U of T", "McGill", "Queen's", "Western", "Harvard"]
+        },
+        "athletics": ["Volleyball", "Basketball", "Soccer", "Field Hockey", "Track & Field", "Badminton", "Cross Country"],
+        "specialPrograms": ["AP Courses", "Catholic Education", "Service Learning", "Arts"],
+        "notable": "Catholic girls' school with strong values-based education and supportive sisterhood",
+        "vibe": "Faith-based, empowering, nurturing",
+        "website": "https://www.lfabc.org"
+      },
+      {
+        "rank": 12,
+        "name": "Southridge School",
+        "shortName": "Southridge",
+        "city": "Surrey",
+        "region": "vancouver",
+        "location": {
+          "address": "2656 160th Street, Surrey, BC",
+          "lat": 49.0458,
+          "lng": -122.7717
+        },
+        "type": "Co-Ed",
+        "boarding": false,
+        "founded": 1995,
+        "grades": "JK-12",
+        "students": "700+",
+        "tuition": {
+          "day": "$23,000 - $27,000",
+          "boarding": null
+        },
+        "admissions": {
+          "openGrades": "JK, K, Grade 6, Grade 8",
+          "applicationDeadline": "January 15",
+          "assessmentRequired": true,
+          "interviewRequired": true,
+          "acceptanceRate": "~40%"
+        },
+        "academics": {
+          "curriculum": "BC Curriculum with AP",
+          "avgClassSize": "18",
+          "studentTeacherRatio": "9:1",
+          "apCourses": true,
+          "ibProgram": false,
+          "frenchImmersion": false
+        },
+        "university": {
+          "ivyLeaguePlacement": "5-8%",
+          "topCanadianPlacement": "90%+",
+          "notableDestinations": ["UBC", "U of T", "McGill", "Stanford", "Queen's", "Western", "Harvard"]
+        },
+        "athletics": ["Soccer", "Basketball", "Volleyball", "Tennis", "Golf", "Cross Country", "Swimming"],
+        "specialPrograms": ["AP Program", "Outdoor Education", "Service Learning", "Arts"],
+        "notable": "South Surrey's premier school with beautiful campus and strong community focus",
+        "vibe": "Community-oriented, balanced, family-like",
+        "website": "https://www.southridge.bc.ca"
+      },
+      {
+        "rank": 13,
+        "name": "Meadowridge School",
+        "shortName": "Meadowridge",
+        "city": "Maple Ridge",
+        "region": "vancouver",
+        "location": {
+          "address": "12224 240th Street, Maple Ridge, BC",
+          "lat": 49.1897,
+          "lng": -122.5144
+        },
+        "type": "Co-Ed",
+        "boarding": false,
+        "founded": 1985,
+        "grades": "JK-12",
+        "students": "650+",
+        "tuition": {
+          "day": "$21,000 - $25,000",
+          "boarding": null
+        },
+        "admissions": {
+          "openGrades": "JK, K, Grade 6, Grade 8",
+          "applicationDeadline": "January 31",
+          "assessmentRequired": true,
+          "interviewRequired": true,
+          "acceptanceRate": "~45%"
+        },
+        "academics": {
+          "curriculum": "IB World School (PYP, MYP, DP)",
+          "avgClassSize": "18",
+          "studentTeacherRatio": "9:1",
+          "apCourses": false,
+          "ibProgram": true,
+          "frenchImmersion": false
+        },
+        "university": {
+          "ivyLeaguePlacement": "4-7%",
+          "topCanadianPlacement": "88%+",
+          "notableDestinations": ["UBC", "U of T", "McGill", "SFU", "Queen's", "Harvard", "Stanford"]
+        },
+        "athletics": ["Soccer", "Basketball", "Volleyball", "Tennis", "Cross Country", "Track & Field", "Badminton"],
+        "specialPrograms": ["Full IB Programme", "Outdoor Education", "Farm to Table", "Sustainability"],
+        "notable": "Full IB school with unique farm campus and environmental focus",
+        "vibe": "Nature-connected, sustainable, inquiry-based",
+        "website": "https://www.meadowridge.bc.ca"
+      },
+      {
+        "rank": 14,
+        "name": "St. John's School",
+        "shortName": "SJS",
+        "city": "Vancouver",
+        "region": "vancouver",
+        "location": {
+          "address": "2215 West 10th Avenue, Vancouver, BC",
+          "lat": 49.2622,
+          "lng": -123.1528
+        },
+        "type": "Co-Ed",
+        "boarding": false,
+        "founded": 1986,
+        "grades": "JK-12",
+        "students": "600+",
+        "tuition": {
+          "day": "$22,000 - $26,000",
+          "boarding": null
+        },
+        "admissions": {
+          "openGrades": "JK, K, Grade 6, Grade 8",
+          "applicationDeadline": "January 15",
+          "assessmentRequired": true,
+          "interviewRequired": true,
+          "acceptanceRate": "~40%"
+        },
+        "academics": {
+          "curriculum": "BC Curriculum with AP",
+          "avgClassSize": "18",
+          "studentTeacherRatio": "10:1",
+          "apCourses": true,
+          "ibProgram": false,
+          "frenchImmersion": false
+        },
+        "university": {
+          "ivyLeaguePlacement": "4-6%",
+          "topCanadianPlacement": "88%+",
+          "notableDestinations": ["UBC", "U of T", "McGill", "SFU", "Queen's", "Western", "Stanford"]
+        },
+        "athletics": ["Soccer", "Basketball", "Volleyball", "Tennis", "Swimming", "Track & Field", "Badminton"],
+        "specialPrograms": ["AP Program", "Arts Excellence", "Outdoor Education", "Community Service"],
+        "notable": "Central Vancouver location with strong academics and arts programs",
+        "vibe": "Urban, arts-focused, tight-knit community",
+        "website": "https://www.stjohns.bc.ca"
+      },
+      {
+        "rank": 15,
+        "name": "Glenlyon Norfolk School",
+        "shortName": "GNS",
+        "city": "Victoria",
+        "region": "vancouver",
+        "location": {
+          "address": "801 Bank Street, Victoria, BC",
+          "lat": 48.4286,
+          "lng": -123.3472
+        },
+        "type": "Co-Ed",
+        "boarding": false,
+        "founded": 1913,
+        "grades": "JK-12",
+        "students": "700+",
+        "tuition": {
+          "day": "$20,000 - $24,000",
+          "boarding": null
+        },
+        "admissions": {
+          "openGrades": "JK, K, Grade 6, Grade 8",
+          "applicationDeadline": "January 31",
+          "assessmentRequired": true,
+          "interviewRequired": true,
+          "acceptanceRate": "~45%"
+        },
+        "academics": {
+          "curriculum": "IB World School (PYP, MYP, DP)",
+          "avgClassSize": "18",
+          "studentTeacherRatio": "10:1",
+          "apCourses": false,
+          "ibProgram": true,
+          "frenchImmersion": false
+        },
+        "university": {
+          "ivyLeaguePlacement": "3-5%",
+          "topCanadianPlacement": "85%+",
+          "notableDestinations": ["UBC", "U of T", "McGill", "UVic", "Queen's", "Harvard", "Oxford"]
+        },
+        "athletics": ["Soccer", "Basketball", "Volleyball", "Rugby", "Tennis", "Cross Country", "Swimming"],
+        "specialPrograms": ["Full IB Programme", "Round Square", "Outdoor Education", "Service Learning"],
+        "notable": "Victoria's IB school with Round Square membership and strong global connections",
+        "vibe": "Globally-minded, adventurous, community-focused",
+        "website": "https://www.mygns.ca"
+      },
+      {
+        "rank": 16,
+        "name": "Queen Margaret's School",
+        "shortName": "QMS",
+        "city": "Duncan",
+        "region": "vancouver",
+        "location": {
+          "address": "660 Brownsey Avenue, Duncan, BC",
+          "lat": 48.7833,
+          "lng": -123.7167
+        },
+        "type": "All-Girls",
+        "boarding": true,
+        "founded": 1921,
+        "grades": "JK-12",
+        "students": "320+",
+        "tuition": {
+          "day": "$18,000 - $22,000",
+          "boarding": "$52,000 - $58,000"
+        },
+        "admissions": {
+          "openGrades": "JK, Grade 6, Grade 8, Grade 9",
+          "applicationDeadline": "January 31",
+          "assessmentRequired": true,
+          "interviewRequired": true,
+          "acceptanceRate": "~55%"
+        },
+        "academics": {
+          "curriculum": "BC Curriculum with AP",
+          "avgClassSize": "14",
+          "studentTeacherRatio": "8:1",
+          "apCourses": true,
+          "ibProgram": false,
+          "frenchImmersion": false
+        },
+        "university": {
+          "ivyLeaguePlacement": "2-4%",
+          "topCanadianPlacement": "85%+",
+          "notableDestinations": ["UBC", "UVic", "U of T", "McGill", "Queen's", "Stanford", "Harvard"]
+        },
+        "athletics": ["Equestrian", "Soccer", "Basketball", "Volleyball", "Tennis", "Swimming", "Cross Country"],
+        "specialPrograms": ["Equestrian Program", "AP Courses", "Outdoor Education", "Arts"],
+        "notable": "Renowned equestrian program and beautiful Vancouver Island campus for girls",
+        "vibe": "Equestrian, nature-connected, nurturing",
+        "website": "https://www.qms.bc.ca"
+      },
+      {
+        "rank": 17,
+        "name": "St. Margaret's School",
+        "shortName": "SMS",
+        "city": "Victoria",
+        "region": "vancouver",
+        "location": {
+          "address": "1080 Lucas Avenue, Victoria, BC",
+          "lat": 48.4389,
+          "lng": -123.3558
+        },
+        "type": "All-Girls",
+        "boarding": true,
+        "founded": 1908,
+        "grades": "JK-12",
+        "students": "350+",
+        "tuition": {
+          "day": "$19,000 - $23,000",
+          "boarding": "$54,000 - $60,000"
+        },
+        "admissions": {
+          "openGrades": "JK, Grade 6, Grade 8, Grade 9",
+          "applicationDeadline": "January 31",
+          "assessmentRequired": true,
+          "interviewRequired": true,
+          "acceptanceRate": "~50%"
+        },
+        "academics": {
+          "curriculum": "BC Curriculum with AP",
+          "avgClassSize": "15",
+          "studentTeacherRatio": "9:1",
+          "apCourses": true,
+          "ibProgram": false,
+          "frenchImmersion": false
+        },
+        "university": {
+          "ivyLeaguePlacement": "2-4%",
+          "topCanadianPlacement": "88%+",
+          "notableDestinations": ["UBC", "UVic", "U of T", "McGill", "Queen's", "Western", "Harvard"]
+        },
+        "athletics": ["Field Hockey", "Basketball", "Volleyball", "Soccer", "Tennis", "Swimming", "Cross Country"],
+        "specialPrograms": ["AP Program", "STEAM", "Leadership", "Arts Excellence"],
+        "notable": "Victoria's premier girls' school with beautiful heritage campus and strong academics",
+        "vibe": "Empowering, heritage, sisterhood",
+        "website": "https://www.stmarg.ca"
+      },
+      {
+        "rank": 18,
+        "name": "Stratford Hall",
+        "shortName": "Stratford Hall",
+        "city": "Vancouver",
+        "region": "vancouver",
+        "location": {
+          "address": "3000 Commercial Drive, Vancouver, BC",
+          "lat": 49.2589,
+          "lng": -123.0694
+        },
+        "type": "Co-Ed",
+        "boarding": false,
+        "founded": 2000,
+        "grades": "JK-12",
+        "students": "550+",
+        "tuition": {
+          "day": "$21,000 - $25,000",
+          "boarding": null
+        },
+        "admissions": {
+          "openGrades": "JK, K, Grade 6, Grade 8",
+          "applicationDeadline": "January 31",
+          "assessmentRequired": true,
+          "interviewRequired": true,
+          "acceptanceRate": "~45%"
+        },
+        "academics": {
+          "curriculum": "IB World School (PYP, MYP, DP)",
+          "avgClassSize": "18",
+          "studentTeacherRatio": "10:1",
+          "apCourses": false,
+          "ibProgram": true,
+          "frenchImmersion": false
+        },
+        "university": {
+          "ivyLeaguePlacement": "3-5%",
+          "topCanadianPlacement": "85%+",
+          "notableDestinations": ["UBC", "U of T", "McGill", "SFU", "Queen's", "Western", "Stanford"]
+        },
+        "athletics": ["Soccer", "Basketball", "Volleyball", "Badminton", "Cross Country", "Track & Field", "Swimming"],
+        "specialPrograms": ["Full IB Programme", "Arts Excellence", "Community Service", "STEAM"],
+        "notable": "East Vancouver IB school with diverse community and strong arts focus",
+        "vibe": "Diverse, artistic, inquiry-based",
+        "website": "https://www.stratfordhall.ca"
+      },
+      {
+        "rank": 19,
+        "name": "Bodwell High School",
+        "shortName": "Bodwell",
+        "city": "North Vancouver",
+        "region": "vancouver",
+        "location": {
+          "address": "955 Harbourside Drive, North Vancouver, BC",
+          "lat": 49.3097,
+          "lng": -123.0789
+        },
+        "type": "Co-Ed",
+        "boarding": true,
+        "founded": 1991,
+        "grades": "8-12",
+        "students": "600+",
+        "tuition": {
+          "day": "$18,000 - $22,000",
+          "boarding": "$42,000 - $48,000"
+        },
+        "admissions": {
+          "openGrades": "Grade 8, Grade 9, Grade 10, Grade 11",
+          "applicationDeadline": "Rolling",
+          "assessmentRequired": true,
+          "interviewRequired": true,
+          "acceptanceRate": "~60%"
+        },
+        "academics": {
+          "curriculum": "BC Curriculum",
+          "avgClassSize": "20",
+          "studentTeacherRatio": "12:1",
+          "apCourses": true,
+          "ibProgram": false,
+          "frenchImmersion": false
+        },
+        "university": {
+          "ivyLeaguePlacement": "1-2%",
+          "topCanadianPlacement": "80%+",
+          "notableDestinations": ["UBC", "SFU", "U of T", "McGill", "UVic", "Waterloo", "Queen's"]
+        },
+        "athletics": ["Soccer", "Basketball", "Volleyball", "Badminton", "Swimming", "Table Tennis", "Fitness"],
+        "specialPrograms": ["ESL Support", "University Prep", "Leadership", "Arts"],
+        "notable": "International school with strong ESL support and diverse global student body",
+        "vibe": "International, diverse, university-focused",
+        "website": "https://www.bodwell.edu"
+      },
+      {
+        "rank": 20,
+        "name": "Dwight School Canada",
+        "shortName": "Dwight",
+        "city": "Shawnigan Lake",
+        "region": "vancouver",
+        "location": {
+          "address": "2371 Shawnigan Lake Road, Shawnigan Lake, BC",
+          "lat": 48.6456,
+          "lng": -123.6367
+        },
+        "type": "Co-Ed",
+        "boarding": true,
+        "founded": 2016,
+        "grades": "6-12",
+        "students": "200+",
+        "tuition": {
+          "day": "$28,000 - $32,000",
+          "boarding": "$58,000 - $65,000"
+        },
+        "admissions": {
+          "openGrades": "Grade 6, Grade 8, Grade 9, Grade 10",
+          "applicationDeadline": "Rolling",
+          "assessmentRequired": true,
+          "interviewRequired": true,
+          "acceptanceRate": "~50%"
+        },
+        "academics": {
+          "curriculum": "IB World School (MYP, DP)",
+          "avgClassSize": "12",
+          "studentTeacherRatio": "6:1",
+          "apCourses": false,
+          "ibProgram": true,
+          "frenchImmersion": false
+        },
+        "university": {
+          "ivyLeaguePlacement": "5-8%",
+          "topCanadianPlacement": "85%+",
+          "notableDestinations": ["UBC", "U of T", "McGill", "NYU", "UCLA", "Harvard", "Stanford"]
+        },
+        "athletics": ["Soccer", "Basketball", "Volleyball", "Tennis", "Swimming", "Outdoor Activities", "Yoga"],
+        "specialPrograms": ["IB Programme", "Spark Tank Innovation", "Global Network", "Personalized Learning"],
+        "notable": "Part of global Dwight School network with innovative IB approach and small class sizes",
+        "vibe": "Innovative, personalized, globally-connected",
+        "website": "https://www.dwight.edu/canada"
+      }
+    ],
+    "montreal": [
+      {
+        "rank": 1,
+        "name": "Lower Canada College",
+        "shortName": "LCC",
+        "city": "Montreal",
+        "region": "montreal",
+        "location": {
+          "address": "4090 Royal Avenue, Montreal, QC",
+          "lat": 45.4689,
+          "lng": -73.6178
+        },
+        "type": "Co-Ed",
+        "boarding": false,
+        "founded": 1909,
+        "grades": "K-12",
+        "students": "800+",
+        "tuition": {
+          "day": "$22,000 - $26,000",
+          "boarding": null
+        },
+        "admissions": {
+          "openGrades": "K, Grade 1, Grade 7",
+          "applicationDeadline": "January 15",
+          "assessmentRequired": true,
+          "interviewRequired": true,
+          "acceptanceRate": "~35%"
+        },
+        "academics": {
+          "curriculum": "Quebec Curriculum with IB Diploma",
+          "avgClassSize": "18",
+          "studentTeacherRatio": "9:1",
+          "apCourses": false,
+          "ibProgram": true,
+          "frenchImmersion": true
+        },
+        "university": {
+          "ivyLeaguePlacement": "10-15%",
+          "topCanadianPlacement": "90%+",
+          "notableDestinations": ["Harvard", "Yale", "Princeton", "McGill", "U of T", "Queen's", "Stanford"]
+        },
+        "athletics": ["Hockey", "Football", "Soccer", "Basketball", "Tennis", "Swimming", "Track & Field"],
+        "specialPrograms": ["IB Diploma", "French Immersion", "Robotics", "Leadership"],
+        "notable": "Montreal's premier co-ed school with exceptional IB program and bilingual education",
+        "vibe": "Bilingual, academic excellence, traditional",
+        "website": "https://www.lcc.ca"
+      },
+      {
+        "rank": 2,
+        "name": "Selwyn House School",
+        "shortName": "Selwyn House",
+        "city": "Westmount",
+        "region": "montreal",
+        "location": {
+          "address": "95 Côte Saint-Antoine Road, Westmount, QC",
+          "lat": 45.4847,
+          "lng": -73.5972
+        },
+        "type": "All-Boys",
+        "boarding": false,
+        "founded": 1908,
+        "grades": "K-11",
+        "students": "600+",
+        "tuition": {
+          "day": "$23,000 - $27,000",
+          "boarding": null
+        },
+        "admissions": {
+          "openGrades": "K, Grade 1, Grade 7",
+          "applicationDeadline": "January 15",
+          "assessmentRequired": true,
+          "interviewRequired": true,
+          "acceptanceRate": "~30%"
+        },
+        "academics": {
+          "curriculum": "Quebec Curriculum",
+          "avgClassSize": "18",
+          "studentTeacherRatio": "9:1",
+          "apCourses": true,
+          "ibProgram": false,
+          "frenchImmersion": true
+        },
+        "university": {
+          "ivyLeaguePlacement": "8-12%",
+          "topCanadianPlacement": "92%+",
+          "notableDestinations": ["Harvard", "Princeton", "Yale", "McGill", "U of T", "Queen's", "MIT"]
+        },
+        "athletics": ["Hockey", "Football", "Soccer", "Basketball", "Rugby", "Tennis", "Swimming"],
+        "specialPrograms": ["AP Program", "Bilingual Education", "Robotics", "Leadership"],
+        "notable": "Premier boys' school in Montreal with strong academics and character development",
+        "vibe": "Traditional, brotherhood, academic rigor",
+        "website": "https://www.selwyn.ca"
+      },
+      {
+        "rank": 3,
+        "name": "The Study",
+        "shortName": "The Study",
+        "city": "Westmount",
+        "region": "montreal",
+        "location": {
+          "address": "3233 The Boulevard, Westmount, QC",
+          "lat": 45.4922,
+          "lng": -73.6028
+        },
+        "type": "All-Girls",
+        "boarding": false,
+        "founded": 1915,
+        "grades": "K-11",
+        "students": "400+",
+        "tuition": {
+          "day": "$22,000 - $25,000",
+          "boarding": null
+        },
+        "admissions": {
+          "openGrades": "K, Grade 1, Grade 7",
+          "applicationDeadline": "January 15",
+          "assessmentRequired": true,
+          "interviewRequired": true,
+          "acceptanceRate": "~35%"
+        },
+        "academics": {
+          "curriculum": "Quebec Curriculum",
+          "avgClassSize": "16",
+          "studentTeacherRatio": "8:1",
+          "apCourses": true,
+          "ibProgram": false,
+          "frenchImmersion": true
+        },
+        "university": {
+          "ivyLeaguePlacement": "6-10%",
+          "topCanadianPlacement": "92%+",
+          "notableDestinations": ["Harvard", "Yale", "McGill", "U of T", "Queen's", "Princeton", "Columbia"]
+        },
+        "athletics": ["Field Hockey", "Basketball", "Volleyball", "Soccer", "Tennis", "Swimming", "Track & Field"],
+        "specialPrograms": ["Bilingual Education", "STEAM", "Leadership", "Arts Excellence"],
+        "notable": "Elite girls' school known for academic excellence and producing confident leaders",
+        "vibe": "Empowering, intellectual, sisterhood",
+        "website": "https://www.thestudy.qc.ca"
+      },
+      {
+        "rank": 4,
+        "name": "Trafalgar School for Girls",
+        "shortName": "Trafalgar",
+        "city": "Montreal",
+        "region": "montreal",
+        "location": {
+          "address": "3495 Simpson Street, Montreal, QC",
+          "lat": 45.4989,
+          "lng": -73.5847
+        },
+        "type": "All-Girls",
+        "boarding": false,
+        "founded": 1887,
+        "grades": "7-11",
+        "students": "250+",
+        "tuition": {
+          "day": "$21,000 - $24,000",
+          "boarding": null
+        },
+        "admissions": {
+          "openGrades": "Grade 7, Grade 8, Grade 9",
+          "applicationDeadline": "January 15",
+          "assessmentRequired": true,
+          "interviewRequired": true,
+          "acceptanceRate": "~40%"
+        },
+        "academics": {
+          "curriculum": "Quebec Curriculum",
+          "avgClassSize": "15",
+          "studentTeacherRatio": "8:1",
+          "apCourses": true,
+          "ibProgram": false,
+          "frenchImmersion": true
+        },
+        "university": {
+          "ivyLeaguePlacement": "5-8%",
+          "topCanadianPlacement": "90%+",
+          "notableDestinations": ["McGill", "U of T", "Queen's", "Harvard", "Yale", "Brown", "Columbia"]
+        },
+        "athletics": ["Basketball", "Volleyball", "Soccer", "Badminton", "Cross Country", "Track & Field", "Swimming"],
+        "specialPrograms": ["Bilingual Education", "STEM Initiative", "Arts", "Leadership"],
+        "notable": "Historic girls' school with small classes and personalized attention",
+        "vibe": "Intimate, academic, empowering",
+        "website": "https://www.trafalgar.qc.ca"
+      },
+      {
+        "rank": 5,
+        "name": "Miss Edgar's & Miss Cramp's School",
+        "shortName": "ECS",
+        "city": "Westmount",
+        "region": "montreal",
+        "location": {
+          "address": "525 Mount Pleasant Avenue, Westmount, QC",
+          "lat": 45.4867,
+          "lng": -73.5958
+        },
+        "type": "All-Girls",
+        "boarding": false,
+        "founded": 1909,
+        "grades": "K-11",
+        "students": "350+",
+        "tuition": {
+          "day": "$21,000 - $24,000",
+          "boarding": null
+        },
+        "admissions": {
+          "openGrades": "K, Grade 1, Grade 7",
+          "applicationDeadline": "January 15",
+          "assessmentRequired": true,
+          "interviewRequired": true,
+          "acceptanceRate": "~40%"
+        },
+        "academics": {
+          "curriculum": "Quebec Curriculum",
+          "avgClassSize": "16",
+          "studentTeacherRatio": "9:1",
+          "apCourses": false,
+          "ibProgram": false,
+          "frenchImmersion": true
+        },
+        "university": {
+          "ivyLeaguePlacement": "4-7%",
+          "topCanadianPlacement": "88%+",
+          "notableDestinations": ["McGill", "U of T", "Queen's", "Harvard", "Western", "Columbia", "NYU"]
+        },
+        "athletics": ["Basketball", "Volleyball", "Soccer", "Field Hockey", "Badminton", "Cross Country", "Swimming"],
+        "specialPrograms": ["Bilingual Education", "STEAM", "Arts Excellence", "Leadership"],
+        "notable": "Nurturing girls' school with strong bilingual program and focus on whole-child development",
+        "vibe": "Nurturing, bilingual, confidence-building",
+        "website": "https://www.ecs.qc.ca"
+      },
+      {
+        "rank": 6,
+        "name": "The Sacred Heart School of Montreal",
+        "shortName": "Sacred Heart",
+        "city": "Montreal",
+        "region": "montreal",
+        "location": {
+          "address": "3635 Atwater Avenue, Montreal, QC",
+          "lat": 45.4736,
+          "lng": -73.5869
+        },
+        "type": "All-Girls",
+        "boarding": false,
+        "founded": 1861,
+        "grades": "K-11",
+        "students": "650+",
+        "tuition": {
+          "day": "$18,000 - $21,000",
+          "boarding": null
+        },
+        "admissions": {
+          "openGrades": "K, Grade 1, Grade 7",
+          "applicationDeadline": "January 31",
+          "assessmentRequired": true,
+          "interviewRequired": true,
+          "acceptanceRate": "~45%"
+        },
+        "academics": {
+          "curriculum": "Quebec Curriculum",
+          "avgClassSize": "20",
+          "studentTeacherRatio": "12:1",
+          "apCourses": false,
+          "ibProgram": false,
+          "frenchImmersion": true
+        },
+        "university": {
+          "ivyLeaguePlacement": "2-4%",
+          "topCanadianPlacement": "85%+",
+          "notableDestinations": ["McGill", "Concordia", "U of T", "Queen's", "Western", "Ottawa", "Harvard"]
+        },
+        "athletics": ["Basketball", "Volleyball", "Soccer", "Badminton", "Cross Country", "Swimming", "Dance"],
+        "specialPrograms": ["Sacred Heart Network", "Bilingual Education", "Service Learning", "Arts"],
+        "notable": "Part of global Sacred Heart network with values-based education for girls",
+        "vibe": "Faith-based, global network, empowering",
+        "website": "https://www.sacredheart.qc.ca"
+      },
+      {
+        "rank": 7,
+        "name": "Villa Maria",
+        "shortName": "Villa Maria",
+        "city": "Montreal",
+        "region": "montreal",
+        "location": {
+          "address": "4245 Décarie Boulevard, Montreal, QC",
+          "lat": 45.4769,
+          "lng": -73.6197
+        },
+        "type": "All-Girls",
+        "boarding": false,
+        "founded": 1854,
+        "grades": "7-11",
+        "students": "1,800+",
+        "tuition": {
+          "day": "$6,500 - $8,000",
+          "boarding": null
+        },
+        "admissions": {
+          "openGrades": "Grade 7",
+          "applicationDeadline": "October 31",
+          "assessmentRequired": true,
+          "interviewRequired": false,
+          "acceptanceRate": "~50%"
+        },
+        "academics": {
+          "curriculum": "Quebec Curriculum",
+          "avgClassSize": "28",
+          "studentTeacherRatio": "15:1",
+          "apCourses": false,
+          "ibProgram": false,
+          "frenchImmersion": true
+        },
+        "university": {
+          "ivyLeaguePlacement": "1-2%",
+          "topCanadianPlacement": "80%+",
+          "notableDestinations": ["McGill", "Concordia", "U de Montreal", "UQAM", "U of T", "Ottawa", "Laval"]
+        },
+        "athletics": ["Basketball", "Volleyball", "Soccer", "Badminton", "Track & Field", "Swimming", "Dance"],
+        "specialPrograms": ["Bilingual Streams", "Arts-Études", "Sports-Études", "STEAM"],
+        "notable": "One of Quebec's largest private girls' schools with affordable tuition and strong academics",
+        "vibe": "Accessible, diverse, community-oriented",
+        "website": "https://www.villamaria.qc.ca"
+      },
+      {
+        "rank": 8,
+        "name": "St. George's School of Montreal",
+        "shortName": "St. George's",
+        "city": "Montreal",
+        "region": "montreal",
+        "location": {
+          "address": "3100 The Boulevard, Westmount, QC",
+          "lat": 45.4917,
+          "lng": -73.6014
+        },
+        "type": "Co-Ed",
+        "boarding": false,
+        "founded": 1930,
+        "grades": "K-11",
+        "students": "550+",
+        "tuition": {
+          "day": "$22,000 - $25,000",
+          "boarding": null
+        },
+        "admissions": {
+          "openGrades": "K, Grade 1, Grade 7",
+          "applicationDeadline": "January 15",
+          "assessmentRequired": true,
+          "interviewRequired": true,
+          "acceptanceRate": "~35%"
+        },
+        "academics": {
+          "curriculum": "Quebec Curriculum with IB",
+          "avgClassSize": "18",
+          "studentTeacherRatio": "9:1",
+          "apCourses": false,
+          "ibProgram": true,
+          "frenchImmersion": true
+        },
+        "university": {
+          "ivyLeaguePlacement": "5-8%",
+          "topCanadianPlacement": "90%+",
+          "notableDestinations": ["McGill", "U of T", "Queen's", "Harvard", "Yale", "Princeton", "Columbia"]
+        },
+        "athletics": ["Soccer", "Basketball", "Volleyball", "Hockey", "Tennis", "Swimming", "Track & Field"],
+        "specialPrograms": ["IB Programme", "Bilingual Education", "Arts Excellence", "Outdoor Education"],
+        "notable": "Strong IB school with excellent bilingual program and inclusive community",
+        "vibe": "Inclusive, bilingual, inquiry-based",
+        "website": "https://www.stgeorges.qc.ca"
+      },
+      {
+        "rank": 9,
+        "name": "Kuper Academy",
+        "shortName": "Kuper",
+        "city": "Kirkland",
+        "region": "montreal",
+        "location": {
+          "address": "2975 Boulevard Saint-Charles, Kirkland, QC",
+          "lat": 45.4486,
+          "lng": -73.8656
+        },
+        "type": "Co-Ed",
+        "boarding": false,
+        "founded": 1972,
+        "grades": "K-11",
+        "students": "600+",
+        "tuition": {
+          "day": "$15,000 - $18,000",
+          "boarding": null
+        },
+        "admissions": {
+          "openGrades": "K, Grade 1, Grade 7",
+          "applicationDeadline": "January 31",
+          "assessmentRequired": true,
+          "interviewRequired": true,
+          "acceptanceRate": "~50%"
+        },
+        "academics": {
+          "curriculum": "Quebec Curriculum",
+          "avgClassSize": "20",
+          "studentTeacherRatio": "12:1",
+          "apCourses": false,
+          "ibProgram": false,
+          "frenchImmersion": true
+        },
+        "university": {
+          "ivyLeaguePlacement": "2-4%",
+          "topCanadianPlacement": "85%+",
+          "notableDestinations": ["McGill", "Concordia", "U of T", "Queen's", "Western", "Ottawa", "Harvard"]
+        },
+        "athletics": ["Soccer", "Basketball", "Volleyball", "Hockey", "Badminton", "Track & Field", "Swimming"],
+        "specialPrograms": ["Bilingual Education", "STEAM", "Arts Program", "Sports Program"],
+        "notable": "West Island school with strong community feel and balanced education",
+        "vibe": "Community-focused, balanced, family-like",
+        "website": "https://www.kuperacademy.ca"
+      },
+      {
+        "rank": 10,
+        "name": "Villa Sainte-Marcelline",
+        "shortName": "Marcelline",
+        "city": "Westmount",
+        "region": "montreal",
+        "location": {
+          "address": "815 Upper Belmont Avenue, Westmount, QC",
+          "lat": 45.4958,
+          "lng": -73.6122
+        },
+        "type": "Co-Ed",
+        "boarding": false,
+        "founded": 1959,
+        "grades": "PK-11",
+        "students": "900+",
+        "tuition": {
+          "day": "$12,000 - $15,000",
+          "boarding": null
+        },
+        "admissions": {
+          "openGrades": "PK, K, Grade 7",
+          "applicationDeadline": "January 31",
+          "assessmentRequired": true,
+          "interviewRequired": true,
+          "acceptanceRate": "~45%"
+        },
+        "academics": {
+          "curriculum": "Quebec Curriculum with IB",
+          "avgClassSize": "22",
+          "studentTeacherRatio": "12:1",
+          "apCourses": false,
+          "ibProgram": true,
+          "frenchImmersion": true
+        },
+        "university": {
+          "ivyLeaguePlacement": "2-4%",
+          "topCanadianPlacement": "85%+",
+          "notableDestinations": ["McGill", "U de Montreal", "Concordia", "U of T", "Queen's", "Ottawa", "Harvard"]
+        },
+        "athletics": ["Soccer", "Basketball", "Volleyball", "Badminton", "Cross Country", "Swimming", "Dance"],
+        "specialPrograms": ["IB Programme", "French Education", "Arts Excellence", "Sports-Études"],
+        "notable": "French-language IB school with international Marcelline network connections",
+        "vibe": "French-language, international, holistic",
+        "website": "https://www.villa.marcelline.qc.ca"
+      },
+      {
+        "rank": 11,
+        "name": "Queen of Angels Academy",
+        "shortName": "QOA",
+        "city": "Dorval",
+        "region": "montreal",
+        "location": {
+          "address": "1035 Technoparc Street, Dorval, QC",
+          "lat": 45.4500,
+          "lng": -73.7417
+        },
+        "type": "All-Girls",
+        "boarding": false,
+        "founded": 1950,
+        "grades": "7-11",
+        "students": "300+",
+        "tuition": {
+          "day": "$8,500 - $10,000",
+          "boarding": null
+        },
+        "admissions": {
+          "openGrades": "Grade 7",
+          "applicationDeadline": "October 31",
+          "assessmentRequired": true,
+          "interviewRequired": false,
+          "acceptanceRate": "~55%"
+        },
+        "academics": {
+          "curriculum": "Quebec Curriculum",
+          "avgClassSize": "24",
+          "studentTeacherRatio": "14:1",
+          "apCourses": false,
+          "ibProgram": false,
+          "frenchImmersion": true
+        },
+        "university": {
+          "ivyLeaguePlacement": "1-2%",
+          "topCanadianPlacement": "80%+",
+          "notableDestinations": ["McGill", "Concordia", "U de Montreal", "Ottawa", "Queen's", "Western", "U of T"]
+        },
+        "athletics": ["Basketball", "Volleyball", "Soccer", "Badminton", "Cross Country", "Track & Field", "Dance"],
+        "specialPrograms": ["Bilingual Education", "STEAM", "Arts Program", "Leadership"],
+        "notable": "Affordable Catholic girls' school with strong values and supportive environment",
+        "vibe": "Faith-based, affordable, supportive",
+        "website": "https://www.queenofangels.qc.ca"
+      },
+      {
+        "rank": 12,
+        "name": "Kells Academy",
+        "shortName": "Kells",
+        "city": "Montreal",
+        "region": "montreal",
+        "location": {
+          "address": "6865 De Maisonneuve Boulevard West, Montreal, QC",
+          "lat": 45.4750,
+          "lng": -73.6331
+        },
+        "type": "Co-Ed",
+        "boarding": false,
+        "founded": 1978,
+        "grades": "1-11",
+        "students": "200+",
+        "tuition": {
+          "day": "$20,000 - $24,000",
+          "boarding": null
+        },
+        "admissions": {
+          "openGrades": "Grade 1, Grade 7, Grade 8",
+          "applicationDeadline": "Rolling",
+          "assessmentRequired": true,
+          "interviewRequired": true,
+          "acceptanceRate": "~60%"
+        },
+        "academics": {
+          "curriculum": "Quebec Curriculum",
+          "avgClassSize": "12",
+          "studentTeacherRatio": "6:1",
+          "apCourses": false,
+          "ibProgram": false,
+          "frenchImmersion": true
+        },
+        "university": {
+          "ivyLeaguePlacement": "2-4%",
+          "topCanadianPlacement": "85%+",
+          "notableDestinations": ["McGill", "Concordia", "U of T", "Queen's", "Western", "Ottawa", "Bishop's"]
+        },
+        "athletics": ["Basketball", "Volleyball", "Soccer", "Badminton", "Cross Country", "Swimming", "Fitness"],
+        "specialPrograms": ["Learning Differences Support", "Small Classes", "Individualized Learning", "Arts"],
+        "notable": "Specialized in supporting students with learning differences with exceptional small class sizes",
+        "vibe": "Supportive, individualized, inclusive",
+        "website": "https://www.kells.ca"
+      },
+      {
+        "rank": 13,
+        "name": "Centennial Academy",
+        "shortName": "Centennial",
+        "city": "Montreal",
+        "region": "montreal",
+        "location": {
+          "address": "3641 Prud'homme Avenue, Montreal, QC",
+          "lat": 45.4756,
+          "lng": -73.6133
+        },
+        "type": "Co-Ed",
+        "boarding": false,
+        "founded": 1969,
+        "grades": "7-11",
+        "students": "200+",
+        "tuition": {
+          "day": "$22,000 - $26,000",
+          "boarding": null
+        },
+        "admissions": {
+          "openGrades": "Grade 7, Grade 8, Grade 9",
+          "applicationDeadline": "Rolling",
+          "assessmentRequired": true,
+          "interviewRequired": true,
+          "acceptanceRate": "~55%"
+        },
+        "academics": {
+          "curriculum": "Quebec Curriculum",
+          "avgClassSize": "10",
+          "studentTeacherRatio": "5:1",
+          "apCourses": false,
+          "ibProgram": false,
+          "frenchImmersion": true
+        },
+        "university": {
+          "ivyLeaguePlacement": "2-4%",
+          "topCanadianPlacement": "85%+",
+          "notableDestinations": ["McGill", "Concordia", "U of T", "Queen's", "Western", "Bishop's", "Ottawa"]
+        },
+        "athletics": ["Basketball", "Volleyball", "Soccer", "Badminton", "Fitness", "Yoga", "Outdoor Activities"],
+        "specialPrograms": ["Learning Differences Support", "ADHD/LD Specialists", "Small Classes", "Study Skills"],
+        "notable": "Leading school for students with learning differences, ADHD, and anxiety",
+        "vibe": "Specialized, therapeutic, empowering",
+        "website": "https://www.centennial.qc.ca"
+      },
+      {
+        "rank": 14,
+        "name": "College Prep International",
+        "shortName": "CPI",
+        "city": "Montreal",
+        "region": "montreal",
+        "location": {
+          "address": "1175 Boulevard Saint-Joseph, Montreal, QC",
+          "lat": 45.5339,
+          "lng": -73.5897
+        },
+        "type": "Co-Ed",
+        "boarding": false,
+        "founded": 1986,
+        "grades": "7-12",
+        "students": "150+",
+        "tuition": {
+          "day": "$16,000 - $19,000",
+          "boarding": null
+        },
+        "admissions": {
+          "openGrades": "Grade 7, Grade 8, Grade 9, Grade 10",
+          "applicationDeadline": "Rolling",
+          "assessmentRequired": true,
+          "interviewRequired": true,
+          "acceptanceRate": "~60%"
+        },
+        "academics": {
+          "curriculum": "Quebec & Ontario Curriculum",
+          "avgClassSize": "12",
+          "studentTeacherRatio": "8:1",
+          "apCourses": true,
+          "ibProgram": false,
+          "frenchImmersion": false
+        },
+        "university": {
+          "ivyLeaguePlacement": "2-4%",
+          "topCanadianPlacement": "82%+",
+          "notableDestinations": ["McGill", "Concordia", "U of T", "Queen's", "Western", "Ottawa", "Waterloo"]
+        },
+        "athletics": ["Basketball", "Volleyball", "Soccer", "Badminton", "Fitness", "Table Tennis", "Outdoor Activities"],
+        "specialPrograms": ["AP Courses", "University Prep", "Ontario Diploma Option", "ESL Support"],
+        "notable": "Flexible curriculum offering both Quebec and Ontario diplomas for university preparation",
+        "vibe": "Flexible, university-focused, international",
+        "website": "https://www.collegeprep.ca"
+      },
+      {
+        "rank": 15,
+        "name": "West Island College",
+        "shortName": "WIC",
+        "city": "Dollard-des-Ormeaux",
+        "region": "montreal",
+        "location": {
+          "address": "851 Tecumseh Avenue, Dollard-des-Ormeaux, QC",
+          "lat": 45.4889,
+          "lng": -73.8147
+        },
+        "type": "Co-Ed",
+        "boarding": false,
+        "founded": 1974,
+        "grades": "7-11",
+        "students": "350+",
+        "tuition": {
+          "day": "$14,000 - $17,000",
+          "boarding": null
+        },
+        "admissions": {
+          "openGrades": "Grade 7",
+          "applicationDeadline": "October 31",
+          "assessmentRequired": true,
+          "interviewRequired": false,
+          "acceptanceRate": "~55%"
+        },
+        "academics": {
+          "curriculum": "Quebec Curriculum",
+          "avgClassSize": "22",
+          "studentTeacherRatio": "12:1",
+          "apCourses": false,
+          "ibProgram": false,
+          "frenchImmersion": true
+        },
+        "university": {
+          "ivyLeaguePlacement": "1-2%",
+          "topCanadianPlacement": "82%+",
+          "notableDestinations": ["McGill", "Concordia", "U de Montreal", "Ottawa", "Queen's", "Western", "Bishop's"]
+        },
+        "athletics": ["Soccer", "Basketball", "Volleyball", "Hockey", "Badminton", "Track & Field", "Swimming"],
+        "specialPrograms": ["Bilingual Education", "Arts Program", "Sports Excellence", "Technology"],
+        "notable": "West Island school with balanced academics and strong extracurricular programs",
+        "vibe": "Balanced, community-oriented, well-rounded",
+        "website": "https://www.wic.qc.ca"
+      }
+    ],
+    "calgary": [
+      {
+        "rank": 1,
+        "name": "Strathcona-Tweedsmuir School",
+        "shortName": "STS",
+        "city": "Okotoks",
+        "region": "calgary",
+        "location": {
+          "address": "RR2, Okotoks, AB",
+          "lat": 50.7167,
+          "lng": -113.9667
+        },
+        "type": "Co-Ed",
+        "boarding": false,
+        "founded": 1971,
+        "grades": "K-12",
+        "students": "700+",
+        "tuition": {
+          "day": "$20,000 - $24,000",
+          "boarding": null
+        },
+        "admissions": {
+          "openGrades": "K, Grade 1, Grade 7, Grade 10",
+          "applicationDeadline": "February 1",
+          "assessmentRequired": true,
+          "interviewRequired": true,
+          "acceptanceRate": "~45%"
+        },
+        "academics": {
+          "curriculum": "Alberta Curriculum with IB Diploma",
+          "avgClassSize": "18",
+          "studentTeacherRatio": "9:1",
+          "apCourses": false,
+          "ibProgram": true,
+          "frenchImmersion": false
+        },
+        "university": {
+          "ivyLeaguePlacement": "5-8%",
+          "topCanadianPlacement": "90%+",
+          "notableDestinations": ["Harvard", "Yale", "Stanford", "U of Calgary", "U of Alberta", "U of T", "McGill"]
+        },
+        "athletics": ["Hockey", "Soccer", "Basketball", "Volleyball", "Rugby", "Cross Country", "Track & Field"],
+        "specialPrograms": ["IB Diploma", "Round Square", "Outdoor Education", "Leadership"],
+        "notable": "Calgary's premier IB school with stunning 220-acre rural campus and strong outdoor program",
+        "vibe": "Outdoor-focused, IB excellence, community",
+        "website": "https://www.sts.ab.ca"
+      },
+      {
+        "rank": 2,
+        "name": "West Island College",
+        "shortName": "WIC Calgary",
+        "city": "Calgary",
+        "region": "calgary",
+        "location": {
+          "address": "7410 Blackfoot Trail SE, Calgary, AB",
+          "lat": 50.9631,
+          "lng": -114.0392
+        },
+        "type": "Co-Ed",
+        "boarding": false,
+        "founded": 1982,
+        "grades": "7-12",
+        "students": "400+",
+        "tuition": {
+          "day": "$18,000 - $22,000",
+          "boarding": null
+        },
+        "admissions": {
+          "openGrades": "Grade 7, Grade 8, Grade 10",
+          "applicationDeadline": "February 1",
+          "assessmentRequired": true,
+          "interviewRequired": true,
+          "acceptanceRate": "~50%"
+        },
+        "academics": {
+          "curriculum": "Alberta Curriculum with IB Diploma",
+          "avgClassSize": "18",
+          "studentTeacherRatio": "10:1",
+          "apCourses": false,
+          "ibProgram": true,
+          "frenchImmersion": false
+        },
+        "university": {
+          "ivyLeaguePlacement": "3-5%",
+          "topCanadianPlacement": "88%+",
+          "notableDestinations": ["U of Calgary", "U of Alberta", "U of T", "McGill", "Queen's", "Harvard", "Stanford"]
+        },
+        "athletics": ["Soccer", "Basketball", "Volleyball", "Badminton", "Cross Country", "Track & Field", "Golf"],
+        "specialPrograms": ["IB Diploma", "Leadership", "Service Learning", "Outdoor Education"],
+        "notable": "Strong IB school with focus on character development and global citizenship",
+        "vibe": "IB-focused, character-driven, inclusive",
+        "website": "https://www.westislandcollege.ab.ca"
+      },
+      {
+        "rank": 3,
+        "name": "Calgary French & International School",
+        "shortName": "CFIS",
+        "city": "Calgary",
+        "region": "calgary",
+        "location": {
+          "address": "700 77th Street SW, Calgary, AB",
+          "lat": 50.9606,
+          "lng": -114.1572
+        },
+        "type": "Co-Ed",
+        "boarding": false,
+        "founded": 1966,
+        "grades": "PK-12",
+        "students": "900+",
+        "tuition": {
+          "day": "$16,000 - $20,000",
+          "boarding": null
+        },
+        "admissions": {
+          "openGrades": "PK, K, Grade 7",
+          "applicationDeadline": "January 31",
+          "assessmentRequired": true,
+          "interviewRequired": true,
+          "acceptanceRate": "~45%"
+        },
+        "academics": {
+          "curriculum": "French Curriculum with IB",
+          "avgClassSize": "20",
+          "studentTeacherRatio": "10:1",
+          "apCourses": false,
+          "ibProgram": true,
+          "frenchImmersion": true
+        },
+        "university": {
+          "ivyLeaguePlacement": "2-4%",
+          "topCanadianPlacement": "85%+",
+          "notableDestinations": ["U of Calgary", "U of Alberta", "McGill", "U de Montreal", "U of T", "Queen's", "Sciences Po"]
+        },
+        "athletics": ["Soccer", "Basketball", "Volleyball", "Badminton", "Cross Country", "Swimming", "Track & Field"],
+        "specialPrograms": ["French Immersion", "IB Programme", "Bilingual Education", "Arts"],
+        "notable": "Calgary's premier French immersion school offering complete bilingual education",
+        "vibe": "Bilingual, international, culturally rich",
+        "website": "https://www.cfis.com"
+      },
+      {
+        "rank": 4,
+        "name": "Rundle College",
+        "shortName": "Rundle",
+        "city": "Calgary",
+        "region": "calgary",
+        "location": {
+          "address": "7375 17th Avenue SW, Calgary, AB",
+          "lat": 51.0372,
+          "lng": -114.1456
+        },
+        "type": "Co-Ed",
+        "boarding": false,
+        "founded": 1985,
+        "grades": "K-12",
+        "students": "1,100+",
+        "tuition": {
+          "day": "$14,000 - $18,000",
+          "boarding": null
+        },
+        "admissions": {
+          "openGrades": "K, Grade 1, Grade 7, Grade 10",
+          "applicationDeadline": "February 15",
+          "assessmentRequired": true,
+          "interviewRequired": true,
+          "acceptanceRate": "~55%"
+        },
+        "academics": {
+          "curriculum": "Alberta Curriculum",
+          "avgClassSize": "20",
+          "studentTeacherRatio": "12:1",
+          "apCourses": true,
+          "ibProgram": false,
+          "frenchImmersion": false
+        },
+        "university": {
+          "ivyLeaguePlacement": "1-3%",
+          "topCanadianPlacement": "85%+",
+          "notableDestinations": ["U of Calgary", "U of Alberta", "U of T", "McGill", "Queen's", "Western", "UBC"]
+        },
+        "athletics": ["Hockey", "Soccer", "Basketball", "Volleyball", "Badminton", "Track & Field", "Golf"],
+        "specialPrograms": ["AP Courses", "Fine Arts", "Athletics Academy", "Leadership"],
+        "notable": "Large Calgary school with multiple campuses and strong athletics programs",
+        "vibe": "Well-rounded, athletic, community-focused",
+        "website": "https://www.rfrundle.ca"
+      },
+      {
+        "rank": 5,
+        "name": "Lycée Louis Pasteur",
+        "shortName": "LLP",
+        "city": "Calgary",
+        "region": "calgary",
+        "location": {
+          "address": "4099 Garrison Boulevard SW, Calgary, AB",
+          "lat": 51.0103,
+          "lng": -114.1297
+        },
+        "type": "Co-Ed",
+        "boarding": false,
+        "founded": 1966,
+        "grades": "PK-12",
+        "students": "600+",
+        "tuition": {
+          "day": "$12,000 - $16,000",
+          "boarding": null
+        },
+        "admissions": {
+          "openGrades": "PK, K, Grade 6",
+          "applicationDeadline": "January 31",
+          "assessmentRequired": true,
+          "interviewRequired": true,
+          "acceptanceRate": "~50%"
+        },
+        "academics": {
+          "curriculum": "French National Curriculum",
+          "avgClassSize": "22",
+          "studentTeacherRatio": "12:1",
+          "apCourses": false,
+          "ibProgram": false,
+          "frenchImmersion": true
+        },
+        "university": {
+          "ivyLeaguePlacement": "1-2%",
+          "topCanadianPlacement": "82%+",
+          "notableDestinations": ["U of Calgary", "McGill", "U de Montreal", "Sciences Po", "Sorbonne", "U of Alberta", "U of T"]
+        },
+        "athletics": ["Soccer", "Basketball", "Volleyball", "Badminton", "Cross Country", "Swimming", "Skiing"],
+        "specialPrograms": ["French Baccalaureate", "Bilingual Streams", "Arts", "STEM"],
+        "notable": "Official French school offering French Baccalaureate and bilingual education",
+        "vibe": "French culture, academic rigor, international",
+        "website": "https://www.lycee.ca"
+      }
+    ],
+    "ottawa": [
+      {
+        "rank": 1,
+        "name": "Ashbury College",
+        "shortName": "Ashbury",
+        "city": "Ottawa",
+        "region": "ottawa",
+        "location": {
+          "address": "362 Mariposa Avenue, Ottawa, ON",
+          "lat": 45.4397,
+          "lng": -75.6675
+        },
+        "type": "Co-Ed",
+        "boarding": true,
+        "founded": 1891,
+        "grades": "4-12",
+        "students": "750+",
+        "tuition": {
+          "day": "$28,000 - $34,000",
+          "boarding": "$58,000 - $65,000"
+        },
+        "admissions": {
+          "openGrades": "Grade 4, Grade 7, Grade 9",
+          "applicationDeadline": "January 15",
+          "assessmentRequired": true,
+          "interviewRequired": true,
+          "acceptanceRate": "~35%"
+        },
+        "academics": {
+          "curriculum": "Ontario Curriculum with IB Diploma",
+          "avgClassSize": "16",
+          "studentTeacherRatio": "8:1",
+          "apCourses": false,
+          "ibProgram": true,
+          "frenchImmersion": true
+        },
+        "university": {
+          "ivyLeaguePlacement": "8-12%",
+          "topCanadianPlacement": "92%+",
+          "notableDestinations": ["Harvard", "Yale", "Princeton", "U of T", "McGill", "Queen's", "Oxford"]
+        },
+        "athletics": ["Hockey", "Soccer", "Basketball", "Rugby", "Tennis", "Swimming", "Cross Country"],
+        "specialPrograms": ["IB Diploma", "Round Square", "Global Programs", "Bilingual Education"],
+        "notable": "Ottawa's premier independent school with exceptional IB program and boarding tradition",
+        "vibe": "Traditional, globally-minded, bilingual excellence",
+        "website": "https://www.ashbury.ca"
+      },
+      {
+        "rank": 2,
+        "name": "Elmwood School",
+        "shortName": "Elmwood",
+        "city": "Ottawa",
+        "region": "ottawa",
+        "location": {
+          "address": "261 Buena Vista Road, Ottawa, ON",
+          "lat": 45.4431,
+          "lng": -75.6719
+        },
+        "type": "All-Girls",
+        "boarding": false,
+        "founded": 1915,
+        "grades": "PK-12",
+        "students": "450+",
+        "tuition": {
+          "day": "$24,000 - $28,000",
+          "boarding": null
+        },
+        "admissions": {
+          "openGrades": "PK, K, Grade 7, Grade 9",
+          "applicationDeadline": "January 15",
+          "assessmentRequired": true,
+          "interviewRequired": true,
+          "acceptanceRate": "~40%"
+        },
+        "academics": {
+          "curriculum": "Ontario Curriculum with IB Diploma",
+          "avgClassSize": "15",
+          "studentTeacherRatio": "9:1",
+          "apCourses": false,
+          "ibProgram": true,
+          "frenchImmersion": true
+        },
+        "university": {
+          "ivyLeaguePlacement": "5-8%",
+          "topCanadianPlacement": "90%+",
+          "notableDestinations": ["Harvard", "Yale", "U of T", "McGill", "Queen's", "Carleton", "Ottawa"]
+        },
+        "athletics": ["Field Hockey", "Basketball", "Volleyball", "Soccer", "Tennis", "Swimming", "Cross Country"],
+        "specialPrograms": ["IB Diploma", "STEAM", "Leadership", "Bilingual Education"],
+        "notable": "Ottawa's premier girls' school with strong IB program and empowering environment",
+        "vibe": "Empowering, academic excellence, sisterhood",
+        "website": "https://www.elmwood.ca"
+      },
+      {
+        "rank": 3,
+        "name": "Académie de la Capitale",
+        "shortName": "ADC",
+        "city": "Ottawa",
+        "region": "ottawa",
+        "location": {
+          "address": "975 St-Jean Baptiste Street, Ottawa, ON",
+          "lat": 45.4583,
+          "lng": -75.6333
+        },
+        "type": "Co-Ed",
+        "boarding": false,
+        "founded": 2001,
+        "grades": "JK-8",
+        "students": "300+",
+        "tuition": {
+          "day": "$14,000 - $17,000",
+          "boarding": null
+        },
+        "admissions": {
+          "openGrades": "JK, K, Grade 1, Grade 4",
+          "applicationDeadline": "February 1",
+          "assessmentRequired": true,
+          "interviewRequired": true,
+          "acceptanceRate": "~55%"
+        },
+        "academics": {
+          "curriculum": "Ontario French Curriculum with IB",
+          "avgClassSize": "18",
+          "studentTeacherRatio": "10:1",
+          "apCourses": false,
+          "ibProgram": true,
+          "frenchImmersion": true
+        },
+        "university": {
+          "ivyLeaguePlacement": "N/A",
+          "topCanadianPlacement": "N/A",
+          "notableDestinations": ["Graduates continue to top high schools"]
+        },
+        "athletics": ["Soccer", "Basketball", "Volleyball", "Badminton", "Cross Country", "Swimming", "Gymnastics"],
+        "specialPrograms": ["IB PYP/MYP", "French Immersion", "Arts", "STEM"],
+        "notable": "French-language IB school preparing students for success in secondary education",
+        "vibe": "French excellence, IB foundation, nurturing",
+        "website": "https://www.academiedelacapitale.ca"
+      },
+      {
+        "rank": 4,
+        "name": "OMS Montessori",
+        "shortName": "OMS",
+        "city": "Ottawa",
+        "region": "ottawa",
+        "location": {
+          "address": "335 Lindsay Street, Ottawa, ON",
+          "lat": 45.4147,
+          "lng": -75.6911
+        },
+        "type": "Co-Ed",
+        "boarding": false,
+        "founded": 1978,
+        "grades": "Toddler-12",
+        "students": "550+",
+        "tuition": {
+          "day": "$16,000 - $20,000",
+          "boarding": null
+        },
+        "admissions": {
+          "openGrades": "Toddler, Casa, Elementary, High School",
+          "applicationDeadline": "Rolling",
+          "assessmentRequired": true,
+          "interviewRequired": true,
+          "acceptanceRate": "~50%"
+        },
+        "academics": {
+          "curriculum": "Montessori with Ontario Curriculum",
+          "avgClassSize": "20",
+          "studentTeacherRatio": "10:1",
+          "apCourses": false,
+          "ibProgram": false,
+          "frenchImmersion": true
+        },
+        "university": {
+          "ivyLeaguePlacement": "2-4%",
+          "topCanadianPlacement": "85%+",
+          "notableDestinations": ["U of T", "McGill", "Queen's", "Carleton", "Ottawa", "Western", "Waterloo"]
+        },
+        "athletics": ["Soccer", "Basketball", "Volleyball", "Badminton", "Cross Country", "Swimming", "Yoga"],
+        "specialPrograms": ["Montessori Method", "Bilingual Education", "Outdoor Education", "Arts"],
+        "notable": "Ottawa's largest Montessori school offering complete toddler-to-graduation pathway",
+        "vibe": "Child-centered, self-directed, holistic",
+        "website": "https://www.omsmontessori.com"
+      }
+    ]
+  }
+}

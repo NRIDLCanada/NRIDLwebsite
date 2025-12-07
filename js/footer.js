@@ -38,8 +38,8 @@ class Footer {
                             <li><a href="/ar-research" class="footer-link">AR Technology</a></li>
                             <li><a href="/learning-programs" class="footer-link">Learning Programs</a></li>
                             <li><a href="/semiconductor-research" class="footer-link">Semiconductor Research</a></li>
+                            <li><a href="/top-canadian-private-schools" class="footer-link">Top Canadian Private Schools</a></li>
                             <li><a href="/top-us-universities" class="footer-link">Top 30 US Universities</a></li>
-                            <li><a href="/faq" class="footer-link">FAQ</a></li>
                         </ul>
                     </div>
                     
@@ -48,6 +48,7 @@ class Footer {
                         <ul class="footer-links">
                             <li><a href="mailto:support@nridl.org" class="footer-link">support@nridl.org</a></li>
                             <li><span class="footer-text">Toronto, Canada</span></li>
+                            <li><a href="/faq" class="footer-link">FAQ</a></li>
                         </ul>
                     </div>
                 </div>

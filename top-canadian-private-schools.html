@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Comprehensive guide to top private schools in Canada. Explore Toronto, Vancouver, Montreal, Calgary, and Ottawa's best private schools with detailed admission info, tuition, Ivy League placement rates, and more.">
+    <meta name="keywords" content="top private schools Canada, best private schools Toronto, private schools Vancouver, Upper Canada College, Branksome Hall, boys school, girls school, boarding school Canada, IB schools Canada">
+    <title>Top Private Schools in Canada - Complete Guide | NRIDL</title>
+    
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.nridl.org/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Top Private Schools in Canada",
+        "item": "https://www.nridl.org/top-canada-private-school.html"
+      }]
+    }
+    </script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700;900&family=Montserrat:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+    
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="css/main.css?v=1.5">
+    <link rel="stylesheet" href="css/navigation.css?v=1.5">
+    <link rel="stylesheet" href="css/footer.css?v=1.5">
+    
+    <style>
+        /* ============================================== 
+           Canadian Private Schools Page Styles
+           ============================================== */
+
+        /* Hero Section */
+        .schools-hero {
+            background: #ffffff;
+            padding: clamp(6rem, 12vw, 10rem) 0 clamp(4rem, 8vw, 6rem);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .schools-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+        
+        .schools-hero .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            font-size: 0.875rem;
+            color: #4a5568;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            padding: 0.5rem 1.5rem;
+            background: #f7fafc;
+            border-radius: 30px;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .schools-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            color: #1a202c;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+        
+        .schools-hero p {
+            font-size: 1.25rem;
+            color: #4a5568;
+            max-width: 750px;
+            margin: 0 auto 2rem;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .hero-stat {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            background: #f7fafc;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 600;
+            line-height: 1.2;
+            color: #1a202c;
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: #718096;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-top: 0.25rem;
+        }
+
+        /* City Tabs */
+        .city-tabs-section {
+            background: #f8f9fa;
+            padding: 2rem 0;
+            border-bottom: 1px solid #e2e8f0;
+            position: sticky;
+            top: 70px;
+            z-index: 100;
+        }
+
+        .city-tabs-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .city-tabs {
+            display: flex;
+            gap: 0.75rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .city-tab {
+            padding: 0.75rem 1.5rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 25px;
+            background: #ffffff;
+            color: #4a5568;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .city-tab:hover {
+            border-color: #2b6cb0;
+            color: #2b6cb0;
+        }
+
+        .city-tab.active {
+            background: #2b6cb0;
+            color: white;
+            border-color: #2b6cb0;
+        }
+
+        .city-tab .school-count {
+            background: rgba(0,0,0,0.1);
+            padding: 0.15rem 0.5rem;
+            border-radius: 10px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .city-tab.active .school-count {
+            background: rgba(255,255,255,0.2);
+        }
+
+        /* Map Section */
+        .map-section {
+            background: #f8f9fa;
+            padding: 3rem 0 4rem;
+        }
+
+        .map-section h2 {
+            text-align: center;
+            font-size: 1.75rem;
+            color: #1a202c;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+
+        .map-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .map-wrapper {
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+        }
+
+        .map-legend {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            padding: 1rem 2rem;
+            background: #ffffff;
+            border-bottom: 1px solid #e2e8f0;
+            flex-wrap: wrap;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            color: #4a5568;
+        }
+
+        .legend-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+        }
+
+        .legend-dot.all-boys { background: #2b6cb0; }
+        .legend-dot.all-girls { background: #d53f8c; }
+        .legend-dot.co-ed { background: #38a169; }
+
+        #schools-map {
+            height: 65vh;
+            min-height: 500px;
+            max-height: 700px;
+            width: 100%;
+            background: #e8f4f8;
+        }
+
+        /* Custom Map Marker Styles */
+        .school-marker {
+            background: transparent !important;
+            border: none !important;
+        }
+
+        .school-marker-inner {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            border: 3px solid #ffffff;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 11px;
+            font-family: 'Inter', sans-serif;
+            transition: transform 0.2s ease;
+        }
+
+        .school-marker-inner:hover {
+            transform: scale(1.15);
+        }
+
+        /* Map Popup Styles */
+        .leaflet-popup-content-wrapper {
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .leaflet-popup-content {
+            margin: 0;
+            min-width: 280px;
+            max-width: 320px;
+        }
+
+        .school-popup {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .school-popup .popup-header {
+            padding: 1rem 1.25rem;
+            background: #f8fafc;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .school-popup .popup-header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .school-popup .popup-rank {
+            background: #1a365d;
+            color: white;
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+
+        .school-popup .popup-type-badge {
+            color: white;
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+            font-size: 0.65rem;
+            font-weight: 600;
+        }
+
+        .school-popup .popup-name {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #1a202c;
+            margin: 0 0 0.25rem;
+            line-height: 1.3;
+        }
+
+        .school-popup .popup-location {
+            font-size: 0.75rem;
+            color: #718096;
+            margin: 0;
+        }
+
+        .school-popup .popup-content {
+            padding: 1rem 1.25rem;
+        }
+
+        .school-popup .popup-quick-info {
+            margin-bottom: 0.75rem;
+        }
+
+        .school-popup .popup-info-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            padding: 0.25rem 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .school-popup .popup-label {
+            color: #718096;
+        }
+
+        .school-popup .popup-value {
+            color: #1a202c;
+            font-weight: 500;
+        }
+
+        .school-popup .popup-value.tuition {
+            color: #2b6cb0;
+            font-weight: 600;
+        }
+
+        .school-popup .popup-badges {
+            display: flex;
+            gap: 0.4rem;
+            flex-wrap: wrap;
+            margin: 0.75rem 0;
+        }
+
+        .school-popup .popup-badge {
+            font-size: 0.65rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: 10px;
+            font-weight: 500;
+        }
+
+        .school-popup .popup-badge.boarding {
+            background: #c6f6d5;
+            color: #276749;
+        }
+
+        .school-popup .popup-badge.day-only {
+            background: #e2e8f0;
+            color: #4a5568;
+        }
+
+        .school-popup .popup-badge.ib {
+            background: #bee3f8;
+            color: #2b6cb0;
+        }
+
+        .school-popup .popup-badge.ap {
+            background: #feebc8;
+            color: #c05621;
+        }
+
+        .school-popup .popup-tuition {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            padding: 0.5rem 0;
+            border-top: 1px solid #e2e8f0;
+            margin-top: 0.5rem;
+        }
+
+        .school-popup .popup-vibe {
+            font-size: 0.8rem;
+            color: #4a5568;
+            font-style: italic;
+            text-align: center;
+            margin: 0.75rem 0 0;
+            padding: 0.75rem;
+            background: linear-gradient(135deg, #ebf8ff 0%, #f0fff4 100%);
+            border-radius: 8px;
+        }
+
+        /* Rankings Section */
+        .rankings-section {
+            padding: 4rem 2rem 5rem;
+            background: #ffffff;
+        }
+
+        .rankings-section h2 {
+            text-align: center;
+            font-size: 1.75rem;
+            color: #1a202c;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        /* Filter Controls */
+        .schools-controls {
+            display: flex;
+            gap: 1.5rem;
+            max-width: 1400px;
+            margin: 0 auto 1.5rem;
+            padding: 0 2rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .schools-search {
+            position: relative;
+            flex: 1;
+            min-width: 250px;
+            max-width: 350px;
+        }
+
+        .schools-search-icon {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #718096;
+        }
+
+        .schools-search input {
+            width: 100%;
+            padding: 0.75rem 1rem 0.75rem 2.75rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+        }
+
+        .schools-search input:focus {
+            outline: none;
+            border-color: #2b6cb0;
+            box-shadow: 0 0 0 3px rgba(43, 108, 176, 0.1);
+        }
+
+        .filter-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #4a5568;
+            margin-right: 0.5rem;
+            white-space: nowrap;
+        }
+
+        .schools-filter {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .schools-filter-btn {
+            padding: 0.5rem 1rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 20px;
+            background: #ffffff;
+            color: #4a5568;
+            font-size: 0.8rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .schools-filter-btn:hover {
+            border-color: #2b6cb0;
+            color: #2b6cb0;
+        }
+
+        .schools-filter-btn.active {
+            background: #2b6cb0;
+            color: white;
+            border-color: #2b6cb0;
+        }
+
+        /* School Cards Grid */
+        .schools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 1.5rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .school-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .school-card:hover {
+            border-color: #2b6cb0;
+            box-shadow: 0 4px 12px rgba(43, 108, 176, 0.15);
+        }
+
+        .school-card .card-header {
+            padding: 1.25rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .school-card .card-rank {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .school-card .card-content {
+            flex: 1;
+            min-width: 150px;
+        }
+
+        .school-card .card-name {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #1a202c;
+            margin: 0 0 0.25rem;
+            line-height: 1.3;
+        }
+
+        .school-card .card-location {
+            font-size: 0.85rem;
+            color: #718096;
+            margin: 0;
+        }
+
+        .school-card .card-badges-row {
+            display: flex;
+            gap: 0.4rem;
+            flex-wrap: wrap;
+            align-items: center;
+            margin-top: 0.5rem;
+        }
+
+        .school-card .card-type-badge {
+            color: white;
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 0.2rem 0.6rem;
+            border-radius: 10px;
+        }
+
+        .school-card .card-badge {
+            font-size: 0.65rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: 10px;
+            font-weight: 500;
+            background: #c6f6d5;
+            color: #276749;
+        }
+
+        .school-card .card-toggle {
+            color: #718096;
+            transition: transform 0.3s ease;
+            padding: 0.5rem;
+        }
+
+        .school-card.expanded .card-toggle {
+            transform: rotate(180deg);
+        }
+
+        /* Expanded Card Content */
+        .school-card .card-expanded-content {
+            display: none;
+            padding: 0;
+            border-top: 1px solid #e2e8f0;
+            background: #f8fafc;
+        }
+
+        .school-card.expanded .card-expanded-content {
+            display: block;
+        }
+
+        .expanded-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .stat-box {
+            padding: 0.75rem;
+            text-align: center;
+            border-right: 1px solid #e2e8f0;
+        }
+
+        .stat-box:last-child {
+            border-right: none;
+        }
+
+        .stat-label {
+            display: block;
+            font-size: 0.65rem;
+            color: #718096;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.25rem;
+        }
+
+        .stat-value {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #1a202c;
+        }
+
+        .expanded-section {
+            padding: 1rem 1.25rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .expanded-section:last-of-type {
+            border-bottom: none;
+        }
+
+        .expanded-section-title {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #4a5568;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.75rem;
+        }
+
+        .expanded-section-title svg {
+            color: #718096;
+        }
+
+        /* Tuition */
+        .tuition-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+        }
+
+        .tuition-box {
+            background: #ffffff;
+            padding: 0.75rem;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+        }
+
+        .tuition-box.boarding {
+            border-left: 3px solid #38a169;
+        }
+
+        .tuition-label {
+            display: block;
+            font-size: 0.65rem;
+            color: #718096;
+            text-transform: uppercase;
+            margin-bottom: 0.25rem;
+        }
+
+        .tuition-value {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #2b6cb0;
+        }
+
+        /* Admissions */
+        .admissions-info {
+            background: #ffffff;
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .admission-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.4rem 0;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 0.85rem;
+        }
+
+        .admission-row:last-of-type {
+            border-bottom: none;
+        }
+
+        .admission-label {
+            color: #718096;
+        }
+
+        .admission-value {
+            color: #1a202c;
+            font-weight: 500;
+        }
+
+        .admission-value.highlight {
+            color: #2b6cb0;
+            font-weight: 600;
+        }
+
+        .admission-requirements {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .req-badge {
+            font-size: 0.7rem;
+            padding: 0.25rem 0.6rem;
+            border-radius: 12px;
+            background: #e2e8f0;
+            color: #4a5568;
+        }
+
+        /* Academics */
+        .academics-info {
+            background: #ffffff;
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .academic-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.4rem 0;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 0.85rem;
+        }
+
+        .academic-row:last-of-type {
+            border-bottom: none;
+        }
+
+        .academic-label {
+            color: #718096;
+        }
+
+        .academic-value {
+            color: #1a202c;
+            font-weight: 500;
+            text-align: right;
+            max-width: 60%;
+        }
+
+        .program-badges {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .program-badge {
+            font-size: 0.7rem;
+            padding: 0.25rem 0.6rem;
+            border-radius: 12px;
+            font-weight: 500;
+        }
+
+        .program-badge.ib {
+            background: #bee3f8;
+            color: #2b6cb0;
+        }
+
+        .program-badge.ap {
+            background: #feebc8;
+            color: #c05621;
+        }
+
+        .program-badge.french {
+            background: #e9d8fd;
+            color: #6b46c1;
+        }
+
+        /* University Section */
+        .university-section {
+            background: #fffaf0;
+        }
+
+        .university-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .uni-stat {
+            background: #ffffff;
+            padding: 0.75rem;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+        }
+
+        .uni-stat.ivy {
+            border-left: 3px solid #805ad5;
+        }
+
+        .uni-stat.canadian {
+            border-left: 3px solid #2b6cb0;
+        }
+
+        .uni-stat-value {
+            display: block;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #1a202c;
+        }
+
+        .uni-stat-label {
+            display: block;
+            font-size: 0.65rem;
+            color: #718096;
+            text-transform: uppercase;
+            margin-top: 0.25rem;
+        }
+
+        .uni-destinations {
+            font-size: 0.8rem;
+            background: #ffffff;
+            padding: 0.75rem;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .destinations-label {
+            color: #718096;
+            font-weight: 600;
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        .destinations-list {
+            color: #4a5568;
+            line-height: 1.5;
+        }
+
+        /* Special Programs & Athletics */
+        .special-programs, .athletics-list {
+            display: flex;
+            gap: 0.4rem;
+            flex-wrap: wrap;
+        }
+
+        .special-badge {
+            font-size: 0.7rem;
+            padding: 0.3rem 0.6rem;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #f0fff4 0%, #c6f6d5 100%);
+            color: #276749;
+            font-weight: 500;
+        }
+
+        .sport-badge {
+            font-size: 0.7rem;
+            padding: 0.3rem 0.6rem;
+            border-radius: 12px;
+            background: #f0f0f0;
+            color: #4a5568;
+        }
+
+        /* Notable & Vibe */
+        .expanded-notable {
+            padding: 1rem 1.25rem;
+            background: linear-gradient(135deg, #ebf8ff 0%, #f0fff4 100%);
+        }
+
+        .notable-text {
+            font-size: 0.85rem;
+            color: #4a5568;
+            margin: 0 0 0.5rem;
+            line-height: 1.6;
+        }
+
+        .vibe-text {
+            font-size: 0.85rem;
+            color: #2b6cb0;
+            font-style: italic;
+            margin: 0;
+        }
+
+        /* Expanded Actions */
+        .expanded-actions {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem 1.25rem;
+            background: #ffffff;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .expanded-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .expanded-link.primary {
+            background: #2b6cb0;
+            color: white;
+        }
+
+        .expanded-link.primary:hover {
+            background: #1a4971;
+        }
+
+        .expanded-link.secondary {
+            background: #e2e8f0;
+            color: #4a5568;
+        }
+
+        .expanded-link.secondary:hover {
+            background: #cbd5e0;
+        }
+
+        /* No Results */
+        .no-results {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 4rem 2rem;
+            color: #718096;
+        }
+
+        .no-results svg {
+            margin-bottom: 1rem;
+            opacity: 0.5;
+        }
+
+        .no-results p {
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .schools-hero {
+                padding: 3.5rem 1.5rem 3rem;
+            }
+
+            .schools-hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-stats {
+                gap: 0.75rem;
+            }
+
+            .hero-stat {
+                padding: 0.75rem 1rem;
+            }
+
+            .city-tabs {
+                justify-content: flex-start;
+                overflow-x: auto;
+                padding-bottom: 0.5rem;
+            }
+
+            .city-tab {
+                white-space: nowrap;
+            }
+
+            #schools-map {
+                height: 50vh;
+                min-height: 350px;
+            }
+
+            .schools-controls {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0.75rem;
+            }
+
+            .schools-search {
+                max-width: none;
+            }
+
+            .schools-filter {
+                overflow-x: auto;
+                padding-bottom: 0.5rem;
+            }
+
+            .schools-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .expanded-stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stat-box:nth-child(2) {
+                border-right: none;
+            }
+
+            .stat-box:nth-child(3), .stat-box:nth-child(4) {
+                border-top: 1px solid #e2e8f0;
+            }
+
+            .tuition-grid, .university-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .schools-hero {
+                padding: 3rem 1rem 2.5rem;
+            }
+
+            .stat-number {
+                font-size: 1.5rem;
+            }
+
+            .school-card .card-header {
+                padding: 1rem;
+            }
+
+            .expanded-section {
+                padding: 0.875rem 1rem;
+            }
+
+            .expanded-actions {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .expanded-link {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="main-nav"></nav>
+
+    <!-- Hero Section -->
+    <section class="schools-hero">
+        <div class="container">
+            <span class="hero-badge">2025 Canadian Private School Guide</span>
+            <h1>Top Private Schools in Canada</h1>
+            <p>Your comprehensive guide to Canada's most prestigious private schools—from admission requirements and tuition to Ivy League placement rates and special programs.</p>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <span class="stat-number">69</span>
+                    <span class="stat-label">Elite Schools</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="stat-number">5</span>
+                    <span class="stat-label">Major Cities</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="stat-number">Dec 1</span>
+                    <span class="stat-label">Key Deadline</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- City Tabs -->
+    <section class="city-tabs-section">
+        <div class="city-tabs-container">
+            <div class="city-tabs">
+                <button class="city-tab active" data-city="toronto">
+                    Toronto Area <span class="school-count">25</span>
+                </button>
+                <button class="city-tab" data-city="vancouver">
+                    Vancouver <span class="school-count">20</span>
+                </button>
+                <button class="city-tab" data-city="montreal">
+                    Montreal <span class="school-count">15</span>
+                </button>
+                <button class="city-tab" data-city="calgary">
+                    Calgary <span class="school-count">5</span>
+                </button>
+                <button class="city-tab" data-city="ottawa">
+                    Ottawa <span class="school-count">4</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Map Section -->
+    <section class="map-section">
+        <h2>Interactive School Map</h2>
+        <div class="map-container">
+            <div class="map-wrapper">
+                <div class="map-legend">
+                    <div class="legend-item">
+                        <span class="legend-dot all-boys"></span>
+                        <span>All-Boys</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-dot all-girls"></span>
+                        <span>All-Girls</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-dot co-ed"></span>
+                        <span>Co-Ed</span>
+                    </div>
+                </div>
+                <div id="schools-map"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rankings List -->
+    <section class="rankings-section">
+        <h2>Top 25 Private Schools in Toronto</h2>
+        
+        <!-- Search and Filter Controls -->
+        <div class="schools-controls">
+            <div class="schools-search">
+                <svg class="schools-search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"/>
+                    <path d="M21 21l-4.35-4.35"/>
+                </svg>
+                <input type="text" id="schools-search" placeholder="Search schools...">
+            </div>
+            <div class="schools-filter">
+                <span class="filter-label">Type:</span>
+                <button class="schools-filter-btn active" data-filter="all" data-filter-type="school">All</button>
+                <button class="schools-filter-btn" data-filter="allboys" data-filter-type="school">All-Boys</button>
+                <button class="schools-filter-btn" data-filter="allgirls" data-filter-type="school">All-Girls</button>
+                <button class="schools-filter-btn" data-filter="coed" data-filter-type="school">Co-Ed</button>
+            </div>
+        </div>
+        <div class="schools-controls">
+            <div class="schools-filter">
+                <span class="filter-label">Boarding:</span>
+                <button class="schools-filter-btn active" data-filter="all" data-filter-type="boarding">All</button>
+                <button class="schools-filter-btn" data-filter="boarding" data-filter-type="boarding">Boarding</button>
+                <button class="schools-filter-btn" data-filter="day" data-filter-type="boarding">Day Only</button>
+            </div>
+            <div class="schools-filter">
+                <span class="filter-label">Program:</span>
+                <button class="schools-filter-btn active" data-filter="all" data-filter-type="program">All</button>
+                <button class="schools-filter-btn" data-filter="ib" data-filter-type="program">IB</button>
+                <button class="schools-filter-btn" data-filter="ap" data-filter-type="program">AP</button>
+            </div>
+        </div>
+        
+        <!-- School Cards Grid -->
+        <div id="schools-grid" class="schools-grid">
+            <!-- Cards will be dynamically generated by JavaScript -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="main-footer"></footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/footer.js"></script>
+    <script src="js/private-schools.js?v=1.0"></script>
+</body>
+</html>
