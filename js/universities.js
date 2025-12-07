@@ -147,9 +147,14 @@ const UniversitiesApp = (function() {
                             <span class="popup-rate-value">${uni.details.type}</span>
                         </div>
                     </div>
-                </div>
-                <div class="popup-footer">
-                    <a href="${uni.website}" target="_blank" rel="noopener" class="popup-link">Visit Website →</a>
+                    <div class="popup-campus">
+                        <div class="popup-campus-row">
+                            <span class="popup-campus-item"><strong>${uni.details.setting}</strong></span>
+                            <span class="popup-campus-item">${uni.details.ratio} ratio</span>
+                            <span class="popup-campus-item">${uni.details.campusSize}</span>
+                        </div>
+                        <p class="popup-vibe">"${uni.details.vibe}"</p>
+                    </div>
                 </div>
             </div>
         `;

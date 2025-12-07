@@ -19,7 +19,11 @@
       "details": {
         "founded": 1861,
         "students": "11,500+",
-        "type": "Private"
+        "type": "Private",
+        "setting": "Urban",
+        "ratio": "3:1",
+        "campusSize": "168 acres",
+        "vibe": "Intense, innovative, collaborative"
       },
       "admissions": {
         "earlyOption": "EA (Early Action)",
@@ -52,7 +56,11 @@
       "details": {
         "founded": 1885,
         "students": "17,000+",
-        "type": "Private"
+        "type": "Private",
+        "setting": "Suburban",
+        "ratio": "5:1",
+        "campusSize": "8,180 acres",
+        "vibe": "Entrepreneurial, sunny, laid-back excellence"
       },
       "admissions": {
         "earlyOption": "REA (Restrictive Early Action)",
@@ -85,7 +93,11 @@
       "details": {
         "founded": 1636,
         "students": "23,000+",
-        "type": "Private"
+        "type": "Private",
+        "setting": "Urban",
+        "ratio": "6:1",
+        "campusSize": "209 acres",
+        "vibe": "Historic prestige, intellectual diversity"
       },
       "admissions": {
         "earlyOption": "REA (Restrictive Early Action)",
@@ -118,7 +130,11 @@
       "details": {
         "founded": 1891,
         "students": "2,400+",
-        "type": "Private"
+        "type": "Private",
+        "setting": "Suburban",
+        "ratio": "3:1",
+        "campusSize": "124 acres",
+        "vibe": "Small, intense STEM focus"
       },
       "admissions": {
         "earlyOption": "EA (Early Action)",
@@ -151,7 +167,11 @@
       "details": {
         "founded": 1746,
         "students": "8,500+",
-        "type": "Private"
+        "type": "Private",
+        "setting": "College Town",
+        "ratio": "5:1",
+        "campusSize": "600 acres",
+        "vibe": "Gothic beauty, undergraduate focused"
       },
       "admissions": {
         "earlyOption": "SCEA (Single-Choice Early Action)",
@@ -184,7 +204,11 @@
       "details": {
         "founded": 1890,
         "students": "17,000+",
-        "type": "Private"
+        "type": "Private",
+        "setting": "Urban",
+        "ratio": "5:1",
+        "campusSize": "217 acres",
+        "vibe": "Intellectually intense, quirky"
       },
       "admissions": {
         "earlyOption": "ED I / ED II / EA",
@@ -217,7 +241,11 @@
       "details": {
         "founded": 1740,
         "students": "22,000+",
-        "type": "Private"
+        "type": "Private",
+        "setting": "Urban",
+        "ratio": "6:1",
+        "campusSize": "299 acres",
+        "vibe": "Pre-professional, social, ambitious"
       },
       "admissions": {
         "earlyOption": "ED (Early Decision)",
@@ -250,7 +278,11 @@
       "details": {
         "founded": 1701,
         "students": "14,000+",
-        "type": "Private"
+        "type": "Private",
+        "setting": "Urban",
+        "ratio": "5:1",
+        "campusSize": "373 acres",
+        "vibe": "Residential colleges, artsy, tight-knit"
       },
       "admissions": {
         "earlyOption": "SCEA (Single-Choice Early Action)",
@@ -283,7 +315,11 @@
       "details": {
         "founded": 1754,
         "students": "33,000+",
-        "type": "Private"
+        "type": "Private",
+        "setting": "Urban",
+        "ratio": "6:1",
+        "campusSize": "36 acres",
+        "vibe": "NYC energy, core curriculum, diverse"
       },
       "admissions": {
         "earlyOption": "ED (Early Decision)",
@@ -316,7 +352,11 @@
       "details": {
         "founded": 1838,
         "students": "17,000+",
-        "type": "Private"
+        "type": "Private",
+        "setting": "Suburban",
+        "ratio": "6:1",
+        "campusSize": "8,691 acres",
+        "vibe": "Southern charm, basketball, research"
       },
       "admissions": {
         "earlyOption": "ED (Early Decision)",
@@ -349,7 +389,11 @@
       "details": {
         "founded": 1876,
         "students": "26,000+",
-        "type": "Private"
+        "type": "Private",
+        "setting": "Urban",
+        "ratio": "7:1",
+        "campusSize": "140 acres",
+        "vibe": "Research-driven, pre-med powerhouse"
       },
       "admissions": {
         "earlyOption": "ED I / ED II",
@@ -382,7 +426,11 @@
       "details": {
         "founded": 1851,
         "students": "22,000+",
-        "type": "Private"
+        "type": "Private",
+        "setting": "Suburban",
+        "ratio": "6:1",
+        "campusSize": "231 acres",
+        "vibe": "Lakefront living, work hard play hard"
       },
       "admissions": {
         "earlyOption": "ED (Early Decision)",
@@ -415,7 +463,11 @@
       "details": {
         "founded": 1868,
         "students": "45,000+",
-        "type": "Public"
+        "type": "Public",
+        "setting": "Urban",
+        "ratio": "20:1",
+        "campusSize": "1,232 acres",
+        "vibe": "Public ivy with activist energy"
       },
       "admissions": {
         "earlyOption": "RD Only (No Early Option)",
@@ -448,7 +500,11 @@
       "details": {
         "founded": 1865,
         "students": "25,000+",
-        "type": "Private"
+        "type": "Private",
+        "setting": "Rural",
+        "ratio": "9:1",
+        "campusSize": "2,300 acres",
+        "vibe": "Gorges campus, any person any study"
       },
       "admissions": {
         "earlyOption": "ED (Early Decision)",
@@ -481,7 +537,11 @@
       "details": {
         "founded": 1919,
         "students": "46,000+",
-        "type": "Public"
+        "type": "Public",
+        "setting": "Urban",
+        "ratio": "18:1",
+        "campusSize": "419 acres",
+        "vibe": "SoCal sunshine, spirited, diverse"
       },
       "admissions": {
         "earlyOption": "RD Only (No Early Option)",
@@ -514,7 +574,11 @@
       "details": {
         "founded": 1912,
         "students": "8,000+",
-        "type": "Private"
+        "type": "Private",
+        "setting": "Urban",
+        "ratio": "6:1",
+        "campusSize": "300 acres",
+        "vibe": "Quirky traditions, residential colleges"
       },
       "admissions": {
         "earlyOption": "ED (Early Decision)",
@@ -547,7 +611,11 @@
       "details": {
         "founded": 1769,
         "students": "6,700+",
-        "type": "Private"
+        "type": "Private",
+        "setting": "Rural",
+        "ratio": "7:1",
+        "campusSize": "269 acres",
+        "vibe": "Outdoorsy intellectuals, tight-knit"
       },
       "admissions": {
         "earlyOption": "ED (Early Decision)",
@@ -580,7 +648,11 @@
       "details": {
         "founded": 1873,
         "students": "13,500+",
-        "type": "Private"
+        "type": "Private",
+        "setting": "Urban",
+        "ratio": "7:1",
+        "campusSize": "330 acres",
+        "vibe": "Southern hospitality, Nashville vibes"
       },
       "admissions": {
         "earlyOption": "ED I / ED II",
@@ -613,7 +685,11 @@
       "details": {
         "founded": 1764,
         "students": "10,000+",
-        "type": "Private"
+        "type": "Private",
+        "setting": "Urban",
+        "ratio": "7:1",
+        "campusSize": "146 acres",
+        "vibe": "Open curriculum, intellectual explorers"
       },
       "admissions": {
         "earlyOption": "ED (Early Decision)",
@@ -646,7 +722,11 @@
       "details": {
         "founded": 1842,
         "students": "13,000+",
-        "type": "Private"
+        "type": "Private",
+        "setting": "Suburban",
+        "ratio": "10:1",
+        "campusSize": "1,265 acres",
+        "vibe": "Faith, family, and football"
       },
       "admissions": {
         "earlyOption": "REA (Restrictive Early Action)",
@@ -679,7 +759,11 @@
       "details": {
         "founded": 1853,
         "students": "16,000+",
-        "type": "Private"
+        "type": "Private",
+        "setting": "Suburban",
+        "ratio": "7:1",
+        "campusSize": "169 acres",
+        "vibe": "Midwest gem, tight-knit community"
       },
       "admissions": {
         "earlyOption": "ED I / ED II",
@@ -712,7 +796,11 @@
       "details": {
         "founded": 1817,
         "students": "47,000+",
-        "type": "Public"
+        "type": "Public",
+        "setting": "Urban",
+        "ratio": "15:1",
+        "campusSize": "3,207 acres",
+        "vibe": "Go Blue—massive school, massive pride"
       },
       "admissions": {
         "earlyOption": "EA (Early Action)",
@@ -745,7 +833,11 @@
       "details": {
         "founded": 1789,
         "students": "19,000+",
-        "type": "Private"
+        "type": "Private",
+        "setting": "Urban",
+        "ratio": "11:1",
+        "campusSize": "104 acres",
+        "vibe": "Politics and policy in the capital"
       },
       "admissions": {
         "earlyOption": "EA (Early Action)",
@@ -778,7 +870,11 @@
       "details": {
         "founded": 1900,
         "students": "15,000+",
-        "type": "Private"
+        "type": "Private",
+        "setting": "Urban",
+        "ratio": "5:1",
+        "campusSize": "157 acres",
+        "vibe": "Where tech meets arts"
       },
       "admissions": {
         "earlyOption": "ED I / ED II",
@@ -811,7 +907,11 @@
       "details": {
         "founded": 1819,
         "students": "25,000+",
-        "type": "Public"
+        "type": "Public",
+        "setting": "Suburban",
+        "ratio": "15:1",
+        "campusSize": "1,682 acres",
+        "vibe": "Jefferson's academic village"
       },
       "admissions": {
         "earlyOption": "EA (Early Action)",
@@ -844,7 +944,11 @@
       "details": {
         "founded": 1880,
         "students": "48,000+",
-        "type": "Private"
+        "type": "Private",
+        "setting": "Urban",
+        "ratio": "9:1",
+        "campusSize": "229 acres",
+        "vibe": "Trojan network, LA connections"
       },
       "admissions": {
         "earlyOption": "EA (Early Action)",
@@ -877,7 +981,11 @@
       "details": {
         "founded": 1831,
         "students": "55,000+",
-        "type": "Private"
+        "type": "Private",
+        "setting": "Urban",
+        "ratio": "9:1",
+        "campusSize": "230 acres",
+        "vibe": "The city is your classroom"
       },
       "admissions": {
         "earlyOption": "ED I / ED II",
@@ -910,7 +1018,11 @@
       "details": {
         "founded": 1789,
         "students": "31,000+",
-        "type": "Public"
+        "type": "Public",
+        "setting": "Suburban",
+        "ratio": "17:1",
+        "campusSize": "729 acres",
+        "vibe": "Southern tradition, public excellence"
       },
       "admissions": {
         "earlyOption": "EA (Early Action)",
@@ -943,7 +1055,11 @@
       "details": {
         "founded": 1853,
         "students": "56,000+",
-        "type": "Public"
+        "type": "Public",
+        "setting": "Suburban",
+        "ratio": "17:1",
+        "campusSize": "2,000 acres",
+        "vibe": "Gator nation pride"
       },
       "admissions": {
         "earlyOption": "EA (Early Action)",
@@ -976,7 +1092,11 @@
       "details": {
         "founded": 1836,
         "students": "15,000+",
-        "type": "Private"
+        "type": "Private",
+        "setting": "Suburban",
+        "ratio": "9:1",
+        "campusSize": "630 acres",
+        "vibe": "Atlanta gem, global health focus"
       },
       "admissions": {
         "earlyOption": "ED I / ED II",

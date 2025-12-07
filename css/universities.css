@@ -157,52 +157,35 @@
     color: #e53e3e;
 }
 
-.university-popup .popup-footer {
-    background: var(--primary-color);
-    padding: 10px 14px;
-    border-radius: 0 0 var(--radius-md) var(--radius-md);
+.university-popup .popup-campus {
+    padding: 10px 14px 14px;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
 }
 
-.university-popup .popup-link {
-    display: block;
-    text-align: center;
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
+.university-popup .popup-campus-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.university-popup .popup-campus-item {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    background: #f1f5f9;
+    padding: 4px 8px;
+    border-radius: var(--radius-sm);
+}
+
+.university-popup .popup-vibe {
     font-size: 0.8rem;
-    padding: 6px;
-    background: rgba(255, 255, 255, 0.15);
-    border-radius: var(--radius-sm);
-    transition: all 0.3s ease;
-}
-
-.university-popup .popup-link:hover {
-    background: #ffffff;
     color: var(--primary-color);
-}
-
-.university-popup .popup-footer {
-    background: var(--primary-color);
-    padding: var(--spacing-sm);
-    border-radius: 0 0 var(--radius-md) var(--radius-md);
-}
-
-.university-popup .popup-link {
-    display: block;
+    font-style: italic;
     text-align: center;
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.85rem;
-    padding: var(--spacing-sm);
-    background: rgba(255, 255, 255, 0.15);
+    margin: 0;
+    padding: 8px;
+    background: linear-gradient(135deg, #f0e6fa 0%, #e8f4f8 100%);
     border-radius: var(--radius-sm);
-    transition: all 0.3s ease;
-}
-
-.university-popup .popup-link:hover {
-    background: #ffffff;
-    color: var(--primary-color);
 }
 
 /* Override Leaflet popup styles */
