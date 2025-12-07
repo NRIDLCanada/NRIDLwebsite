@@ -295,6 +295,8 @@
     transition: background 0.3s ease;
     min-height: 88px;
     border-radius: var(--radius-md);
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .university-card-header:hover {
@@ -338,7 +340,7 @@
     width: 32px;
     height: 32px;
     border-radius: 50%;
-    background: white;
+    background: rgba(255, 255, 255, 0.8);
     border: 1px solid var(--border-color);
     display: flex;
     align-items: center;
@@ -346,7 +348,7 @@
     color: var(--text-secondary);
     transition: all 0.3s ease;
     flex-shrink: 0;
-    margin-left: var(--spacing-sm);
+    margin-left: auto;
 }
 
 .university-card-header:hover .university-card-toggle {
