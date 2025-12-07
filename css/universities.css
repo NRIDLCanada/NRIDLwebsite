@@ -555,27 +555,28 @@
 /* Search and Filter */
 .universities-controls {
     display: flex;
+    flex-direction: column;
     gap: var(--spacing-md);
     max-width: 1400px;
-    margin: 0 auto var(--spacing-xl);
-    flex-wrap: wrap;
-    align-items: center;
+    margin: 0 auto var(--spacing-lg);
+}
+
+.universities-controls.app-type-controls {
+    margin-top: 0;
 }
 
 .universities-search {
-    flex: 1;
-    min-width: 280px;
-    max-width: 400px;
+    width: 100%;
     position: relative;
 }
 
 .universities-search input {
     width: 100%;
-    padding: 0.75rem 1rem;
-    padding-left: 44px;
+    padding: 0.875rem 1.25rem;
+    padding-left: 48px;
     border: 2px solid var(--border-color);
-    border-radius: 25px;
-    font-size: 0.95rem;
+    border-radius: 30px;
+    font-size: 1rem;
     transition: all 0.3s ease;
     background: #ffffff;
 }
@@ -592,7 +593,7 @@
 
 .universities-search-icon {
     position: absolute;
-    left: 16px;
+    left: 18px;
     top: 50%;
     transform: translateY(-50%);
     color: #a0aec0;
@@ -601,7 +602,16 @@
 
 .universities-filter {
     display: flex;
+    align-items: center;
     gap: var(--spacing-sm);
+    flex-wrap: wrap;
+}
+
+.filter-label {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    margin-right: var(--spacing-xs);
 }
 
 .universities-filter-btn {
