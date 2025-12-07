@@ -125,65 +125,31 @@ const UniversitiesApp = (function() {
         return `
             <div class="university-popup">
                 <div class="popup-header">
-                    <span class="popup-rank">#${uni.rank} Nationally</span>
+                    <div class="popup-header-top">
+                        <span class="popup-rank">#${uni.rank}</span>
+                        <span class="popup-type-badge" style="background: ${badgeStyle.bg}; color: ${badgeStyle.color};">${appTypeLabel}</span>
+                    </div>
                     <h3 class="popup-name">${uni.name}</h3>
-                    <p class="popup-location">📍 ${uni.location.city}, ${uni.location.state}</p>
+                    <p class="popup-location">${uni.location.city}, ${uni.location.state}</p>
                 </div>
                 <div class="popup-content">
-                    <div class="popup-section">
-                        <div class="popup-grid">
-                            <div class="popup-item">
-                                <div class="popup-item-label">Founded</div>
-                                <div class="popup-item-value">${uni.details.founded}</div>
-                            </div>
-                            <div class="popup-item">
-                                <div class="popup-item-label">Students</div>
-                                <div class="popup-item-value">${uni.details.students}</div>
-                            </div>
-                            <div class="popup-item">
-                                <div class="popup-item-label">Type</div>
-                                <div class="popup-item-value">${uni.details.type}</div>
-                            </div>
-                            <div class="popup-item">
-                                <div class="popup-item-label">Early Option</div>
-                                <div class="popup-item-value">
-                                    <span style="background: ${badgeStyle.bg}; color: ${badgeStyle.color}; padding: 2px 8px; border-radius: 10px; font-size: 0.7rem; font-weight: 600;">${appTypeLabel}</span>
-                                </div>
-                            </div>
+                    <div class="popup-rates">
+                        <div class="popup-rate">
+                            <span class="popup-rate-label">Early</span>
+                            <span class="popup-rate-value early">${uni.admissions.earlyRate}</span>
+                        </div>
+                        <div class="popup-rate">
+                            <span class="popup-rate-label">Regular</span>
+                            <span class="popup-rate-value regular">${uni.admissions.rdRate}</span>
+                        </div>
+                        <div class="popup-rate">
+                            <span class="popup-rate-label">Type</span>
+                            <span class="popup-rate-value">${uni.details.type}</span>
                         </div>
                     </div>
-                    <div class="popup-section">
-                        <div class="popup-section-title">Acceptance Rates</div>
-                        <div class="popup-grid">
-                            <div class="popup-item">
-                                <div class="popup-item-label">Early Rate</div>
-                                <div class="popup-item-value" style="color: #38a169; font-weight: 700;">${uni.admissions.earlyRate}</div>
-                            </div>
-                            <div class="popup-item">
-                                <div class="popup-item-label">Regular Rate</div>
-                                <div class="popup-item-value" style="color: #e53e3e; font-weight: 700;">${uni.admissions.rdRate}</div>
-                            </div>
-                        </div>
-                        ${uni.admissions.rateNote ? `<div style="font-size: 0.7rem; color: #666; margin-top: 6px; font-style: italic; padding: 0 4px;">Note: ${uni.admissions.rateNote}</div>` : ''}
-                    </div>
-                    <div class="popup-section">
-                        <div class="popup-notable">${uni.notable}</div>
-                    </div>
-                    ${uni.aiInitiative ? `
-                    <div class="popup-section popup-ai-section">
-                        <div class="popup-section-title">🤖 AI Learning Initiative</div>
-                        <div class="popup-ai-content">
-                            <div class="popup-ai-name">${uni.aiInitiative.name}</div>
-                            <div class="popup-ai-desc">${uni.aiInitiative.description}</div>
-                            ${uni.aiInitiative.link ? `<a href="${uni.aiInitiative.link}" target="_blank" rel="noopener" class="popup-ai-link">Learn More →</a>` : ''}
-                        </div>
-                    </div>
-                    ` : ''}
                 </div>
                 <div class="popup-footer">
-                    <a href="${uni.website}" target="_blank" rel="noopener" class="popup-link">
-                        Visit Official Website →
-                    </a>
+                    <a href="${uni.website}" target="_blank" rel="noopener" class="popup-link">Visit Website →</a>
                 </div>
             </div>
         `;
