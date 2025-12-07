@@ -32,6 +32,11 @@
         "rateNote": ""
       },
       "notable": "Leading in engineering, computer science, and technology innovation",
+      "aiInitiative": {
+        "name": "MIT Schwarzman College of Computing",
+        "description": "Cross-disciplinary AI hub connecting computing with all fields of study, offering AI+X programs",
+        "link": "https://computing.mit.edu"
+      },
       "website": "https://www.mit.edu"
     },
     {
@@ -60,6 +65,11 @@
         "rateNote": ""
       },
       "notable": "Heart of Silicon Valley, renowned for entrepreneurship and innovation",
+      "aiInitiative": {
+        "name": "Stanford HAI (Human-Centered AI)",
+        "description": "Leading institute advancing AI research, education, and policy for humanity's benefit",
+        "link": "https://hai.stanford.edu"
+      },
       "website": "https://www.stanford.edu"
     },
     {
@@ -88,6 +98,11 @@
         "rateNote": ""
       },
       "notable": "America's oldest university, excellence across all disciplines",
+      "aiInitiative": {
+        "name": "Kempner Institute for Natural & Artificial Intelligence",
+        "description": "Bridging biological and machine intelligence to advance AI understanding",
+        "link": "https://kempnerinstitute.harvard.edu"
+      },
       "website": "https://www.harvard.edu"
     },
     {
@@ -116,6 +131,11 @@
         "rateNote": ""
       },
       "notable": "World leader in science and engineering, manages NASA's JPL",
+      "aiInitiative": {
+        "name": "AI4Science Initiative",
+        "description": "Applying machine learning to accelerate scientific discovery across physics and engineering",
+        "link": "https://www.cms.caltech.edu/research/ai4science"
+      },
       "website": "https://www.caltech.edu"
     },
     {
@@ -144,6 +164,11 @@
         "rateNote": ""
       },
       "notable": "Exceptional undergraduate focus, beautiful Gothic campus",
+      "aiInitiative": {
+        "name": "Princeton AI Initiative",
+        "description": "Campus-wide program integrating AI across disciplines with focus on ethics and societal impact",
+        "link": "https://ai.princeton.edu"
+      },
       "website": "https://www.princeton.edu"
     },
     {
@@ -172,6 +197,11 @@
         "rateNote": "ED typically ~50% higher than RD"
       },
       "notable": "Known for rigorous academics and groundbreaking economics research",
+      "aiInitiative": {
+        "name": "Data Science Institute",
+        "description": "Pioneering AI applications in social sciences, economics, and policy research",
+        "link": "https://datascience.uchicago.edu"
+      },
       "website": "https://www.uchicago.edu"
     },
     {
@@ -200,6 +230,11 @@
         "rateNote": "ED typically ~50% higher than RD"
       },
       "notable": "Wharton School of Business, interdisciplinary collaboration",
+      "aiInitiative": {
+        "name": "GRASP Lab & AI Initiative",
+        "description": "World-renowned robotics lab advancing AI for autonomous systems and machine perception",
+        "link": "https://www.grasp.upenn.edu"
+      },
       "website": "https://www.upenn.edu"
     },
     {
@@ -228,6 +263,11 @@
         "rateNote": ""
       },
       "notable": "Renowned for law, drama, and residential college system",
+      "aiInitiative": {
+        "name": "Institute for Foundations of Data Science",
+        "description": "Advancing theoretical foundations of AI and machine learning with ethical considerations",
+        "link": "https://datascienceinstitute.yale.edu"
+      },
       "website": "https://www.yale.edu"
     },
     {
@@ -256,6 +296,11 @@
         "rateNote": "ED typically ~50% higher than RD"
       },
       "notable": "Ivy League in Manhattan, strong in journalism and arts",
+      "aiInitiative": {
+        "name": "Data Science Institute",
+        "description": "Interdisciplinary hub for AI research connecting engineering, medicine, and social sciences",
+        "link": "https://datascience.columbia.edu"
+      },
       "website": "https://www.columbia.edu"
     },
     {
@@ -284,6 +329,11 @@
         "rateNote": "ED typically ~50% higher than RD"
       },
       "notable": "Top medical school, beautiful Gothic architecture, ACC athletics",
+      "aiInitiative": {
+        "name": "+DataScience (+DS)",
+        "description": "University-wide initiative integrating AI and data science across all academic programs",
+        "link": "https://plus.datascience.duke.edu"
+      },
       "website": "https://www.duke.edu"
     },
     {
@@ -312,6 +362,11 @@
         "rateNote": "ED typically ~50% higher than RD"
       },
       "notable": "America's first research university, leading medical institution",
+      "aiInitiative": {
+        "name": "AI-X Foundry",
+        "description": "Collaborative platform applying AI to medicine, public health, and biomedical research",
+        "link": "https://ai.jhu.edu"
+      },
       "website": "https://www.jhu.edu"
     },
     {
@@ -340,6 +395,11 @@
         "rateNote": "ED typically ~50% higher than RD"
       },
       "notable": "Top journalism school, lakefront campus near Chicago",
+      "aiInitiative": {
+        "name": "Center for AI",
+        "description": "Research hub focusing on AI fundamentals, applications, and societal implications",
+        "link": "https://ai.northwestern.edu"
+      },
       "website": "https://www.northwestern.edu"
     },
     {
@@ -368,6 +428,11 @@
         "rateNote": "UC system uses single deadline"
       },
       "notable": "Top public university, birthplace of the free speech movement",
+      "aiInitiative": {
+        "name": "BAIR (Berkeley AI Research)",
+        "description": "World-leading AI research lab pioneering deep learning, robotics, and NLP",
+        "link": "https://bair.berkeley.edu"
+      },
       "website": "https://www.berkeley.edu"
     },
     {
@@ -396,6 +461,11 @@
         "rateNote": "ED typically ~50% higher than RD"
       },
       "notable": "Beautiful gorges, strong engineering and hospitality programs",
+      "aiInitiative": {
+        "name": "Cornell Tech AI Initiative",
+        "description": "NYC campus focused on AI applications for startups, business, and social good",
+        "link": "https://tech.cornell.edu/research/ai/"
+      },
       "website": "https://www.cornell.edu"
     },
     {
@@ -424,6 +494,11 @@
         "rateNote": "UC system uses single deadline"
       },
       "notable": "Elite athletics, strong film school, diverse campus",
+      "aiInitiative": {
+        "name": "UCLA AI Institute",
+        "description": "Campus-wide initiative advancing AI research across science, arts, and medicine",
+        "link": "https://www.cs.ucla.edu/research/ai/"
+      },
       "website": "https://www.ucla.edu"
     },
     {
@@ -452,6 +527,11 @@
         "rateNote": "ED typically ~50% higher than RD"
       },
       "notable": "Beautiful campus, strong STEM programs, residential college system",
+      "aiInitiative": {
+        "name": "Ken Kennedy Institute",
+        "description": "Leading AI and computing research with focus on data science and intelligent systems",
+        "link": "https://kenkennedy.rice.edu"
+      },
       "website": "https://www.rice.edu"
     },
     {
@@ -480,6 +560,11 @@
         "rateNote": "ED typically ~50% higher than RD"
       },
       "notable": "Tuck School of Business, outdoor culture, strong alumni network",
+      "aiInitiative": {
+        "name": "Birthplace of AI (1956 Conference)",
+        "description": "Historic AI birthplace now advancing responsible AI through research and ethics programs",
+        "link": "https://web.cs.dartmouth.edu/research/artificial-intelligence"
+      },
       "website": "https://www.dartmouth.edu"
     },
     {
@@ -508,6 +593,11 @@
         "rateNote": "ED typically ~50% higher than RD"
       },
       "notable": "Top medical center, music city location, beautiful arboretum campus",
+      "aiInitiative": {
+        "name": "Vanderbilt Data Science Institute",
+        "description": "Integrating AI across healthcare, education, and engineering research",
+        "link": "https://www.vanderbilt.edu/datascience/"
+      },
       "website": "https://www.vanderbilt.edu"
     },
     {
@@ -536,6 +626,11 @@
         "rateNote": "ED typically ~50% higher than RD"
       },
       "notable": "Open curriculum, strong humanities, creative academic freedom",
+      "aiInitiative": {
+        "name": "Center for Computational Molecular Biology",
+        "description": "AI applications in biology, genomics, and computational research",
+        "link": "https://ccmb.brown.edu"
+      },
       "website": "https://www.brown.edu"
     },
     {
@@ -564,6 +659,11 @@
         "rateNote": ""
       },
       "notable": "Strong Catholic tradition, iconic football program, Golden Dome",
+      "aiInitiative": {
+        "name": "Lucy Family Institute for Data & Society",
+        "description": "Ethical AI research addressing societal challenges through interdisciplinary work",
+        "link": "https://lucyinstitute.nd.edu"
+      },
       "website": "https://www.nd.edu"
     },
     {
@@ -592,6 +692,11 @@
         "rateNote": "ED typically ~50% higher than RD"
       },
       "notable": "Top medical school, beautiful campus, strong research",
+      "aiInitiative": {
+        "name": "AI & ML in Medicine",
+        "description": "Pioneering AI applications in healthcare, diagnostics, and biomedical research",
+        "link": "https://engineering.wustl.edu/research/ai-machine-learning.html"
+      },
       "website": "https://www.wustl.edu"
     },
     {
@@ -620,6 +725,11 @@
         "rateNote": ""
       },
       "notable": "The Big House, extensive research programs, school spirit",
+      "aiInitiative": {
+        "name": "Michigan AI Lab",
+        "description": "Leading AI research in robotics, NLP, and computer vision with industry partnerships",
+        "link": "https://ai.engin.umich.edu"
+      },
       "website": "https://www.umich.edu"
     },
     {
@@ -648,6 +758,11 @@
         "rateNote": ""
       },
       "notable": "Top foreign service school, historic campus in nation's capital",
+      "aiInitiative": {
+        "name": "Georgetown AI Initiative",
+        "description": "Focus on AI ethics, policy, and governance in the nation's capital",
+        "link": "https://mccourt.georgetown.edu/research/research-initiatives/center-for-security-and-emerging-technology/"
+      },
       "website": "https://www.georgetown.edu"
     },
     {
@@ -676,6 +791,11 @@
         "rateNote": "ED typically ~50% higher than RD"
       },
       "notable": "Top computer science and robotics, strong arts programs",
+      "aiInitiative": {
+        "name": "CMU AI (School of Computer Science)",
+        "description": "World's #1 AI program with pioneering robotics, ML, and autonomous systems research",
+        "link": "https://ai.cs.cmu.edu"
+      },
       "website": "https://www.cmu.edu"
     },
     {
@@ -704,6 +824,11 @@
         "rateNote": ""
       },
       "notable": "Founded by Jefferson, UNESCO World Heritage Site, honor system",
+      "aiInitiative": {
+        "name": "School of Data Science",
+        "description": "First school of data science in the US, focusing on responsible AI development",
+        "link": "https://datascience.virginia.edu"
+      },
       "website": "https://www.virginia.edu"
     },
     {
@@ -732,6 +857,11 @@
         "rateNote": ""
       },
       "notable": "Top film school, Trojan athletics, strong alumni network",
+      "aiInitiative": {
+        "name": "USC Viterbi AI Initiative",
+        "description": "AI research in NLP, robotics, and interactive media with industry collaborations",
+        "link": "https://www.cs.usc.edu/research/artificial-intelligence/"
+      },
       "website": "https://www.usc.edu"
     },
     {
@@ -760,6 +890,11 @@
         "rateNote": "ED typically ~50% higher than RD"
       },
       "notable": "Global campus network, heart of Greenwich Village, strong arts",
+      "aiInitiative": {
+        "name": "NYU Center for Data Science",
+        "description": "Home to Yann LeCun's lab, pioneering deep learning and AI research",
+        "link": "https://cds.nyu.edu"
+      },
       "website": "https://www.nyu.edu"
     },
     {
@@ -788,6 +923,11 @@
         "rateNote": ""
       },
       "notable": "First public university, top pharmacy and journalism schools",
+      "aiInitiative": {
+        "name": "UNC AI Initiative",
+        "description": "AI research focusing on healthcare, social sciences, and computational linguistics",
+        "link": "https://ai.unc.edu"
+      },
       "website": "https://www.unc.edu"
     },
     {
@@ -816,6 +956,11 @@
         "rateNote": ""
       },
       "notable": "Top public university, Gator athletics, extensive research",
+      "aiInitiative": {
+        "name": "UF AI Initiative & HiPerGator",
+        "description": "Largest university AI supercomputer powering research across all disciplines",
+        "link": "https://ai.ufl.edu"
+      },
       "website": "https://www.ufl.edu"
     },
     {
@@ -844,6 +989,11 @@
         "rateNote": "ED typically ~50% higher than RD"
       },
       "notable": "Top medical and business schools, CDC partnership, beautiful campus",
+      "aiInitiative": {
+        "name": "Emory AI.Humanity Initiative",
+        "description": "AI research addressing healthcare, ethics, and humanitarian challenges",
+        "link": "https://aihumanity.emory.edu"
+      },
       "website": "https://www.emory.edu"
     }
   ]

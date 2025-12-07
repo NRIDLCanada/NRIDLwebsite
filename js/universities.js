@@ -169,6 +169,16 @@ const UniversitiesApp = (function() {
                     <div class="popup-section">
                         <div class="popup-notable">${uni.notable}</div>
                     </div>
+                    ${uni.aiInitiative ? `
+                    <div class="popup-section popup-ai-section">
+                        <div class="popup-section-title">🤖 AI Learning Initiative</div>
+                        <div class="popup-ai-content">
+                            <div class="popup-ai-name">${uni.aiInitiative.name}</div>
+                            <div class="popup-ai-desc">${uni.aiInitiative.description}</div>
+                            ${uni.aiInitiative.link ? `<a href="${uni.aiInitiative.link}" target="_blank" rel="noopener" class="popup-ai-link">Learn More →</a>` : ''}
+                        </div>
+                    </div>
+                    ` : ''}
                 </div>
                 <div class="popup-footer">
                     <a href="${uni.website}" target="_blank" rel="noopener" class="popup-link">
@@ -309,6 +319,24 @@ const UniversitiesApp = (function() {
                         </div>
                         <div class="university-card-notable">${uni.notable}</div>
                     </div>
+                    ${uni.aiInitiative ? `
+                    <div class="university-card-section university-card-ai-section">
+                        <div class="university-card-section-title">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="4" y="4" width="16" height="16" rx="2"/>
+                                <circle cx="9" cy="9" r="1.5"/>
+                                <circle cx="15" cy="9" r="1.5"/>
+                                <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
+                            </svg>
+                            AI Learning Initiative
+                        </div>
+                        <div class="university-card-ai-content">
+                            <div class="university-card-ai-name">${uni.aiInitiative.name}</div>
+                            <div class="university-card-ai-desc">${uni.aiInitiative.description}</div>
+                            ${uni.aiInitiative.link ? `<a href="${uni.aiInitiative.link}" target="_blank" rel="noopener" class="university-card-ai-link">Learn More About This Program →</a>` : ''}
+                        </div>
+                    </div>
+                    ` : ''}
                     <div class="university-card-actions">
                         <button class="university-card-btn university-card-btn-map" onclick="UniversitiesApp.showOnMap(${uni.rank})">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">

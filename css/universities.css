@@ -159,6 +159,47 @@
     border-left: 3px solid var(--accent-color);
 }
 
+/* AI Initiative section in popup */
+.university-popup .popup-ai-section {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.08), rgba(59, 130, 246, 0.08));
+    padding: var(--spacing-sm);
+    border-radius: var(--radius-sm);
+    border-left: 3px solid #8b5cf6;
+}
+
+.university-popup .popup-ai-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.university-popup .popup-ai-name {
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: #6d28d9;
+}
+
+.university-popup .popup-ai-desc {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+}
+
+.university-popup .popup-ai-link {
+    display: inline-block;
+    margin-top: 4px;
+    font-size: 0.7rem;
+    color: #7c3aed;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.university-popup .popup-ai-link:hover {
+    color: #5b21b6;
+    text-decoration: underline;
+}
+
 .university-popup .popup-footer {
     background: var(--primary-color);
     padding: var(--spacing-sm);
@@ -412,6 +453,50 @@
     color: var(--text-secondary);
     font-style: italic;
     border-left: 3px solid var(--accent-color);
+}
+
+/* AI Initiative Section in Cards */
+.university-card-ai-section {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.08), rgba(59, 130, 246, 0.08));
+    padding: var(--spacing-sm);
+    border-radius: var(--radius-sm);
+    border-left: 3px solid #8b5cf6;
+}
+
+.university-card-ai-content {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.university-card-ai-name {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: #6d28d9;
+}
+
+.university-card-ai-desc {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.university-card-ai-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 4px;
+    font-size: 0.8rem;
+    color: #7c3aed;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.university-card-ai-link:hover {
+    color: #5b21b6;
+    text-decoration: underline;
+    transform: translateX(2px);
 }
 
 /* Card Actions */
