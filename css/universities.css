@@ -292,6 +292,7 @@
     cursor: pointer;
     background: linear-gradient(135deg, rgba(26, 26, 46, 0.02), rgba(15, 76, 117, 0.05));
     transition: background 0.3s ease;
+    min-height: 88px;
 }
 
 .university-card-header:hover {
