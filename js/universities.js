@@ -96,6 +96,32 @@ const UniversitiesApp = (function() {
      * Generate popup HTML content for a university
      */
     function createPopupContent(uni) {
+        // Determine the application type badge color
+        const appTypeColors = {
+            'ED': { bg: '#fed7d7', color: '#c53030' },
+            'EA': { bg: '#c6f6d5', color: '#276749' },
+            'REA': { bg: '#feebc8', color: '#c05621' },
+            'SCEA': { bg: '#feebc8', color: '#c05621' },
+            'RD': { bg: '#e2e8f0', color: '#4a5568' }
+        };
+        
+        let badgeStyle = appTypeColors['RD']; // default
+        for (const [key, style] of Object.entries(appTypeColors)) {
+            if (uni.admissions.earlyOption.includes(key)) {
+                badgeStyle = style;
+                break;
+            }
+        }
+        
+        // Get short app type label
+        let appTypeLabel = uni.admissions.earlyOption;
+        if (appTypeLabel.includes('ED I / ED II')) appTypeLabel = 'ED I & II';
+        else if (appTypeLabel.includes('SCEA')) appTypeLabel = 'SCEA';
+        else if (appTypeLabel.includes('REA')) appTypeLabel = 'REA';
+        else if (appTypeLabel.includes('ED')) appTypeLabel = 'ED';
+        else if (appTypeLabel.includes('EA')) appTypeLabel = 'EA';
+        else if (appTypeLabel.includes('RD Only')) appTypeLabel = 'RD Only';
+        
         return `
             <div class="university-popup">
                 <div class="popup-header">
@@ -105,7 +131,6 @@ const UniversitiesApp = (function() {
                 </div>
                 <div class="popup-content">
                     <div class="popup-section">
-                        <div class="popup-section-title">University Details</div>
                         <div class="popup-grid">
                             <div class="popup-item">
                                 <div class="popup-item-label">Founded</div>
@@ -121,28 +146,9 @@ const UniversitiesApp = (function() {
                             </div>
                             <div class="popup-item">
                                 <div class="popup-item-label">Early Option</div>
-                                <div class="popup-item-value">${uni.admissions.earlyOption}</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="popup-section">
-                        <div class="popup-section-title">Application Deadlines</div>
-                        <div class="popup-grid">
-                            <div class="popup-item">
-                                <div class="popup-item-label">Early Deadline</div>
-                                <div class="popup-item-value">${uni.admissions.earlyDeadline}</div>
-                            </div>
-                            <div class="popup-item">
-                                <div class="popup-item-label">RD Deadline</div>
-                                <div class="popup-item-value">${uni.admissions.rdDeadline}</div>
-                            </div>
-                            <div class="popup-item">
-                                <div class="popup-item-label">Early Decision</div>
-                                <div class="popup-item-value">${uni.admissions.earlyDecision}</div>
-                            </div>
-                            <div class="popup-item">
-                                <div class="popup-item-label">RD Decision</div>
-                                <div class="popup-item-value">${uni.admissions.rdDecision}</div>
+                                <div class="popup-item-value">
+                                    <span style="background: ${badgeStyle.bg}; color: ${badgeStyle.color}; padding: 2px 8px; border-radius: 10px; font-size: 0.7rem; font-weight: 600;">${appTypeLabel}</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -151,14 +157,14 @@ const UniversitiesApp = (function() {
                         <div class="popup-grid">
                             <div class="popup-item">
                                 <div class="popup-item-label">Early Rate</div>
-                                <div class="popup-item-value">${uni.admissions.earlyRate}</div>
+                                <div class="popup-item-value" style="color: #38a169; font-weight: 700;">${uni.admissions.earlyRate}</div>
                             </div>
                             <div class="popup-item">
-                                <div class="popup-item-label">RD Rate</div>
-                                <div class="popup-item-value">${uni.admissions.rdRate}</div>
+                                <div class="popup-item-label">Regular Rate</div>
+                                <div class="popup-item-value" style="color: #e53e3e; font-weight: 700;">${uni.admissions.rdRate}</div>
                             </div>
                         </div>
-                        ${uni.admissions.rateNote ? `<div style="font-size: 0.7rem; color: #666; margin-top: 4px; font-style: italic;">Note: ${uni.admissions.rateNote}</div>` : ''}
+                        ${uni.admissions.rateNote ? `<div style="font-size: 0.7rem; color: #666; margin-top: 6px; font-style: italic; padding: 0 4px;">Note: ${uni.admissions.rateNote}</div>` : ''}
                     </div>
                     <div class="popup-section">
                         <div class="popup-notable">${uni.notable}</div>
