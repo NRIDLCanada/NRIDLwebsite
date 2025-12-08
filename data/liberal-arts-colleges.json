@@ -1,0 +1,999 @@
+{
+  "metadata": {
+    "source": "US News & World Report Liberal Arts Rankings",
+    "year": 2025,
+    "lastUpdated": "2025-12-07",
+    "totalColleges": 30
+  },
+  "colleges": [
+    {
+      "rank": 1,
+      "name": "Williams College",
+      "shortName": "Williams",
+      "location": {
+        "city": "Williamstown",
+        "state": "Massachusetts",
+        "lat": 42.7128,
+        "lng": -73.2037
+      },
+      "details": {
+        "founded": 1793,
+        "students": "2,100",
+        "type": "Private",
+        "setting": "Rural",
+        "ratio": "6:1",
+        "campusSize": "450 acres",
+        "vibe": "Intellectual curiosity, tight-knit community"
+      },
+      "admissions": {
+        "earlyOption": "ED (Early Decision)",
+        "earlyDeadline": "November 15",
+        "rdDeadline": "January 9",
+        "earlyDecision": "By December 15, 2025",
+        "rdDecision": "Late March",
+        "earlyRate": "~35%",
+        "rdRate": "~9%",
+        "rateNote": ""
+      },
+      "notable": "#1 Liberal Arts College, exceptional tutorial program, Division III athletics powerhouse",
+      "website": "https://www.williams.edu"
+    },
+    {
+      "rank": 2,
+      "name": "Amherst College",
+      "shortName": "Amherst",
+      "location": {
+        "city": "Amherst",
+        "state": "Massachusetts",
+        "lat": 42.3709,
+        "lng": -72.5167
+      },
+      "details": {
+        "founded": 1821,
+        "students": "1,900",
+        "type": "Private",
+        "setting": "Small City",
+        "ratio": "6:1",
+        "campusSize": "1,000 acres",
+        "vibe": "Open curriculum, diverse perspectives"
+      },
+      "admissions": {
+        "earlyOption": "ED (Early Decision)",
+        "earlyDeadline": "November 1",
+        "rdDeadline": "January 3",
+        "earlyDecision": "Mid-December 2025",
+        "rdDecision": "Late March",
+        "earlyRate": "~30%",
+        "rdRate": "~7%",
+        "rateNote": ""
+      },
+      "notable": "Open curriculum with no distribution requirements, Five College Consortium member",
+      "website": "https://www.amherst.edu"
+    },
+    {
+      "rank": 3,
+      "name": "Pomona College",
+      "shortName": "Pomona",
+      "location": {
+        "city": "Claremont",
+        "state": "California",
+        "lat": 34.0977,
+        "lng": -117.7131
+      },
+      "details": {
+        "founded": 1887,
+        "students": "1,700",
+        "type": "Private",
+        "setting": "Suburban",
+        "ratio": "7:1",
+        "campusSize": "140 acres",
+        "vibe": "Laid-back excellence, collaborative spirit"
+      },
+      "admissions": {
+        "earlyOption": "ED I / ED II",
+        "earlyDeadline": "November 15",
+        "rdDeadline": "January 8",
+        "earlyDecision": "By December 15, 2025",
+        "ed2Decision": "By February 15, 2026",
+        "rdDecision": "Late March",
+        "earlyRate": "~18%",
+        "rdRate": "~5%",
+        "rateNote": "ED II deadline: January 8"
+      },
+      "notable": "Part of Claremont Consortium, excellent research opportunities, beautiful SoCal campus",
+      "website": "https://www.pomona.edu"
+    },
+    {
+      "rank": 4,
+      "name": "Swarthmore College",
+      "shortName": "Swarthmore",
+      "location": {
+        "city": "Swarthmore",
+        "state": "Pennsylvania",
+        "lat": 39.9022,
+        "lng": -75.3549
+      },
+      "details": {
+        "founded": 1864,
+        "students": "1,600",
+        "type": "Private",
+        "setting": "Suburban",
+        "ratio": "8:1",
+        "campusSize": "425 acres",
+        "vibe": "Intellectually intense, socially conscious"
+      },
+      "admissions": {
+        "earlyOption": "ED I / ED II",
+        "earlyDeadline": "November 15",
+        "rdDeadline": "January 4",
+        "earlyDecision": "Mid-December 2025",
+        "ed2Decision": "Mid-February 2026",
+        "rdDecision": "Late March",
+        "earlyRate": "~25%",
+        "rdRate": "~7%",
+        "rateNote": "ED II deadline: January 4"
+      },
+      "notable": "Honors program with external examiners, arboretum campus, Tri-College Consortium",
+      "website": "https://www.swarthmore.edu"
+    },
+    {
+      "rank": 5,
+      "name": "Wellesley College",
+      "shortName": "Wellesley",
+      "location": {
+        "city": "Wellesley",
+        "state": "Massachusetts",
+        "lat": 42.2938,
+        "lng": -71.3050
+      },
+      "details": {
+        "founded": 1870,
+        "students": "2,400",
+        "type": "Private",
+        "setting": "Suburban",
+        "ratio": "7:1",
+        "campusSize": "500 acres",
+        "vibe": "Empowering, intellectual excellence"
+      },
+      "admissions": {
+        "earlyOption": "ED I / ED II",
+        "earlyDeadline": "November 1",
+        "rdDeadline": "January 8",
+        "earlyDecision": "Mid-December 2025",
+        "ed2Decision": "Mid-February 2026",
+        "rdDecision": "Late March",
+        "earlyRate": "~35%",
+        "rdRate": "~15%",
+        "rateNote": "Women's college, cross-registration with MIT"
+      },
+      "notable": "Premier women's college, MIT cross-registration, stunning lakeside campus",
+      "website": "https://www.wellesley.edu"
+    },
+    {
+      "rank": 6,
+      "name": "Bowdoin College",
+      "shortName": "Bowdoin",
+      "location": {
+        "city": "Brunswick",
+        "state": "Maine",
+        "lat": 43.9076,
+        "lng": -69.9635
+      },
+      "details": {
+        "founded": 1794,
+        "students": "1,900",
+        "type": "Private",
+        "setting": "Small City",
+        "ratio": "9:1",
+        "campusSize": "215 acres",
+        "vibe": "Down-to-earth, outdoorsy excellence"
+      },
+      "admissions": {
+        "earlyOption": "ED I / ED II",
+        "earlyDeadline": "November 15",
+        "rdDeadline": "January 5",
+        "earlyDecision": "Mid-December 2025",
+        "ed2Decision": "February 2026",
+        "rdDecision": "Late March",
+        "earlyRate": "~30%",
+        "rdRate": "~9%",
+        "rateNote": "Test-optional pioneer"
+      },
+      "notable": "Test-optional pioneer, exceptional dining, Maine coast location",
+      "website": "https://www.bowdoin.edu"
+    },
+    {
+      "rank": 7,
+      "name": "Carleton College",
+      "shortName": "Carleton",
+      "location": {
+        "city": "Northfield",
+        "state": "Minnesota",
+        "lat": 44.4608,
+        "lng": -93.1544
+      },
+      "details": {
+        "founded": 1866,
+        "students": "2,000",
+        "type": "Private",
+        "setting": "Small Town",
+        "ratio": "9:1",
+        "campusSize": "1,000 acres",
+        "vibe": "Quirky, intellectually curious"
+      },
+      "admissions": {
+        "earlyOption": "ED I / ED II",
+        "earlyDeadline": "November 15",
+        "rdDeadline": "January 15",
+        "earlyDecision": "By Mid-December 2025",
+        "ed2Decision": "Mid-February 2026",
+        "rdDecision": "Late March",
+        "earlyRate": "~35%",
+        "rdRate": "~15%",
+        "rateNote": ""
+      },
+      "notable": "Strong sciences, trimester system, 880-acre arboretum",
+      "website": "https://www.carleton.edu"
+    },
+    {
+      "rank": 8,
+      "name": "Barnard College",
+      "shortName": "Barnard",
+      "location": {
+        "city": "New York",
+        "state": "New York",
+        "lat": 40.8090,
+        "lng": -73.9637
+      },
+      "details": {
+        "founded": 1889,
+        "students": "2,600",
+        "type": "Private",
+        "setting": "Urban",
+        "ratio": "9:1",
+        "campusSize": "4 acres",
+        "vibe": "Urban sophistication, feminist strength"
+      },
+      "admissions": {
+        "earlyOption": "ED (Early Decision)",
+        "earlyDeadline": "November 1",
+        "rdDeadline": "January 4",
+        "earlyDecision": "Mid-December 2025",
+        "rdDecision": "Late March",
+        "earlyRate": "~35%",
+        "rdRate": "~10%",
+        "rateNote": ""
+      },
+      "notable": "Women's college affiliated with Columbia, Manhattan location, cross-registration",
+      "website": "https://www.barnard.edu"
+    },
+    {
+      "rank": 9,
+      "name": "Claremont McKenna College",
+      "shortName": "CMC",
+      "location": {
+        "city": "Claremont",
+        "state": "California",
+        "lat": 34.1019,
+        "lng": -117.7101
+      },
+      "details": {
+        "founded": 1946,
+        "students": "1,400",
+        "type": "Private",
+        "setting": "Suburban",
+        "ratio": "8:1",
+        "campusSize": "69 acres",
+        "vibe": "Leadership-focused, ambitious"
+      },
+      "admissions": {
+        "earlyOption": "ED I / ED II",
+        "earlyDeadline": "November 1",
+        "rdDeadline": "January 5",
+        "earlyDecision": "By December 15, 2025",
+        "ed2Decision": "By February 15, 2026",
+        "rdDecision": "Late March",
+        "earlyRate": "~25%",
+        "rdRate": "~8%",
+        "rateNote": ""
+      },
+      "notable": "Strong economics, government, and leadership programs, Silicon Valley connections",
+      "website": "https://www.cmc.edu"
+    },
+    {
+      "rank": 10,
+      "name": "Grinnell College",
+      "shortName": "Grinnell",
+      "location": {
+        "city": "Grinnell",
+        "state": "Iowa",
+        "lat": 41.7500,
+        "lng": -92.7167
+      },
+      "details": {
+        "founded": 1846,
+        "students": "1,700",
+        "type": "Private",
+        "setting": "Rural",
+        "ratio": "9:1",
+        "campusSize": "120 acres",
+        "vibe": "Socially conscious, self-governance"
+      },
+      "admissions": {
+        "earlyOption": "ED I / ED II",
+        "earlyDeadline": "November 15",
+        "rdDeadline": "January 15",
+        "earlyDecision": "Mid-Late December 2025",
+        "ed2Decision": "Early February 2026",
+        "rdDecision": "Late March",
+        "earlyRate": "~50%",
+        "rdRate": "~15%",
+        "rateNote": ""
+      },
+      "notable": "Open curriculum, $2B+ endowment, strong need-based aid",
+      "website": "https://www.grinnell.edu"
+    },
+    {
+      "rank": 11,
+      "name": "Middlebury College",
+      "shortName": "Middlebury",
+      "location": {
+        "city": "Middlebury",
+        "state": "Vermont",
+        "lat": 44.0087,
+        "lng": -73.1762
+      },
+      "details": {
+        "founded": 1800,
+        "students": "2,600",
+        "type": "Private",
+        "setting": "Rural",
+        "ratio": "8:1",
+        "campusSize": "350 acres",
+        "vibe": "Eco-conscious, multilingual, outdoorsy"
+      },
+      "admissions": {
+        "earlyOption": "ED I / ED II",
+        "earlyDeadline": "November 15",
+        "rdDeadline": "January 1",
+        "earlyDecision": "Mid-December 2025",
+        "ed2Decision": "Mid-February 2026",
+        "rdDecision": "Late March",
+        "earlyRate": "~45%",
+        "rdRate": "~15%",
+        "rateNote": ""
+      },
+      "notable": "Top language programs, environmental studies pioneer, ski culture",
+      "website": "https://www.middlebury.edu"
+    },
+    {
+      "rank": 12,
+      "name": "Wesleyan University",
+      "shortName": "Wesleyan",
+      "location": {
+        "city": "Middletown",
+        "state": "Connecticut",
+        "lat": 41.5556,
+        "lng": -72.6558
+      },
+      "details": {
+        "founded": 1831,
+        "students": "3,000",
+        "type": "Private",
+        "setting": "Small City",
+        "ratio": "8:1",
+        "campusSize": "360 acres",
+        "vibe": "Creative, politically engaged"
+      },
+      "admissions": {
+        "earlyOption": "ED I / ED II",
+        "earlyDeadline": "November 15",
+        "rdDeadline": "January 1",
+        "earlyDecision": "Mid-December 2025",
+        "ed2Decision": "Mid-February 2026",
+        "rdDecision": "Late March",
+        "earlyRate": "~40%",
+        "rdRate": "~15%",
+        "rateNote": ""
+      },
+      "notable": "Film studies powerhouse, strong arts scene, graduate programs available",
+      "website": "https://www.wesleyan.edu"
+    },
+    {
+      "rank": 13,
+      "name": "Davidson College",
+      "shortName": "Davidson",
+      "location": {
+        "city": "Davidson",
+        "state": "North Carolina",
+        "lat": 35.4994,
+        "lng": -80.8481
+      },
+      "details": {
+        "founded": 1837,
+        "students": "2,000",
+        "type": "Private",
+        "setting": "Suburban",
+        "ratio": "9:1",
+        "campusSize": "665 acres",
+        "vibe": "Honor-bound, community-focused"
+      },
+      "admissions": {
+        "earlyOption": "ED I / ED II",
+        "earlyDeadline": "November 15",
+        "rdDeadline": "January 5",
+        "earlyDecision": "December 15, 2025",
+        "ed2Decision": "February 1, 2026",
+        "rdDecision": "Late March",
+        "earlyRate": "~45%",
+        "rdRate": "~18%",
+        "rateNote": ""
+      },
+      "notable": "Honor Code tradition, no-loan financial aid, D1 athletics",
+      "website": "https://www.davidson.edu"
+    },
+    {
+      "rank": 14,
+      "name": "Hamilton College",
+      "shortName": "Hamilton",
+      "location": {
+        "city": "Clinton",
+        "state": "New York",
+        "lat": 43.0549,
+        "lng": -75.4010
+      },
+      "details": {
+        "founded": 1812,
+        "students": "2,000",
+        "type": "Private",
+        "setting": "Rural",
+        "ratio": "9:1",
+        "campusSize": "1,350 acres",
+        "vibe": "Writing-focused, supportive"
+      },
+      "admissions": {
+        "earlyOption": "ED I / ED II",
+        "earlyDeadline": "November 15",
+        "rdDeadline": "January 4",
+        "earlyDecision": "By December 19, 2025",
+        "ed2Decision": "By February 15, 2026",
+        "rdDecision": "Late March",
+        "earlyRate": "~40%",
+        "rdRate": "~12%",
+        "rateNote": ""
+      },
+      "notable": "Open curriculum, outstanding writing program, oral communication center",
+      "website": "https://www.hamilton.edu"
+    },
+    {
+      "rank": 15,
+      "name": "Harvey Mudd College",
+      "shortName": "Harvey Mudd",
+      "location": {
+        "city": "Claremont",
+        "state": "California",
+        "lat": 34.1064,
+        "lng": -117.7108
+      },
+      "details": {
+        "founded": 1955,
+        "students": "900",
+        "type": "Private",
+        "setting": "Suburban",
+        "ratio": "8:1",
+        "campusSize": "33 acres",
+        "vibe": "STEM-intensive, collaborative"
+      },
+      "admissions": {
+        "earlyOption": "ED I / ED II",
+        "earlyDeadline": "November 15",
+        "rdDeadline": "January 5",
+        "earlyDecision": "December 15, 2025",
+        "ed2Decision": "February 15, 2026",
+        "rdDecision": "Late March",
+        "earlyRate": "~25%",
+        "rdRate": "~10%",
+        "rateNote": ""
+      },
+      "notable": "STEM focus at a liberal arts college, Claremont Consortium, highest graduate earnings",
+      "website": "https://www.hmc.edu"
+    },
+    {
+      "rank": 16,
+      "name": "Smith College",
+      "shortName": "Smith",
+      "location": {
+        "city": "Northampton",
+        "state": "Massachusetts",
+        "lat": 42.3175,
+        "lng": -72.6389
+      },
+      "details": {
+        "founded": 1871,
+        "students": "2,500",
+        "type": "Private",
+        "setting": "Small City",
+        "ratio": "9:1",
+        "campusSize": "147 acres",
+        "vibe": "Empowering, house system"
+      },
+      "admissions": {
+        "earlyOption": "ED I / ED II",
+        "earlyDeadline": "November 15",
+        "rdDeadline": "January 15",
+        "earlyDecision": "Mid-December 2025",
+        "ed2Decision": "Late January 2026",
+        "rdDecision": "Late March",
+        "earlyRate": "~45%",
+        "rdRate": "~20%",
+        "rateNote": "Women's college"
+      },
+      "notable": "Largest women's college, engineering program, Five College Consortium",
+      "website": "https://www.smith.edu"
+    },
+    {
+      "rank": 17,
+      "name": "Vassar College",
+      "shortName": "Vassar",
+      "location": {
+        "city": "Poughkeepsie",
+        "state": "New York",
+        "lat": 41.6867,
+        "lng": -73.8950
+      },
+      "details": {
+        "founded": 1861,
+        "students": "2,400",
+        "type": "Private",
+        "setting": "Suburban",
+        "ratio": "8:1",
+        "campusSize": "1,000 acres",
+        "vibe": "Artsy, eclectic, progressive"
+      },
+      "admissions": {
+        "earlyOption": "ED I / ED II",
+        "earlyDeadline": "November 15",
+        "rdDeadline": "January 1",
+        "earlyDecision": "Mid-December 2025",
+        "ed2Decision": "Early February 2026",
+        "rdDecision": "Late March",
+        "earlyRate": "~35%",
+        "rdRate": "~18%",
+        "rateNote": ""
+      },
+      "notable": "Strong arts programs, Victorian Gothic campus, progressive history",
+      "website": "https://www.vassar.edu"
+    },
+    {
+      "rank": 18,
+      "name": "Colgate University",
+      "shortName": "Colgate",
+      "location": {
+        "city": "Hamilton",
+        "state": "New York",
+        "lat": 42.8183,
+        "lng": -75.5414
+      },
+      "details": {
+        "founded": 1819,
+        "students": "3,000",
+        "type": "Private",
+        "setting": "Rural",
+        "ratio": "9:1",
+        "campusSize": "575 acres",
+        "vibe": "Spirited, residential community"
+      },
+      "admissions": {
+        "earlyOption": "ED I / ED II",
+        "earlyDeadline": "November 15",
+        "rdDeadline": "January 15",
+        "earlyDecision": "Around December 12, 2025",
+        "ed2Decision": "Mid-February 2026",
+        "rdDecision": "Late March",
+        "earlyRate": "~50%",
+        "rdRate": "~20%",
+        "rateNote": ""
+      },
+      "notable": "Beautiful hilltop campus, strong Greek life, alumni network",
+      "website": "https://www.colgate.edu"
+    },
+    {
+      "rank": 19,
+      "name": "Haverford College",
+      "shortName": "Haverford",
+      "location": {
+        "city": "Haverford",
+        "state": "Pennsylvania",
+        "lat": 40.0094,
+        "lng": -75.3034
+      },
+      "details": {
+        "founded": 1833,
+        "students": "1,400",
+        "type": "Private",
+        "setting": "Suburban",
+        "ratio": "9:1",
+        "campusSize": "216 acres",
+        "vibe": "Honor Code, trust-based community"
+      },
+      "admissions": {
+        "earlyOption": "ED I / ED II",
+        "earlyDeadline": "November 15",
+        "rdDeadline": "January 15",
+        "earlyDecision": "December 15, 2025",
+        "ed2Decision": "Early February 2026",
+        "rdDecision": "Late March",
+        "earlyRate": "~40%",
+        "rdRate": "~12%",
+        "rateNote": ""
+      },
+      "notable": "Student-run Honor Code, Tri-College Consortium, arboretum campus",
+      "website": "https://www.haverford.edu"
+    },
+    {
+      "rank": 20,
+      "name": "Washington and Lee University",
+      "shortName": "W&L",
+      "location": {
+        "city": "Lexington",
+        "state": "Virginia",
+        "lat": 37.7876,
+        "lng": -79.4428
+      },
+      "details": {
+        "founded": 1749,
+        "students": "2,200",
+        "type": "Private",
+        "setting": "Small Town",
+        "ratio": "8:1",
+        "campusSize": "415 acres",
+        "vibe": "Traditional, honor-bound"
+      },
+      "admissions": {
+        "earlyOption": "ED I / ED II",
+        "earlyDeadline": "November 1",
+        "rdDeadline": "January 1",
+        "earlyDecision": "December 20, 2025",
+        "ed2Decision": "February 1, 2026",
+        "rdDecision": "Late March",
+        "earlyRate": "~50%",
+        "rdRate": "~18%",
+        "rateNote": ""
+      },
+      "notable": "Historic campus, honor system since 1842, Spring Term abroad options",
+      "website": "https://www.wlu.edu"
+    },
+    {
+      "rank": 21,
+      "name": "Bates College",
+      "shortName": "Bates",
+      "location": {
+        "city": "Lewiston",
+        "state": "Maine",
+        "lat": 44.1053,
+        "lng": -70.2031
+      },
+      "details": {
+        "founded": 1855,
+        "students": "1,800",
+        "type": "Private",
+        "setting": "Small City",
+        "ratio": "10:1",
+        "campusSize": "133 acres",
+        "vibe": "Inclusive, outdoor-focused"
+      },
+      "admissions": {
+        "earlyOption": "ED I / ED II",
+        "earlyDeadline": "November 15",
+        "rdDeadline": "January 1",
+        "earlyDecision": "Mid-December 2025",
+        "ed2Decision": "Mid-February 2026",
+        "rdDecision": "Late March",
+        "earlyRate": "~50%",
+        "rdRate": "~15%",
+        "rateNote": ""
+      },
+      "notable": "Test-optional since 1984, 4-4-1 calendar, debate team excellence",
+      "website": "https://www.bates.edu"
+    },
+    {
+      "rank": 22,
+      "name": "Colby College",
+      "shortName": "Colby",
+      "location": {
+        "city": "Waterville",
+        "state": "Maine",
+        "lat": 44.5639,
+        "lng": -69.6617
+      },
+      "details": {
+        "founded": 1813,
+        "students": "2,200",
+        "type": "Private",
+        "setting": "Small Town",
+        "ratio": "10:1",
+        "campusSize": "714 acres",
+        "vibe": "Collaborative, community-driven"
+      },
+      "admissions": {
+        "earlyOption": "ED I / ED II",
+        "earlyDeadline": "November 15",
+        "rdDeadline": "January 1",
+        "earlyDecision": "On or Before December 15, 2025",
+        "ed2Decision": "On or Before February 15, 2026",
+        "rdDecision": "Late March",
+        "earlyRate": "~40%",
+        "rdRate": "~8%",
+        "rateNote": ""
+      },
+      "notable": "January term, environmental studies, art museum on campus",
+      "website": "https://www.colby.edu"
+    },
+    {
+      "rank": 23,
+      "name": "University of Richmond",
+      "shortName": "Richmond",
+      "location": {
+        "city": "Richmond",
+        "state": "Virginia",
+        "lat": 37.5751,
+        "lng": -77.5401
+      },
+      "details": {
+        "founded": 1830,
+        "students": "3,200",
+        "type": "Private",
+        "setting": "Suburban",
+        "ratio": "8:1",
+        "campusSize": "350 acres",
+        "vibe": "Preprofessional, Southern charm"
+      },
+      "admissions": {
+        "earlyOption": "ED I / ED II + EA",
+        "earlyDeadline": "November 1",
+        "rdDeadline": "January 15",
+        "earlyDecision": "December 12, 2025",
+        "earlyAction": "January 23, 2026",
+        "ed2Decision": "February 13, 2026",
+        "rdDecision": "Late March",
+        "earlyRate": "~45%",
+        "rdRate": "~25%",
+        "rateNote": "EA deadline: November 1"
+      },
+      "notable": "Robins School of Business, full financial aid for admits with need",
+      "website": "https://www.richmond.edu"
+    },
+    {
+      "rank": 24,
+      "name": "College of the Holy Cross",
+      "shortName": "Holy Cross",
+      "location": {
+        "city": "Worcester",
+        "state": "Massachusetts",
+        "lat": 42.2374,
+        "lng": -71.8087
+      },
+      "details": {
+        "founded": 1843,
+        "students": "3,100",
+        "type": "Private",
+        "setting": "Urban",
+        "ratio": "10:1",
+        "campusSize": "174 acres",
+        "vibe": "Jesuit tradition, community service"
+      },
+      "admissions": {
+        "earlyOption": "ED I / ED II",
+        "earlyDeadline": "November 15",
+        "rdDeadline": "January 15",
+        "earlyDecision": "December 15, 2025",
+        "ed2Decision": "February 15, 2026",
+        "rdDecision": "Late March",
+        "earlyRate": "~60%",
+        "rdRate": "~30%",
+        "rateNote": ""
+      },
+      "notable": "Jesuit liberal arts, strong pre-law/pre-med, Patriot League athletics",
+      "website": "https://www.holycross.edu"
+    },
+    {
+      "rank": 25,
+      "name": "Macalester College",
+      "shortName": "Macalester",
+      "location": {
+        "city": "St. Paul",
+        "state": "Minnesota",
+        "lat": 44.9378,
+        "lng": -93.1691
+      },
+      "details": {
+        "founded": 1874,
+        "students": "2,200",
+        "type": "Private",
+        "setting": "Urban",
+        "ratio": "10:1",
+        "campusSize": "53 acres",
+        "vibe": "Globally-minded, politically active"
+      },
+      "admissions": {
+        "earlyOption": "ED I / ED II + EA",
+        "earlyDeadline": "November 1",
+        "rdDeadline": "January 15",
+        "earlyDecision": "December 7, 2025",
+        "earlyAction": "December 20, 2025",
+        "ed2Decision": "January 25, 2026",
+        "rdDecision": "Late March",
+        "earlyRate": "~55%",
+        "rdRate": "~30%",
+        "rateNote": "EA deadline: December 1"
+      },
+      "notable": "UN flag on campus, internationalism focus, Twin Cities location",
+      "website": "https://www.macalester.edu"
+    },
+    {
+      "rank": 26,
+      "name": "Berea College",
+      "shortName": "Berea",
+      "location": {
+        "city": "Berea",
+        "state": "Kentucky",
+        "lat": 37.5687,
+        "lng": -84.2963
+      },
+      "details": {
+        "founded": 1855,
+        "students": "1,400",
+        "type": "Private",
+        "setting": "Small Town",
+        "ratio": "10:1",
+        "campusSize": "9,000 acres",
+        "vibe": "Work-focused, service-oriented"
+      },
+      "admissions": {
+        "earlyOption": "EA (Early Action)",
+        "earlyDeadline": "October 31",
+        "rdDeadline": "January 31",
+        "earlyDecision": "Mid-December 2025",
+        "rdDecision": "Late March",
+        "earlyRate": "~30%",
+        "rdRate": "~25%",
+        "rateNote": "Free tuition for all admitted students"
+      },
+      "notable": "100% free tuition, work-study required, Appalachian service commitment",
+      "website": "https://www.berea.edu"
+    },
+    {
+      "rank": 27,
+      "name": "Bryn Mawr College",
+      "shortName": "Bryn Mawr",
+      "location": {
+        "city": "Bryn Mawr",
+        "state": "Pennsylvania",
+        "lat": 40.0281,
+        "lng": -75.3130
+      },
+      "details": {
+        "founded": 1885,
+        "students": "1,400",
+        "type": "Private",
+        "setting": "Suburban",
+        "ratio": "8:1",
+        "campusSize": "135 acres",
+        "vibe": "Academic rigor, empowerment"
+      },
+      "admissions": {
+        "earlyOption": "ED I / ED II",
+        "earlyDeadline": "November 15",
+        "rdDeadline": "January 15",
+        "earlyDecision": "Mid-December 2025",
+        "ed2Decision": "Early February 2026",
+        "rdDecision": "Late March",
+        "earlyRate": "~55%",
+        "rdRate": "~30%",
+        "rateNote": "Women's college"
+      },
+      "notable": "Women's college, Tri-College Consortium, Gothic architecture",
+      "website": "https://www.brynmawr.edu"
+    },
+    {
+      "rank": 28,
+      "name": "Bucknell University",
+      "shortName": "Bucknell",
+      "location": {
+        "city": "Lewisburg",
+        "state": "Pennsylvania",
+        "lat": 40.9548,
+        "lng": -76.8833
+      },
+      "details": {
+        "founded": 1846,
+        "students": "3,700",
+        "type": "Private",
+        "setting": "Rural",
+        "ratio": "9:1",
+        "campusSize": "450 acres",
+        "vibe": "Well-rounded, spirited"
+      },
+      "admissions": {
+        "earlyOption": "ED I / ED II",
+        "earlyDeadline": "November 15",
+        "rdDeadline": "January 15",
+        "earlyDecision": "Early December 2025",
+        "ed2Decision": "Mid-February 2026",
+        "rdDecision": "Late March",
+        "earlyRate": "~55%",
+        "rdRate": "~30%",
+        "rateNote": ""
+      },
+      "notable": "Engineering at a liberal arts school, beautiful Susquehanna River campus",
+      "website": "https://www.bucknell.edu"
+    },
+    {
+      "rank": 29,
+      "name": "Lafayette College",
+      "shortName": "Lafayette",
+      "location": {
+        "city": "Easton",
+        "state": "Pennsylvania",
+        "lat": 40.6989,
+        "lng": -75.2135
+      },
+      "details": {
+        "founded": 1826,
+        "students": "2,700",
+        "type": "Private",
+        "setting": "Suburban",
+        "ratio": "10:1",
+        "campusSize": "340 acres",
+        "vibe": "Engineering meets liberal arts"
+      },
+      "admissions": {
+        "earlyOption": "ED I / ED II",
+        "earlyDeadline": "November 15",
+        "rdDeadline": "January 15",
+        "earlyDecision": "Mid-December 2025",
+        "ed2Decision": "Mid-February 2026",
+        "rdDecision": "Late March",
+        "earlyRate": "~50%",
+        "rdRate": "~30%",
+        "rateNote": ""
+      },
+      "notable": "Engineering programs, historic Lehigh Valley rivalry, community partnerships",
+      "website": "https://www.lafayette.edu"
+    },
+    {
+      "rank": 30,
+      "name": "Colorado College",
+      "shortName": "CC",
+      "location": {
+        "city": "Colorado Springs",
+        "state": "Colorado",
+        "lat": 38.8479,
+        "lng": -104.8244
+      },
+      "details": {
+        "founded": 1874,
+        "students": "2,200",
+        "type": "Private",
+        "setting": "Urban",
+        "ratio": "10:1",
+        "campusSize": "90 acres",
+        "vibe": "Adventurous, Block Plan unique"
+      },
+      "admissions": {
+        "earlyOption": "ED I / ED II + EA",
+        "earlyDeadline": "November 15",
+        "rdDeadline": "January 15",
+        "earlyDecision": "December 11, 2025",
+        "earlyAction": "January 8, 2025",
+        "ed2Decision": "February 12, 2025",
+        "rdDecision": "Late March",
+        "earlyRate": "~35%",
+        "rdRate": "~12%",
+        "rateNote": "EA deadline: November 15"
+      },
+      "notable": "Block Plan (one course at a time), outdoor focus, hockey culture",
+      "website": "https://www.coloradocollege.edu"
+    }
+  ]
+}

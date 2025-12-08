@@ -1,13 +1,17 @@
 /**
  * Universities Module
  * Handles interactive map and university cards for Top 30 US Universities page
+ * and Top 30 Liberal Arts Colleges section
  */
 
 const UniversitiesApp = (function() {
     // Private state
     let universitiesData = [];
+    let liberalArtsData = [];
     let map = null;
+    let liberalArtsMap = null;
     let markers = {};
+    let liberalArtsMarkers = {};
     
     // Active filters state
     let activeFilters = {
@@ -16,12 +20,23 @@ const UniversitiesApp = (function() {
         appType: 'all'
     };
     
+    // Active filters state for Liberal Arts
+    let liberalArtsFilters = {
+        search: '',
+        schoolType: 'all',
+        appType: 'all'
+    };
+    
     // Configuration
     const config = {
         dataUrl: 'data/universities.json',
+        liberalArtsDataUrl: 'data/liberal-arts-colleges.json',
         mapContainerId: 'universities-map',
+        liberalArtsMapContainerId: 'liberal-arts-map',
         gridContainerId: 'universities-grid',
+        liberalArtsGridContainerId: 'liberal-arts-grid',
         searchInputId: 'universities-search',
+        liberalArtsSearchInputId: 'liberal-arts-search',
         mapCenter: [39.8283, -98.5795], // Center of US
         mapZoom: 4,
         markerSize: 28
@@ -47,6 +62,16 @@ const UniversitiesApp = (function() {
             renderCards();
             initSearch();
             initFilterButtons();
+            
+            // Initialize Liberal Arts section if it exists
+            if (document.getElementById(config.liberalArtsMapContainerId)) {
+                await loadLiberalArtsData();
+                initLiberalArtsMap();
+                renderLiberalArtsMarkers();
+                renderLiberalArtsCards();
+                initLiberalArtsSearch();
+                initLiberalArtsFilterButtons();
+            }
         } catch (error) {
             console.error('Failed to initialize universities app:', error);
         }
@@ -62,6 +87,18 @@ const UniversitiesApp = (function() {
         }
         const json = await response.json();
         universitiesData = json.universities;
+    }
+
+    /**
+     * Load liberal arts colleges data from JSON file
+     */
+    async function loadLiberalArtsData() {
+        const response = await fetch(config.liberalArtsDataUrl);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const json = await response.json();
+        liberalArtsData = json.colleges;
     }
 
     /**
@@ -81,11 +118,39 @@ const UniversitiesApp = (function() {
     }
 
     /**
+     * Initialize the Liberal Arts Leaflet map
+     */
+    function initLiberalArtsMap() {
+        liberalArtsMap = L.map(config.liberalArtsMapContainerId, {
+            center: config.mapCenter,
+            zoom: config.mapZoom,
+            scrollWheelZoom: true
+        });
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+            maxZoom: 18
+        }).addTo(liberalArtsMap);
+    }
+
+    /**
      * Create a custom marker icon
      */
     function createMarkerIcon(rank) {
         return L.divIcon({
             className: 'university-marker',
+            html: `<span>${rank}</span>`,
+            iconSize: [config.markerSize, config.markerSize],
+            iconAnchor: [config.markerSize / 2, config.markerSize / 2]
+        });
+    }
+
+    /**
+     * Create a custom marker icon for liberal arts colleges (green theme)
+     */
+    function createLiberalArtsMarkerIcon(rank) {
+        return L.divIcon({
+            className: 'liberal-arts-marker',
             html: `<span>${rank}</span>`,
             iconSize: [config.markerSize, config.markerSize],
             iconAnchor: [config.markerSize / 2, config.markerSize / 2]
@@ -176,6 +241,25 @@ const UniversitiesApp = (function() {
             });
 
             markers[uni.rank] = marker;
+        });
+    }
+
+    /**
+     * Render all markers on the liberal arts map
+     */
+    function renderLiberalArtsMarkers() {
+        liberalArtsData.forEach(college => {
+            const marker = L.marker(
+                [college.location.lat, college.location.lng],
+                { icon: createLiberalArtsMarkerIcon(college.rank) }
+            ).addTo(liberalArtsMap);
+
+            marker.bindPopup(createPopupContent(college), {
+                maxWidth: 450,
+                className: 'university-popup-wrapper liberal-arts-popup'
+            });
+
+            liberalArtsMarkers[college.rank] = marker;
         });
     }
 
@@ -342,6 +426,138 @@ const UniversitiesApp = (function() {
     }
 
     /**
+     * Render all liberal arts college cards
+     */
+    function renderLiberalArtsCards() {
+        const container = document.getElementById(config.liberalArtsGridContainerId);
+        if (!container) return;
+
+        const html = liberalArtsData.map(college => createLiberalArtsCardHTML(college)).join('');
+        container.innerHTML = html;
+    }
+
+    /**
+     * Generate HTML for a liberal arts college card
+     */
+    function createLiberalArtsCardHTML(college) {
+        const appTypeCategory = getAppTypeCategory(college.admissions.earlyOption);
+        return `
+            <div class="university-card liberal-arts-card" data-rank="${college.rank}" data-type="${college.details.type.toLowerCase()}" data-app-type="${appTypeCategory}" data-name="${college.name.toLowerCase()}">
+                <div class="university-card-header" onclick="UniversitiesApp.toggleCard(this)">
+                    <div class="university-card-rank liberal-arts-rank">${college.rank}</div>
+                    <div class="university-card-info">
+                        <div class="university-card-name">${college.name}</div>
+                        <div class="university-card-location">${college.location.city}, ${college.location.state}</div>
+                    </div>
+                    <div class="university-card-toggle">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </div>
+                </div>
+                <div class="university-card-content">
+                    <div class="university-card-section">
+                        <div class="university-card-section-title">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                                <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/>
+                            </svg>
+                            College Details
+                        </div>
+                        <div class="university-card-details-grid">
+                            <div class="university-card-detail">
+                                <div class="university-card-detail-label">Founded</div>
+                                <div class="university-card-detail-value">${college.details.founded}</div>
+                            </div>
+                            <div class="university-card-detail">
+                                <div class="university-card-detail-label">Students</div>
+                                <div class="university-card-detail-value">${college.details.students}</div>
+                            </div>
+                            <div class="university-card-detail">
+                                <div class="university-card-detail-label">Type</div>
+                                <div class="university-card-detail-value">${college.details.type}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="university-card-section">
+                        <div class="university-card-section-title">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                                <line x1="16" y1="2" x2="16" y2="6"/>
+                                <line x1="8" y1="2" x2="8" y2="6"/>
+                                <line x1="3" y1="10" x2="21" y2="10"/>
+                            </svg>
+                            Application Information
+                        </div>
+                        <div class="university-card-admission-grid">
+                            <div class="university-card-admission-item">
+                                <div class="university-card-admission-label">Early Option</div>
+                                <div class="university-card-admission-value">${college.admissions.earlyOption}</div>
+                            </div>
+                            <div class="university-card-admission-item">
+                                <div class="university-card-admission-label">Early Deadline</div>
+                                <div class="university-card-admission-value">${college.admissions.earlyDeadline}</div>
+                            </div>
+                            <div class="university-card-admission-item">
+                                <div class="university-card-admission-label">RD Deadline</div>
+                                <div class="university-card-admission-value">${college.admissions.rdDeadline}</div>
+                            </div>
+                            <div class="university-card-admission-item">
+                                <div class="university-card-admission-label">Early Decision</div>
+                                <div class="university-card-admission-value">${college.admissions.earlyDecision}</div>
+                            </div>
+                            <div class="university-card-admission-item">
+                                <div class="university-card-admission-label">RD Decision</div>
+                                <div class="university-card-admission-value">${college.admissions.rdDecision}</div>
+                            </div>
+                            <div class="university-card-admission-item">
+                                <div class="university-card-admission-label">Early Rate</div>
+                                <div class="university-card-admission-value">${college.admissions.earlyRate}</div>
+                            </div>
+                            <div class="university-card-admission-item">
+                                <div class="university-card-admission-label">RD Rate</div>
+                                <div class="university-card-admission-value">${college.admissions.rdRate}</div>
+                            </div>
+                            ${college.admissions.rateNote ? `
+                            <div class="university-card-admission-item" style="grid-column: span 2;">
+                                <div class="university-card-admission-label">Note</div>
+                                <div class="university-card-admission-value" style="font-style: italic;">${college.admissions.rateNote}</div>
+                            </div>
+                            ` : ''}
+                        </div>
+                    </div>
+                    <div class="university-card-section">
+                        <div class="university-card-section-title">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                            </svg>
+                            Notable
+                        </div>
+                        <div class="university-card-notable">${college.notable}</div>
+                    </div>
+                    <div class="university-card-actions">
+                        <button class="university-card-btn university-card-btn-map liberal-arts-btn" onclick="UniversitiesApp.showOnLiberalArtsMap(${college.rank})">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            Show on Map
+                        </button>
+                        <a href="${college.website}" target="_blank" rel="noopener" class="university-card-btn university-card-btn-website liberal-arts-btn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <line x1="2" y1="12" x2="22" y2="12"/>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                            </svg>
+                            Visit Website
+                        </a>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+
+    /**
      * Toggle card expansion
      */
     function toggleCard(headerElement) {
@@ -367,6 +583,23 @@ const UniversitiesApp = (function() {
     }
 
     /**
+     * Show liberal arts college on map
+     */
+    function showOnLiberalArtsMap(rank) {
+        const marker = liberalArtsMarkers[rank];
+        if (marker && liberalArtsMap) {
+            liberalArtsMap.setView(marker.getLatLng(), 10, { animate: true });
+            setTimeout(() => marker.openPopup(), 300);
+            
+            // Scroll to map
+            document.getElementById(config.liberalArtsMapContainerId).scrollIntoView({
+                behavior: 'smooth',
+                block: 'center'
+            });
+        }
+    }
+
+    /**
      * Initialize search functionality
      */
     function initSearch() {
@@ -380,10 +613,23 @@ const UniversitiesApp = (function() {
     }
 
     /**
+     * Initialize Liberal Arts search functionality
+     */
+    function initLiberalArtsSearch() {
+        const searchInput = document.getElementById(config.liberalArtsSearchInputId);
+        if (!searchInput) return;
+
+        searchInput.addEventListener('input', (e) => {
+            liberalArtsFilters.search = e.target.value.toLowerCase().trim();
+            applyLiberalArtsFilters();
+        });
+    }
+
+    /**
      * Apply all active filters to cards
      */
     function applyFilters() {
-        const cards = document.querySelectorAll('.university-card');
+        const cards = document.querySelectorAll('#universities-grid .university-card');
         let visibleCount = 0;
         
         cards.forEach(card => {
@@ -401,14 +647,41 @@ const UniversitiesApp = (function() {
         });
         
         // Update no results message
-        updateNoResultsMessage(visibleCount);
+        updateNoResultsMessage(visibleCount, config.gridContainerId, 'universities');
+    }
+
+    /**
+     * Apply all active filters to liberal arts cards
+     */
+    function applyLiberalArtsFilters() {
+        const cards = document.querySelectorAll('#liberal-arts-grid .university-card');
+        let visibleCount = 0;
+        
+        cards.forEach(card => {
+            const name = card.dataset.name;
+            const cardType = card.dataset.type;
+            const cardAppType = card.dataset.appType;
+            
+            const matchesSearch = !liberalArtsFilters.search || name.includes(liberalArtsFilters.search);
+            const matchesSchoolType = liberalArtsFilters.schoolType === 'all' || cardType === liberalArtsFilters.schoolType;
+            const matchesAppType = liberalArtsFilters.appType === 'all' || cardAppType === liberalArtsFilters.appType;
+            
+            const isVisible = matchesSearch && matchesSchoolType && matchesAppType;
+            card.style.display = isVisible ? 'block' : 'none';
+            if (isVisible) visibleCount++;
+        });
+        
+        // Update no results message
+        updateNoResultsMessage(visibleCount, config.liberalArtsGridContainerId, 'colleges');
     }
     
     /**
      * Show/hide no results message
      */
-    function updateNoResultsMessage(visibleCount) {
-        const container = document.getElementById(config.gridContainerId);
+    function updateNoResultsMessage(visibleCount, containerId, type) {
+        const container = document.getElementById(containerId);
+        if (!container) return;
+        
         let noResultsEl = container.querySelector('.no-results-message');
         
         if (visibleCount === 0) {
@@ -420,7 +693,7 @@ const UniversitiesApp = (function() {
                         <circle cx="11" cy="11" r="8"/>
                         <path d="M21 21l-4.35-4.35"/>
                     </svg>
-                    <p style="font-size: 1.1rem; color: #4a5568; margin: 0;">No universities match your current filters.</p>
+                    <p style="font-size: 1.1rem; color: #4a5568; margin: 0;">No ${type} match your current filters.</p>
                     <p style="font-size: 0.9rem; color: #718096; margin-top: 0.5rem;">Try adjusting your search or filter criteria.</p>
                 `;
                 noResultsEl.style.cssText = 'text-align: center; padding: 3rem; grid-column: 1 / -1;';
@@ -436,7 +709,7 @@ const UniversitiesApp = (function() {
      * Initialize filter buttons
      */
     function initFilterButtons() {
-        const filterBtns = document.querySelectorAll('.universities-filter-btn');
+        const filterBtns = document.querySelectorAll('.universities-controls .universities-filter-btn');
         
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
@@ -444,7 +717,7 @@ const UniversitiesApp = (function() {
                 const filterValue = btn.dataset.filter;
                 
                 // Update active state only within the same filter group
-                const siblingBtns = document.querySelectorAll(`.universities-filter-btn[data-filter-type="${filterType}"]`);
+                const siblingBtns = document.querySelectorAll(`.universities-controls .universities-filter-btn[data-filter-type="${filterType}"]`);
                 siblingBtns.forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
                 
@@ -462,10 +735,46 @@ const UniversitiesApp = (function() {
     }
 
     /**
+     * Initialize Liberal Arts filter buttons
+     */
+    function initLiberalArtsFilterButtons() {
+        const filterBtns = document.querySelectorAll('.liberal-arts-controls .universities-filter-btn');
+        
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const filterType = btn.dataset.filterType;
+                const filterValue = btn.dataset.filter;
+                
+                // Update active state only within the same filter group
+                const siblingBtns = document.querySelectorAll(`.liberal-arts-controls .universities-filter-btn[data-filter-type="${filterType}"]`);
+                siblingBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                // Update active filters
+                if (filterType === 'school') {
+                    liberalArtsFilters.schoolType = filterValue;
+                } else if (filterType === 'app') {
+                    liberalArtsFilters.appType = filterValue;
+                }
+                
+                // Apply all filters
+                applyLiberalArtsFilters();
+            });
+        });
+    }
+
+    /**
      * Get universities data (for external access if needed)
      */
     function getData() {
         return universitiesData;
+    }
+
+    /**
+     * Get liberal arts data (for external access if needed)
+     */
+    function getLiberalArtsData() {
+        return liberalArtsData;
     }
 
     // Public API
@@ -473,7 +782,9 @@ const UniversitiesApp = (function() {
         init,
         toggleCard,
         showOnMap,
-        getData
+        showOnLiberalArtsMap,
+        getData,
+        getLiberalArtsData
     };
 })();
 
