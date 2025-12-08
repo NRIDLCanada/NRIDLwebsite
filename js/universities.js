@@ -146,7 +146,7 @@ const UniversitiesApp = (function() {
     }
 
     /**
-     * Create a custom marker icon for liberal arts colleges (green theme)
+     * Create a custom marker icon for liberal arts colleges (dark theme)
      */
     function createLiberalArtsMarkerIcon(rank) {
         return L.divIcon({
