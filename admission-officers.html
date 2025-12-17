@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Find your regional admission officer at top liberal arts colleges. Interactive map and directory of admission counselors at Pomona College, Wellesley College, and Swarthmore College.">
+    <meta name="keywords" content="college admission officers, regional admission counselors, Pomona College admissions, Wellesley College admissions, Swarthmore College admissions, liberal arts college admissions">
+    <title>Regional Admission Officers - Top Liberal Arts Colleges | NRIDL</title>
+    
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.nridl.org/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Regional Admission Officers",
+        "item": "https://www.nridl.org/admission-officers.html"
+      }]
+    }
+    </script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700;900&family=Montserrat:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+    
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="css/main.css?v=1.5">
+    <link rel="stylesheet" href="css/navigation.css?v=1.5">
+    <link rel="stylesheet" href="css/footer.css?v=1.5">
+    
+    <style>
+        /* Hero Section */
+        .officers-hero {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+            padding: clamp(6rem, 12vw, 10rem) 0 clamp(4rem, 8vw, 6rem);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .officers-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+        
+        .officers-hero .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            font-size: 0.875rem;
+            color: #a0a0a0;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            padding: 0.5rem 1.5rem;
+            background: rgba(160, 160, 160, 0.1);
+            border-radius: 30px;
+            border: 1px solid rgba(160, 160, 160, 0.2);
+        }
+        
+        .officers-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            color: #ffffff;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+        
+        .officers-hero p {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .hero-stat {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 600;
+            line-height: 1.2;
+            color: #ffffff;
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.7);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-top: 0.25rem;
+        }
+        
+        /* Map Section */
+        .map-section {
+            background: #f8f9fa;
+            padding: clamp(3rem, 6vw, 5rem) 0;
+        }
+
+        .map-section h2 {
+            text-align: center;
+            font-size: 1.75rem;
+            color: #1a202c;
+            margin-bottom: 0.5rem;
+            font-weight: 400;
+        }
+        
+        .map-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .map-wrapper {
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .map-header {
+            padding: 1.5rem 2rem;
+            background: #ffffff;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .map-header h2 {
+            font-size: 1.25rem;
+            color: #1a202c;
+            font-weight: 500;
+            margin: 0;
+        }
+        
+        .map-legend {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            color: #4a5568;
+        }
+        
+        .legend-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        
+        #officers-map {
+            height: 500px;
+            width: 100%;
+        }
+        
+        /* Officers Section */
+        .officers-section {
+            background: #ffffff;
+            padding: clamp(3rem, 6vw, 5rem) 0;
+        }
+        
+        .officers-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .section-title h2 {
+            font-size: 1.75rem;
+            color: #1a202c;
+            margin: 0 0 0.5rem;
+            font-weight: 400;
+        }
+        
+        .section-title p {
+            color: #718096;
+            font-size: 1rem;
+            margin: 0;
+        }
+        
+        /* Search and Filters */
+        .filters-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: center;
+            background: #f7fafc;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+        }
+        
+        .search-box {
+            flex: 1;
+            min-width: 250px;
+            position: relative;
+        }
+        
+        .search-box input {
+            width: 100%;
+            padding: 0.875rem 1rem 0.875rem 2.75rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            background: #ffffff;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        
+        .search-box input:focus {
+            outline: none;
+            border-color: #1a1a1a;
+            box-shadow: 0 0 0 3px rgba(26, 26, 26, 0.1);
+        }
+        
+        .search-box svg {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #a0aec0;
+        }
+        
+        .filter-group {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .filter-group label {
+            font-size: 0.875rem;
+            color: #4a5568;
+            font-weight: 500;
+        }
+        
+        .filter-group select {
+            padding: 0.75rem 2rem 0.75rem 1rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            background: #ffffff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%234a5568' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E") no-repeat right 0.5rem center;
+            background-size: 1rem;
+            appearance: none;
+            cursor: pointer;
+            min-width: 150px;
+        }
+        
+        .filter-group select:focus {
+            outline: none;
+            border-color: #1a1a1a;
+        }
+        
+        .clear-filters-btn {
+            padding: 0.75rem 1.25rem;
+            background: #1a1a1a;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        
+        .clear-filters-btn:hover {
+            background: #333333;
+        }
+        
+        .results-count {
+            font-size: 0.875rem;
+            color: #718096;
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Officers Grid */
+        #officers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .officer-card {
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e2e8f0;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .officer-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+        }
+        
+        .officer-card-header {
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: white;
+        }
+        
+        .officer-avatar {
+            width: 56px;
+            height: 56px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+        
+        .officer-info {
+            flex: 1;
+            min-width: 0;
+        }
+        
+        .officer-name {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin: 0 0 0.25rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .officer-title {
+            font-size: 0.8rem;
+            opacity: 0.9;
+            margin: 0;
+            line-height: 1.4;
+        }
+        
+        .officer-card-body {
+            padding: 1.5rem;
+        }
+        
+        .officer-college {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #4a5568;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .officer-college svg {
+            flex-shrink: 0;
+        }
+        
+        .officer-regions h4 {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.8rem;
+            color: #718096;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin: 0 0 0.75rem;
+            font-weight: 500;
+        }
+        
+        .region-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.25rem;
+        }
+        
+        .region-tag {
+            display: inline-block;
+            padding: 0.35rem 0.75rem;
+            background: #f7fafc;
+            color: #4a5568;
+            font-size: 0.75rem;
+            border-radius: 20px;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .officer-contact {
+            margin-top: auto;
+        }
+        
+        .linkedin-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.25rem;
+            background: #0077b5;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: background 0.2s;
+            width: 100%;
+            justify-content: center;
+        }
+        
+        .linkedin-btn:hover {
+            background: #005885;
+        }
+        
+        .linkedin-btn svg {
+            fill: white;
+        }
+        
+        /* No Results */
+        .no-results {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 4rem 2rem;
+            color: #718096;
+        }
+        
+        .no-results-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .no-results h3 {
+            color: #1a202c;
+            margin: 0 0 0.5rem;
+        }
+        
+        .no-results p {
+            margin: 0;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-stats {
+                gap: 1.5rem;
+            }
+            
+            .hero-stat {
+                padding: 0.75rem 1rem;
+            }
+            
+            .stat-number {
+                font-size: 1.5rem;
+            }
+            
+            .map-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            #officers-map {
+                height: 350px;
+            }
+            
+            .filters-bar {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .search-box {
+                min-width: 100%;
+            }
+            
+            .filter-group {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .filter-group select {
+                min-width: 100%;
+            }
+            
+            #officers-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-header {
+                flex-direction: column;
+            }
+        }
+        
+        /* Footer spacing */
+        .site-footer {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav" id="mainNav">
+        <div class="nav-container">
+            <a href="index.html" class="logo">NRIDL</a>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="#">Research</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="ar-research.html">AR/VR Research</a></li>
+                        <li><a href="ai-projects.html">AI Projects</a></li>
+                        <li><a href="semiconductor-research.html">Semiconductor Research</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Education</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="literacy.html">Literacy Programs</a></li>
+                        <li><a href="digital-literacy.html">Digital Literacy</a></li>
+                        <li><a href="ai-literacy.html">AI Literacy</a></li>
+                        <li><a href="financial-literacy.html">Financial Literacy</a></li>
+                        <li><a href="learning-programs.html">Learning Programs</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Resources</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="top-canadian-private-schools.html">Canadian Private Schools</a></li>
+                        <li><a href="top-us-universities.html">Top US Universities</a></li>
+                        <li><a href="admission-officers.html" class="active">Admission Officers</a></li>
+                        <li><a href="digital-futures.html">Digital Futures</a></li>
+                        <li><a href="sustainability.html">Sustainability</a></li>
+                        <li><a href="heritage.html">Heritage</a></li>
+                    </ul>
+                </li>
+                <li><a href="faq.html">FAQ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="officers-hero">
+        <div class="container">
+            <span class="hero-badge">Admissions Directory</span>
+            <h1>Regional Admission Officers</h1>
+            <p>Connect with your regional admission counselor at top liberal arts colleges. Find the right person to answer your questions about applying.</p>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <span class="stat-number">3</span>
+                    <span class="stat-label">Elite Colleges</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="stat-number">39</span>
+                    <span class="stat-label">Regional Officers</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="stat-number">100+</span>
+                    <span class="stat-label">Regions Covered</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="map-container">
+            <div class="map-wrapper">
+                <div class="map-header">
+                    <h2>College Locations</h2>
+                    <div class="map-legend">
+                        <div class="legend-item">
+                            <div class="legend-dot" style="background: #0057b8;"></div>
+                            <span>Pomona College</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-dot" style="background: #002776;"></div>
+                            <span>Wellesley College</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-dot" style="background: #7e1e2e;"></div>
+                            <span>Swarthmore College</span>
+                        </div>
+                    </div>
+                </div>
+                <div id="officers-map"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Officers Section -->
+    <section class="officers-section">
+        <div class="officers-container">
+            <div class="section-header">
+                <div class="section-title">
+                    <h2>Find Your Admission Counselor</h2>
+                    <p>Search by name, region, or college to find your designated admission officer</p>
+                </div>
+            </div>
+            
+            <div class="filters-bar">
+                <div class="search-box">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    <input type="text" id="officers-search" placeholder="Search by name, region, or country...">
+                </div>
+                <div class="filter-group">
+                    <label for="college-filter">College:</label>
+                    <select id="college-filter">
+                        <option value="all">All Colleges</option>
+                        <option value="Pomona College">Pomona College</option>
+                        <option value="Wellesley College">Wellesley College</option>
+                        <option value="Swarthmore College">Swarthmore College</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="region-filter">Region:</label>
+                    <select id="region-filter">
+                        <option value="all">All Regions</option>
+                        <optgroup label="US Regions">
+                            <option value="California">California</option>
+                            <option value="New York">New York</option>
+                            <option value="Texas">Texas</option>
+                            <option value="Florida">Florida</option>
+                            <option value="Massachusetts">Massachusetts</option>
+                            <option value="Pennsylvania">Pennsylvania</option>
+                            <option value="Illinois">Illinois</option>
+                        </optgroup>
+                        <optgroup label="International">
+                            <option value="Asia">Asia</option>
+                            <option value="Europe">Europe</option>
+                            <option value="Africa">Africa</option>
+                            <option value="Canada">Canada</option>
+                            <option value="Latin America">Latin America</option>
+                            <option value="Middle East">Middle East</option>
+                            <option value="Oceania">Oceania</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <button id="clear-filters" class="clear-filters-btn">Clear Filters</button>
+            </div>
+            
+            <p class="results-count" id="officers-count">39 officers found</p>
+            
+            <div id="officers-grid">
+                <!-- Officers will be rendered here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-wave"></div>
+        <div class="footer-content">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">NRIDL</a>
+                    <p class="footer-tagline">Natural Resources Institute for Digital Literacy</p>
+                    <p class="footer-description">Empowering learners worldwide through innovative digital education, literacy programs, and sustainable technology initiatives.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Programs</h4>
+                        <ul>
+                            <li><a href="literacy.html">Literacy Programs</a></li>
+                            <li><a href="digital-literacy.html">Digital Literacy</a></li>
+                            <li><a href="ai-literacy.html">AI Literacy</a></li>
+                            <li><a href="financial-literacy.html">Financial Literacy</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="top-canadian-private-schools.html">Canadian Private Schools</a></li>
+                            <li><a href="top-us-universities.html">Top US Universities</a></li>
+                            <li><a href="admission-officers.html">Admission Officers</a></li>
+                            <li><a href="faq.html">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                            <li><a href="terms-of-use.html">Terms of Use</a></li>
+                            <li><a href="cookie-policy.html">Cookie Policy</a></li>
+                            <li><a href="ip-policy.html">IP Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 NRIDL. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    
+    <!-- Site Scripts -->
+    <script src="js/navigation.js"></script>
+    <script src="js/admission-officers.js"></script>
+</body>
+</html>

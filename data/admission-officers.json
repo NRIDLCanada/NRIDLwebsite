@@ -1,0 +1,265 @@
+{
+  "colleges": [
+    {
+      "name": "Pomona College",
+      "location": "Claremont, CA",
+      "coordinates": [34.0967, -117.7131],
+      "website": "https://www.pomona.edu/admissions",
+      "ranking": 4,
+      "officers": [
+        {
+          "name": "Joel A. Hart",
+          "title": "Assistant Vice President, Dean of Admissions",
+          "email": "admissions@pomona.edu",
+          "regions": ["New York City", "San Francisco Bay Area", "Europe", "Oceania"]
+        },
+        {
+          "name": "Paola Franco",
+          "title": "Senior Associate Dean of Admissions",
+          "email": "admissions@pomona.edu",
+          "regions": ["Colorado", "Puerto Rico", "Latin America", "Middle East", "North Africa", "Caribbean"]
+        },
+        {
+          "name": "Tray Hammond",
+          "title": "Senior Associate Dean of Admissions",
+          "email": "admissions@pomona.edu",
+          "regions": ["Los Angeles (Hollywood & Wilshire)", "East Asia", "Southeast Asia", "Pacific Islands"]
+        },
+        {
+          "name": "Sophie Wright",
+          "title": "Associate Dean of Admissions",
+          "email": "admissions@pomona.edu",
+          "regions": ["Pennsylvania", "Indiana", "Michigan", "Ohio", "Central Asia", "India", "Subcontinent"]
+        },
+        {
+          "name": "Ethan Bradley",
+          "title": "Associate Dean of Admissions",
+          "email": "admissions@pomona.edu",
+          "regions": ["Iowa", "Kansas", "Minnesota", "Missouri", "Nebraska", "North Dakota", "South Dakota", "Wisconsin", "Canada", "United World Colleges"]
+        },
+        {
+          "name": "Nathalie Jimenez",
+          "title": "Associate Dean of Admissions",
+          "email": "admissions@pomona.edu",
+          "regions": ["Connecticut", "Delaware", "Maine", "New Hampshire", "New Jersey", "New York", "Rhode Island", "Vermont"]
+        },
+        {
+          "name": "Kenia Alfaro",
+          "title": "Associate Dean of Admissions",
+          "email": "admissions@pomona.edu",
+          "regions": ["Texas (Houston, San Antonio, Rio Grande Valley)", "Africa"]
+        },
+        {
+          "name": "Luis Garcia",
+          "title": "Assistant Dean of Admissions",
+          "email": "admissions@pomona.edu",
+          "regions": ["Los Angeles (Eastside, Downtown, South Bay)", "Arizona", "Nevada", "New Mexico", "Utah"]
+        },
+        {
+          "name": "Hannah Gonzales",
+          "title": "Admissions Counselor",
+          "email": "admissions@pomona.edu",
+          "regions": ["Los Angeles (Westside, South LA, Orange County)", "Alaska", "Hawaii", "Idaho", "Montana", "Oregon", "Washington", "Wyoming"]
+        },
+        {
+          "name": "Kat Alvarado",
+          "title": "Admissions Counselor",
+          "email": "admissions@pomona.edu",
+          "regions": ["Texas (Austin, North Texas, West Texas)", "Arkansas", "Louisiana", "Mississippi", "Oklahoma"]
+        },
+        {
+          "name": "Elizabeth Machado",
+          "title": "Admissions Counselor",
+          "email": "admissions@pomona.edu",
+          "regions": ["Northern California", "Central California", "Inland Empire"]
+        },
+        {
+          "name": "Yannick Trapman-O'Brien",
+          "title": "Admissions Counselor",
+          "email": "admissions@pomona.edu",
+          "regions": ["Washington DC", "Maryland", "Massachusetts", "Virginia", "West Virginia"]
+        },
+        {
+          "name": "Jane Park",
+          "title": "Admissions Counselor",
+          "email": "admissions@pomona.edu",
+          "regions": ["Illinois", "Kentucky", "Tennessee", "Alabama", "Florida", "Georgia", "North Carolina", "South Carolina"]
+        }
+      ]
+    },
+    {
+      "name": "Wellesley College",
+      "location": "Wellesley, MA",
+      "coordinates": [42.2932, -71.3059],
+      "website": "https://www.wellesley.edu/admission",
+      "ranking": 5,
+      "officers": [
+        {
+          "name": "Sarah Arment",
+          "title": "Associate Director of Admission",
+          "email": "admission@wellesley.edu",
+          "regions": ["Asia (excluding China, India, Nepal, Pakistan, South Korea, Singapore)", "Illinois", "Massachusetts", "Michigan", "Middle East", "Ohio", "Wisconsin", "Indiana"]
+        },
+        {
+          "name": "Kenzie Caputo",
+          "title": "Assistant Director of Admission",
+          "email": "admission@wellesley.edu",
+          "regions": ["Canada", "Hawaii", "Oregon", "Texas", "Washington"]
+        },
+        {
+          "name": "Cassandra Clifford",
+          "title": "Counselor for Admission",
+          "email": "admission@wellesley.edu",
+          "regions": ["Southern California", "Europe", "Massachusetts", "Nevada"]
+        },
+        {
+          "name": "Adriana Fernandez",
+          "title": "Associate Director of Admission",
+          "email": "admission@wellesley.edu",
+          "regions": ["Alabama", "Arkansas", "Florida", "Georgia", "Kentucky", "Louisiana", "Mississippi", "South Carolina", "Tennessee", "Caribbean", "Central America", "South America"]
+        },
+        {
+          "name": "Jenna Hill",
+          "title": "Assistant Director of Admission",
+          "email": "admission@wellesley.edu",
+          "regions": ["Africa", "India", "Pakistan", "Maine", "New Hampshire", "Rhode Island", "Vermont"]
+        },
+        {
+          "name": "Nhia Solari '19",
+          "title": "Assistant Director of Admission",
+          "email": "admission@wellesley.edu",
+          "regions": ["Alaska", "China", "New York (excluding Manhattan)", "Singapore", "South Korea"]
+        },
+        {
+          "name": "Rebecca Simons",
+          "title": "Associate Director of Admission",
+          "email": "admission@wellesley.edu",
+          "regions": ["APO", "AS", "GU", "MP", "New Mexico", "New York (Manhattan)", "Oceania"]
+        },
+        {
+          "name": "Alicia Trujillo '22",
+          "title": "Counselor for Admission",
+          "email": "admission@wellesley.edu",
+          "regions": ["Arizona", "Colorado", "Idaho", "Massachusetts", "Montana", "Nepal", "Utah", "Wyoming"]
+        },
+        {
+          "name": "Erin Williams",
+          "title": "Associate Director of Admission",
+          "email": "admission@wellesley.edu",
+          "regions": ["Connecticut", "Delaware", "Iowa", "Kansas", "Missouri", "Nebraska", "New Jersey", "North Dakota", "Oklahoma", "South Dakota"]
+        },
+        {
+          "name": "Michelle Wong",
+          "title": "Assistant Director of Admission",
+          "email": "admission@wellesley.edu",
+          "regions": ["Maryland", "Minnesota", "North Carolina", "Northern California", "Virginia", "Washington DC", "West Virginia"]
+        },
+        {
+          "name": "Elizabeth Young",
+          "title": "Assistant Director of Admission",
+          "email": "admission@wellesley.edu",
+          "regions": ["Massachusetts", "Pennsylvania"]
+        }
+      ]
+    },
+    {
+      "name": "Swarthmore College",
+      "location": "Swarthmore, PA",
+      "coordinates": [39.9026, -75.3541],
+      "website": "https://www.swarthmore.edu/admissions-aid",
+      "ranking": 3,
+      "officers": [
+        {
+          "name": "Jim Bock '90",
+          "title": "Vice President & Dean, Admissions",
+          "email": "admissions@swarthmore.edu",
+          "regions": ["Washington DC", "Texas (Austin)", "Tennessee (Nashville/Central)", "Hawaii"]
+        },
+        {
+          "name": "Isthier Chaudhury",
+          "title": "Director, Admissions",
+          "email": "ichaudh1@swarthmore.edu",
+          "regions": ["Georgia", "South Asia (excluding Pakistan)"]
+        },
+        {
+          "name": "Windsor Jordan Jr. '07",
+          "title": "Associate Dean, Director of Access and Equity",
+          "email": "wjordan1@swarthmore.edu",
+          "regions": ["California (Los Angeles)", "Illinois", "Maine", "New Hampshire", "Vermont", "Ghana", "Nigeria"]
+        },
+        {
+          "name": "Emily Fry",
+          "title": "Director of Admissions Communications, Associate Dean",
+          "email": "efry1@swarthmore.edu",
+          "regions": ["Virginia", "Europe (excluding Eastern)", "Oceania"]
+        },
+        {
+          "name": "Yulia Korovikov",
+          "title": "Associate Dean, Director of Recruitment",
+          "email": "ykorovi1@swarthmore.edu",
+          "regions": ["Massachusetts", "New York (Bronx, Queens, Staten Island)", "Homeschool Students", "Central Asia", "Western Asia", "Eastern Europe"]
+        },
+        {
+          "name": "Lisa Shen",
+          "title": "Associate Dean, Director of International Recruitment",
+          "email": "lshen2@swarthmore.edu",
+          "regions": ["Oklahoma", "North Dakota", "South Dakota", "Middle East", "Africa (excluding Ghana and Nigeria)"]
+        },
+        {
+          "name": "Nicole Dianzumba",
+          "title": "Senior Assistant Dean, Director of Diversity and Outreach",
+          "email": "ndianzu1@swarthmore.edu",
+          "regions": ["Pennsylvania (Philadelphia, Western, Central)", "Ohio", "Delaware", "US Territories", "Caribbean"]
+        },
+        {
+          "name": "Natalie Gainer '15",
+          "title": "Senior Assistant Dean, Director of Admissions Events",
+          "email": "ngainer1@swarthmore.edu",
+          "regions": ["West Virginia", "New York (Manhattan)", "China", "Macau", "Taiwan", "Hong Kong", "Mongolia"]
+        },
+        {
+          "name": "Mark Detterline",
+          "title": "Senior Assistant Dean, Director of Selection",
+          "email": "mdetter1@swarthmore.edu",
+          "regions": ["Colorado", "Pennsylvania (Bucks, Chester, Delaware, Montgomery)", "California (Southern, excluding LA)", "Central America", "South America"]
+        },
+        {
+          "name": "Annette Senesi",
+          "title": "Assistant Dean",
+          "email": "asenesi1@swarthmore.edu",
+          "regions": ["Florida", "New York (Brooklyn)", "Japan", "South Korea", "Pakistan", "Southeast Asia"]
+        },
+        {
+          "name": "Janet Barkdoll '22",
+          "title": "Assistant Dean",
+          "email": "jbarkdo1@swarthmore.edu",
+          "regions": ["California (Northern & Central)", "Oregon", "Washington", "Alaska", "Idaho", "Montana", "Wyoming", "Kentucky"]
+        },
+        {
+          "name": "Amanda Galczyk",
+          "title": "Admissions Counselor",
+          "email": "agalczy1@swarthmore.edu",
+          "regions": ["Texas (excluding Austin)", "New Jersey (Northern & Central)"]
+        },
+        {
+          "name": "Emma Sonnenblick",
+          "title": "Admissions Counselor",
+          "email": "esonnen1@swarthmore.edu",
+          "regions": ["New York (Long Island)", "Connecticut", "Rhode Island", "Maryland", "Pennsylvania (Lehigh Valley)", "Canada"]
+        },
+        {
+          "name": "Tan Zhou",
+          "title": "Admissions Counselor",
+          "email": "tzhou3@swarthmore.edu",
+          "regions": ["Iowa", "Indiana", "Kansas", "Michigan", "Minnesota", "Missouri", "Nebraska", "Wisconsin", "New Jersey (Southern)", "Arizona", "New Mexico"]
+        },
+        {
+          "name": "Alondra Romero",
+          "title": "Admissions Counselor",
+          "email": "aromero2@swarthmore.edu",
+          "regions": ["New York (Upstate)", "Alabama", "Arkansas", "Louisiana", "Mississippi", "North Carolina", "South Carolina", "Tennessee (excluding Nashville)", "Utah", "Nevada"]
+        }
+      ]
+    }
+  ]
+}
